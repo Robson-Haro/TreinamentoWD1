@@ -81,9 +81,15 @@ export default function Home() {
 
       <section id="modulos" className="modules-preview" aria-label="Módulos da jornada">
         <div className="glass-card modules-card">
-          <span className="eyebrow">Próxima etapa</span>
-          <h2>Os módulos serão revelados aqui.</h2>
-          <p>A jornada está pronta para receber os conteúdos que construiremos juntos.</p>
+          <span className="eyebrow">Módulo 1</span>
+          <h2>Se conhecendo para liderar</h2>
+          <p>Uma jornada sobre exemplo, desenvolvimento, estratégia e organização.</p>
+          <a className="gold-button module-entry" href="/modulo-1/video">
+            <span>Assistir ao conteúdo</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
       </section>
     </main>
