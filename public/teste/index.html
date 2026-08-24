@@ -557,7 +557,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(window.location.search);
   if(params.get('painel') === '1'){
     goTo('admin');
-    if(supabaseReady) loadFromSupabase();
+    if(supabaseReady){
+      loadFromSupabase();
+      window.setInterval(loadFromSupabase, 5000);
+    }
   }
 });
 
