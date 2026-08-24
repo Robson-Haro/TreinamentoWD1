@@ -162,9 +162,10 @@
   position:absolute;
   z-index:10;
   bottom:1.5vh;
-  left:-28vw;
+  left:47%;
   width:clamp(270px,28vw,470px);
-  animation:robsonCross 13s linear infinite;
+  transform:translateX(-50%);
+  animation:none;
   filter:drop-shadow(0 30px 24px rgba(0,0,0,.55));
 }
 .robson-bob { position:relative; animation:robsonStep .72s ease-in-out infinite alternate; transform-origin:50% 100%; }
@@ -208,7 +209,7 @@
   .coffee-copy p { font-size:17px; }
   .walking-logos { top:260px; right:18px; transform:scale(.8); transform-origin:right top; }
   .auditorium { width:92vw; right:4vw; height:53%; }
-  .robson-walk { width:300px; }
+  .robson-walk { left:50%; width:300px; }
   @keyframes robsonCross {
     0% { transform:translateX(0) scale(.78) rotateY(-4deg); }
     50% { transform:translateX(88vw) scale(.94) rotateY(2deg); }
@@ -216,6 +217,6 @@
   }
 }
 @media (prefers-reduced-motion:reduce) {
-  .robson-walk { left:8vw; animation:none; }
+  .robson-walk { animation:none; }
   .robson-bob,.walking-logo,.walker-leg,.walker-cup,.coffee-steam { animation:none; }
 }
