@@ -1,4 +1,5 @@
 import "../experience.css";
+import CaseQRCode from "./CaseQRCode";
 
 const decisions = [
   {
@@ -74,6 +75,10 @@ export default function EstudoDeCaso() {
         </aside>
       </header>
 
+      <div className="case-qr-wrap">
+        <CaseQRCode />
+      </div>
+
       <nav className="case-index" aria-label="Tópicos do estudo">
         <a href="#postos">01 · Postos</a>
         <a href="#alerta">02 · O alerta</a>
@@ -95,7 +100,8 @@ export default function EstudoDeCaso() {
           <article className="post-card critical">
             <div className="post-card-head"><span>POSTO B</span><b>CRITICIDADE ALTA</b></div>
             <h3>Unidade Industrial</h3>
-            <p><strong>Vigilância:</strong> 2 vigilantes por turno, escala 4×2.</p>
+            <p><strong>Vigilância:</strong> 9 vigilantes no total, em escala 4×2 e três turnos de 8 horas.</p>
+            <p><strong>Turno das 6h às 14h:</strong> os 2 profissionais previstos estão presentes. Não existe excedente nesse turno.</p>
             <p><strong>Regra contratual:</strong> permanência mínima de 2 vigilantes por turno.</p>
             <footer>25 km do Posto A · 30 km do Posto C</footer>
           </article>
@@ -104,6 +110,7 @@ export default function EstudoDeCaso() {
             <h3>Unidade Administrativa</h3>
             <p><strong>Limpeza:</strong> 4 profissionais, escala 6×1, das 7h às 15h20.</p>
             <p><strong>Situação inicial:</strong> equipe completa para a segunda-feira.</p>
+            <p><strong>Limite operacional:</strong> consegue manter o essencial com 3 profissionais por até 4 horas, reagendando tarefas não críticas.</p>
             <footer>15 km do Posto A · 30 km do Posto B</footer>
           </article>
         </div>
@@ -117,6 +124,20 @@ export default function EstudoDeCaso() {
           <article><time>6h10</time><div><h3>Limpeza reduzida a uma pessoa</h3><p>Uma ausência por filho doente se soma a um afastamento semanal: somente 1 das 3 profissionais do Posto A estará disponível.</p></div></article>
           <article><time>6h20</time><div><h3>Auditoria internacional</h3><p>O Posto A receberá uma auditoria às 9h e exige atenção especial à recepção, banheiros, salas e circulação.</p></div></article>
           <article><time>6h30</time><div><h3>Posto B reforça a exigência</h3><p>Haverá aumento da movimentação de caminhões e o cliente não aceitará redução da vigilância.</p></div></article>
+        </div>
+        <div className="case-resources">
+          <h3>Recursos de contingência disponíveis</h3>
+          <div>
+            <p><b>Central operacional 24h</b><span>Recebe os acionamentos e coordena as substituições.</span></p>
+            <p><b>Vigilante reserva</b><span>Está a aproximadamente 50 minutos do Posto A.</span></p>
+            <p><b>Vigilante de folga</b><span>Mora a 35 minutos do local, mas ainda não confirmou disponibilidade.</span></p>
+            <p><b>Supervisor habilitado</b><span>Pode assumir vigilância, mas precisa buscar uniforme e equipamentos na base, a 40 minutos.</span></p>
+            <p><b>Veículo operacional</b><span>Disponível para os deslocamentos emergenciais.</span></p>
+          </div>
+        </div>
+        <div className="case-travel">
+          <b>TEMPOS MÉDIOS DE DESLOCAMENTO</b>
+          <span>A ↔ B: 40 minutos</span><span>A ↔ C: 25 minutos</span><span>B ↔ C: 45 minutos</span>
         </div>
         <div className="case-rule"><b>REGRA INEGOCIÁVEL</b><span>Profissionais não podem ser usados em funções diferentes daquelas para as quais foram contratados e habilitados.</span></div>
       </section>
