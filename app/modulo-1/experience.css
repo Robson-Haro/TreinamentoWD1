@@ -66,6 +66,43 @@
   .qr-card { width:min(430px,100%); }
   .disc-grid { grid-template-columns:1fr 1fr; }
 }
+
+/* Momentos de descontração — dinâmicas de grupo */
+.group-moment { min-height:100svh; overflow:hidden; color:#f6f1e7; background:radial-gradient(circle at 76% 40%,rgba(214,166,59,.22),transparent 35%),linear-gradient(145deg,#050505,#15110a 62%,#070706); }
+.group-moment-two { background:radial-gradient(circle at 74% 42%,rgba(250,194,61,.24),transparent 34%),radial-gradient(circle at 16% 70%,rgba(255,225,151,.08),transparent 28%),linear-gradient(145deg,#060606,#18130a 60%,#050505); }
+.group-moment-topbar { position:relative; z-index:30; background:rgba(5,5,5,.62); backdrop-filter:blur(16px); }
+.group-moment-stage { position:relative; min-height:calc(100svh - 88px); overflow:hidden; }
+.group-moment-stage::before { content:""; position:absolute; width:520px; height:520px; right:12%; top:15%; border:1px solid rgba(255,217,122,.14); border-radius:50%; box-shadow:0 0 0 70px rgba(255,255,255,.018),0 0 0 140px rgba(214,166,59,.025); animation:groupPulse 4s ease-in-out infinite alternate; }
+.group-moment-copy { position:relative; z-index:8; width:min(720px,48vw); padding:clamp(65px,11vh,130px) 0 50px clamp(28px,7vw,120px); }
+.group-moment-copy h1 { margin:12px 0 22px; font-size:clamp(70px,8vw,132px); line-height:.84; letter-spacing:-.065em; }
+.group-moment-copy h1 strong { display:block; color:var(--gold-bright); }
+.group-moment-copy > p { margin:0; color:#f3e8cd; font-size:clamp(29px,3vw,48px); font-weight:650; letter-spacing:-.03em; }
+.group-moment-callout { display:flex; align-items:center; gap:15px; width:min(540px,100%); margin-top:32px; padding:18px 20px; border:1px solid rgba(255,218,126,.34); border-radius:18px; background:rgba(255,255,255,.065); box-shadow:inset 1px 1px rgba(255,255,255,.15),0 18px 45px rgba(0,0,0,.35); backdrop-filter:blur(15px); }
+.group-moment-callout span { color:var(--gold-bright); font-size:31px; }
+.group-moment-callout b { color:#ddd5c5; font-size:18px; line-height:1.45; }
+.group-orbit { position:absolute; z-index:4; right:8%; top:20%; width:500px; height:500px; animation:orbitFloat 4s ease-in-out infinite alternate; }
+.orbit-table { position:absolute; z-index:3; inset:28%; display:grid; place-content:center; justify-items:center; border:2px solid rgba(255,220,137,.42); border-radius:50%; background:radial-gradient(circle at 35% 25%,#5c451e,#17120a 65%,#080706); box-shadow:inset 0 0 50px rgba(255,220,137,.12),0 30px 70px rgba(0,0,0,.6),0 0 45px rgba(214,166,59,.15); transform:perspective(600px) rotateX(58deg); }
+.orbit-table span { color:#efd48f; font-size:25px; font-weight:900; letter-spacing:.18em; }
+.orbit-table small { margin-top:8px; color:#a99c80; font-size:11px; letter-spacing:.1em; }
+.orbit-person { position:absolute; z-index:5; width:74px; height:115px; filter:drop-shadow(0 15px 15px rgba(0,0,0,.5)); }
+.orbit-person i { position:absolute; left:50%; width:48px; height:48px; border:2px solid rgba(255,222,148,.32); border-radius:50%; background:linear-gradient(145deg,#ac7a2b,#2c2112); transform:translateX(-50%); }
+.orbit-person b { position:absolute; left:5px; right:5px; top:39px; bottom:0; border:1px solid rgba(255,255,255,.1); border-radius:35px 35px 13px 13px; background:linear-gradient(145deg,#3b3327,#0b0a08); }
+.person-1 { left:42%; top:0; }.person-2 { right:1%; top:27%; transform:rotate(60deg); }.person-3 { right:12%; bottom:2%; transform:rotate(120deg); }.person-4 { left:40%; bottom:-5%; transform:rotate(180deg); }.person-5 { left:2%; bottom:14%; transform:rotate(235deg); }.person-6 { left:0; top:23%; transform:rotate(300deg); }
+.orbit-variant .orbit-person i { background:linear-gradient(145deg,#e0b453,#493317); }
+.group-brand-panel { position:absolute; z-index:10; right:clamp(24px,5vw,80px); bottom:28px; display:flex; align-items:center; gap:16px; padding:12px 17px; border:1px solid rgba(255,220,137,.3); border-radius:20px; background:rgba(7,7,6,.63); backdrop-filter:blur(16px); }
+.group-brand-panel div { display:flex; align-items:center; gap:10px; }
+.group-brand-panel img { width:55px; height:55px; object-fit:cover; border-radius:13px; }
+.group-brand-panel strong { color:#ead9b2; font-size:12px; letter-spacing:.1em; }
+.group-brand-panel > span { color:var(--gold-bright); }
+@keyframes groupPulse { to { transform:scale(1.06); opacity:.7; } }
+@keyframes orbitFloat { to { transform:translateY(-13px) rotate(1.2deg); } }
+@media (max-width:800px) {
+  .group-moment-copy { width:calc(100% - 28px); padding:50px 14px 0; }
+  .group-moment-copy h1 { font-size:61px; }
+  .group-orbit { top:48%; right:50%; width:360px; height:360px; transform:translateX(50%) scale(.82); }
+  .group-brand-panel { right:14px; bottom:12px; }
+  .group-brand-panel strong { display:none; }
+}
 @media (max-width:600px) {
   .screen-nav { gap:12px; }
   .screen-nav { max-width:72vw; overflow-x:auto; padding:8px 0; }
