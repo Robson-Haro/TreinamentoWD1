@@ -9,7 +9,7 @@ export default function TesteGrafologico() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/cafe">← Tela anterior</a>
-          <a className="back-link next-test-link" href="#orientacoes">Iniciar atividade →</a>
+          <a className="back-link next-test-link" href="/modulo-1/estudo-caso">Próxima atividade →</a>
         </div>
       </nav>
 
