@@ -257,6 +257,25 @@
 .graphology-brands img { width:54px; height:54px; object-fit:cover; border-radius:13px; }
 .graphology-brands span { color:#e7d8b6; font-size:12px; font-weight:850; letter-spacing:.1em; }
 .graphology-brands i { color:var(--gold-bright); font-style:normal; }
+.graphology-wall-brands {
+  position:absolute;
+  z-index:6;
+  top:24%;
+  right:5.5%;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:18px 22px;
+  border:1px solid rgba(255,211,105,.45);
+  border-radius:20px;
+  background:rgba(8,7,6,.68);
+  box-shadow:inset 1px 1px rgba(255,255,255,.18),0 18px 45px rgba(0,0,0,.5),0 0 30px rgba(214,166,59,.13);
+  backdrop-filter:blur(14px);
+}
+.graphology-wall-brands div { display:grid; justify-items:center; gap:8px; }
+.graphology-wall-brands img { width:76px; height:76px; object-fit:cover; border-radius:17px; }
+.graphology-wall-brands strong { color:#f0dfb8; font-size:13px; letter-spacing:.1em; }
+.graphology-wall-brands > span { color:var(--gold-bright); font-size:22px; }
 @keyframes graphologyDrift { from { transform:scale(1.01); } to { transform:scale(1.055) translateX(-.7%); } }
 @media (max-width:800px) {
   .graphology-hero { min-height:calc(100svh - 72px); }
@@ -266,4 +285,5 @@
   .graphology-copy h1 { font-size:58px; }
   .graphology-brands { top:22px; left:14px; right:auto; max-width:calc(100% - 28px); }
   .graphology-brands span { display:none; }
+  .graphology-wall-brands { top:108px; right:14px; transform:scale(.72); transform-origin:right top; }
 }
