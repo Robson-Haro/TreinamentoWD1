@@ -84,3 +84,107 @@
   .disc-footer { display:block; }
   .disc-footer .module-entry { width:100%; margin-top:18px; }
 }
+
+/* Tela 8 — Hora do café */
+.coffee-screen {
+  min-height:100svh;
+  position:relative;
+  overflow:hidden;
+  color:var(--ivory);
+  background:
+    radial-gradient(circle at 78% 18%,rgba(204,140,36,.28),transparent 32%),
+    radial-gradient(circle at 18% 38%,rgba(255,214,110,.08),transparent 27%),
+    linear-gradient(145deg,#050505 0%,#12100c 52%,#070707 100%);
+}
+.coffee-light { position:absolute; border-radius:50%; filter:blur(85px); pointer-events:none; }
+.coffee-light-one { width:430px; height:430px; right:-80px; top:60px; background:rgba(191,125,22,.2); }
+.coffee-light-two { width:300px; height:300px; left:10%; bottom:-120px; background:rgba(255,207,91,.1); }
+.coffee-topbar { z-index:30; }
+.coffee-stage { position:relative; z-index:2; min-height:calc(100svh - 88px); overflow:hidden; }
+.coffee-copy {
+  position:absolute;
+  z-index:12;
+  top:clamp(34px,7vh,82px);
+  left:clamp(28px,7vw,120px);
+  width:min(620px,46vw);
+}
+.coffee-copy h1 {
+  margin:6px 0 18px;
+  font-size:clamp(62px,8vw,130px);
+  line-height:.88;
+  letter-spacing:-.065em;
+  font-weight:760;
+  color:var(--gold-bright);
+  text-shadow:0 7px 38px rgba(214,166,59,.2);
+}
+.coffee-copy p { max-width:570px; margin:0; color:#d0cbc1; font-size:clamp(18px,1.5vw,25px); line-height:1.55; }
+.coffee-time { display:inline-flex; align-items:center; gap:13px; margin-top:25px; padding:13px 18px; border:1px solid rgba(255,218,126,.34); border-radius:16px; background:rgba(255,255,255,.07); box-shadow:inset 1px 1px rgba(255,255,255,.15); backdrop-filter:blur(15px); }
+.coffee-time span { font-size:27px; }
+.coffee-time strong { color:#f1dfb3; font-size:14px; letter-spacing:.06em; }
+.auditorium { position:absolute; z-index:1; right:3vw; bottom:4vh; width:min(760px,54vw); height:70%; perspective:900px; }
+.auditorium-wall { height:42%; display:grid; place-content:center; justify-items:center; border:1px solid rgba(255,210,102,.16); border-radius:28px 28px 10px 10px; background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(0,0,0,.32)); box-shadow:inset 0 0 80px rgba(214,166,59,.08),0 30px 80px rgba(0,0,0,.45); transform:rotateY(-4deg); }
+.auditorium-wall span { color:rgba(255,220,137,.35); font-size:clamp(35px,5vw,74px); font-weight:900; letter-spacing:.09em; }
+.auditorium-wall small { color:rgba(255,255,255,.32); text-transform:uppercase; letter-spacing:.32em; }
+.audience { position:absolute; inset:38% 0 0; display:grid; grid-template-columns:repeat(9,1fr); align-content:end; align-items:end; gap:10px; transform:perspective(900px) rotateX(7deg); }
+.audience-person { position:relative; height:clamp(76px,11vh,128px); filter:drop-shadow(0 15px 14px rgba(0,0,0,.55)); opacity:.88; }
+.audience-person i { position:absolute; top:0; left:50%; width:clamp(28px,3vw,43px); height:clamp(28px,3vw,43px); border-radius:50%; background:linear-gradient(145deg,#3c3329,#0d0c0b); transform:translateX(-50%); }
+.audience-person b { position:absolute; left:12%; right:12%; top:25%; bottom:0; border-radius:45% 45% 10px 10px; background:linear-gradient(145deg,#26231f,#090909); border:1px solid rgba(255,255,255,.04); }
+.audience-2 { transform:scale(.91); }
+.audience-3 { transform:scale(1.06); }
+.audience-4 { transform:scale(.96); }
+.robson-walk {
+  position:absolute;
+  z-index:10;
+  bottom:1.5vh;
+  left:-28vw;
+  width:clamp(270px,28vw,470px);
+  animation:robsonCross 16s ease-in-out infinite;
+  filter:drop-shadow(0 30px 24px rgba(0,0,0,.55));
+}
+.robson-bob { position:relative; animation:robsonStep .72s ease-in-out infinite alternate; transform-origin:50% 100%; }
+.robson-bob img { display:block; width:100%; height:auto; }
+.coffee-steam { position:absolute; top:34%; color:rgba(255,244,216,.8); font-size:34px; font-family:serif; animation:steamRise 1.8s ease-out infinite; }
+.steam-one { left:52%; }
+.steam-two { left:60%; animation-delay:.45s; }
+.steam-three { left:68%; animation-delay:.9s; }
+.walking-logos { position:absolute; z-index:15; top:31px; right:clamp(28px,7vw,120px); width:315px; height:116px; }
+.walking-logo { position:absolute; top:0; width:92px; animation:logoWalk 5s ease-in-out infinite alternate; filter:drop-shadow(0 12px 14px rgba(0,0,0,.5)); }
+.logo-walker-one { left:0; }
+.logo-walker-two { left:142px; animation-delay:-2.5s; }
+.walker-body { position:relative; z-index:2; width:82px; height:82px; padding:5px; border:1px solid rgba(255,216,119,.42); border-radius:20px; background:rgba(255,255,255,.11); backdrop-filter:blur(15px); }
+.walker-body img { width:100%; height:100%; object-fit:cover; border-radius:15px; }
+.walker-leg { position:absolute; z-index:1; top:74px; width:7px; height:34px; border-radius:99px; background:linear-gradient(#d9aa46,#6d470e); transform-origin:top; }
+.leg-left { left:27px; animation:legLeft .48s ease-in-out infinite alternate; }
+.leg-right { left:54px; animation:legRight .48s ease-in-out infinite alternate; }
+.walker-leg::after { content:""; position:absolute; bottom:-2px; width:17px; height:7px; border-radius:8px; background:#d6a63b; }
+.walker-cup { position:absolute; z-index:5; right:-18px; top:44px; font-size:25px; animation:cupBounce .9s ease-in-out infinite alternate; }
+.stage-floor { position:absolute; z-index:0; left:-10%; right:-10%; bottom:-25%; height:49%; border-radius:50% 50% 0 0; background:radial-gradient(ellipse at center,rgba(214,166,59,.13),rgba(17,14,10,.96) 57%,#050505 76%); transform:perspective(700px) rotateX(48deg); }
+@keyframes robsonCross {
+  0% { transform:translateX(0) scale(.88); }
+  42% { transform:translateX(70vw) scale(1); }
+  58% { transform:translateX(70vw) scale(1); }
+  100% { transform:translateX(122vw) scale(.92); }
+}
+@keyframes robsonStep { from { transform:translateY(0) rotate(-.7deg); } to { transform:translateY(-9px) rotate(.8deg); } }
+@keyframes steamRise { 0% { transform:translateY(0) scale(.7); opacity:0; } 35% { opacity:.85; } 100% { transform:translateY(-42px) scale(1.2); opacity:0; } }
+@keyframes logoWalk { from { transform:translateX(0) translateY(0) rotate(-3deg); } to { transform:translateX(62px) translateY(-5px) rotate(3deg); } }
+@keyframes legLeft { from { transform:rotate(25deg); } to { transform:rotate(-25deg); } }
+@keyframes legRight { from { transform:rotate(-25deg); } to { transform:rotate(25deg); } }
+@keyframes cupBounce { to { transform:translateY(-5px) rotate(5deg); } }
+@media (max-width:800px) {
+  .coffee-copy { width:calc(100% - 48px); top:24px; }
+  .coffee-copy h1 { font-size:64px; }
+  .coffee-copy p { font-size:17px; }
+  .walking-logos { top:260px; right:18px; transform:scale(.8); transform-origin:right top; }
+  .auditorium { width:92vw; right:4vw; height:53%; }
+  .robson-walk { width:300px; }
+  @keyframes robsonCross {
+    0% { transform:translateX(0) scale(.84); }
+    45%,58% { transform:translateX(54vw) scale(.95); }
+    100% { transform:translateX(145vw) scale(.88); }
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .robson-walk { left:8vw; animation:none; }
+  .robson-bob,.walking-logo,.walker-leg,.walker-cup,.coffee-steam { animation:none; }
+}
