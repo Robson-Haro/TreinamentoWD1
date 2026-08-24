@@ -169,7 +169,14 @@
   filter:drop-shadow(0 30px 24px rgba(0,0,0,.55));
 }
 .robson-bob { position:relative; animation:robsonStep .72s ease-in-out infinite alternate; transform-origin:50% 100%; }
-.robson-bob img { display:block; width:100%; height:auto; }
+.robson-bob img {
+  display:block;
+  width:auto;
+  height:min(72vh,calc(100svh - 130px));
+  max-width:100%;
+  margin:0 auto;
+  object-fit:contain;
+}
 .coffee-steam { position:absolute; top:34%; color:rgba(255,244,216,.8); font-size:34px; font-family:serif; animation:steamRise 1.8s ease-out infinite; }
 .steam-one { left:52%; }
 .steam-two { left:60%; animation-delay:.45s; }
@@ -209,7 +216,8 @@
   .coffee-copy p { font-size:17px; }
   .walking-logos { top:260px; right:18px; transform:scale(.8); transform-origin:right top; }
   .auditorium { width:92vw; right:4vw; height:53%; }
-  .robson-walk { left:50%; width:300px; }
+  .robson-walk { left:50%; width:min(300px,58vw); }
+  .robson-bob img { height:min(62vh,calc(100svh - 150px)); }
   @keyframes robsonCross {
     0% { transform:translateX(0) scale(.78) rotateY(-4deg); }
     50% { transform:translateX(88vw) scale(.94) rotateY(2deg); }
