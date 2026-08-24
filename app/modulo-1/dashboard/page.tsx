@@ -9,7 +9,7 @@ export default function DashboardLideranca() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/teste">← Voltar ao QR Code</a>
-          <a className="back-link next-link" href="/modulo-1/disc">Conhecer o DISC →</a>
+          <a className="back-link next-test-link" href="/modulo-1/disc">Ir para o próximo teste →</a>
         </div>
       </nav>
       <section className="dashboard-lesson">

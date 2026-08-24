@@ -10,7 +10,8 @@ export default function TesteLideranca() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/video">← Tela anterior</a>
-          <a className="back-link next-link" href="/modulo-1/dashboard">Ver dashboard →</a>
+          <a className="back-link dashboard-link" href="/modulo-1/dashboard">Ver dashboard →</a>
+          <a className="back-link next-test-link" href="/modulo-1/disc">Ir para o próximo teste →</a>
         </div>
       </nav>
       <section className="test-lesson">
