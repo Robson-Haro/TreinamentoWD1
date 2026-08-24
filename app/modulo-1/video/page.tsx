@@ -1,3 +1,5 @@
+import VideoPlayer from "./VideoPlayer";
+
 export default function VideoModuloUm() {
   return (
     <main className="module-screen">
@@ -23,10 +25,7 @@ export default function VideoModuloUm() {
 
         <div className="video-glass">
           <div className="video-gold-line" aria-hidden="true" />
-          <video controls preload="metadata" playsInline poster="/favicon.svg">
-            <source src="/videos/modulo-1-lideranca.mp4" type="video/mp4" />
-            Seu navegador não consegue reproduzir este vídeo.
-          </video>
+          <VideoPlayer />
         </div>
 
         <div className="lesson-topics" aria-label="Temas do vídeo">
