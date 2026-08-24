@@ -1,6 +1,6 @@
-import "../experience.css";
+import "../../experience.css";
 
-export default function DashboardLideranca() {
+export default function DiscDashboard() {
   return (
     <main className="module-screen dashboard-screen">
       <div className="ambient ambient-one" aria-hidden="true" />
@@ -8,18 +8,18 @@ export default function DashboardLideranca() {
       <nav className="topbar module-topbar" aria-label="Navegação do módulo">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-1/teste">← Voltar ao QR Code</a>
-          <a className="back-link next-link" href="/modulo-1/disc">Conhecer o DISC →</a>
+          <a className="back-link" href="/modulo-1/disc/teste">← Voltar ao QR Code</a>
+          <a className="back-link next-link" href="/">Encerrar módulo →</a>
         </div>
       </nav>
       <section className="dashboard-lesson">
         <header className="lesson-heading dashboard-heading">
           <div>
-            <span className="eyebrow">Módulo 1 · Tela 4</span>
-            <h1>Retrato da liderança do Grupo WD</h1>
-            <p>Resultados consolidados do grupo, atualizados a partir das respostas recebidas.</p>
+            <span className="eyebrow">Módulo 1 · Tela 7</span>
+            <h1>Dashboard comportamental DISC</h1>
+            <p>Prevalência do grupo, distribuição D · I · S · C, pontos positivos e pontos de atenção.</p>
           </div>
-          <div className="lesson-logos" aria-label="Grupo WD e Ramos Consultoria">
+          <div className="lesson-logos">
             <img src="/grupo-wd.png" alt="Grupo WD" />
             <img src="/ramos-consultoria.png" alt="Ramos Consultoria" />
           </div>
@@ -27,8 +27,8 @@ export default function DashboardLideranca() {
         <div className="dashboard-frame">
           <div className="video-gold-line" aria-hidden="true" />
           <iframe
-            src="/teste/index.html?painel=1"
-            title="Dashboard consolidado dos estilos de liderança"
+            src="/teste-disc/index.html?painel=1"
+            title="Dashboard consolidado DISC"
             allow="clipboard-write"
           />
         </div>
