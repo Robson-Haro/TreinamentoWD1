@@ -1,4 +1,5 @@
 import "../experience.css";
+import FootstepSound from "./FootstepSound";
 
 const audience = Array.from({ length: 18 });
 
@@ -29,6 +30,7 @@ export default function HoraDoCafe() {
             <span>☕</span>
             <strong>Sirva-se. O café está pronto.</strong>
           </div>
+          <FootstepSound />
         </div>
 
         <div className="walking-logos" aria-label="Grupo WD e Ramos Consultoria indo tomar café">

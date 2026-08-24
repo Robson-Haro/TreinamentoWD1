@@ -121,6 +121,31 @@
 .coffee-time { display:inline-flex; align-items:center; gap:13px; margin-top:25px; padding:13px 18px; border:1px solid rgba(255,218,126,.34); border-radius:16px; background:rgba(255,255,255,.07); box-shadow:inset 1px 1px rgba(255,255,255,.15); backdrop-filter:blur(15px); }
 .coffee-time span { font-size:27px; }
 .coffee-time strong { color:#f1dfb3; font-size:14px; letter-spacing:.06em; }
+.footstep-toggle {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-top:14px;
+  padding:12px 17px;
+  border:1px solid rgba(255,214,110,.42);
+  border-radius:15px;
+  color:#f4e7c5;
+  background:linear-gradient(135deg,rgba(214,166,59,.18),rgba(255,255,255,.06));
+  box-shadow:inset 1px 1px rgba(255,255,255,.18),0 12px 28px rgba(0,0,0,.3);
+  backdrop-filter:blur(14px);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.footstep-toggle:hover { transform:translateY(-2px); box-shadow:inset 1px 1px rgba(255,255,255,.2),0 0 25px rgba(214,166,59,.2); }
+.footstep-toggle > span { font-size:25px; }
+.footstep-toggle div { display:grid; justify-items:start; gap:2px; }
+.footstep-toggle strong { font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+.footstep-toggle small { color:#aaa69e; font-size:11px; }
+.footstep-toggle.sound-on {
+  color:#161006;
+  background:linear-gradient(145deg,#ffe29a,#d6a63b);
+  box-shadow:inset 0 1px rgba(255,255,255,.65),0 0 30px rgba(214,166,59,.35);
+}
+.footstep-toggle.sound-on small { color:#4c3510; }
 .auditorium { position:absolute; z-index:1; right:3vw; bottom:4vh; width:min(760px,54vw); height:70%; perspective:900px; }
 .auditorium-wall { height:42%; display:grid; place-content:center; justify-items:center; border:1px solid rgba(255,210,102,.16); border-radius:28px 28px 10px 10px; background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(0,0,0,.32)); box-shadow:inset 0 0 80px rgba(214,166,59,.08),0 30px 80px rgba(0,0,0,.45); transform:rotateY(-4deg); }
 .auditorium-wall span { color:rgba(255,220,137,.35); font-size:clamp(35px,5vw,74px); font-weight:900; letter-spacing:.09em; }
