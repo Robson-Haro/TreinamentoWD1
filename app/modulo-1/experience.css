@@ -228,3 +228,42 @@
   .robson-walk { animation:none; }
   .robson-bob,.walking-logo,.walker-leg,.walker-cup,.coffee-steam { animation:none; }
 }
+
+/* Próxima etapa — Teste grafológico */
+.graphology-screen { min-height:100svh; overflow:hidden; color:var(--ivory); background:#080706; }
+.graphology-topbar { position:relative; z-index:20; background:rgba(5,5,5,.76); backdrop-filter:blur(18px); }
+.graphology-hero { position:relative; min-height:calc(100svh - 88px); overflow:hidden; }
+.graphology-scene { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; animation:graphologyDrift 16s ease-in-out infinite alternate; }
+.graphology-shade {
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg,rgba(5,5,5,.97) 0%,rgba(5,5,5,.86) 30%,rgba(5,5,5,.24) 58%,rgba(5,5,5,.12) 100%),
+    linear-gradient(0deg,rgba(5,5,5,.72),transparent 38%);
+}
+.graphology-copy { position:relative; z-index:4; width:min(650px,46vw); padding:clamp(48px,8vh,92px) 0 50px clamp(28px,7vw,120px); }
+.graphology-copy h1 { margin:10px 0 22px; font-size:clamp(58px,7vw,112px); line-height:.9; letter-spacing:-.06em; font-weight:760; }
+.graphology-copy h1 strong { display:block; color:var(--gold-bright); font-weight:760; }
+.graphology-copy > p { max-width:610px; margin:0; color:#d3cec5; font-size:clamp(18px,1.5vw,24px); line-height:1.55; }
+.graphology-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+.graphology-meta span { padding:11px 14px; border:1px solid rgba(255,224,151,.24); border-radius:999px; color:#ddd5c5; background:rgba(255,255,255,.055); backdrop-filter:blur(12px); font-size:12px; }
+.graphology-meta b { margin-right:7px; color:var(--gold-bright); }
+.graphology-note { display:flex; align-items:center; gap:14px; width:min(470px,100%); margin-top:20px; padding:15px 17px; border:1px solid rgba(255,216,119,.32); border-radius:17px; background:linear-gradient(135deg,rgba(214,166,59,.17),rgba(255,255,255,.055)); box-shadow:inset 1px 1px rgba(255,255,255,.14),0 16px 36px rgba(0,0,0,.28); backdrop-filter:blur(15px); }
+.graphology-note > span { color:var(--gold-bright); font-size:30px; }
+.graphology-note div { display:grid; gap:4px; }
+.graphology-note strong { color:#f3dfad; font-size:14px; letter-spacing:.04em; }
+.graphology-note small { color:#bcb5aa; line-height:1.4; }
+.graphology-brands { position:absolute; z-index:5; top:35px; right:clamp(28px,5vw,82px); display:flex; align-items:center; gap:17px; padding:12px 17px; border:1px solid rgba(255,220,137,.28); border-radius:21px; background:rgba(8,7,6,.56); box-shadow:inset 1px 1px rgba(255,255,255,.14),0 18px 42px rgba(0,0,0,.36); backdrop-filter:blur(17px); }
+.graphology-brands div { display:flex; align-items:center; gap:10px; }
+.graphology-brands img { width:54px; height:54px; object-fit:cover; border-radius:13px; }
+.graphology-brands span { color:#e7d8b6; font-size:12px; font-weight:850; letter-spacing:.1em; }
+.graphology-brands i { color:var(--gold-bright); font-style:normal; }
+@keyframes graphologyDrift { from { transform:scale(1.01); } to { transform:scale(1.055) translateX(-.7%); } }
+@media (max-width:800px) {
+  .graphology-hero { min-height:calc(100svh - 72px); }
+  .graphology-scene { object-position:63% center; }
+  .graphology-shade { background:linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.6) 72%,rgba(5,5,5,.24)); }
+  .graphology-copy { width:calc(100% - 28px); padding:180px 14px 45px; }
+  .graphology-copy h1 { font-size:58px; }
+  .graphology-brands { top:22px; left:14px; right:auto; max-width:calc(100% - 28px); }
+  .graphology-brands span { display:none; }
+}

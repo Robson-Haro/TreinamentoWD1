@@ -14,7 +14,7 @@ export default function HoraDoCafe() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/disc/dashboard">← Tela anterior</a>
-          <a className="back-link next-test-link" href="/">Continuar treinamento →</a>
+          <a className="back-link next-test-link" href="/modulo-1/grafologico">Continuar treinamento →</a>
         </div>
       </nav>
 
