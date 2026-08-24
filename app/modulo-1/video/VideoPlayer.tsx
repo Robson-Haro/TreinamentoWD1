@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const TOTAL_PARTS = 67;
+const TOTAL_PARTS = 65;
 
 export default function VideoPlayer() {
   const [videoUrl, setVideoUrl] = useState<string>();
