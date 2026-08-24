@@ -149,6 +149,7 @@
 .auditorium { position:absolute; z-index:1; right:3vw; bottom:4vh; width:min(760px,54vw); height:70%; perspective:900px; }
 .auditorium-wall { height:42%; display:grid; place-content:center; justify-items:center; border:1px solid rgba(255,210,102,.16); border-radius:28px 28px 10px 10px; background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(0,0,0,.32)); box-shadow:inset 0 0 80px rgba(214,166,59,.08),0 30px 80px rgba(0,0,0,.45); transform:rotateY(-4deg); }
 .auditorium-wall span { color:rgba(255,220,137,.35); font-size:clamp(35px,5vw,74px); font-weight:900; letter-spacing:.09em; }
+.auditorium-wall b { margin:4px 0 11px; color:rgba(255,220,137,.66); font-size:clamp(15px,1.65vw,26px); font-weight:750; letter-spacing:.15em; }
 .auditorium-wall small { color:rgba(255,255,255,.32); text-transform:uppercase; letter-spacing:.32em; }
 .audience { position:absolute; inset:38% 0 0; display:grid; grid-template-columns:repeat(9,1fr); align-content:end; align-items:end; gap:10px; transform:perspective(900px) rotateX(7deg); }
 .audience-person { position:relative; height:clamp(76px,11vh,128px); filter:drop-shadow(0 15px 14px rgba(0,0,0,.55)); opacity:.88; }

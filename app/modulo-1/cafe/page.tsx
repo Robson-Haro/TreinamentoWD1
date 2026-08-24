@@ -49,6 +49,7 @@ export default function HoraDoCafe() {
         <div className="auditorium" aria-hidden="true">
           <div className="auditorium-wall">
             <span>GRUPO WD</span>
+            <b>× RAMOS CONSULTORIA</b>
             <small>Jornada de Liderança</small>
           </div>
           <div className="audience">
@@ -62,7 +63,7 @@ export default function HoraDoCafe() {
 
         <div className="robson-walk">
           <div className="robson-bob">
-            <img src="/robson-coffee-3d.png" alt="Robson caminhando e oferecendo uma bandeja de café" />
+            <img src="/robson-coffee-3d.webp" alt="Robson caminhando e oferecendo uma bandeja de café" />
             <span className="coffee-steam steam-one">~</span>
             <span className="coffee-steam steam-two">~</span>
             <span className="coffee-steam steam-three">~</span>
