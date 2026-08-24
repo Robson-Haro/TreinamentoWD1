@@ -49,7 +49,7 @@ export default function HoraDoCafe() {
         <div className="auditorium" aria-hidden="true">
           <div className="auditorium-wall">
             <span>GRUPO WD</span>
-            <b>× RAMOS CONSULTORIA</b>
+            <span>RAMOS CONSULTORIA</span>
             <small>Jornada de Liderança</small>
           </div>
           <div className="audience">

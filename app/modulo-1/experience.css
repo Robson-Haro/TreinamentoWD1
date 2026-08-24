@@ -148,8 +148,8 @@
 .footstep-toggle.sound-on small { color:#4c3510; }
 .auditorium { position:absolute; z-index:1; right:3vw; bottom:4vh; width:min(760px,54vw); height:70%; perspective:900px; }
 .auditorium-wall { height:42%; display:grid; place-content:center; justify-items:center; border:1px solid rgba(255,210,102,.16); border-radius:28px 28px 10px 10px; background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(0,0,0,.32)); box-shadow:inset 0 0 80px rgba(214,166,59,.08),0 30px 80px rgba(0,0,0,.45); transform:rotateY(-4deg); }
-.auditorium-wall span { color:rgba(255,220,137,.35); font-size:clamp(35px,5vw,74px); font-weight:900; letter-spacing:.09em; }
-.auditorium-wall b { margin:4px 0 11px; color:rgba(255,220,137,.66); font-size:clamp(15px,1.65vw,26px); font-weight:750; letter-spacing:.15em; }
+.auditorium-wall span { color:rgba(255,220,137,.5); font-family:Inter,"Segoe UI",Arial,sans-serif; font-size:clamp(28px,3.6vw,54px); line-height:1.08; font-weight:900; letter-spacing:.09em; }
+.auditorium-wall span + span { margin-top:8px; color:rgba(255,220,137,.7); }
 .auditorium-wall small { color:rgba(255,255,255,.32); text-transform:uppercase; letter-spacing:.32em; }
 .audience { position:absolute; inset:38% 0 0; display:grid; grid-template-columns:repeat(9,1fr); align-content:end; align-items:end; gap:10px; transform:perspective(900px) rotateX(7deg); }
 .audience-person { position:relative; height:clamp(76px,11vh,128px); filter:drop-shadow(0 15px 14px rgba(0,0,0,.55)); opacity:.88; }
@@ -164,7 +164,7 @@
   bottom:1.5vh;
   left:-28vw;
   width:clamp(270px,28vw,470px);
-  animation:robsonCross 16s ease-in-out infinite;
+  animation:robsonCross 13s linear infinite;
   filter:drop-shadow(0 30px 24px rgba(0,0,0,.55));
 }
 .robson-bob { position:relative; animation:robsonStep .72s ease-in-out infinite alternate; transform-origin:50% 100%; }
@@ -186,12 +186,17 @@
 .walker-cup { position:absolute; z-index:5; right:-18px; top:44px; font-size:25px; animation:cupBounce .9s ease-in-out infinite alternate; }
 .stage-floor { position:absolute; z-index:0; left:-10%; right:-10%; bottom:-25%; height:49%; border-radius:50% 50% 0 0; background:radial-gradient(ellipse at center,rgba(214,166,59,.13),rgba(17,14,10,.96) 57%,#050505 76%); transform:perspective(700px) rotateX(48deg); }
 @keyframes robsonCross {
-  0% { transform:translateX(0) scale(.88); }
-  42% { transform:translateX(70vw) scale(1); }
-  58% { transform:translateX(70vw) scale(1); }
-  100% { transform:translateX(122vw) scale(.92); }
+  0% { transform:translateX(0) scale(.82) rotateY(-5deg); }
+  25% { transform:translateX(37vw) scale(.93) rotateY(-2deg); }
+  50% { transform:translateX(73vw) scale(1.02) rotateY(2deg); }
+  75% { transform:translateX(108vw) scale(.95) rotateY(4deg); }
+  100% { transform:translateX(145vw) scale(.82) rotateY(7deg); }
 }
-@keyframes robsonStep { from { transform:translateY(0) rotate(-.7deg); } to { transform:translateY(-9px) rotate(.8deg); } }
+@keyframes robsonStep {
+  0% { transform:translateY(0) rotate(-1.2deg) scaleX(1); }
+  50% { transform:translateY(-11px) rotate(.8deg) scaleX(.995); }
+  100% { transform:translateY(0) rotate(1.2deg) scaleX(1); }
+}
 @keyframes steamRise { 0% { transform:translateY(0) scale(.7); opacity:0; } 35% { opacity:.85; } 100% { transform:translateY(-42px) scale(1.2); opacity:0; } }
 @keyframes logoWalk { from { transform:translateX(0) translateY(0) rotate(-3deg); } to { transform:translateX(62px) translateY(-5px) rotate(3deg); } }
 @keyframes legLeft { from { transform:rotate(25deg); } to { transform:rotate(-25deg); } }
@@ -205,9 +210,9 @@
   .auditorium { width:92vw; right:4vw; height:53%; }
   .robson-walk { width:300px; }
   @keyframes robsonCross {
-    0% { transform:translateX(0) scale(.84); }
-    45%,58% { transform:translateX(54vw) scale(.95); }
-    100% { transform:translateX(145vw) scale(.88); }
+    0% { transform:translateX(0) scale(.78) rotateY(-4deg); }
+    50% { transform:translateX(88vw) scale(.94) rotateY(2deg); }
+    100% { transform:translateX(180vw) scale(.8) rotateY(6deg); }
   }
 }
 @media (prefers-reduced-motion:reduce) {
