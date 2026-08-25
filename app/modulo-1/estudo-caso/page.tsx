@@ -59,6 +59,7 @@ export default function EstudoDeCaso() {
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/grafologico">← Tela anterior</a>
           <a className="back-link next-test-link" href="#decisoes">Ir às decisões ↓</a>
+          <a className="back-link next-test-link" href="/modulo-1/conclusao">Concluir módulo →</a>
         </div>
       </nav>
 
@@ -161,6 +162,7 @@ export default function EstudoDeCaso() {
         <h2>DECISÃO <i>→</i> JUSTIFICATIVA <i>→</i> RISCO <i>→</i> PLANO B</h2>
         <div><strong>PESSOAS</strong><b>+</b><strong>CONTINUIDADE DA OPERAÇÃO</strong><b>+</b><strong>SATISFAÇÃO DO CLIENTE</strong></div>
         <p>Resolver o problema de um posto criando um problema em outro não será considerado uma solução.</p>
+        <a className="gold-button module-entry" href="/modulo-1/conclusao">Finalizar o primeiro módulo →</a>
       </section>
     </main>
   );
