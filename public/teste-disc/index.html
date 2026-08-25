@@ -261,7 +261,10 @@
     <div class="q-count" id="qCount">Bloco 1 de 20</div>
     <div class="q-instruction">Marque a palavra que <strong style="color:var(--good)">mais</strong> e a que <strong style="color:var(--warn)">menos</strong> te representa.</div>
     <div class="tetrad" id="tetradOptions"></div>
-    <div class="last-hint hidden" id="lastQuestionHint">Último bloco — ao marcar "mais" e "menos", seu resultado será exibido.</div>
+    <div class="last-hint hidden" id="lastQuestionHint">Último bloco — marque "mais" e "menos" e confirme o envio abaixo.</div>
+    <button id="btnSubmitQuiz" class="btn primary hidden" type="button" onclick="finishQuiz()" style="margin-top:18px; width:100%;">
+      Enviar respostas e ver resultado
+    </button>
     <div class="quiz-nav">
       <button class="link-btn" id="btnBack" onclick="goBack()">← Voltar</button>
       <button class="link-btn" onclick="goTo('cover')">Cancelar</button>
@@ -553,6 +556,7 @@ function renderQuestion(){
 
   const isLast = currentIndex === quizOrder.length - 1;
   document.getElementById('lastQuestionHint').classList.toggle('hidden', !isLast);
+  document.getElementById('btnSubmitQuiz').classList.add('hidden');
 
   renderTetrad(q);
 }
@@ -613,7 +617,7 @@ function advance(){
     renderQuestion();
   } else {
     document.getElementById('progressFill').style.width = '100%';
-    setTimeout(()=> finishQuiz(), 200);
+    document.getElementById('btnSubmitQuiz').classList.remove('hidden');
   }
 }
 
@@ -642,7 +646,10 @@ function computeScores(){
   return scores;
 }
 
-function finishQuiz(){
+async function finishQuiz(){
+  const submitButton = document.getElementById('btnSubmitQuiz');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Enviando respostas...';
   const scores = computeScores();
   const sorted = PROFILE_ORDER.slice().sort((a,b)=> scores[b]-scores[a]);
   const result = {
@@ -654,7 +661,13 @@ function finishQuiz(){
   };
   lastResult = result;
   saveToLocalStorage(result);
-  saveToSupabase(result);
+  const saved = await saveToSupabase(result);
+  if(!saved){
+    submitButton.disabled = false;
+    submitButton.textContent = 'Tentar enviar novamente';
+    alert('Não foi possível confirmar o envio. Verifique sua internet e tente novamente. Suas respostas continuam nesta tela.');
+    return;
+  }
   renderResult(result);
   goTo('result');
 }
