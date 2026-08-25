@@ -273,6 +273,9 @@
     <div id="lastQuestionHint" class="hidden" style="margin-top:16px; font-size:13px; color:var(--accent); display:flex; align-items:center; gap:8px;">
       <span>Última pergunta — ao selecionar uma opção, seu resultado será exibido.</span>
     </div>
+    <button id="btnSubmitQuiz" class="btn primary hidden" type="button" onclick="finishQuiz()" style="margin-top:18px; width:100%;">
+      Enviar respostas e ver resultado
+    </button>
     <div class="quiz-nav">
       <button class="link-btn" id="btnBack" onclick="goBack()">← Voltar</button>
       <button class="link-btn" onclick="goTo('cover')">Cancelar</button>
@@ -593,6 +596,7 @@ function renderQuestion(){
 
   const isLast = currentIndex === quizOrder.length - 1;
   document.getElementById('lastQuestionHint').classList.toggle('hidden', !isLast);
+  document.getElementById('btnSubmitQuiz').classList.add('hidden');
 
   const wrap = document.getElementById('likertOptions');
   wrap.innerHTML = '';
@@ -612,7 +616,7 @@ function selectAnswer(qid, value){
     renderQuestion();
   } else {
     document.getElementById('progressFill').style.width = '100%';
-    setTimeout(()=> finishQuiz(), 250);
+    document.getElementById('btnSubmitQuiz').classList.remove('hidden');
   }
 }
 
@@ -637,7 +641,10 @@ function computeScores(){
   return scores;
 }
 
-function finishQuiz(){
+async function finishQuiz(){
+  const submitButton = document.getElementById('btnSubmitQuiz');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Enviando respostas...';
   const scores = computeScores();
   const sorted = PROFILE_ORDER.slice().sort((a,b)=> scores[b]-scores[a]);
   const result = {
@@ -649,7 +656,13 @@ function finishQuiz(){
   };
   lastResult = result;
   saveToLocalStorage(result);
-  saveToSupabase(result);
+  const saved = await saveToSupabase(result);
+  if(!saved){
+    submitButton.disabled = false;
+    submitButton.textContent = 'Tentar enviar novamente';
+    alert('Não foi possível confirmar o envio. Verifique sua internet e tente novamente. Suas respostas continuam nesta tela.');
+    return;
+  }
   renderResult(result);
   goTo('result');
 }
