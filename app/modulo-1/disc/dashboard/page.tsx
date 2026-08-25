@@ -27,7 +27,7 @@ export default function DiscDashboard() {
         <div className="dashboard-frame">
           <div className="video-gold-line" aria-hidden="true" />
           <iframe
-            src="/teste-disc/index.html?painel=1"
+            src="/teste-disc/index.html?painel=1&sessao=grupo-wd-2026-08-29"
             title="Dashboard consolidado DISC"
             allow="clipboard-write"
           />

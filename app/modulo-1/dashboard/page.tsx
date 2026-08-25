@@ -27,7 +27,7 @@ export default function DashboardLideranca() {
         <div className="dashboard-frame">
           <div className="video-gold-line" aria-hidden="true" />
           <iframe
-            src="/teste/index.html?painel=1"
+            src="/teste/index.html?painel=1&sessao=grupo-wd-2026-08-29"
             title="Dashboard consolidado dos estilos de liderança"
             allow="clipboard-write"
           />

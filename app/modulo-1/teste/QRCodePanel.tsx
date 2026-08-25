@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 export default function QRCodePanel() {
-  const [testUrl, setTestUrl] = useState("/teste/index.html");
+  const [testUrl, setTestUrl] = useState("/teste/index.html?sessao=grupo-wd-2026-08-29");
 
   useEffect(() => {
-    setTestUrl(`${window.location.origin}/teste/index.html`);
+    setTestUrl(`${window.location.origin}/teste/index.html?sessao=grupo-wd-2026-08-29`);
   }, []);
 
   const qrUrl =

@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 export default function DiscQRCode() {
-  const [testUrl, setTestUrl] = useState("/teste-disc/index.html");
+  const [testUrl, setTestUrl] = useState("/teste-disc/index.html?sessao=grupo-wd-2026-08-29");
 
   useEffect(() => {
-    setTestUrl(`${window.location.origin}/teste-disc/index.html`);
+    setTestUrl(`${window.location.origin}/teste-disc/index.html?sessao=grupo-wd-2026-08-29`);
   }, []);
 
   const qrUrl =

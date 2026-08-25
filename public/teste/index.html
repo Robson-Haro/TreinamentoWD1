@@ -403,6 +403,7 @@
    ================================================================== */
 const SUPABASE_URL = window.WD_LEADERSHIP_CONFIG?.url || '';
 const SUPABASE_ANON_KEY = window.WD_LEADERSHIP_CONFIG?.anonKey || '';
+const SESSION_CODE = new URLSearchParams(window.location.search).get('sessao') || 'grupo-wd-2026-08-29';
 
 let supabaseClient = null;
 let supabaseReady = false;
@@ -752,9 +753,10 @@ function downloadResult(){
    SUPABASE — salvar resultado individual e ler os resultados do grupo
    ================================================================== */
 async function saveToSupabase(result){
-  if(!supabaseReady) return;
+  if(!supabaseReady) return false;
   try{
-    await supabaseClient.from('leadership_results').insert([{
+    const { error } = await supabaseClient.from('leadership_results').insert([{
+      session_code: SESSION_CODE,
       diretivo: result.scores.diretivo,
       modelador: result.scores.modelador,
       participativo: result.scores.participativo,
@@ -765,7 +767,9 @@ async function saveToSupabase(result){
       second: result.second,
       lowest: result.lowest
     }]);
-  }catch(e){ console.error('Falha ao salvar no Supabase:', e); }
+    if(error) throw error;
+    return true;
+  }catch(e){ console.error('Falha ao salvar no Supabase:', e); return false; }
 }
 
 async function loadFromSupabase(){
@@ -778,7 +782,7 @@ async function loadFromSupabase(){
   }
   statusText.textContent = 'Buscando resultados...';
   try{
-    const { data, error } = await supabaseClient.from('leadership_results').select('*').order('created_at', {ascending:true});
+    const { data, error } = await supabaseClient.from('leadership_results').select('*').eq('session_code', SESSION_CODE).order('created_at', {ascending:true});
     if(error) throw error;
     groupData = (data||[]).map(row=>({
       timestamp: row.created_at,
