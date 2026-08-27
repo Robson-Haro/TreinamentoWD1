@@ -25,10 +25,10 @@ export default function VideoModuloUm() {
           <VideoPlayer />
         </div>
         <div className="lesson-topics" aria-label="Etapas do exercício">
-          <span>21 estímulos</span>
-          <span>7 telas · 3 segundos</span>
-          <span>7 telas · 2 segundos</span>
-          <span>7 telas · 1 segundo</span>
+          <span>30 estímulos</span>
+          <span>10 telas · 3 segundos</span>
+          <span>10 telas · 2 segundos</span>
+          <span>10 telas · 1 segundo</span>
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 24 }}>
           <a className="gold-button module-entry" href="/modulo-1/descontracao-video">
