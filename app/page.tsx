@@ -84,8 +84,8 @@ export default function Home() {
           <span className="eyebrow">Módulo 1</span>
           <h2>Se conhecendo para liderar</h2>
           <p>Uma jornada sobre exemplo, desenvolvimento, estratégia e organização.</p>
-          <a className="gold-button module-entry" href="/modulo-1/video">
-            <span>Assistir ao conteúdo</span>
+          <a className="gold-button module-entry" href="/modulo-1/atencao">
+            <span>Iniciar o módulo</span>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
