@@ -70,11 +70,11 @@ export default function VideoPlayer() {
     <div className="mind-game">
       <div className="monitor">
         <div className="monitor-camera" aria-hidden="true" />
-        <div className="monitor-screen" style={stage === "running" ? { backgroundColor: challenge.bg } : undefined}>
+        <div className="monitor-screen" style={stage === "running" ? { background: challenge.bg } : undefined}>
           {stage === "ready" && (
             <div className="game-panel">
               <span className="game-kicker">Exercício de atenção · Efeito Stroop</span>
-              <h2>Confunda a mente.<br /><strong>Domine o foco.</strong></h2>
+              <h2>Atenção <strong>e Foco</strong></h2>
               <p>Em cada tela, diga em voz alta somente a <b>cor das letras</b>. Ignore o nome da cor escrito e ignore a cor do fundo.</p>
               <div className="rule-example">
                 <span style={{ background: "#f2c94c", color: "#e63946" }}>AZUL</span>
