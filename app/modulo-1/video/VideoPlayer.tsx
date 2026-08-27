@@ -26,10 +26,19 @@ const challenges = [
   { word: "AZUL", bg: "#f6c945", ink: "#d71920" },
   { word: "VERDE", bg: "#e04f9a", ink: "#063970" },
   { word: "AMARELO", bg: "#3949ab", ink: "#ff8a00" },
+  { word: "ROXO", bg: "#ff7043", ink: "#1a4fb3" },
+  { word: "VERMELHO", bg: "#46c36f", ink: "#f8d34f" },
+  { word: "BRANCO", bg: "#7d45c7", ink: "#ff7b32" },
+  { word: "LARANJA", bg: "#1976d2", ink: "#ff5a88" },
+  { word: "PRETO", bg: "#f5c542", ink: "#7a35bd" },
+  { word: "ROSA", bg: "#21a179", ink: "#ffe8f0" },
+  { word: "AZUL", bg: "#e83e62", ink: "#64d9ff" },
+  { word: "VERDE", bg: "#6a3dad", ink: "#ffcf33" },
+  { word: "AMARELO", bg: "#00a7a0", ink: "#f04e45" },
 ];
 
-const durationFor = (index: number) => index < 7 ? 3000 : index < 14 ? 2000 : 1000;
-const phaseLabel = (index: number) => index < 7 ? "Aquecimento · 3 segundos" : index < 14 ? "Aceleração · 2 segundos" : "Desafio máximo · 1 segundo";
+const durationFor = (index: number) => index < 10 ? 3000 : index < 20 ? 2000 : 1000;
+const phaseLabel = (index: number) => index < 10 ? "Aquecimento · 3 segundos" : index < 20 ? "Aceleração · 2 segundos" : "Desafio máximo · 1 segundo";
 
 export default function VideoPlayer() {
   const [stage, setStage] = useState<Stage>("ready");
@@ -96,7 +105,7 @@ export default function VideoPlayer() {
             <div className="challenge" aria-live="assertive">
               <div className="challenge-top">
                 <span>{phaseLabel(index)}</span>
-                <b>{String(index + 1).padStart(2, "0")} / 21</b>
+                <b>{String(index + 1).padStart(2, "0")} / 30</b>
               </div>
               <strong style={{ color: challenge.ink }}>{challenge.word}</strong>
               <div className="progress-track"><i style={{ width: `${((index + 1) / challenges.length) * 100}%` }} /></div>
