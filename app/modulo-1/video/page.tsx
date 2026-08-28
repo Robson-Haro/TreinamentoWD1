@@ -31,8 +31,8 @@ export default function VideoModuloUm() {
           <span>10 telas · 1 segundo</span>
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 24 }}>
-          <a className="gold-button module-entry" href="/modulo-1/descontracao-video">
-            <span>Continuar treinamento</span>
+          <a className="gold-button module-entry" href="/modulo-1/video-lideranca">
+            <span>Continuar para os vídeos</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </a>
         </div>
