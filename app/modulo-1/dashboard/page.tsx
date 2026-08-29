@@ -9,6 +9,7 @@ export default function DashboardLideranca() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/teste">← Voltar ao QR Code</a>
+          <a className="back-link dashboard-link" href="/modulo-1/resultados">Resultados por pessoa →</a>
           <a className="back-link next-test-link" href="/modulo-1/disc">Ir para o próximo teste →</a>
         </div>
       </nav>
@@ -17,7 +18,7 @@ export default function DashboardLideranca() {
           <div>
             <span className="eyebrow">Módulo 1 · Tela 4</span>
             <h1>Retrato da liderança do Grupo WD</h1>
-            <p>Resultados consolidados do grupo, atualizados a partir das respostas recebidas.</p>
+            <p>Resultados consolidados do grupo, predominância dos estilos e leitura dos pontos fortes e pontos de atenção.</p>
           </div>
           <div className="lesson-logos" aria-label="Grupo WD e Ramos Consultoria">
             <img src="/grupo-wd.png" alt="Grupo WD" />
