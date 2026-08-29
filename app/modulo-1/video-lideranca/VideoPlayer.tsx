@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const TOTAL_PARTS = 65;
-const PARTS_URL = "https://raw.githubusercontent.com/Robson-Haro/TreinamentoWD1/1bcfd65/public/video-parts";
+const PARTS_URL = "https://raw.githubusercontent.com/Robson-Haro/TreinamentoWD1/cabe341/public/video-parts";
 
 export default function VideoPlayer() {
   const [videoUrl, setVideoUrl] = useState<string>();
