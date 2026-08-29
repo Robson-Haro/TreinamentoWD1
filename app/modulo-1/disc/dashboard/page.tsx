@@ -9,7 +9,7 @@ export default function DiscDashboard() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/disc/teste">← Voltar ao QR Code</a>
-          <a className="back-link dashboard-link" href="/modulo-1/resultados">Resultados por pessoa →</a>
+          <a className="back-link dashboard-link" href="/administrador">Área do Administrador →</a>
           <a className="back-link next-test-link" href="/modulo-1/cafe">Hora do café →</a>
         </div>
       </nav>
