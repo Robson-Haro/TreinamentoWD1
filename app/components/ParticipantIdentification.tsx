@@ -55,12 +55,7 @@ export default function ParticipantIdentification({
     sessionStorage.setItem("wd_participant_name", cleanName);
     sessionStorage.setItem("wd_participant_email", cleanEmail);
 
-    const params = new URLSearchParams({
-      sessao: sessionCode,
-      nome: cleanName,
-      email: cleanEmail,
-    });
-
+    const params = new URLSearchParams({ sessao: sessionCode });
     window.location.assign(`${targetPath}?${params.toString()}`);
   }
 
@@ -144,7 +139,7 @@ export default function ParticipantIdentification({
         </button>
 
         <small style={{ color: "rgba(255,255,255,.42)", lineHeight: 1.45 }}>
-          Cada envio gera um registro próprio. O resultado individual aparece ao final do teste e o consolidado fica disponível no dashboard do facilitador.
+          A identificação é mantida nesta sessão do navegador e não é exposta na URL. Cada envio gera um registro próprio no banco.
         </small>
       </form>
     </div>
