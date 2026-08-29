@@ -46,8 +46,8 @@ window.WD_LEADERSHIP_CONFIG = ${JSON.stringify(config)};
           var enrich = function(row){
             if (!row || typeof row !== 'object') return row;
             var next = Object.assign({}, row);
-            if (!next.nome && identity.nome) next.nome = identity.nome;
-            if (!next.email && identity.email) next.email = identity.email;
+            if (identity.nome) next.nome = identity.nome;
+            if (identity.email) next.email = identity.email;
             return next;
           };
           var enriched = Array.isArray(values) ? values.map(enrich) : enrich(values);
