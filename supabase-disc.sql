@@ -1,12 +1,12 @@
 -- ============================================================
 -- Teste DISC — Schema do Supabase
--- Execute este script inteiro no SQL Editor do seu projeto Supabase
--- (Painel do Supabase → SQL Editor → New query → colar → Run)
+-- Pode ser executado novamente para atualizar a tabela sem apagar resultados.
 -- ============================================================
 
-create table if not exists disc_results (
+create table if not exists public.disc_results (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz default now(),
+  session_code text not null default 'grupo-wd-2026-08-29',
   nome text,
   email text,
   dominancia int not null,
@@ -18,27 +18,24 @@ create table if not exists disc_results (
   lowest text not null
 );
 
--- Caso a tabela já existisse de uma versão anterior deste teste,
--- estas duas linhas adicionam as colunas de nome/e-mail sem apagar dados:
-alter table disc_results add column if not exists nome text;
-alter table disc_results add column if not exists email text;
+alter table public.disc_results add column if not exists session_code text not null default 'grupo-wd-2026-08-29';
+alter table public.disc_results add column if not exists nome text;
+alter table public.disc_results add column if not exists email text;
 
--- Ativa a segurança em nível de linha (obrigatório no Supabase)
-alter table disc_results enable row level security;
+create index if not exists disc_results_session_idx on public.disc_results(session_code, created_at);
+create index if not exists disc_results_email_idx on public.disc_results(session_code, email);
 
--- Permite que qualquer participante (chave anon) grave seu resultado
-create policy "Permitir insercao publica"
-  on disc_results
-  for insert
-  to anon
-  with check (true);
+alter table public.disc_results enable row level security;
 
--- Permite que o painel do gestor leia os resultados agregados
--- (leitura pública com a chave anon — adequado para uso interno da equipe;
---  se quiser restringir, troque "to anon" por "to authenticated" e ative
---  o login do Supabase Auth antes de liberar o painel do gestor)
-create policy "Permitir leitura publica"
-  on disc_results
-  for select
-  to anon
-  using (true);
+drop policy if exists "Permitir insercao publica" on public.disc_results;
+drop policy if exists "Permitir leitura publica" on public.disc_results;
+drop policy if exists "Inserir resultados disc" on public.disc_results;
+drop policy if exists "Ler resultados disc" on public.disc_results;
+
+create policy "Inserir resultados disc"
+  on public.disc_results for insert to anon with check (session_code <> '');
+create policy "Ler resultados disc"
+  on public.disc_results for select to anon using (session_code <> '');
+
+grant usage on schema public to anon;
+grant select, insert on public.disc_results to anon;
