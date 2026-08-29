@@ -9,6 +9,7 @@ export default function DiscDashboard() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/disc/teste">← Voltar ao QR Code</a>
+          <a className="back-link dashboard-link" href="/modulo-1/resultados">Resultados por pessoa →</a>
           <a className="back-link next-test-link" href="/modulo-1/cafe">Hora do café →</a>
         </div>
       </nav>
@@ -17,7 +18,7 @@ export default function DiscDashboard() {
           <div>
             <span className="eyebrow">Módulo 1 · Tela 7</span>
             <h1>Dashboard comportamental DISC</h1>
-            <p>Prevalência do grupo, distribuição D · I · S · C, pontos positivos e pontos de atenção.</p>
+            <p>Prevalência do grupo, distribuição D · I · S · C, pontos positivos, pontos de atenção e acesso ao resultado individual.</p>
           </div>
           <div className="lesson-logos">
             <img src="/grupo-wd.png" alt="Grupo WD" />
