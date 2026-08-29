@@ -51,6 +51,10 @@ export default function Home() {
               Uma experiência criada para transformar conhecimento em presença,
               decisões em resultados e liderança em legado.
             </p>
+            <p className="today-module">
+              <span>Módulo de hoje</span>
+              <strong>Conhecendo a liderança da WD</strong>
+            </p>
             <button
               className={`gold-button ${activated ? "is-active" : ""}`}
               onClick={handleEntry}
