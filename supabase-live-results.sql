@@ -1,5 +1,6 @@
 -- RESULTADOS AO VIVO — Jornada de Liderança Grupo WD
 -- Execute uma única vez no SQL Editor do Supabase.
+-- Este script também pode ser executado novamente com segurança para atualizar tabelas já existentes.
 
 create extension if not exists pgcrypto;
 
@@ -7,6 +8,8 @@ create table if not exists public.leadership_results (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
   session_code text not null default 'grupo-wd-2026-08-29',
+  nome text,
+  email text,
   diretivo int not null check (diretivo between 0 and 100),
   modelador int not null check (modelador between 0 and 100),
   participativo int not null check (participativo between 0 and 100),
@@ -33,11 +36,18 @@ create table if not exists public.disc_results (
   lowest text not null
 );
 
+-- Migração segura para instalações que já tinham as tabelas anteriores.
 alter table public.leadership_results add column if not exists session_code text not null default 'grupo-wd-2026-08-29';
+alter table public.leadership_results add column if not exists nome text;
+alter table public.leadership_results add column if not exists email text;
 alter table public.disc_results add column if not exists session_code text not null default 'grupo-wd-2026-08-29';
+alter table public.disc_results add column if not exists nome text;
+alter table public.disc_results add column if not exists email text;
 
 create index if not exists leadership_results_session_idx on public.leadership_results(session_code, created_at);
+create index if not exists leadership_results_email_idx on public.leadership_results(session_code, email);
 create index if not exists disc_results_session_idx on public.disc_results(session_code, created_at);
+create index if not exists disc_results_email_idx on public.disc_results(session_code, email);
 
 alter table public.leadership_results enable row level security;
 alter table public.disc_results enable row level security;
