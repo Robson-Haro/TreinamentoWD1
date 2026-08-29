@@ -51,7 +51,17 @@ window.WD_LEADERSHIP_CONFIG = ${JSON.stringify(config)};
             return next;
           };
           var enriched = Array.isArray(values) ? values.map(enrich) : enrich(values);
-          return originalInsert(enriched, options);
+          var attempt = originalInsert(enriched, options);
+
+          return Promise.resolve(attempt).then(function(response){
+            var message = response && response.error ? String(response.error.message || '') : '';
+            var missingIdentityColumns = /column.*(nome|email)|(nome|email).*column|schema cache/i.test(message);
+            if (response && response.error && missingIdentityColumns) {
+              console.warn('Colunas de identificação ainda não migradas; preservando o envio do teste sem bloquear o participante.');
+              return originalFrom(table).insert(values, options);
+            }
+            return response;
+          });
         };
         return builder;
       };
