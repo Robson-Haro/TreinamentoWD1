@@ -107,7 +107,35 @@ h1 {
   text-transform: none;
 }
 h1 strong { color: var(--gold-bright); font-weight: 700; text-shadow: 0 0 28px rgba(214,166,59,.35); }
-.intro { max-width: 610px; color: #aaa69e; font-size: 16px; line-height: 1.75; margin: 24px 0 34px; }
+.intro { max-width: 610px; color: #aaa69e; font-size: 16px; line-height: 1.75; margin: 24px 0 26px; }
+
+.today-module {
+  width: fit-content;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 5px;
+  color: #fff8d8;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  text-shadow:
+    0 0 5px rgba(255,255,255,.95),
+    0 0 12px rgba(255,214,110,.9),
+    0 0 26px rgba(214,166,59,.72);
+  filter: drop-shadow(0 0 8px rgba(255,201,73,.35));
+  animation: todayLightPulse 2.8s ease-in-out infinite;
+}
+.today-module span {
+  color: #e6c978;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .3em;
+}
+.today-module strong {
+  font-size: clamp(15px, 1.6vw, 21px);
+  line-height: 1.35;
+  font-weight: 700;
+}
+
 
 .logos-stage {
   width: min(100%, 470px);
@@ -222,6 +250,10 @@ h1 strong { color: var(--gold-bright); font-weight: 700; text-shadow: 0 0 28px r
 .lesson-topics span { padding: 15px 16px; text-align: center; color: #bdb7ac; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; border: 1px solid rgba(255,255,255,.11); border-radius: 14px; background: rgba(255,255,255,.045); backdrop-filter: blur(12px); }
 
 @keyframes orbitGlow { to { transform: rotate(360deg); } }
+@keyframes todayLightPulse {
+  0%, 100% { opacity: .86; filter: drop-shadow(0 0 7px rgba(255,201,73,.3)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 15px rgba(255,214,110,.65)); }
+}
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
