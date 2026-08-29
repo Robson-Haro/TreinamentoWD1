@@ -7,8 +7,8 @@ export default function DescontracaoAposVideos() {
       <nav className="topbar module-topbar group-moment-topbar">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-1/video">← Tela anterior</a>
-          <a className="back-link next-test-link" href="/modulo-1/teste">Continuar →</a>
+          <a className="back-link" href="/modulo-1/video-lideranca">← Tela anterior</a>
+          <a className="back-link next-test-link" href="/modulo-1/dilema-trem">Continuar →</a>
         </div>
       </nav>
       <section className="group-moment-stage">
