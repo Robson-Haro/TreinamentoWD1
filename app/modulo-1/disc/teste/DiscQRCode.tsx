@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 export default function DiscQRCode() {
-  const [testUrl, setTestUrl] = useState("/teste-disc/index.html?sessao=grupo-wd-2026-08-29");
+  const [testUrl, setTestUrl] = useState("/modulo-1/disc/identificacao?sessao=grupo-wd-2026-08-29");
 
   useEffect(() => {
-    setTestUrl(`${window.location.origin}/teste-disc/index.html?sessao=grupo-wd-2026-08-29`);
+    setTestUrl(`${window.location.origin}/modulo-1/disc/identificacao?sessao=grupo-wd-2026-08-29`);
   }, []);
 
   const qrUrl =
@@ -19,11 +19,11 @@ export default function DiscQRCode() {
         <span className="eyebrow">Módulo 1 · Tela 6</span>
         <h1 className="test-title">Teste Comportamental DISC</h1>
         <p className="test-intro">
-          Cada pessoa responde pelo próprio celular. São 20 blocos de escolha
-          forçada para identificar a prevalência entre D, I, S e C.
+          Cada pessoa confirma nome e e-mail no próprio celular e responde individualmente.
+          São 20 blocos de escolha forçada para identificar a prevalência entre D, I, S e C.
         </p>
         <div className="test-steps">
-          <span><b>01</b> Escaneie</span>
+          <span><b>01</b> Identifique-se</span>
           <span><b>02</b> Responda individualmente</span>
           <span><b>03</b> Receba seu perfil</span>
         </div>
@@ -38,7 +38,7 @@ export default function DiscQRCode() {
           <img src={qrUrl} alt={"QR Code para acessar " + testUrl} />
           <div>
             <strong>TESTE DISC</strong>
-            <span>Respostas individuais e simultâneas</span>
+            <span>Identificação e respostas individuais</span>
           </div>
         </div>
       </div>
