@@ -23,15 +23,20 @@ export default function Home() {
         <a className="brand-mark" href="#inicio" aria-label="Voltar ao início">
           WD <span>×</span> RC
         </a>
-        <button
-          className={`entry-link ${activated ? "is-active" : ""}`}
-          onClick={handleEntry}
-        >
-          <span>Ingressar</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <a className="entry-link" href="/administrador" style={{ textDecoration: "none" }}>
+            <span>Administrador</span>
+          </a>
+          <button
+            className={`entry-link ${activated ? "is-active" : ""}`}
+            onClick={handleEntry}
+          >
+            <span>Ingressar</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </button>
+        </div>
       </nav>
 
       <section id="inicio" className="hero">
