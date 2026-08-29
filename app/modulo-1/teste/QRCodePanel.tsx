@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 export default function QRCodePanel() {
-  const [testUrl, setTestUrl] = useState("/teste/index.html?sessao=grupo-wd-2026-08-29");
+  const [testUrl, setTestUrl] = useState("/modulo-1/teste/identificacao?sessao=grupo-wd-2026-08-29");
 
   useEffect(() => {
-    setTestUrl(`${window.location.origin}/teste/index.html?sessao=grupo-wd-2026-08-29`);
+    setTestUrl(`${window.location.origin}/modulo-1/teste/identificacao?sessao=grupo-wd-2026-08-29`);
   }, []);
 
   const qrUrl =
@@ -19,11 +19,11 @@ export default function QRCodePanel() {
         <span className="eyebrow">Módulo 1 · Tela 3</span>
         <h1 className="test-title">Teste: Que tipo de líder você é?</h1>
         <p className="test-intro">
-          Aponte a câmera do celular para o QR Code. Cada participante acessa
-          sua própria página, responde individualmente e recebe o resultado ao final.
+          Aponte a câmera do celular para o QR Code. Cada participante primeiro informa
+          nome e e-mail, responde em sua própria tela e recebe o resultado individual ao final.
         </p>
         <div className="test-steps">
-          <span><b>01</b> Escaneie</span>
+          <span><b>01</b> Identifique-se</span>
           <span><b>02</b> Responda</span>
           <span><b>03</b> Veja seu perfil</span>
         </div>
@@ -39,7 +39,7 @@ export default function QRCodePanel() {
           <img src={qrUrl} alt={"QR Code para acessar " + testUrl} />
           <div>
             <strong>ACESSE E RESPONDA</strong>
-            <span>Participação individual e simultânea</span>
+            <span>Identificação e participação individual</span>
           </div>
         </div>
       </div>
