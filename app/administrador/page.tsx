@@ -234,14 +234,14 @@ export default async function Administrador({
             ["Predom. Liderança", prevalence(leadership, leadershipLabels)],
             ["Predom. DISC", prevalence(disc, discLabels)],
           ].map(([label, value]) => (
-            <div className="qr-card" key={String(label)} style={{ padding: 20 }}>
+            <div className="admin-card admin-stat-card" key={String(label)} style={{ padding: 20 }}>
               <span className="eyebrow">{label}</span>
               <strong style={{ display: "block", fontSize: typeof value === "number" ? 34 : 20, marginTop: 5 }}>{value}</strong>
             </div>
           ))}
         </div>
 
-        <form method="get" className="qr-card" style={{ padding: 18, display: "grid", gridTemplateColumns: "minmax(220px,1fr) 190px auto", gap: 12, marginBottom: 24, alignItems: "end" }}>
+        <form method="get" className="admin-card admin-filter-card" style={{ padding: 18, display: "grid", gridTemplateColumns: "minmax(220px,1fr) 190px auto", gap: 12, marginBottom: 24, alignItems: "end" }}>
           <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
             <span style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: ".08em" }}>Buscar participante</span>
             <input name="q" defaultValue={params.q ?? ""} placeholder="Nome ou e-mail" style={{ padding: "12px 14px", borderRadius: 10, border: "1px solid rgba(255,255,255,.14)", background: "rgba(255,255,255,.06)", color: "white" }} />
@@ -257,7 +257,7 @@ export default async function Administrador({
           <button className="gold-button test-open" type="submit" style={{ border: 0, cursor: "pointer", minHeight: 44 }}><span>Filtrar</span></button>
         </form>
 
-        <section className="qr-card" style={{ padding: 22, overflowX: "auto", marginBottom: 26 }}>
+        <section className="admin-card admin-table-card" style={{ padding: 22, marginBottom: 26 }}>
           <div style={{ display: "flex", justifyContent: "space-between", gap: 14, alignItems: "end", marginBottom: 14, flexWrap: "wrap" }}>
             <div>
               <span className="eyebrow">Controle individual</span>
@@ -265,6 +265,7 @@ export default async function Administrador({
             </div>
             <p style={{ fontSize: 12 }}>E-mails permanecem mascarados nesta visão.</p>
           </div>
+          <div className="admin-table-scroll">
           <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 860 }}>
             <thead>
               <tr>
@@ -289,6 +290,7 @@ export default async function Administrador({
               })}
             </tbody>
           </table>
+          </div>
           {!filtered.length ? <p style={{ marginTop: 16 }}>Nenhum participante encontrado para esse filtro.</p> : null}
         </section>
 
@@ -300,7 +302,7 @@ export default async function Administrador({
 
           <div style={{ display: "grid", gap: 14 }}>
             {filtered.map((person, index) => (
-              <details className="qr-card" key={`detail-${person.email ?? person.nome}-${index}`} style={{ padding: 22 }}>
+              <details className="admin-card admin-person-card" key={`detail-${person.email ?? person.nome}-${index}`} style={{ padding: 22 }}>
                 <summary style={{ cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
                   <div>
                     <strong style={{ fontSize: 19 }}>{person.nome}</strong>
