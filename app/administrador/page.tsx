@@ -206,6 +206,7 @@ export default async function Administrador({
       <nav className="topbar module-topbar" aria-label="Área administrativa">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
+          <a className="back-link" href="/relatorio-testes">Relatório dos testes</a>
           <a className="back-link" href="/modulo-1/dashboard">Dashboard Liderança</a>
           <a className="back-link" href="/modulo-1/disc/dashboard">Dashboard DISC</a>
           <a className="back-link" href="/administrador">↻ Atualizar</a>

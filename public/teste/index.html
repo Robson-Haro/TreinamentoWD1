@@ -407,6 +407,8 @@
 const SUPABASE_URL = window.WD_LEADERSHIP_CONFIG?.url || '';
 const SUPABASE_ANON_KEY = window.WD_LEADERSHIP_CONFIG?.anonKey || '';
 const SESSION_CODE = new URLSearchParams(window.location.search).get('sessao') || 'grupo-wd-2026-08-29';
+const participantName = (sessionStorage.getItem('wd_participant_name') || '').trim();
+const participantEmail = (sessionStorage.getItem('wd_participant_email') || '').trim().toLowerCase();
 
 let supabaseClient = null;
 let supabaseReady = false;
@@ -770,6 +772,8 @@ async function saveToSupabase(result){
   try{
     const { error } = await supabaseClient.from('leadership_results').insert([{
       session_code: SESSION_CODE,
+      nome: participantName || null,
+      email: participantEmail || null,
       diretivo: result.scores.diretivo,
       modelador: result.scores.modelador,
       participativo: result.scores.participativo,
