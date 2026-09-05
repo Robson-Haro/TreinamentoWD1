@@ -1,26 +1,26 @@
 'use client';
-import { useState, type FormEvent } from 'react';
+import { useState, useEffect } from 'react';
 import { type ReportDelivery, sections } from './report';
 import styles from './resgatar.module.css';
 
 export default function ReportPortal() {
-  const [code, setCode] = useState('');
   const [delivery, setDelivery] = useState<ReportDelivery | null>(null);
   const [selected, setSelected] = useState('');
-  const [busy, setBusy] = useState(false);
+  const [busy, setBusy] = useState(true);
   const [pdfBusy, setPdfBusy] = useState(false);
   const [error, setError] = useState('');
-  async function redeem(event: FormEvent) {
-    event.preventDefault(); setBusy(true); setError('');
+  async function loadReports() {
+    setBusy(true); setError('');
     try {
-      const response = await fetch('/api/reports/redeem', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code: code.trim().toLowerCase() }), cache: 'no-store' });
+      const response = await fetch('/api/reports/redeem', { cache: 'no-store' });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Não foi possível abrir o relatório.');
-      if (!Array.isArray(data.reports) || !data.reports.length) throw new Error('Nenhum relatório disponível para este acesso.');
-      setDelivery(data); setSelected(data.reports[0].id); setCode('');
+      if (!Array.isArray(data.reports) || !data.reports.length) throw new Error('Nenhum relatório disponível no momento.');
+      setDelivery(data); setSelected(data.reports[0].id);
     } catch (err) { setError(err instanceof Error ? err.message : 'Verifique sua conexão e tente novamente.'); }
     finally { setBusy(false); }
   }
+  useEffect(() => { void loadReports(); }, []);
   const report = delivery?.reports.find(r => r.id === selected);
   async function download() {
     if (!report) return;
@@ -32,26 +32,19 @@ export default function ReportPortal() {
     } catch { setError('Não foi possível preparar o PDF. Tente novamente.'); }
     finally { setPdfBusy(false); }
   }
-  if (!report) return <section className={styles.access} aria-labelledby="access-title">
-    <span className={styles.kicker}>Relatório individual</span><h2 id="access-title">Um olhar sobre sua jornada</h2>
-    <p>Use o código recebido da coordenação para acessar seu relatório. Seu código é pessoal: guarde-o com cuidado.</p>
-    <form onSubmit={redeem} className={styles.form}>
-      <label htmlFor="report-code">Código de acesso</label>
-      <input id="report-code" type="password" autoComplete="off" spellCheck={false} value={code} onChange={e => setCode(e.target.value)} required maxLength={100} placeholder="Cole aqui seu código" aria-describedby={error ? 'access-error' : undefined}/>
-      <button className={styles.button} disabled={busy}>{busy ? 'Abrindo seu relatório...' : 'Resgatar meu relatório'}</button>
-    </form>
-    {error && <p id="access-error" className={styles.error} role="alert">{error}</p>}
-    <p className={styles.help}>Ainda não recebeu o código? Solicite à coordenação do treinamento.</p>
+  if (!report) return <section className={styles.access} aria-live="polite">
+    <h2>{busy ? 'Carregando os relatórios...' : 'Relatórios dos participantes'}</h2>
+    {error && <p className={styles.error} role="alert">{error}</p>}
+    {!busy && <button className={styles.button} onClick={loadReports}>Tentar novamente</button>}
   </section>;
   return <>
     <div className={styles.toolbar}>
-      <label htmlFor="participant">{delivery?.role === 'coordinator' ? 'Escolha o participante' : 'Seu relatório'}
+      <label htmlFor="participant">Escolha o participante
         <select id="participant" value={selected} onChange={e => {setSelected(e.target.value);setError('');}}>
           {delivery?.reports.map(r => <option key={r.id} value={r.id}>{r.name}</option>)}
         </select>
       </label>
       <button className={styles.button} onClick={download} disabled={pdfBusy}>{pdfBusy ? 'Preparando PDF...' : 'Baixar em PDF'}</button>
-      <button className={styles.exit} onClick={() => {setDelivery(null);setSelected('');setError('');}}>Encerrar acesso</button>
     </div>
     {error && <p className={styles.error} role="alert">{error}</p>}
     <article className={styles.paper} key={report.id}>
