@@ -50,10 +50,10 @@ export async function makeReportPdf(report: PersonalReport, suppliedFonts?: PdfF
   doc.setFontSize(13);doc.text(report.name,left,37);
   doc.setFont('WD','normal');doc.setFontSize(9);doc.setTextColor(219,211,192);doc.text(`Atualizado em ${report.date} | Liderança: identificação pendente`,left,46);y=64;
   sections(report).forEach((section,index)=>{
-    y+=3;heading(`${index+1}. ${section.title}`,true);
+    ensure(48);y+=3;heading(`${index+1}. ${section.title}`,true);
     section.blocks.forEach(block=>{heading(block.title);block.paragraphs.forEach((p,i)=>paragraph(index>=2?`${i+1}) ${p}`:p));});
   });
-  heading('Pontuações de referência do questionário');
+  ensure(68);heading('Pontuações de referência do questionário');
   Object.entries(report.scores).forEach(([label,value])=>{
     ensure(10);doc.setFontSize(10.5);doc.setFont('WD','normal');doc.setTextColor(50,50,45);doc.text(label,left,y);
     doc.setFillColor(230,224,211);doc.roundedRect(65,y-3,103,3,1,1,'F');doc.setFillColor(168,126,46);doc.roundedRect(65,y-3,103*value/100,3,1,1,'F');doc.text(`${value} / 100`,192,y,{align:'right'});y+=9;

@@ -15,9 +15,8 @@ export function sections(report: PersonalReport) {
     ] },
     { title: 'Estilo de Liderança', blocks: [
       { title: 'Resultado do teste: identificação pendente', paragraphs: [report.leadershipNote] },
-      { title: 'Uma aplicação para experimentar', paragraphs: report.leadershipDetails ?? [report.application] },
     ] },
-    { title: 'Pontos Fortes', blocks: [{ title: 'Possibilidades para reconhecer na prática', paragraphs: report.strengths }] },
-    { title: 'Recomendações de Desenvolvimento', blocks: [{ title: 'Seu próximo passo nos próximos 30 dias', paragraphs: report.actions }] },
+    { title: 'Pontos Fortes', blocks: [{ title: 'O que se destaca nos materiais', paragraphs: report.strengths }] },
+    { title: 'Pontos de Melhoria e Desenvolvimento', blocks: [{ title: 'Aspectos a desenvolver e ações práticas', paragraphs: report.actions }] },
   ];
 }
