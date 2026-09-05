@@ -49,10 +49,6 @@ export default function ReportPortal() {
     {error && <p className={styles.error} role="alert">{error}</p>}
     <article className={styles.paper} key={report.id}>
       <header className={styles.paperHeader}><span>Jornada de Liderança · Relatório individual</span><h2>{report.name}</h2><p>{report.status}</p><small>Atualizado em {report.date}</small></header>
-      <div className={styles.overview}><span className={styles.kicker}>Visão integrada</span><p>{report.summary}</p></div>
-      <div className={styles.scorePanel}><h3>Seu DISC neste exercício</h3><div className={styles.scores}>
-        {Object.entries(report.scores).map(([label,value]) => <div key={label}><div className={styles.scoreLabel}><span>{label}</span><strong>{value}<small> / 100</small></strong></div><div className={styles.track}><div style={{width:`${value}%`}}/></div></div>)}
-      </div><p>Pontos do questionário do treinamento. Não são percentuais de personalidade nem uma comparação com outras pessoas.</p></div>
       {sections(report).map((section,index) => <section className={styles.section} key={section.title}>
         <span className={styles.number}>{String(index+1).padStart(2,'0')}</span><div><h3>{section.title}</h3>
           {section.blocks.map(block => <div className={styles.block} key={block.title}><h4>{block.title}</h4>
@@ -60,6 +56,9 @@ export default function ReportPortal() {
           </div>)}
         </div>
       </section>)}
+      <details className={styles.scorePanel}><summary>Pontuações de referência do questionário</summary><div className={styles.scores}>
+        {Object.entries(report.scores).map(([label,value]) => <div key={label}><div className={styles.scoreLabel}><span>{label}</span><strong>{value}<small> / 100</small></strong></div><div className={styles.track}><div style={{width:`${value}%`}}/></div></div>)}
+      </div><p>Valores consultados na elaboração do perfil integrado. Não são percentuais de personalidade nem uma comparação com outras pessoas.</p></details>
       <footer className={styles.footer}><strong>Um convite à prática</strong><p>{report.method}</p><p>{report.sources}</p><p>Referência sobre os limites da grafologia: <a href="https://pubmed.ncbi.nlm.nih.gov/20229925/" target="_blank" rel="noreferrer">Dazzi e Pedrabissi (2009)</a>.</p></footer>
     </article>
   </>;

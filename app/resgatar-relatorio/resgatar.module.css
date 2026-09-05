@@ -63,3 +63,9 @@
 .footer a { color:#624916; text-decoration:underline; }
 .page input:focus-visible,.page select:focus-visible,.page button:focus-visible { outline:3px solid #d6a63b; outline-offset:4px; }
 @media(max-width:600px) { .toolbar { padding:16px; gap:12px; } .toolbar .button,.exit { width:100%; } .scores { grid-template-columns:1fr; } .section { grid-template-columns:1fr; gap:8px; } .section h3 { font-size:24px; } .overview p { font-size:17px; } }
+
+/* Leitura integrada: parágrafos arejados e dados de referência opcionais. */
+.block p + p { margin-top:18px; }
+.scorePanel summary { cursor:pointer; font-size:16px; line-height:1.6; font-weight:600; }
+.scorePanel[open] summary { margin-bottom:22px; }
+.scorePanel summary:focus-visible { outline:3px solid #a57b2c; outline-offset:5px; }

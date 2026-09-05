@@ -27,11 +27,13 @@ export async function makeReportPdf(report: PersonalReport, suppliedFonts?: PdfF
     doc.setFont('WD','normal');doc.setFontSize(9);doc.text(report.name,left,20);y=31;
   }
   function ensure(height:number){if(y+height>bottom)newPage();}
-  function paragraph(text:string,size=11.5,color:[number,number,number]=[45,45,42]) {
+  function paragraph(text:string,size=11,color:[number,number,number]=[45,45,42]) {
     doc.setFont('WD','normal');doc.setFontSize(size);
     const lines=doc.splitTextToSize(clean(text),width) as string[];
-    for(const line of lines){ensure(6);doc.setFont('WD','normal');doc.setFontSize(size);doc.setTextColor(...color);doc.text(line,left,y);y+=5.8;}
-    y+=4;
+    const leading = size < 10 ? 4.7 : 5.3;
+    ensure(Math.min(lines.length,2)*leading);
+    for(let i=0;i<lines.length;i++){ensure((lines.length-i===2?2:1)*leading);doc.setFont('WD','normal');doc.setFontSize(size);doc.setTextColor(...color);doc.text(lines[i],left,y);y+=leading;}
+    y+=3.5;
   }
   function heading(text:string,major=false){
     const size=major?17:12;
@@ -39,7 +41,7 @@ export async function makeReportPdf(report: PersonalReport, suppliedFonts?: PdfF
     const lines=doc.splitTextToSize(clean(text),width) as string[];
     ensure(lines.length*7+16);
     doc.setFont('WD','bold');doc.setFontSize(size);doc.setTextColor(123,90,29);
-    doc.text(lines,left,y);y+=lines.length*7+3;
+    for (const line of lines) { doc.text(line,left,y); y+=7; } y+=3;
   }
   doc.setProperties({title:`Relatório individual - ${report.name}`,author:'Grupo WD / Ramos Consultoria',subject:'Jornada de desenvolvimento da liderança'});
   doc.setFillColor(34,35,32);doc.rect(0,0,210,52,'F');
@@ -47,17 +49,16 @@ export async function makeReportPdf(report: PersonalReport, suppliedFonts?: PdfF
   doc.setTextColor(249,246,239);doc.setFontSize(21);doc.text('Relatório individual',left,25);
   doc.setFontSize(13);doc.text(report.name,left,37);
   doc.setFont('WD','normal');doc.setFontSize(9);doc.setTextColor(219,211,192);doc.text(`Atualizado em ${report.date} | Liderança: identificação pendente`,left,46);y=64;
-  heading('Visão integrada',true);paragraph(report.summary);
-  heading('Seu DISC neste exercício');
+  sections(report).forEach((section,index)=>{
+    y+=3;heading(`${index+1}. ${section.title}`,true);
+    section.blocks.forEach(block=>{heading(block.title);block.paragraphs.forEach((p,i)=>paragraph(index>=2?`${i+1}) ${p}`:p));});
+  });
+  heading('Pontuações de referência do questionário');
   Object.entries(report.scores).forEach(([label,value])=>{
     ensure(10);doc.setFontSize(10.5);doc.setFont('WD','normal');doc.setTextColor(50,50,45);doc.text(label,left,y);
     doc.setFillColor(230,224,211);doc.roundedRect(65,y-3,103,3,1,1,'F');doc.setFillColor(168,126,46);doc.roundedRect(65,y-3,103*value/100,3,1,1,'F');doc.text(`${value} / 100`,192,y,{align:'right'});y+=9;
   });
   y+=3;paragraph('Pontos do questionário do treinamento. Não são percentuais de personalidade nem comparação com outras pessoas.',9.5);
-  sections(report).forEach((section,index)=>{
-    y+=3;heading(`${index+1}. ${section.title}`,true);
-    section.blocks.forEach(block=>{heading(block.title);block.paragraphs.forEach((p,i)=>paragraph(index>=2?`${i+1}) ${p}`:p));});
-  });
   heading('Sobre esta leitura');paragraph(report.method,9.5);paragraph(report.sources,9.5);
   paragraph('Referência: Dazzi e Pedrabissi (2009). https://pubmed.ncbi.nlm.nih.gov/20229925/',9.5);
   const total=doc.getNumberOfPages();
