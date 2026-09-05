@@ -1,5 +1,5 @@
 import "../globals.css";
-import "../modulo-1/experience.css";
+import styles from "./administrador.module.css";
 
 export const dynamic = "force-dynamic";
 
@@ -199,34 +199,33 @@ export default async function Administrador({
   });
 
   return (
-    <main className="module-screen dashboard-screen">
-      <div className="ambient ambient-one" aria-hidden="true" />
-      <div className="noise" aria-hidden="true" />
+    <main className={styles.page}>
+      <div className={styles.glow} aria-hidden="true" />
 
-      <nav className="topbar module-topbar" aria-label="Área administrativa">
-        <a className="brand-mark" href="/">WD <span>×</span> RC</a>
-        <div className="screen-nav">
-          <a className="back-link" href="/relatorio-testes">Relatório dos testes</a>
-          <a className="back-link" href="/modulo-1/dashboard">Dashboard Liderança</a>
-          <a className="back-link" href="/modulo-1/disc/dashboard">Dashboard DISC</a>
-          <a className="back-link" href="/administrador">↻ Atualizar</a>
+      <nav className={styles.nav} aria-label="Área administrativa">
+        <a className={styles.brand} href="/">WD <span>×</span> RC</a>
+        <div className={styles.navLinks}>
+          <a href="/relatorio-testes">Relatório dos testes</a>
+          <a href="/modulo-1/dashboard">Dashboard Liderança</a>
+          <a href="/modulo-1/disc/dashboard">Dashboard DISC</a>
+          <a href="/administrador">↻ Atualizar</a>
         </div>
       </nav>
 
-      <section className="dashboard-lesson">
-        <header className="lesson-heading dashboard-heading">
+      <section className={styles.content}>
+        <header className={styles.heading}>
           <div>
-            <span className="eyebrow">Área do Administrador · Grupo WD</span>
+            <span className={styles.eyebrow}>Área do Administrador · Grupo WD</span>
             <h1>Resultados individuais dos participantes</h1>
             <p>Acompanhamento nominal dos dois testes, status de conclusão, pontuações por dimensão e parecer individual combinado.</p>
           </div>
-          <div className="lesson-logos" aria-label="Grupo WD e Ramos Consultoria">
+          <div className={styles.logos} aria-label="Grupo WD e Ramos Consultoria">
             <img src="/grupo-wd.png" alt="Grupo WD" />
             <img src="/ramos-consultoria.png" alt="Ramos Consultoria" />
           </div>
         </header>
 
-        <div className="admin-stats-grid" style={{ display: "grid", gap: 14, marginBottom: 22 }}>
+        <div className={styles.statsGrid}>
           {[
             ["Participantes", allParticipants.length],
             ["Completaram os 2", complete],
@@ -234,14 +233,14 @@ export default async function Administrador({
             ["Predom. Liderança", prevalence(leadership, leadershipLabels)],
             ["Predom. DISC", prevalence(disc, discLabels)],
           ].map(([label, value]) => (
-            <div className="admin-card admin-stat-card" key={String(label)} style={{ padding: 20 }}>
-              <span className="eyebrow">{label}</span>
+            <div className={styles.statCard} key={String(label)}>
+              <span className={styles.eyebrow}>{label}</span>
               <strong style={{ display: "block", fontSize: typeof value === "number" ? 34 : 20, marginTop: 5 }}>{value}</strong>
             </div>
           ))}
         </div>
 
-        <form method="get" className="admin-card admin-filter-card" style={{ padding: 18, display: "grid", gridTemplateColumns: "minmax(220px,1fr) 190px auto", gap: 12, marginBottom: 24, alignItems: "end" }}>
+        <form method="get" className={styles.filters}>
           <label style={{ display: "flex", flexDirection: "column", gap: 7 }}>
             <span style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: ".08em" }}>Buscar participante</span>
             <input name="q" defaultValue={params.q ?? ""} placeholder="Nome ou e-mail" style={{ padding: "12px 14px", borderRadius: 10, border: "1px solid rgba(255,255,255,.14)", background: "rgba(255,255,255,.06)", color: "white" }} />
@@ -254,18 +253,18 @@ export default async function Administrador({
               <option value="parcial">Parcial</option>
             </select>
           </label>
-          <button className="gold-button test-open" type="submit" style={{ border: 0, cursor: "pointer", minHeight: 44 }}><span>Filtrar</span></button>
+          <button className={styles.filterButton} type="submit">Filtrar</button>
         </form>
 
-        <section className="admin-card admin-table-card" style={{ padding: 22, marginBottom: 26 }}>
+        <section className={styles.tableCard}>
           <div style={{ display: "flex", justifyContent: "space-between", gap: 14, alignItems: "end", marginBottom: 14, flexWrap: "wrap" }}>
             <div>
-              <span className="eyebrow">Controle individual</span>
+              <span className={styles.eyebrow}>Controle individual</span>
               <h2>{filtered.length} participante(s) exibido(s)</h2>
             </div>
             <p style={{ fontSize: 12 }}>E-mails permanecem mascarados nesta visão.</p>
           </div>
-          <div className="admin-table-scroll">
+          <div className={styles.tableScroll}>
           <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 860 }}>
             <thead>
               <tr>
@@ -296,13 +295,13 @@ export default async function Administrador({
 
         <section>
           <div style={{ marginBottom: 16 }}>
-            <span className="eyebrow">Prontuário de resultados</span>
+            <span className={styles.eyebrow}>Prontuário de resultados</span>
             <h2>Abra cada participante para ver o resultado completo</h2>
           </div>
 
-          <div className="admin-people-grid" style={{ display: "grid", gap: 14 }}>
+          <div className={styles.peopleGrid}>
             {filtered.map((person, index) => (
-              <details className="admin-card admin-person-card" key={`detail-${person.email ?? person.nome}-${index}`} style={{ padding: 22 }}>
+              <details className={styles.personCard} key={`detail-${person.email ?? person.nome}-${index}`}>
                 <summary style={{ cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
                   <div>
                     <strong style={{ fontSize: 19 }}>{person.nome}</strong>
@@ -313,7 +312,7 @@ export default async function Administrador({
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(310px,1fr))", gap: 18, marginTop: 22 }}>
                   <div style={{ padding: 20, border: "1px solid rgba(255,255,255,.09)", borderRadius: 14 }}>
-                    <span className="eyebrow">Que tipo de líder você é?</span>
+                    <span className={styles.eyebrow}>Que tipo de líder você é?</span>
                     {person.leadership ? <>
                       <h3 style={{ fontSize: 21, marginBottom: 6 }}>{leadershipLabels[person.leadership.top] ?? person.leadership.top}</h3>
                       <p style={{ marginBottom: 18 }}>{leadershipNotes[person.leadership.top]}</p>
@@ -328,7 +327,7 @@ export default async function Administrador({
                   </div>
 
                   <div style={{ padding: 20, border: "1px solid rgba(255,255,255,.09)", borderRadius: 14 }}>
-                    <span className="eyebrow">DISC</span>
+                    <span className={styles.eyebrow}>DISC</span>
                     {person.disc ? <>
                       <h3 style={{ fontSize: 21, marginBottom: 6 }}>{discLabels[person.disc.top] ?? person.disc.top}</h3>
                       <p style={{ marginBottom: 18 }}>{discNotes[person.disc.top]}</p>
@@ -342,7 +341,7 @@ export default async function Administrador({
                 </div>
 
                 <div style={{ marginTop: 18, padding: 20, border: "1px solid rgba(217,186,107,.28)", borderRadius: 14, background: "rgba(217,186,107,.05)" }}>
-                  <span className="eyebrow">Parecer combinado</span>
+                  <span className={styles.eyebrow}>Parecer combinado</span>
                   <p style={{ fontSize: 15, lineHeight: 1.7 }}>{combinedOpinion(person)}</p>
                 </div>
               </details>
