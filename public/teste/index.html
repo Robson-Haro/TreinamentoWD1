@@ -409,6 +409,7 @@ const SUPABASE_ANON_KEY = window.WD_LEADERSHIP_CONFIG?.anonKey || '';
 const SESSION_CODE = new URLSearchParams(window.location.search).get('sessao') || 'grupo-wd-2026-08-29';
 const participantName = (sessionStorage.getItem('wd_participant_name') || '').trim();
 const participantEmail = (sessionStorage.getItem('wd_participant_email') || '').trim().toLowerCase();
+const participantIdentified = participantName.length >= 3 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(participantEmail);
 
 let supabaseClient = null;
 let supabaseReady = false;
@@ -578,6 +579,10 @@ function toggleTheory(){
    QUIZ
    ================================================================== */
 function startQuiz(){
+  if(!participantIdentified){
+    window.location.replace('/modulo-1/teste/identificacao?sessao='+encodeURIComponent(SESSION_CODE));
+    return;
+  }
   quizOrder = shuffle(QUESTIONS);
   currentIndex = 0;
   answers = {};
@@ -644,6 +649,11 @@ function computeScores(){
 }
 
 async function finishQuiz(){
+  if(!participantIdentified){
+    alert('Sua identificação não foi encontrada. Informe novamente seu nome e e-mail para responder.');
+    window.location.replace('/modulo-1/teste/identificacao?sessao='+encodeURIComponent(SESSION_CODE));
+    return;
+  }
   const submitButton = document.getElementById('btnSubmitQuiz');
   submitButton.disabled = true;
   submitButton.textContent = 'Enviando respostas...';
@@ -651,6 +661,10 @@ async function finishQuiz(){
   const sorted = PROFILE_ORDER.slice().sort((a,b)=> scores[b]-scores[a]);
   const result = {
     timestamp: new Date().toISOString(),
+    nome: participantName,
+    email: participantEmail,
+    answers: Object.assign({}, answers),
+    questionOrder: quizOrder.map(q=>q.id),
     scores: scores,
     top: sorted[0],
     second: sorted[1],
@@ -774,6 +788,8 @@ async function saveToSupabase(result){
       session_code: SESSION_CODE,
       nome: participantName || null,
       email: participantEmail || null,
+      answers: result.answers,
+      question_order: result.questionOrder,
       diretivo: result.scores.diretivo,
       modelador: result.scores.modelador,
       participativo: result.scores.participativo,

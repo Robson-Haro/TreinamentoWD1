@@ -19,6 +19,8 @@ type LeadershipRow = {
   agregador: number;
   coaching: number;
   visionario: number;
+  answers?: Record<string, number> | null;
+  question_order?: string[] | null;
 };
 
 type DiscRow = {
@@ -49,6 +51,37 @@ const leadershipLabels: Record<string, string> = {
   agregador: "Agregador",
   coaching: "Coaching",
   visionario: "Visionário",
+};
+
+const leadershipQuestions: Record<string, string> = {
+  d1: "Em momentos de crise, prefiro tomar a decisão sozinho(a) e comunicar o caminho a seguir.",
+  d2: "Acredito que a equipe funciona melhor quando as regras e expectativas são claras e não negociáveis.",
+  d3: "Costumo dizer exatamente o que espero de cada pessoa, sem margem para interpretação.",
+  d4: "Prefiro agir rápido e ajustar depois a gastar tempo buscando consenso.",
+  m1: "Assumo tarefas difíceis para mostrar como quero que sejam feitas.",
+  m2: "Tenho um padrão de qualidade elevado e espero que a equipe acompanhe meu ritmo.",
+  m3: "Prefiro fazer eu mesmo(a) quando percebo que sairá mais rápido ou melhor.",
+  m4: "Costumo corrigir o trabalho da equipe quando não atende ao nível que eu entregaria.",
+  p1: "Antes de decidir, busco a opinião da equipe e considero as sugestões recebidas.",
+  p2: "Acredito que decisões construídas em grupo geram mais comprometimento.",
+  p3: "Costumo abrir espaço para discordância antes de fechar um posicionamento.",
+  p4: "Prefiro dividir o poder de decisão com quem será impactado por ela.",
+  a1: "Priorizo manter um bom clima na equipe, mesmo quando isso atrasa uma decisão difícil.",
+  a2: "Presto atenção em como as pessoas estão se sentindo antes de cobrar resultados.",
+  a3: "Evito conflitos diretos e prefiro mediar com cuidado.",
+  a4: "Meço meu sucesso como líder também pela coesão do grupo, não só pelos números.",
+  c1: "Meu foco principal é o desenvolvimento de longo prazo de cada pessoa da equipe.",
+  c2: "Prefiro fazer perguntas que ajudem a pessoa a chegar à própria resposta.",
+  c3: "Delego responsabilidades importantes mesmo sabendo que a pessoa pode errar e aprender.",
+  c4: "Invisto tempo em conversas de carreira, mesmo sob pressão de entrega.",
+  v1: 'Prefiro comunicar o "porquê" e o destino final, deixando o "como" com a equipe.',
+  v2: "Inspiro mais pelo propósito do que pelas regras do dia a dia.",
+  v3: "Tenho facilidade para articular uma visão de futuro que engaja as pessoas.",
+  v4: "Costumo delegar a execução para focar em direção estratégica.",
+};
+
+const answerLabels: Record<number, string> = {
+  1: "Discordo totalmente", 2: "Discordo", 3: "Neutro", 4: "Concordo", 5: "Concordo totalmente",
 };
 
 const discLabels: Record<string, string> = {
@@ -169,6 +202,7 @@ export default async function Administrador({
   leadership.forEach((row) => {
     const key = row.email?.trim().toLowerCase() || `leadership-${row.id}`;
     const current = participants.get(key);
+    if (current?.leadership) return;
     participants.set(key, {
       nome: row.nome || current?.nome || "Participante sem identificação",
       email: row.email || current?.email,
@@ -180,6 +214,7 @@ export default async function Administrador({
   disc.forEach((row) => {
     const key = row.email?.trim().toLowerCase() || `disc-${row.id}`;
     const current = participants.get(key);
+    if (current?.disc) return;
     participants.set(key, {
       nome: row.nome || current?.nome || "Participante sem identificação",
       email: row.email || current?.email,
@@ -307,7 +342,7 @@ export default async function Administrador({
                     <strong style={{ fontSize: 19 }}>{person.nome}</strong>
                     <p style={{ marginTop: 4, fontSize: 12 }}>{maskedEmail(person.email)}</p>
                   </div>
-                  <span style={{ border: "1px solid rgba(217,186,107,.45)", borderRadius: 999, padding: "7px 12px", fontSize: 12 }}>{person.leadership && person.disc ? "2/2 testes completos" : `${person.leadership ? 1 : 0 + (person.disc ? 1 : 0)}/2 testes`}</span>
+                  <span style={{ border: "1px solid rgba(217,186,107,.45)", borderRadius: 999, padding: "7px 12px", fontSize: 12 }}>{person.leadership && person.disc ? "2/2 testes completos" : `${(person.leadership ? 1 : 0) + (person.disc ? 1 : 0)}/2 testes`}</span>
                 </summary>
 
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(310px,1fr))", gap: 18, marginTop: 22 }}>
@@ -323,6 +358,17 @@ export default async function Administrador({
                       {scoreBar("Coaching", person.leadership.coaching)}
                       {scoreBar("Visionário", person.leadership.visionario)}
                       <p style={{ marginTop: 14, fontSize: 12 }}>2º estilo: <strong>{leadershipLabels[person.leadership.second] ?? person.leadership.second}</strong> · Menos ativado: <strong>{leadershipLabels[person.leadership.lowest] ?? person.leadership.lowest}</strong></p>
+                      {person.leadership.answers && Object.keys(person.leadership.answers).length ? (
+                        <details className={styles.answerDetails}>
+                          <summary>Ver as 24 respostas individuais</summary>
+                          <ol>
+                            {(person.leadership.question_order?.length ? person.leadership.question_order : Object.keys(person.leadership.answers)).map((questionId) => {
+                              const value = person.leadership!.answers![questionId];
+                              return <li key={questionId}><span>{leadershipQuestions[questionId] ?? questionId}</span><strong>{value} · {answerLabels[value] ?? "Resposta registrada"}</strong></li>;
+                            })}
+                          </ol>
+                        </details>
+                      ) : <p className={styles.legacyNote}>Registro anterior: somente as pontuações finais foram armazenadas.</p>}
                     </> : <p>Teste ainda não respondido ou não vinculado a esta identificação.</p>}
                   </div>
 
