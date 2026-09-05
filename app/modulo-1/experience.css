@@ -106,6 +106,43 @@
 .qr-card strong { color:var(--gold-bright); font-size:12px; letter-spacing:.16em; }
 .qr-card span { color:#aaa69e; font-size:11px; text-align:right; }
 .dashboard-heading p { color:#aaa69e; margin:12px 0 0; }
+
+/* Área administrativa: cartões neutros, sem a largura/rotação dos cartões de QR Code. */
+.dashboard-screen { overflow-x:hidden; transform:none!important; perspective:none!important; }
+.dashboard-screen .module-topbar { min-width:0; }
+.dashboard-screen .dashboard-lesson { width:min(1380px,calc(100% - 48px)); max-width:1380px; transform:none!important; rotate:0deg!important; perspective:none!important; }
+.dashboard-screen .dashboard-heading > div:first-child { min-width:0; max-width:920px; }
+.dashboard-screen .lesson-heading,.dashboard-screen .admin-stats-grid,.dashboard-screen .admin-filter-card,.dashboard-screen .admin-table-card,.dashboard-screen .admin-people-grid,.dashboard-screen .admin-person-card { transform:none!important; rotate:0deg!important; perspective:none!important; }
+.admin-stats-grid { grid-template-columns:repeat(5,minmax(0,1fr)); width:100%; align-items:stretch; }
+.admin-card { position:relative; width:100%!important; max-width:none!important; min-width:0; border:1px solid rgba(255,220,134,.28); border-radius:20px; background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.025)); box-shadow:inset 1px 1px rgba(255,255,255,.16),0 18px 48px rgba(0,0,0,.38),0 0 24px rgba(214,166,59,.09); backdrop-filter:blur(18px) saturate(125%); transform:none!important; rotate:0deg!important; }
+.admin-stat-card { min-height:112px; display:flex; flex-direction:column; justify-content:center; }
+.admin-stat-card .eyebrow { display:block; text-align:left; }
+.admin-filter-card { width:100%; }
+.admin-table-card { width:100%!important; max-width:none!important; overflow:hidden; }
+.admin-table-scroll { width:100%; overflow-x:auto; scrollbar-width:thin; scrollbar-color:rgba(217,186,107,.7) rgba(255,255,255,.06); }
+.admin-table-scroll table { width:100%!important; table-layout:auto; transform:none!important; }
+.admin-table-scroll th,.admin-table-scroll td { white-space:nowrap; }
+.admin-table-scroll th:first-child,.admin-table-scroll td:first-child { white-space:normal; min-width:190px; }
+.admin-people-grid { width:100%; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:start; }
+.admin-person-card { width:100%!important; max-width:none!important; align-self:start; }
+.admin-person-card summary { min-width:0; }
+.admin-person-card summary div { min-width:0; }
+.admin-person-card summary p { overflow-wrap:anywhere; }
+
+@media (max-width:900px) {
+  .admin-stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .admin-filter-card { grid-template-columns:1fr!important; }
+  .admin-people-grid { grid-template-columns:1fr; }
+  .dashboard-screen .dashboard-heading { align-items:flex-start; }
+}
+
+@media (max-width:640px) {
+  .dashboard-screen .dashboard-lesson { width:calc(100% - 24px); }
+  .admin-card { border-radius:16px; }
+  .admin-stats-grid { grid-template-columns:1fr; }
+  .admin-table-card { padding:14px!important; }
+  .admin-person-card { padding:18px!important; }
+}
 .dashboard-frame { position:relative; height:calc(100svh - 235px); min-height:620px; padding:5px; overflow:hidden; border-radius:26px; border:1px solid rgba(255,221,142,.28); background:linear-gradient(130deg,rgba(255,255,255,.13),rgba(255,255,255,.025)); box-shadow:inset 1px 1px rgba(255,255,255,.2),0 35px 80px rgba(0,0,0,.58),0 0 44px rgba(214,166,59,.12); }
 .dashboard-frame iframe { position:relative; z-index:1; display:block; width:100%; height:100%; border:0; border-radius:20px; background:#0b0b0d; }
 .disc-lesson { position:relative; z-index:2; width:min(1380px,calc(100% - 48px)); margin:0 auto; padding:36px 0 58px; }
