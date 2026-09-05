@@ -291,3 +291,8 @@ h1 strong { color: var(--gold-bright); font-weight: 700; text-shadow: 0 0 28px r
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+/* Navegação da página inicial: acomoda o acesso aos relatórios. */
+.home-nav-actions { display:flex; align-items:center; justify-content:flex-end; gap:10px; flex-wrap:wrap; }
+.home-topbar { height:auto; min-height:88px; gap:20px; padding-block:16px; }
+@media(max-width:640px) { .home-topbar { flex-wrap:wrap; } .home-nav-actions { width:100%; justify-content:flex-start; gap:8px 16px; } .home-nav-actions .entry-link { padding:10px 0; letter-spacing:.08em; } }

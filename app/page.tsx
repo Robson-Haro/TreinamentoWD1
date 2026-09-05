@@ -19,13 +19,16 @@ export default function Home() {
       <div className="ambient ambient-two" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
 
-      <nav className="topbar" aria-label="Navegação principal">
+      <nav className="topbar home-topbar" aria-label="Navegação principal">
         <a className="brand-mark" href="#inicio" aria-label="Voltar ao início">
           WD <span>×</span> RC
         </a>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <div className="home-nav-actions">
           <a className="entry-link" href="/administrador" style={{ textDecoration: "none" }}>
             <span>Administrador</span>
+          </a>
+          <a className="entry-link" href="/resgatar-relatorio" style={{ textDecoration: "none" }}>
+            <span>Resgatar Relatório</span>
           </a>
           <button
             className={`entry-link ${activated ? "is-active" : ""}`}
