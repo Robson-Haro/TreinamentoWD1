@@ -226,7 +226,7 @@ export default async function Administrador({
           </div>
         </header>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))", gap: 14, marginBottom: 22 }}>
+        <div className="admin-stats-grid" style={{ display: "grid", gap: 14, marginBottom: 22 }}>
           {[
             ["Participantes", allParticipants.length],
             ["Completaram os 2", complete],
@@ -300,7 +300,7 @@ export default async function Administrador({
             <h2>Abra cada participante para ver o resultado completo</h2>
           </div>
 
-          <div style={{ display: "grid", gap: 14 }}>
+          <div className="admin-people-grid" style={{ display: "grid", gap: 14 }}>
             {filtered.map((person, index) => (
               <details className="admin-card admin-person-card" key={`detail-${person.email ?? person.nome}-${index}`} style={{ padding: 22 }}>
                 <summary style={{ cursor: "pointer", listStyle: "none", display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
