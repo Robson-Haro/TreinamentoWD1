@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import styles from "./relatorio.module.css";
 
 export type LeadershipRow = {
   id: string; top: string; second: string; lowest: string;
@@ -56,8 +57,6 @@ const leadershipText: Record<string, { description: string; strength: string; im
   coaching: { description: "Você tende a desenvolver as pessoas por meio de perguntas, orientação e autonomia. Valoriza o crescimento contínuo e enxerga potencial para além da tarefa atual.", strength: "Desenvolvimento, autonomia e preparação de sucessores", improvement: "Ajustar o nível de orientação à experiência de cada pessoa e às urgências do momento" },
   visionario: { description: "Você conecta o trabalho a uma direção de futuro e costuma mobilizar as pessoas pelo propósito. Tem facilidade para mostrar por que uma mudança ou objetivo importa.", strength: "Inspiração, visão de futuro e capacidade de dar sentido", improvement: "Traduzir a visão em prioridades, responsáveis, prazos e acompanhamento" }
 };
-
-const inputStyle = { width: "100%", padding: "13px 14px", borderRadius: 11, border: "1px solid rgba(255,255,255,.16)", background: "#17181b", color: "white", fontSize: 15 } as const;
 
 function scoreLine(label: string, value: number) {
   return <div className="report-score"><span>{label}</span><div><i style={{ width: `${value}%` }} /></div><strong>{value}%</strong></div>;
@@ -115,10 +114,10 @@ export default function ReportClient({ disc, leadership }: { disc: DiscRow[]; le
   const usedByAnother = new Set(Object.entries(links).filter(([id]) => id !== person.id).map(([, value]) => value));
 
   return <>
-    <div className="report-controls qr-card">
-      <label><span>Escolha o participante</span><select value={person.id} onChange={(e) => setSelectedId(e.target.value)} style={inputStyle}>{disc.map((row) => <option key={row.id} value={row.id}>{row.nome || "Participante sem nome"}</option>)}</select></label>
-      <label><span>Vincular teste de liderança antigo</span><select value={links[person.id] || ""} onChange={(e) => linkLeadership(e.target.value)} style={inputStyle}><option value="">Ainda não vinculado</option>{leadership.map((row, index) => <option key={row.id} value={row.id} disabled={usedByAnother.has(row.id)}>Resposta {index + 1} · {leadLabel[row.top] || row.top}{usedByAnother.has(row.id) ? " · já vinculada" : ""}</option>)}</select></label>
-      <button className="gold-button report-download" onClick={downloadPdf} disabled={pdfBusy}><span>{pdfBusy ? "Preparando..." : "Baixar em PDF"}</span></button>
+    <div className={styles.controls} data-testid="report-controls">
+      <label className={styles.field}><span>Escolha o participante</span><select className={styles.select} value={person.id} onChange={(e) => setSelectedId(e.target.value)}>{disc.map((row) => <option key={row.id} value={row.id}>{row.nome || "Participante sem nome"}</option>)}</select></label>
+      <label className={styles.field}><span>Vincular teste de liderança antigo</span><select className={styles.select} value={links[person.id] || ""} onChange={(e) => linkLeadership(e.target.value)}><option value="">Ainda não vinculado</option>{leadership.map((row, index) => <option key={row.id} value={row.id} disabled={usedByAnother.has(row.id)}>Resposta {index + 1} · {leadLabel[row.top] || row.top}{usedByAnother.has(row.id) ? " · já vinculada" : ""}</option>)}</select></label>
+      <button className={styles.download} type="button" onClick={downloadPdf} disabled={pdfBusy}><span>{pdfBusy ? "Preparando..." : "Baixar em PDF"}</span></button>
     </div>
 
     {!linkedLeadership && <div className="report-alert">Confirme acima qual resposta do teste de liderança pertence a {person.nome}. Até essa confirmação, o relatório não atribui um resultado anônimo à pessoa.</div>}

@@ -1,5 +1,5 @@
 import "../globals.css";
-import "../modulo-1/experience.css";
+import styles from "./relatorio.module.css";
 import ReportClient, { DiscRow, LeadershipRow } from "./ReportClient";
 
 export const dynamic = "force-dynamic";
@@ -18,9 +18,9 @@ async function fetchResults<T>(table: string): Promise<T[]> {
 export default async function RelatorioTestes() {
   const [disc, leadership] = await Promise.all([fetchResults<DiscRow>("disc_results"), fetchResults<LeadershipRow>("leadership_results")]);
   const namedDisc = disc.filter((row) => row.nome?.trim()).sort((a, b) => (a.nome || "").localeCompare(b.nome || "", "pt-BR"));
-  return <main className="module-screen report-screen"><div className="ambient ambient-one" aria-hidden="true"/><div className="noise" aria-hidden="true"/>
-    <nav className="topbar module-topbar"><a className="brand-mark" href="/">WD <span>×</span> RC</a><div className="screen-nav"><a className="back-link" href="/administrador">← Área do Administrador</a></div></nav>
-    <section className="report-shell"><header className="lesson-heading dashboard-heading"><div><span className="eyebrow">Grupo WD · Ramos Consultoria</span><h1>Relatório dos testes</h1><p>Resultados individuais apresentados de forma simples, acolhedora e voltada ao desenvolvimento.</p></div><div className="lesson-logos"><img src="/grupo-wd.png" alt="Grupo WD"/><img src="/ramos-consultoria.png" alt="Ramos Consultoria"/></div></header>
+  return <main className={styles.page}>
+    <nav className={styles.nav} aria-label="Navegação dos relatórios"><a className={styles.brand} href="/">WD <span>×</span> RC</a><a className={styles.backLink} href="/administrador">← Área do Administrador</a></nav>
+    <section className={styles.shell}><header className={styles.heading}><div><span className="eyebrow">Grupo WD · Ramos Consultoria</span><h1>Relatório dos testes</h1><p>Resultados individuais apresentados de forma simples, acolhedora e voltada ao desenvolvimento.</p></div><div className={styles.logos}><img src="/grupo-wd.png" alt="Grupo WD"/><img src="/ramos-consultoria.png" alt="Ramos Consultoria"/></div></header>
       <ReportClient disc={namedDisc} leadership={leadership}/>
     </section>
   </main>;
