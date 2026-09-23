@@ -33,6 +33,15 @@ export default function DashboardLideranca() {
             allow="clipboard-write"
           />
         </div>
+        <div className="dashboard-continue">
+          <p>Concluiu a leitura do painel? Continue a jornada pelo próximo teste.</p>
+          <a className="gold-button dashboard-continue-button" href="/modulo-1/disc">
+            <span>Continuar para o DISC</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
   );

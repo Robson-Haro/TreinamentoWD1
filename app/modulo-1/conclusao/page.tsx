@@ -28,7 +28,7 @@ export default function ConclusaoModuloUm() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-1/estudo-caso">← Tela anterior</a>
-          <a className="back-link next-test-link" href="/">Voltar ao início →</a>
+          <a className="back-link next-test-link" href="/modulo-2">Iniciar Módulo 2 →</a>
         </div>
       </nav>
 
@@ -64,6 +64,13 @@ export default function ConclusaoModuloUm() {
         </div>
 
         <div className="finale-message">Juntos, construindo lideranças que inspiram, cuidam e transformam.</div>
+
+        <a className="gold-button finale-next-module" href="/modulo-2">
+          <span>Módulo 2 · Comunicação e Excelência</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
       </section>
 
       <div className="finale-stage" aria-hidden="true"><span /><span /><span /><span /><span /></div>
