@@ -111,6 +111,15 @@ export default function EtapasDaComunicacao() {
           <strong>Importante:</strong>
           <p>Essas etapas se sobrepõem e interagem. O cérebro interpreta a mensagem continuamente, usando contexto, memória e previsões enquanto escuta.</p>
         </aside>
+
+        <div className="module-two-next-row">
+          <a className="module-two-button" href="/modulo-2/frases-de-comunicacao">
+            <span>Frases sobre comunicação</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
   );
