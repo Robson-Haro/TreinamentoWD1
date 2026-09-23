@@ -28,6 +28,12 @@ export default function EuOucoEReajo() {
             <span>Atenção</span>
             <span>Reação</span>
           </div>
+          <a className="module-two-button listen-react-next" href="/modulo-2/video-eu-ouco-e-reajo">
+            <span>Ir para o vídeo</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
         </div>
 
         <div className="sound-glass" aria-hidden="true">
