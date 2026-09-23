@@ -678,3 +678,138 @@
   .module-two-logos { order:-1; min-height:270px; width:min(430px,100%); margin:0 auto; }
   .module-two-logo-card { border-radius:24px; }
 }
+
+
+/* Módulo 2 — identidade chumbo, cinza e glass translúcido */
+.module-two-screen {
+  --m2-white:#ffffff;
+  --m2-silver:#d9dde2;
+  --m2-chrome:#9ba2aa;
+  --m2-lead:#24272b;
+  --m2-deep:#0d0f11;
+  color:var(--m2-white);
+  background:
+    radial-gradient(circle at 78% 25%,rgba(188,195,203,.16),transparent 28%),
+    radial-gradient(circle at 15% 85%,rgba(112,119,128,.13),transparent 30%),
+    linear-gradient(145deg,#090a0c 0%,#24272b 52%,#0d0f11 100%);
+}
+.module-two-screen::before {
+  background:linear-gradient(112deg,transparent 0 37%,rgba(255,255,255,.075) 48%,transparent 58%);
+}
+.module-two-silver-glow { position:absolute; border-radius:50%; pointer-events:none; filter:blur(95px); opacity:.32; }
+.module-two-silver-glow-one { width:480px; height:480px; top:6%; right:-130px; background:#9da4ac; }
+.module-two-silver-glow-two { width:360px; height:360px; left:-160px; bottom:3%; background:#5e646b; }
+.module-two-topbar {
+  background:rgba(18,20,23,.46);
+  border-bottom-color:rgba(255,255,255,.14);
+  box-shadow:0 12px 45px rgba(0,0,0,.22);
+  backdrop-filter:blur(24px) saturate(125%);
+}
+.module-two-nav-link,.module-two-step {
+  color:#fff;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.075);
+  box-shadow:inset 1px 1px rgba(255,255,255,.14),0 12px 28px rgba(0,0,0,.2);
+}
+.module-two-step { padding:11px 15px; border-radius:12px; font-size:13px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+.module-two-glass-panel {
+  border:1px solid rgba(255,255,255,.2);
+  background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.045));
+  box-shadow:inset 1px 1px rgba(255,255,255,.2),0 36px 80px rgba(0,0,0,.38);
+  backdrop-filter:blur(25px) saturate(125%);
+}
+.module-two-copy.module-two-glass-panel { padding:clamp(30px,4.5vw,58px); border-radius:34px; }
+.module-two-number {
+  border-color:rgba(255,255,255,.28);
+  color:#fff;
+  background:rgba(255,255,255,.09);
+  box-shadow:0 0 28px rgba(255,255,255,.07);
+}
+.module-two-copy h1 strong { color:#fff; text-shadow:0 0 28px rgba(255,255,255,.2); }
+.module-two-intro { color:#d4d7db; }
+.module-two-button {
+  width:fit-content;
+  min-width:290px;
+  margin-top:32px;
+  padding:18px 22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:35px;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:15px;
+  color:#fff;
+  background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(115,122,130,.26));
+  box-shadow:inset 1px 1px rgba(255,255,255,.3),inset 0 -3px 5px rgba(0,0,0,.25),0 5px 0 #25292e,0 18px 38px rgba(0,0,0,.38);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:12px;
+  font-weight:900;
+  transition:.22s ease;
+}
+.module-two-button:hover { transform:translateY(-2px); background:linear-gradient(145deg,rgba(255,255,255,.3),rgba(135,142,150,.34)); box-shadow:inset 1px 1px rgba(255,255,255,.38),0 7px 0 #25292e,0 24px 45px rgba(0,0,0,.44),0 0 34px rgba(255,255,255,.11); }
+.module-two-button svg { width:20px; fill:none; stroke:currentColor; stroke-width:1.6; }
+.module-two-orbit { border-color:rgba(255,255,255,.22); box-shadow:inset 0 0 35px rgba(255,255,255,.08),0 0 45px rgba(255,255,255,.07); }
+.module-two-logo-card {
+  border-color:rgba(255,255,255,.28);
+  background:linear-gradient(130deg,rgba(255,255,255,.18),rgba(255,255,255,.045));
+  box-shadow:inset 1px 1px rgba(255,255,255,.28),0 28px 58px rgba(0,0,0,.5),0 0 28px rgba(255,255,255,.08);
+}
+
+/* Módulo 2 · Tela 2 — influência do líder */
+.influence-screen { overflow:auto; }
+.influence-content { position:relative; z-index:2; width:min(1440px,calc(100% - 48px)); margin:0 auto; padding:42px 0 72px; }
+.influence-heading { display:flex; align-items:center; justify-content:space-between; gap:30px; padding:28px 32px; border-radius:28px; }
+.influence-heading span { display:block; margin-bottom:10px; color:#d7dbe0; font-size:15px; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+.influence-heading h1 { max-width:none; color:#fff; font-size:clamp(42px,5vw,72px); line-height:1.04; font-weight:850; letter-spacing:-.045em; }
+.influence-logos { display:flex; gap:12px; flex:0 0 auto; }
+.influence-logos img { width:72px; height:72px; object-fit:cover; border:1px solid rgba(255,255,255,.25); border-radius:18px; box-shadow:0 18px 35px rgba(0,0,0,.34); }
+.influence-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:22px; }
+.influence-card {
+  min-height:250px;
+  display:grid;
+  grid-template-columns:170px 1fr;
+  align-items:center;
+  gap:25px;
+  padding:32px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:26px;
+  background:linear-gradient(135deg,rgba(255,255,255,.135),rgba(255,255,255,.035));
+  box-shadow:inset 1px 1px rgba(255,255,255,.19),0 28px 62px rgba(0,0,0,.3);
+  backdrop-filter:blur(24px) saturate(120%);
+}
+.influence-card:nth-child(2),.influence-card:nth-child(3) { background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(110,117,125,.07)); }
+.influence-card strong { color:#fff; font-size:72px; line-height:1; font-weight:850; letter-spacing:-.055em; text-shadow:0 0 30px rgba(255,255,255,.13); }
+.influence-card p { margin:0; color:#fff; font-size:30px; line-height:1.35; font-weight:800; }
+.influence-content blockquote {
+  margin:22px 0 0;
+  padding:25px 30px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:22px;
+  color:#fff;
+  background:rgba(255,255,255,.075);
+  box-shadow:inset 1px 1px rgba(255,255,255,.13),0 20px 45px rgba(0,0,0,.25);
+  backdrop-filter:blur(20px);
+  font-size:30px;
+  line-height:1.42;
+  font-weight:800;
+  text-align:center;
+}
+@media (max-width:900px) {
+  .module-two-copy.module-two-glass-panel { padding:28px 23px; }
+  .module-two-button { width:100%; min-width:0; }
+  .influence-content { width:calc(100% - 28px); }
+  .influence-heading { align-items:flex-start; }
+  .influence-logos img { width:54px; height:54px; }
+  .influence-grid { grid-template-columns:1fr; }
+  .influence-card { grid-template-columns:125px 1fr; }
+  .influence-card strong { font-size:58px; }
+}
+@media (max-width:600px) {
+  .influence-heading { display:grid; padding:23px 19px; }
+  .influence-heading h1 { font-size:42px; }
+  .influence-card { min-height:0; grid-template-columns:1fr; gap:15px; padding:24px 20px; }
+  .influence-card p,.influence-content blockquote { font-size:30px; }
+  .module-two-step { display:none; }
+}
