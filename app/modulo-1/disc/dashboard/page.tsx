@@ -33,6 +33,15 @@ export default function DiscDashboard() {
             allow="clipboard-write"
           />
         </div>
+        <div className="dashboard-continue">
+          <p>Concluiu a leitura do DISC? Siga para a próxima experiência do treinamento.</p>
+          <a className="gold-button dashboard-continue-button" href="/modulo-1/cafe">
+            <span>Continuar a jornada</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
   );
