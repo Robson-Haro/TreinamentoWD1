@@ -70,6 +70,15 @@ export default function FrasesDeComunicacao() {
           <span>Reflexão</span>
           <p>Que mensagem a sua liderança deixa quando você termina de falar?</p>
         </div>
+
+        <div className="module-two-next-row">
+          <a className="module-two-button" href="/modulo-2/leitura-dos-sentimentos">
+            <span>Leitura dos sentimentos</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
   );
