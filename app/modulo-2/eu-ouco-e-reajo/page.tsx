@@ -1,4 +1,5 @@
 import "../../modulo-1/experience.css";
+import type { CSSProperties } from "react";
 
 export default function EuOucoEReajo() {
   return (
@@ -36,7 +37,7 @@ export default function EuOucoEReajo() {
           </div>
           <div className="sound-wave">
             {Array.from({ length: 21 }, (_, index) => (
-              <i key={index} style={{ "--wave-index": index } as React.CSSProperties} />
+              <i key={index} style={{ "--wave-index": index } as CSSProperties} />
             ))}
           </div>
           <p>Ouça · Perceba · Reaja</p>
