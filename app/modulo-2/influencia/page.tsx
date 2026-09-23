@@ -59,6 +59,15 @@ export default function InfluenciaDoLider() {
           Ninguém é neutro nessa cadeira. A pergunta não é se você impacta o outro
           — é para que lado.
         </blockquote>
+
+        <div className="module-two-next-row">
+          <a className="module-two-button" href="/modulo-2/eu-ouco-e-reajo">
+            <span>Descontração também é aprender</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </a>
+        </div>
       </section>
     </main>
   );

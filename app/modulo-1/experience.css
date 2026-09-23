@@ -813,3 +813,63 @@
   .influence-card p,.influence-content blockquote { font-size:30px; }
   .module-two-step { display:none; }
 }
+
+
+/* Módulo 2 · Tela 3 — Descontração também é aprender */
+.module-two-next-row { display:flex; justify-content:flex-end; margin-top:24px; }
+.module-two-next-row .module-two-button { margin-top:0; min-width:390px; }
+.listen-react-screen { overflow:hidden; }
+.listen-react-stage {
+  position:relative;
+  z-index:2;
+  width:min(1380px,calc(100% - 48px));
+  min-height:calc(100svh - 88px);
+  margin:0 auto;
+  padding:clamp(48px,7vh,86px) 0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(390px,.72fr);
+  align-items:center;
+  gap:clamp(38px,7vw,100px);
+}
+.listen-react-copy { padding:clamp(34px,5vw,64px); border-radius:36px; }
+.listen-react-kicker { display:block; margin-bottom:22px; color:#d7dbe0; font-size:16px; font-weight:900; letter-spacing:.18em; text-transform:uppercase; }
+.listen-react-copy h1 { max-width:760px; color:#fff; font-size:clamp(70px,9vw,136px); line-height:.84; font-weight:850; letter-spacing:-.07em; }
+.listen-react-copy h1 strong { display:block; color:#fff; text-shadow:0 0 32px rgba(255,255,255,.2); }
+.listen-react-copy > p { max-width:720px; margin:30px 0 0; color:#e0e3e7; font-size:30px; line-height:1.45; font-weight:750; }
+.listen-react-badges { display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+.listen-react-badges span { padding:12px 17px; border:1px solid rgba(255,255,255,.2); border-radius:999px; color:#fff; background:rgba(255,255,255,.075); font-size:14px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+.sound-glass {
+  position:relative;
+  min-height:480px;
+  display:grid;
+  align-content:center;
+  justify-items:center;
+  gap:35px;
+  padding:40px 28px;
+  border:1px solid rgba(255,255,255,.23);
+  border-radius:42px;
+  background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.035));
+  box-shadow:inset 1px 1px rgba(255,255,255,.23),0 38px 80px rgba(0,0,0,.42),0 0 45px rgba(255,255,255,.07);
+  backdrop-filter:blur(28px) saturate(130%);
+  transform:rotate(2deg);
+}
+.sound-icon { position:relative; width:170px; height:170px; display:grid; place-items:center; border:1px solid rgba(255,255,255,.22); border-radius:50%; background:rgba(255,255,255,.08); box-shadow:inset 0 0 32px rgba(255,255,255,.08),0 0 50px rgba(255,255,255,.07); }
+.sound-icon > span { color:#fff; font-size:115px; line-height:1; transform:rotate(180deg) translateX(-5px); text-shadow:0 0 24px rgba(255,255,255,.22); }
+.sound-icon > i { position:absolute; right:18px; width:28px; height:55px; border:3px solid rgba(255,255,255,.86); border-left:0; border-block-color:transparent; border-radius:0 100% 100% 0; }
+.sound-icon > i:nth-of-type(2) { right:-2px; width:48px; height:88px; opacity:.68; }
+.sound-icon > i:nth-of-type(3) { right:-25px; width:68px; height:120px; opacity:.38; }
+.sound-wave { width:100%; height:90px; display:flex; align-items:center; justify-content:center; gap:5px; }
+.sound-wave i { width:5px; height:calc(18px + (var(--wave-index) % 7) * 9px); border-radius:999px; background:linear-gradient(#fff,#8f969e); box-shadow:0 0 10px rgba(255,255,255,.22); animation:soundPulse 1.25s ease-in-out infinite alternate; animation-delay:calc(var(--wave-index) * -0.07s); }
+.sound-glass > p { margin:0; color:#fff; font-size:18px; font-weight:900; letter-spacing:.16em; text-transform:uppercase; }
+.listen-react-partnership { position:absolute; right:0; bottom:24px; display:flex; align-items:center; gap:10px; padding:10px 13px; border:1px solid rgba(255,255,255,.16); border-radius:18px; background:rgba(255,255,255,.065); backdrop-filter:blur(18px); }
+.listen-react-partnership img { width:48px; height:48px; object-fit:cover; border-radius:12px; }
+.listen-react-partnership span { color:#fff; font-weight:900; }
+@keyframes soundPulse { from { transform:scaleY(.46); opacity:.45; } to { transform:scaleY(1.18); opacity:1; } }
+@media (max-width:900px) {
+  .module-two-next-row .module-two-button { width:100%; min-width:0; }
+  .listen-react-screen { overflow:auto; }
+  .listen-react-stage { width:calc(100% - 28px); grid-template-columns:1fr; padding:36px 0 110px; }
+  .listen-react-copy h1 { font-size:66px; }
+  .sound-glass { min-height:380px; transform:none; }
+  .listen-react-partnership { left:0; right:auto; bottom:30px; }
+}
