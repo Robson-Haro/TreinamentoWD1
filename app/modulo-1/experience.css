@@ -1552,3 +1552,291 @@
     animation: none;
   }
 }
+
+
+/* Módulo 2 — identidade azul em tela inteira */
+.module-two-screen,
+.module-two-case {
+  --m2-blue-deep: #001434;
+  --m2-blue-mid: #04285b;
+  --m2-blue-light: #0b70bd;
+  --m2-cyan: #35c7ff;
+  --m2-yellow: #ffd43b;
+  --m2-white: #ffffff;
+  min-height: 100vh;
+  color: var(--m2-white);
+  background:
+    linear-gradient(118deg, transparent 0 64%, rgba(44, 170, 245, .13) 64.2% 71%, transparent 71.2%),
+    radial-gradient(circle at 88% 5%, rgba(32, 145, 231, .36), transparent 26%),
+    radial-gradient(circle at 8% 86%, rgba(0, 92, 180, .22), transparent 34%),
+    linear-gradient(145deg, #00102c 0%, #032354 48%, #001633 100%) !important;
+}
+
+.module-two-screen::after,
+.module-two-case::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .65;
+  background:
+    linear-gradient(132deg, transparent 8%, rgba(72, 188, 255, .13) 8.2%, transparent 16%),
+    linear-gradient(132deg, transparent 73%, rgba(72, 188, 255, .1) 73.2%, transparent 82%);
+}
+
+.module-two-screen > *,
+.module-two-case > * {
+  position: relative;
+  z-index: 1;
+}
+
+.module-two-screen .module-two-silver-glow {
+  background: rgba(29, 143, 226, .28) !important;
+  filter: blur(70px);
+}
+
+.module-two-screen .module-two-topbar,
+.module-two-case .case-topbar {
+  width: 100%;
+  max-width: none;
+  padding-left: clamp(20px, 3vw, 58px);
+  padding-right: clamp(20px, 3vw, 58px);
+  background: rgba(0, 18, 50, .64) !important;
+  border-bottom: 1px solid rgba(53, 199, 255, .3) !important;
+  box-shadow: 0 12px 38px rgba(0, 8, 28, .3), inset 0 -1px 0 rgba(255,255,255,.05);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.module-two-screen :is(
+  .module-two-hero,
+  .influence-content,
+  .listen-react-stage,
+  .module-two-video-content,
+  .communication-content,
+  .quotes-content,
+  .feelings-content,
+  .relax-learn-stage,
+  .relax-learn-footer,
+  .relax-learn-next
+),
+.module-two-case :is(
+  .case-hero,
+  .case-qr-wrap,
+  .case-index,
+  .case-section,
+  .case-delivery
+) {
+  width: calc(100% - clamp(32px, 5vw, 96px)) !important;
+  max-width: none !important;
+}
+
+.module-two-screen :is(
+  .module-two-glass-panel,
+  .influence-card,
+  .sound-glass,
+  .module-two-video-frame,
+  .comm-node,
+  .comm-noise,
+  .receiver-step,
+  .leadership-quote-card,
+  .feelings-photo-card,
+  .feelings-answer,
+  .relax-chip,
+  .relax-core
+),
+.module-two-case :is(
+  .case-hero,
+  .case-access-card,
+  .case-index,
+  .post-card,
+  .crisis-timeline article,
+  .case-resources,
+  .case-travel,
+  .case-rule,
+  .decision-card,
+  .case-delivery
+) {
+  background: linear-gradient(135deg, rgba(7, 61, 119, .62), rgba(0, 22, 60, .72)) !important;
+  border: 1px solid rgba(65, 197, 255, .38) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.15),
+    inset 0 0 34px rgba(25, 145, 224, .08),
+    0 24px 65px rgba(0, 8, 31, .38) !important;
+  backdrop-filter: blur(20px) saturate(145%);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+}
+
+.module-two-screen :is(h1, h2),
+.module-two-case :is(h1, h2) {
+  color: var(--m2-yellow) !important;
+  font-size: 50px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em;
+}
+
+.module-two-screen :is(h1, h2) strong,
+.module-two-case :is(h1, h2) strong {
+  color: var(--m2-white) !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor;
+}
+
+.module-two-screen :is(
+  .module-two-intro,
+  .influence-card p,
+  .influence-content blockquote,
+  .listen-react-copy > p,
+  .module-two-video-heading p,
+  .comm-node p,
+  .communication-heading p,
+  .receiver-step p,
+  .quotes-heading p,
+  .leadership-quote-card blockquote,
+  .quotes-closing p,
+  .feelings-heading p,
+  .feelings-answer > p,
+  .feelings-question p,
+  .relax-learn-copy > p
+),
+.module-two-case :is(
+  .case-hero p,
+  .case-section-title p,
+  .post-card p,
+  .crisis-timeline p,
+  .case-resources p,
+  .case-rule span,
+  .decision-card p,
+  .decision-card h4,
+  .decision-card footer,
+  .case-delivery p
+) {
+  color: var(--m2-white) !important;
+  font-size: 25px !important;
+  line-height: 1.5 !important;
+}
+
+.module-two-screen :is(
+  .eyebrow,
+  .module-two-number,
+  .module-two-step,
+  .influence-heading > div > span,
+  .listen-react-kicker,
+  .module-two-video-heading > div > span,
+  .communication-heading > div > span,
+  .quotes-heading > div > span,
+  .feelings-heading > div > span,
+  .relax-learn-kicker
+),
+.module-two-case :is(
+  .eyebrow,
+  .case-section-title > span,
+  .case-access-copy span
+) {
+  color: var(--m2-yellow) !important;
+}
+
+.module-two-screen .module-two-button,
+.module-two-case .module-two-button {
+  color: #07152d !important;
+  background: linear-gradient(135deg, #ffe777, #ffd43b 56%, #edae00) !important;
+  border-color: rgba(255, 239, 149, .9) !important;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.5), 0 12px 34px rgba(255, 196, 0, .2) !important;
+}
+
+.module-two-screen .module-two-button svg,
+.module-two-case .module-two-button svg {
+  stroke: #07152d !important;
+}
+
+.module-two-screen :is(.back-link, .brand-mark),
+.module-two-case :is(.back-link, .brand-mark) {
+  color: var(--m2-white);
+}
+
+.module-two-screen .brand-mark span,
+.module-two-case .brand-mark span {
+  color: var(--m2-yellow);
+}
+
+.module-two-screen :is(
+  .influence-grid,
+  .leadership-quotes-grid,
+  .receiver-steps,
+  .post-grid,
+  .decision-grid
+),
+.module-two-case :is(.post-grid, .decision-grid) {
+  width: 100%;
+}
+
+.module-two-screen .influence-card strong,
+.module-two-screen .feelings-progress strong,
+.module-two-screen .leadership-quote-card > span,
+.module-two-case :is(.crisis-timeline time, .decision-card header > span) {
+  color: var(--m2-yellow) !important;
+}
+
+@media (max-width: 900px) {
+  .module-two-screen :is(h1, h2),
+  .module-two-case :is(h1, h2) {
+    font-size: clamp(38px, 8vw, 50px) !important;
+  }
+
+  .module-two-screen :is(
+    .module-two-intro,
+    .influence-card p,
+    .influence-content blockquote,
+    .listen-react-copy > p,
+    .module-two-video-heading p,
+    .comm-node p,
+    .communication-heading p,
+    .receiver-step p,
+    .quotes-heading p,
+    .leadership-quote-card blockquote,
+    .quotes-closing p,
+    .feelings-heading p,
+    .feelings-answer > p,
+    .feelings-question p,
+    .relax-learn-copy > p
+  ),
+  .module-two-case :is(
+    .case-hero p,
+    .case-section-title p,
+    .post-card p,
+    .crisis-timeline p,
+    .case-resources p,
+    .case-rule span,
+    .decision-card p,
+    .decision-card h4,
+    .decision-card footer,
+    .case-delivery p
+  ) {
+    font-size: clamp(20px, 4vw, 25px) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .module-two-screen :is(
+    .module-two-hero,
+    .influence-content,
+    .listen-react-stage,
+    .module-two-video-content,
+    .communication-content,
+    .quotes-content,
+    .feelings-content,
+    .relax-learn-stage,
+    .relax-learn-footer,
+    .relax-learn-next
+  ),
+  .module-two-case :is(
+    .case-hero,
+    .case-qr-wrap,
+    .case-index,
+    .case-section,
+    .case-delivery
+  ) {
+    width: calc(100% - 24px) !important;
+  }
+}
