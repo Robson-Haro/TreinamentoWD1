@@ -21,7 +21,7 @@ export default function EtapasDaComunicacao() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/video-eu-ouco-e-reajo">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 5</span>
+          <span className="module-two-step">Módulo 2 · Tela 6</span>
         </div>
       </nav>
 

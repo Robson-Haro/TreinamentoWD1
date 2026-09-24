@@ -12,7 +12,7 @@ export default function VideoNormalizacaoDoDesvio() {
       <div className="noise" aria-hidden="true" />
       <nav className={`topbar module-topbar module-two-topbar ${styles.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
-        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/comportamentos-e-resultados">← Tela anterior</Link><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">Próxima tela →</Link><span className="module-two-step">Módulo 2 · Tela 13</span></div>
+        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/comportamentos-e-resultados">← Tela anterior</Link><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">Próxima tela →</Link><span className="module-two-step">Módulo 2 · Tela 14</span></div>
       </nav>
       <div className={styles.content}>
         <header className={styles.header}>

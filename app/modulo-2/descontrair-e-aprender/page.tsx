@@ -18,7 +18,7 @@ export default function DescontrairEAprender() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/leitura-dos-sentimentos">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 8</span>
+          <span className="module-two-step">Módulo 2 · Tela 9</span>
         </div>
       </nav>
 

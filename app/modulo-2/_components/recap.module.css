@@ -1,0 +1,32 @@
+.screen { overflow-x: clip; overflow-y: visible; }
+.navLinks { display: flex; align-items: center; justify-content: flex-end; gap: 22px; flex-wrap: wrap; }
+.screen .topbar { min-height: 88px; height: auto; padding-block: 18px; gap: 24px; }
+.content { width: calc(100% - clamp(32px, 5vw, 96px)); max-width: none; margin: 0 auto; padding: 32px 0; display: grid; gap: 26px; }
+.heading { width: 100%; min-width: 0; text-align: center; padding: 8px 0 16px; }
+.kicker { display: block; margin-bottom: 14px; color: #d4edff; font-size: 20px; font-weight: 700; letter-spacing: .06em; text-wrap: balance; }
+.screen .heading h1 { width: 100%; max-width: none; margin: 0; font-size: 60px; text-align: center; text-wrap: balance; }
+.screen .heading h1 strong { display: inline; }
+.panel { width: 100%; min-width: 0; padding: 28px clamp(24px, 3vw, 48px); border-radius: 28px; }
+.sectionLabel { display: block; margin-bottom: 18px; color: #b8e5ff; font-size: 22px; line-height: 1.4; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+/* The presentation's global type rules read this variable on each list item. */
+.bullets { --training-content-size: 50px; width: 100%; max-width: none; margin: 0; padding-inline-start: 1.05em; font-size: 50px; list-style: disc outside; }
+.bullets li { margin: 0; padding: 14px 0 14px 8px; color: #fff; font-size: 50px; overflow-wrap: anywhere; }
+.bullets li + li { border-top: 1px solid #74cfff24; }
+.bullets li::marker { color: #ffd43b; }
+.bullets strong { color: #ffd43b; font-weight: 750; }
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.screen .button { min-width: 0; max-width: 100%; margin: 0; font-size: 20px; padding: 18px 24px; text-align: center; }
+.partnership { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.partnership img { width: 56px; height: 56px; object-fit: contain; border-radius: 12px; }
+.partnership span { color: #ffd43b; font-size: 24px; }
+.screen a:focus-visible { outline: 3px solid #ffd43b; outline-offset: 5px; }
+@media (max-width: 800px) {
+  .screen .topbar { flex-wrap: wrap; }
+  .navLinks { justify-content: flex-start; gap: 16px; }
+  .content { padding-block: 24px; }
+  .panel { padding: 24px 18px; }
+  .bullets { padding-inline-start: .7em; }
+  .bullets li { padding-inline-start: 0; }
+  .footer { display: grid; justify-items: stretch; }
+  .screen .button { justify-content: center; width: 100%; }
+}

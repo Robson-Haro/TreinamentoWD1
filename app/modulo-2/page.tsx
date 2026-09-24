@@ -33,7 +33,7 @@ export default function ModuloDois() {
             <div className={styles.logoCard}>
               <Image src="/ramos-consultoria.png" alt="Ramos Consultoria" width={160} height={160} priority />
             </div>
-            <Link className={`module-two-button ${styles.start}`} href="/modulo-2/influencia">
+            <Link className={`module-two-button ${styles.start}`} href="/modulo-2/recapitulacao-modulo-1">
               <span>Iniciar Módulo 2</span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />

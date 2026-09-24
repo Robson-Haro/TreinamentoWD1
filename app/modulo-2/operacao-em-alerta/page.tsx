@@ -60,7 +60,7 @@ export default function OperacaoEmAlertaModuloDois() {
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/pausa-para-o-cafe">← Tela anterior</a>
           <a className="back-link next-test-link" href="/modulo-2/excelencia-operacional">Próxima tela →</a>
-          <span className="module-two-step">Módulo 2 · Tela 10</span>
+          <span className="module-two-step">Módulo 2 · Tela 11</span>
         </div>
       </nav>
 

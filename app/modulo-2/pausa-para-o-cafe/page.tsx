@@ -11,7 +11,7 @@ export default function PausaParaOCafe() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/descontrair-e-aprender">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 9</span>
+          <span className="module-two-step">Módulo 2 · Tela 10</span>
         </div>
       </nav>
 

@@ -29,8 +29,8 @@ export default function InfluenciaDoLider() {
       <nav className="topbar module-topbar module-two-topbar" aria-label="Navegação do módulo">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 2</span>
+          <a className="back-link" href="/modulo-2/recapitulacao-modulo-1">← Recapitulação do Módulo 1</a>
+          <span className="module-two-step">Módulo 2 · Tela 3</span>
         </div>
       </nav>
 

@@ -68,7 +68,7 @@ export default function WorkGroup() {
         <div className={styles.navLinks}>
           <Link className="back-link" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link>
           <Link className="back-link" href="/modulo-2/qualidade-na-origem">Próxima tela →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 17</span>
+          <span className="module-two-step">Módulo 2 · Tela 18</span>
         </div>
       </nav>
 

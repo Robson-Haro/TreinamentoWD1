@@ -101,7 +101,7 @@ export default function CoffeeBreak() {
         <div className={styles.navLinks}>
           <Link className="back-link" href="/modulo-2/cliente-processos-e-padroes">← Tela anterior</Link>
           <Link className="back-link" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 16</span>
+          <span className="module-two-step">Módulo 2 · Tela 17</span>
         </div>
       </nav>
 

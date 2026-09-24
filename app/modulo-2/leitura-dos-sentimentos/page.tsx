@@ -77,7 +77,7 @@ export default function LeituraDosSentimentos() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/frases-de-comunicacao">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 7</span>
+          <span className="module-two-step">Módulo 2 · Tela 8</span>
         </div>
       </nav>
 

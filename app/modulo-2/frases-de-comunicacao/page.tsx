@@ -39,7 +39,7 @@ export default function FrasesDeComunicacao() {
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/etapas-da-comunicacao">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 6</span>
+          <span className="module-two-step">Módulo 2 · Tela 7</span>
         </div>
       </nav>
 

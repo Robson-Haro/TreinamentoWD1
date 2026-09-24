@@ -35,7 +35,7 @@ export default function NormalizacaoDoDesvio() {
           <Link className="back-link" href="/modulo-2/video-normalizacao-do-desvio">← Voltar ao vídeo</Link>
           <Link className="back-link" href="/modulo-2">Início do módulo</Link>
           <Link className="back-link" href="/modulo-2/cliente-processos-e-padroes">Próxima tela →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 14</span>
+          <span className="module-two-step">Módulo 2 · Tela 15</span>
         </div>
       </nav>
       <div className={styles.content}>
