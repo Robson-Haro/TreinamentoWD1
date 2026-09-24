@@ -26,8 +26,8 @@ export default function DescontrairEAprender() {
         <article className="relax-learn-copy module-two-glass-panel">
           <span className="relax-learn-kicker">Momento de conexão</span>
           <h1>
-            Descontrair
-            <strong>é aprender.</strong>
+            Dinâmica
+            <strong>da história.</strong>
           </h1>
           <p>
             Uma pausa leve para ativar a atenção, fortalecer vínculos

@@ -156,7 +156,7 @@ export default function LeituraDosSentimentos() {
         {current === examples.length - 1 && revealed && (
           <div className="module-two-next-row feelings-next-screen">
             <a className="module-two-button" href="/modulo-2/descontrair-e-aprender">
-              <span>Descontrair é aprender</span>
+              <span>Dinâmica da história</span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
