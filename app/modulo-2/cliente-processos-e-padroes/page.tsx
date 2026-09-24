@@ -37,7 +37,7 @@ export default function ClienteProcessosEPadroes() {
       <div className="noise" aria-hidden="true" />
       <nav className={`topbar module-topbar module-two-topbar ${styles.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
-        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">← Tela anterior</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><span className="module-two-step">Módulo 2 · Tela 15</span></div>
+        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">← Tela anterior</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/cafe-5-minutos">Pausa para o café →</Link><span className="module-two-step">Módulo 2 · Tela 15</span></div>
       </nav>
       <div className={styles.content}>
         <header className={styles.header}>
@@ -97,7 +97,7 @@ export default function ClienteProcessosEPadroes() {
 
         <section className={styles.section}><h2>Leve uma mudança <strong>para a sua rotina.</strong></h2><p>Escolha uma atividade e responda: qual valor ela entrega, qual dificuldade do processo precisa ser tratada e qual ponto do padrão precisa ficar mais claro?</p><p><strong>Excelência é entender o cliente, melhorar o processo e sustentar o cuidado na rotina.</strong></p></section>
         <details id="referencias" className={`module-two-glass-panel ${styles.panel} ${styles.sources} ${local.sources}`}><summary>Referências e bases do conteúdo</summary><ol>{sources.map(([title,subject,url]) => <li key={url}><a href={url} target="_blank" rel="noopener noreferrer">{title} ↗</a><p>{subject}</p></li>)}</ol><p>Conteúdo e exemplos adaptados para o contexto de facilities. Imagens ilustrativas geradas por IA; não retratam colaboradores do Grupo WD.</p></details>
-        <footer className={styles.footer}><Link className="module-two-button" href="/modulo-2/normalizacao-do-desvio">← Normalização do desvio</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><a className="module-two-button" href="#inicio">Voltar ao topo ↑</a></footer>
+        <footer className={styles.footer}><Link className="module-two-button" href="/modulo-2/normalizacao-do-desvio">← Normalização do desvio</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><Link className="module-two-button" href="/modulo-2/cafe-5-minutos">Pausa de 5 minutos para o café →</Link></footer>
       </div>
     </main>
   );

@@ -1,0 +1,95 @@
+.screen { isolation: isolate; }
+.topbar { gap: 20px; }
+.navLinks { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.stage {
+  min-height: calc(100svh - 154px);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.arena { position: absolute; inset: 14px 24px; pointer-events: none; }
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 100%);
+  padding: 24px 38px;
+  text-align: center;
+  border: 1px solid rgba(102, 204, 255, .38);
+  border-radius: 36px;
+  background: linear-gradient(145deg, rgba(10, 51, 96, .95), rgba(0, 21, 55, .96));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 28px 80px rgba(0, 8, 31, .32);
+}
+.eyebrow { display: block; font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #bfe9ff; }
+.card h1 { max-width: none; margin: 8px 0; font-size: 60px; font-weight: 700; letter-spacing: -.035em; }
+.card p { margin: 0 auto; max-width: 670px; font-size: 40px; color: #fff; }
+.clock { margin: 8px 0 12px; font-size: clamp(84px, 9vw, 112px); font-weight: 750; line-height: 1.1; letter-spacing: -.045em; color: #ffd43b; font-variant-numeric: tabular-nums; text-shadow: 0 4px 32px rgba(255,212,59,.18); }
+.progress { height: 7px; max-width: 390px; margin: 0 auto; overflow: hidden; background: #233f63; border-radius: 99px; }
+.progress span { display: block; height: 100%; background: linear-gradient(90deg,#ffd43b,#ffe99a); transform-origin: left; }
+.status { display: block; margin: 12px 0 16px; font-size: 20px; color: #d4edff; }
+.controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.controls button { min-height: 48px; padding: 12px 20px; border: 1px solid #6c9bbc; border-radius: 14px; background: #123b65; color: #fff; font-size: 20px; font-weight: 650; }
+.controls button:first-child { background: #ffd43b; border-color: #ffd43b; color: #06264a; }
+.controls button:disabled { opacity: .5; cursor: default; }
+.controls button:hover:not(:disabled) { filter: brightness(1.12); }
+.screen :is(button,a):focus-visible { outline: 3px solid #ffd43b; outline-offset: 5px; }
+.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 30px 24px; }
+.footer a, .footer button { color: #d4edff; font-size: 18px; text-decoration: none; }
+.footer button { background: transparent; border: 1px solid #567ca7; border-radius: 10px; padding: 8px 14px; }
+.footer a:hover { text-decoration: underline; }
+
+/* Each character travels in both axes, including diagonal crossings.
+   Percentage translations keep its complete tray and feet inside the stage. */
+.walker { position: absolute; width: 270px; height: 180px; filter: drop-shadow(0 12px 12px rgba(0,0,0,.25)); animation: tourWd 34s linear infinite; }
+.ramos { animation-name: tourRamos; animation-duration: 41s; }
+.body { position: absolute; left: 0; top: 0; width: 165px; height: 116px; display: grid; place-items: center; padding: 12px; border: 2px solid #d9ecfa; border-radius: 26px; background: linear-gradient(145deg,#fff,#e7f1f8); box-shadow: inset 0 -5px 0 #c2d8e8; animation: bob .55s ease-in-out infinite alternate; }
+.body img { position: relative; z-index: 2; width: 100%; height: 100%; object-fit: contain; }
+.arm { position: absolute; left: 92%; top: 77px; width: 53px; height: 14px; border-radius: 12px; background: #e6f3ff; transform: rotate(-14deg); }
+.tray { position: absolute; left: 130px; top: -5px; width: 140px; height: 100px; transform-origin: center bottom; animation: balance .9s ease-in-out infinite alternate; }
+.steam { animation: steam 1.8s ease-out infinite; }
+.leg { position: absolute; top: 108px; width: 14px; height: 53px; border-radius: 12px; background: #d6eaf9; transform-origin: top center; }
+.leg::after { content: ""; position: absolute; bottom: -2px; left: -5px; width: 32px; height: 14px; border-radius: 12px 15px 7px 7px; background: #ffd43b; }
+.leftLeg { left: 46px; animation: step .55s ease-in-out infinite alternate; }
+.rightLeg { left: 108px; animation: step .55s ease-in-out -.55s infinite alternate; }
+.shadow { position: absolute; left: 15px; bottom: 2px; width: 140px; height: 15px; border-radius: 50%; background: rgba(0,8,31,.3); filter: blur(4px); }
+.still .walker, .still .body, .still .leg, .still .tray, .still .steam { animation-play-state: paused; }
+@keyframes tourWd {
+  0%,100% { left: 0; top: 0; transform: translate(0,0); }
+  18% { left: 100%; top: 0; transform: translate(-100%,0); }
+  36% { left: 100%; top: 100%; transform: translate(-100%,-100%); }
+  54% { left: 0; top: 100%; transform: translate(0,-100%); }
+  76% { left: 100%; top: 12%; transform: translate(-100%,-12%); }
+}
+@keyframes tourRamos {
+  0%,100% { left: 100%; top: 100%; transform: translate(-100%,-100%); }
+  20% { left: 0; top: 100%; transform: translate(0,-100%); }
+  40% { left: 0; top: 0; transform: translate(0,0); }
+  60% { left: 100%; top: 0; transform: translate(-100%,0); }
+  80% { left: 0; top: 80%; transform: translate(0,-80%); }
+}
+@keyframes bob { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+@keyframes step { from { transform: rotate(-22deg); } to { transform: rotate(22deg); } }
+@keyframes balance { from { transform: rotate(-2deg); } to { transform: rotate(2deg); } }
+@keyframes steam { from { opacity: .2; transform: translateY(4px); } to { opacity: .85; transform: translateY(-5px); } }
+@media (max-width: 1100px) {
+  .stage { padding-block: 150px; }
+  .walker { width: 220px; height: 160px; }
+  .body { transform-origin: top left; scale: .8; }
+  .leg { top: 86px; height: 42px; }
+  .leftLeg { left: 34px; }
+  .rightLeg { left: 86px; }
+  .shadow { width: 110px; bottom: 22px; }
+}
+@media (max-width: 600px) {
+  .screen .topbar { height: auto; min-height: 88px; flex-wrap: wrap; padding-block: 18px; }
+  .navLinks { gap: 14px; }
+  .stage { padding: 150px 12px; }
+  .arena { inset: 12px; }
+  .card { border-radius: 24px; padding: 26px 18px; }
+  .controls { flex-direction: column; }
+  .footer { padding-inline: 20px; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .walker, .body, .leg, .tray, .steam { animation: none; }
+  .wd { left: 0; top: 0; }
+  .ramos { right: 0; bottom: 0; }
+}
