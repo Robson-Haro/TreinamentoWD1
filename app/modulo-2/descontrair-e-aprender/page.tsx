@@ -58,8 +58,8 @@ export default function DescontrairEAprender() {
       </section>
 
       <div className="module-two-next-row relax-learn-next">
-        <a className="module-two-button" href="/modulo-2/operacao-em-alerta">
-          <span>Iniciar estudo de caso</span>
+        <a className="module-two-button" href="/modulo-2/pausa-para-o-cafe">
+          <span>Hora do café</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
