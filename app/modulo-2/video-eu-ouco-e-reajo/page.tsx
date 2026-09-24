@@ -13,6 +13,7 @@ const videos = [
 export default function VideoEuOucoEReajo() {
   const [videoUrls, setVideoUrls] = useState<(string | null)[]>(videos.map(() => null));
   const [failed, setFailed] = useState<boolean[]>(videos.map(() => false));
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     let active = true;
@@ -69,48 +70,65 @@ export default function VideoEuOucoEReajo() {
           </div>
         </header>
 
-        <div className="reaction-video-grid">
-          {videos.map((video, index) => (
-            <article className="reaction-video-card" key={video.title}>
-              <header>
+        <div className="reaction-sequence">
+          <div className="reaction-sequence-progress" aria-label="Sequência dos vídeos">
+            {videos.map((video, index) => (
+              <button
+                type="button"
+                className={index === current ? "is-active" : index < current ? "is-complete" : ""}
+                onClick={() => setCurrent(index)}
+                aria-label={`Reproduzir ${video.title}`}
+                aria-current={index === current ? "step" : undefined}
+                key={video.title}
+              >
                 <span>{String(index + 1).padStart(2, "0")}</span>
-                <div><strong>{video.title}</strong><small>{video.duration} · reprodução automática</small></div>
-              </header>
+                <strong>{video.title}</strong>
+                <small>{video.duration}</small>
+              </button>
+            ))}
+          </div>
 
-              <div className="reaction-video-portrait">
-                {videoUrls[index] && (
-                  <video
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    src={videoUrls[index] ?? undefined}
-                    aria-label={`${video.title} da dinâmica Eu ouço e reajo`}
-                  >
-                    Seu navegador não oferece suporte à reprodução de vídeo.
-                  </video>
-                )}
+          <article className="reaction-featured-card">
+            <header>
+              <span>Reproduzindo agora</span>
+              <strong>{videos[current].title}</strong>
+              <small>{current + 1} de {videos.length} · o próximo começa automaticamente</small>
+            </header>
 
-                {!videoUrls[index] && !failed[index] && (
-                  <div className="reaction-loading">
-                    <span aria-hidden="true">▶</span>
-                    <strong>Preparando {video.title}</strong>
-                    <p>Aguarde um instante.</p>
-                  </div>
-                )}
+            <div className="reaction-featured-video">
+              {videoUrls[current] && (
+                <video
+                  key={`${current}-${videoUrls[current]}`}
+                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  preload="auto"
+                  src={videoUrls[current] ?? undefined}
+                  onEnded={() => setCurrent((index) => (index + 1) % videos.length)}
+                  aria-label={`${videos[current].title} da dinâmica Eu ouço e reajo`}
+                >
+                  Seu navegador não oferece suporte à reprodução de vídeo.
+                </video>
+              )}
 
-                {failed[index] && (
-                  <div className="reaction-loading">
-                    <span aria-hidden="true">!</span>
-                    <strong>Não foi possível carregar</strong>
-                    <p>Atualize a página e tente novamente.</p>
-                  </div>
-                )}
-              </div>
-            </article>
-          ))}
+              {!videoUrls[current] && !failed[current] && (
+                <div className="reaction-loading">
+                  <span aria-hidden="true">▶</span>
+                  <strong>Preparando {videos[current].title}</strong>
+                  <p>Aguarde um instante.</p>
+                </div>
+              )}
+
+              {failed[current] && (
+                <div className="reaction-loading">
+                  <span aria-hidden="true">!</span>
+                  <strong>Não foi possível carregar</strong>
+                  <p>Atualize a página e tente novamente.</p>
+                </div>
+              )}
+            </div>
+          </article>
         </div>
 
         <p className="reaction-audio-note">Os vídeos iniciam sem som porque essa é uma exigência dos navegadores. Clique no ícone de volume de cada vídeo para ouvir.</p>
@@ -126,19 +144,25 @@ export default function VideoEuOucoEReajo() {
       <style jsx>{`
         .reaction-all-screen{overflow:auto}
         .reaction-all-content{padding-bottom:70px}
-        .reaction-video-grid{display:grid;grid-template-columns:repeat(2,minmax(340px,560px));justify-content:center;align-items:start;gap:34px;margin-top:28px}
-        .reaction-video-card{overflow:hidden;border:1px solid rgba(65,197,255,.42);border-radius:30px;background:linear-gradient(145deg,rgba(7,61,119,.7),rgba(0,18,51,.88));box-shadow:inset 0 1px rgba(255,255,255,.14),0 30px 75px rgba(0,8,31,.42)}
-        .reaction-video-card>header{min-height:88px;display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid rgba(65,197,255,.28)}
-        .reaction-video-card>header>span{width:50px;height:50px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%;color:#07152d;background:linear-gradient(135deg,#ffe777,#ffd43b);font-size:18px;font-weight:950;box-shadow:0 0 22px rgba(255,212,59,.25)}
-        .reaction-video-card header div{display:grid;gap:4px}.reaction-video-card header strong{color:#fff;font-size:22px}.reaction-video-card header small{color:rgba(255,255,255,.62);font-size:13px}
-        .reaction-video-portrait{position:relative;width:100%;aspect-ratio:9/16;display:grid;place-items:center;overflow:hidden;background:#020817}
-        .reaction-video-portrait video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#020817}
-        .reaction-loading{display:grid;justify-items:center;gap:8px;color:#fff;text-align:center}.reaction-loading>span{width:76px;height:76px;display:grid;place-items:center;border:1px solid rgba(255,212,59,.55);border-radius:50%;color:#07152d;background:#ffd43b;font-size:28px;font-weight:950;animation:reaction-pulse 1.1s ease-in-out infinite}.reaction-loading strong{font-size:20px}.reaction-loading p{margin:0;color:rgba(255,255,255,.65)}
-        .reaction-audio-note{max-width:1160px;margin:28px auto 0;padding:16px 20px;border:1px solid rgba(255,212,59,.34);border-radius:16px;color:#fff;background:rgba(0,20,52,.7);font-size:18px;text-align:center}
-        .reaction-next-row{max-width:1160px;margin:24px auto 0}
+        .reaction-sequence{width:min(1180px,100%);margin:28px auto 0}
+        .reaction-sequence-progress{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+        .reaction-sequence-progress button{min-height:78px;display:grid;grid-template-columns:48px 1fr;grid-template-rows:1fr 1fr;align-items:center;gap:0 12px;padding:12px 15px;border:1px solid rgba(65,197,255,.3);border-radius:17px;color:#fff;background:linear-gradient(135deg,rgba(7,61,119,.62),rgba(0,22,60,.78));text-align:left;cursor:pointer;transition:.22s ease}
+        .reaction-sequence-progress button:hover,.reaction-sequence-progress button.is-active{border-color:#ffd43b;transform:translateY(-3px);box-shadow:0 0 28px rgba(255,212,59,.18)}
+        .reaction-sequence-progress button>span{grid-row:1/-1;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;color:#07152d;background:#ffd43b;font-weight:950}
+        .reaction-sequence-progress button.is-complete>span{color:#fff;background:#1686c9}
+        .reaction-sequence-progress strong{align-self:end;font-size:16px}.reaction-sequence-progress small{align-self:start;color:rgba(255,255,255,.62);font-size:12px}
+        .reaction-featured-card{overflow:hidden;border:1px solid rgba(65,197,255,.44);border-radius:32px;background:linear-gradient(145deg,rgba(7,61,119,.72),rgba(0,18,51,.9));box-shadow:inset 0 1px rgba(255,255,255,.14),0 32px 84px rgba(0,8,31,.46)}
+        .reaction-featured-card>header{min-height:92px;display:flex;align-items:center;gap:18px;padding:18px 26px;border-bottom:1px solid rgba(65,197,255,.28)}
+        .reaction-featured-card>header>span{padding:9px 13px;border-radius:999px;color:#07152d;background:#ffd43b;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+        .reaction-featured-card>header strong{color:#fff;font-size:25px}.reaction-featured-card>header small{margin-left:auto;color:rgba(255,255,255,.68);font-size:14px}
+        .reaction-featured-video{position:relative;width:100%;height:min(78vh,900px);min-height:680px;display:grid;place-items:center;overflow:hidden;background:#020817}
+        .reaction-featured-video video{width:100%;height:100%;object-fit:contain;background:#020817}
+        .reaction-loading{display:grid;justify-items:center;gap:8px;color:#fff;text-align:center}.reaction-loading>span{width:80px;height:80px;display:grid;place-items:center;border:1px solid rgba(255,212,59,.55);border-radius:50%;color:#07152d;background:#ffd43b;font-size:30px;font-weight:950;animation:reaction-pulse 1.1s ease-in-out infinite}.reaction-loading strong{font-size:22px}.reaction-loading p{margin:0;color:rgba(255,255,255,.65)}
+        .reaction-audio-note{max-width:1180px;margin:22px auto 0;padding:16px 20px;border:1px solid rgba(255,212,59,.34);border-radius:16px;color:#fff;background:rgba(0,20,52,.7);font-size:18px;text-align:center}
+        .reaction-next-row{max-width:1180px;margin:24px auto 0}
         @keyframes reaction-pulse{50%{transform:scale(1.1);filter:brightness(1.2)}}
-        @media(max-width:840px){.reaction-video-grid{grid-template-columns:minmax(280px,560px)}}
-        @media(max-width:560px){.reaction-video-grid{grid-template-columns:1fr;gap:22px}.reaction-video-card{border-radius:22px}.reaction-video-card>header{min-height:76px}.reaction-audio-note{font-size:16px}}
+        @media(max-width:760px){.reaction-sequence-progress{grid-template-columns:repeat(2,1fr)}.reaction-featured-card>header{align-items:flex-start;flex-wrap:wrap}.reaction-featured-card>header small{width:100%;margin-left:0}.reaction-featured-video{height:72vh;min-height:560px}}
+        @media(max-width:560px){.reaction-sequence-progress button{grid-template-columns:40px 1fr;padding:10px}.reaction-sequence-progress button>span{width:38px;height:38px}.reaction-featured-card{border-radius:22px}.reaction-featured-video{height:68vh;min-height:500px}.reaction-audio-note{font-size:16px}}
         @media(prefers-reduced-motion:reduce){.reaction-loading>span{animation:none}}
       `}</style>
     </main>
