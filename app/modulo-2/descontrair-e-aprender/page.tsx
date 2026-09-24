@@ -57,6 +57,15 @@ export default function DescontrairEAprender() {
         </div>
       </section>
 
+      <div className="module-two-next-row relax-learn-next">
+        <a className="module-two-button" href="/modulo-2/operacao-em-alerta">
+          <span>Iniciar estudo de caso</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+
       <footer className="relax-learn-footer">
         <span>Comunicação e Excelência</span>
         <span>Módulo 2</span>
