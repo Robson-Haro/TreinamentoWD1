@@ -105,6 +105,7 @@ export default function VideoEuOucoEReajo() {
                   playsInline
                   preload="auto"
                   src={videoUrls[current] ?? undefined}
+                  style={{ width: "100%", height: "100%", objectFit: "contain", aspectRatio: "9 / 16" }}
                   onEnded={() => setCurrent((index) => (index + 1) % videos.length)}
                   aria-label={`${videos[current].title} da dinâmica Eu ouço e reajo`}
                 >
@@ -151,18 +152,18 @@ export default function VideoEuOucoEReajo() {
         .reaction-sequence-progress button>span{grid-row:1/-1;width:46px;height:46px;display:grid;place-items:center;border-radius:50%;color:#07152d;background:#ffd43b;font-weight:950}
         .reaction-sequence-progress button.is-complete>span{color:#fff;background:#1686c9}
         .reaction-sequence-progress strong{align-self:end;font-size:16px}.reaction-sequence-progress small{align-self:start;color:rgba(255,255,255,.62);font-size:12px}
-        .reaction-featured-card{overflow:hidden;border:1px solid rgba(65,197,255,.44);border-radius:32px;background:linear-gradient(145deg,rgba(7,61,119,.72),rgba(0,18,51,.9));box-shadow:inset 0 1px rgba(255,255,255,.14),0 32px 84px rgba(0,8,31,.46)}
+        .reaction-featured-card{width:min(100%,620px);margin:0 auto;overflow:hidden;border:1px solid rgba(65,197,255,.44);border-radius:32px;background:linear-gradient(145deg,rgba(7,61,119,.72),rgba(0,18,51,.9));box-shadow:inset 0 1px rgba(255,255,255,.14),0 32px 84px rgba(0,8,31,.46)}
         .reaction-featured-card>header{min-height:92px;display:flex;align-items:center;gap:18px;padding:18px 26px;border-bottom:1px solid rgba(65,197,255,.28)}
         .reaction-featured-card>header>span{padding:9px 13px;border-radius:999px;color:#07152d;background:#ffd43b;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
         .reaction-featured-card>header strong{color:#fff;font-size:25px}.reaction-featured-card>header small{margin-left:auto;color:rgba(255,255,255,.68);font-size:14px}
-        .reaction-featured-video{position:relative;width:100%;height:min(78vh,900px);min-height:680px;display:grid;place-items:center;overflow:hidden;background:#020817}
-        .reaction-featured-video video{width:100%;height:100%;object-fit:contain;background:#020817}
+        .reaction-featured-video{position:relative;width:100%;aspect-ratio:9/16;display:grid;place-items:center;overflow:hidden;background:#020817}
+        .reaction-featured-video video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;aspect-ratio:9/16!important;object-fit:contain!important;object-position:center!important;border-radius:0!important;background:#020817}
         .reaction-loading{display:grid;justify-items:center;gap:8px;color:#fff;text-align:center}.reaction-loading>span{width:80px;height:80px;display:grid;place-items:center;border:1px solid rgba(255,212,59,.55);border-radius:50%;color:#07152d;background:#ffd43b;font-size:30px;font-weight:950;animation:reaction-pulse 1.1s ease-in-out infinite}.reaction-loading strong{font-size:22px}.reaction-loading p{margin:0;color:rgba(255,255,255,.65)}
         .reaction-audio-note{max-width:1180px;margin:22px auto 0;padding:16px 20px;border:1px solid rgba(255,212,59,.34);border-radius:16px;color:#fff;background:rgba(0,20,52,.7);font-size:18px;text-align:center}
         .reaction-next-row{max-width:1180px;margin:24px auto 0}
         @keyframes reaction-pulse{50%{transform:scale(1.1);filter:brightness(1.2)}}
-        @media(max-width:760px){.reaction-sequence-progress{grid-template-columns:repeat(2,1fr)}.reaction-featured-card>header{align-items:flex-start;flex-wrap:wrap}.reaction-featured-card>header small{width:100%;margin-left:0}.reaction-featured-video{height:72vh;min-height:560px}}
-        @media(max-width:560px){.reaction-sequence-progress button{grid-template-columns:40px 1fr;padding:10px}.reaction-sequence-progress button>span{width:38px;height:38px}.reaction-featured-card{border-radius:22px}.reaction-featured-video{height:68vh;min-height:500px}.reaction-audio-note{font-size:16px}}
+        @media(max-width:760px){.reaction-sequence-progress{grid-template-columns:repeat(2,1fr)}.reaction-featured-card{width:min(100%,520px)}.reaction-featured-card>header{align-items:flex-start;flex-wrap:wrap}.reaction-featured-card>header small{width:100%;margin-left:0}}
+        @media(max-width:560px){.reaction-sequence-progress button{grid-template-columns:40px 1fr;padding:10px}.reaction-sequence-progress button>span{width:38px;height:38px}.reaction-featured-card{width:min(100%,430px);border-radius:22px}.reaction-audio-note{font-size:16px}}
         @media(prefers-reduced-motion:reduce){.reaction-loading>span{animation:none}}
       `}</style>
     </main>
