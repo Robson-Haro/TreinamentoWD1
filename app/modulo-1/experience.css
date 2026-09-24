@@ -1585,8 +1585,9 @@
     linear-gradient(132deg, transparent 73%, rgba(72, 188, 255, .1) 73.2%, transparent 82%);
 }
 
-.module-two-screen > *,
-.module-two-case > * {
+/* Keep decorative layers out of document flow so they cannot push the navigation down. */
+.module-two-screen > :not(.module-two-silver-glow):not(.noise),
+.module-two-case > :not(.noise) {
   position: relative;
   z-index: 1;
 }
