@@ -80,9 +80,9 @@
 .feelings-progress { flex:0 0 auto; min-width:116px; display:grid; justify-items:center; padding:15px 18px; border:1px solid rgba(255,255,255,.2); border-radius:20px; background:rgba(255,255,255,.075); }
 .feelings-progress strong { color:#fff; font-size:42px; line-height:1; }
 .feelings-progress span { margin-top:5px; color:#bec4ca; font-size:12px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
-.feelings-stage { display:grid; grid-template-columns:minmax(0,1.22fr) minmax(370px,.78fr); gap:20px; margin-top:22px; }
-.feelings-photo-card { position:relative; min-height:600px; padding:8px; overflow:hidden; border-radius:31px; }
-.feelings-photo { width:100%; height:100%; min-height:584px; border-radius:24px; background-image:url('/emocoes/leitura-sentimentos-atlas.jpg'); background-size:500% 200%; background-repeat:no-repeat; background-color:#202225; box-shadow:inset 0 0 38px rgba(0,0,0,.18); transition:background-position .35s ease; }
+.feelings-stage { display:grid; grid-template-columns:minmax(560px,1.35fr) minmax(390px,.65fr); align-items:stretch; gap:20px; margin-top:22px; }
+.feelings-photo-card { position:relative; width:100%; aspect-ratio:1 / 1; min-height:0; padding:8px; overflow:hidden; border-radius:31px; }
+.feelings-photo { width:100%; height:100%; min-height:0; border-radius:24px; background-image:url('/emocoes/leitura-sentimentos-atlas.jpg'); background-size:500% 200%; background-repeat:no-repeat; background-color:#202225; box-shadow:inset 0 0 38px rgba(0,0,0,.18); transition:background-position .35s ease; }
 .feelings-countdown { position:absolute; left:24px; bottom:24px; display:flex; align-items:center; gap:15px; padding:13px 16px; border:1px solid rgba(255,255,255,.22); border-radius:18px; color:#fff; background:rgba(8,10,12,.62); box-shadow:0 16px 35px rgba(0,0,0,.35); backdrop-filter:blur(18px); }
 .feelings-countdown span { font-size:13px; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
 .feelings-countdown strong { min-width:62px; font-size:28px; text-align:center; }
@@ -107,14 +107,15 @@
   .feelings-content { width:calc(100% - 24px); padding-top:24px; }
   .feelings-heading { align-items:flex-start; }
   .feelings-stage { grid-template-columns:1fr; }
-  .feelings-photo-card,.feelings-answer { min-height:520px; }
-  .feelings-photo { min-height:504px; }
+  .feelings-photo-card { width:min(100%,760px); min-height:0; margin-inline:auto; }
+  .feelings-photo { min-height:0; }
+  .feelings-answer { min-height:430px; }
 }
 @media (max-width:600px) {
   .feelings-heading { display:grid; padding:22px 19px; }
   .feelings-progress { min-width:0; width:100%; grid-auto-flow:column; align-items:center; justify-content:center; gap:10px; }
-  .feelings-photo-card { min-height:390px; }
-  .feelings-photo { min-height:374px; }
+  .feelings-photo-card { min-height:0; }
+  .feelings-photo { min-height:0; }
   .feelings-answer { min-height:430px; padding:25px 21px; }
   .feelings-answer > p { font-size:22px; }
   .feelings-controls { grid-template-columns:1fr 1fr; }
