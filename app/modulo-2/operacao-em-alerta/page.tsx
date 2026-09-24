@@ -57,9 +57,9 @@ export default function OperacaoEmAlertaModuloDois() {
           <strong>RAMOS CONSULTORIA</strong>
         </div>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2/descontrair-e-aprender">← Tela anterior</a>
+          <a className="back-link" href="/modulo-2/pausa-para-o-cafe">← Tela anterior</a>
           <a className="back-link next-test-link" href="#decisoes">Ir às decisões ↓</a>
-          <span className="module-two-step">Módulo 2 · Tela 9</span>
+          <span className="module-two-step">Módulo 2 · Tela 10</span>
         </div>
       </nav>
 
@@ -162,7 +162,7 @@ export default function OperacaoEmAlertaModuloDois() {
         <h2>DECISÃO <i>→</i> JUSTIFICATIVA <i>→</i> RISCO <i>→</i> PLANO B</h2>
         <div><strong>PESSOAS</strong><b>+</b><strong>CONTINUIDADE DA OPERAÇÃO</strong><b>+</b><strong>SATISFAÇÃO DO CLIENTE</strong></div>
         <p>Resolver o problema de um posto criando um problema em outro não será considerado uma solução.</p>
-        <a className="module-two-button case-return-button" href="/modulo-2/descontrair-e-aprender">← Voltar para Descontrair é aprender</a>
+        <a className="module-two-button case-return-button" href="/modulo-2/pausa-para-o-cafe">← Voltar para a pausa do café</a>
       </section>
     </main>
   );
