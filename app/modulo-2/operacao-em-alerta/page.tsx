@@ -1,4 +1,5 @@
 import "../../modulo-1/experience.css";
+import Link from "next/link";
 import CaseQRCode from "./CaseQRCode";
 
 const decisions = [
@@ -49,7 +50,7 @@ export default function OperacaoEmAlertaModuloDois() {
     <main className="case-screen module-two-case">
       <div className="noise" aria-hidden="true" />
       <nav className="topbar module-topbar case-topbar" aria-label="Navegação do estudo de caso">
-        <a className="brand-mark" href="/">WD <span>×</span> RC</a>
+        <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className="case-logo-lockup">
           <img src="/grupo-wd.png" alt="Grupo WD" />
           <strong>GRUPO WD</strong><i>×</i>
@@ -58,7 +59,7 @@ export default function OperacaoEmAlertaModuloDois() {
         </div>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/pausa-para-o-cafe">← Tela anterior</a>
-          <a className="back-link next-test-link" href="#decisoes">Ir às decisões ↓</a>
+          <a className="back-link next-test-link" href="/modulo-2/excelencia-operacional">Próxima tela →</a>
           <span className="module-two-step">Módulo 2 · Tela 10</span>
         </div>
       </nav>
@@ -163,6 +164,7 @@ export default function OperacaoEmAlertaModuloDois() {
         <div><strong>PESSOAS</strong><b>+</b><strong>CONTINUIDADE DA OPERAÇÃO</strong><b>+</b><strong>SATISFAÇÃO DO CLIENTE</strong></div>
         <p>Resolver o problema de um posto criando um problema em outro não será considerado uma solução.</p>
         <a className="module-two-button case-return-button" href="/modulo-2/pausa-para-o-cafe">← Voltar para a pausa do café</a>
+        <a className="module-two-button case-return-button" href="/modulo-2/excelencia-operacional">Excelência Operacional →</a>
       </section>
     </main>
   );

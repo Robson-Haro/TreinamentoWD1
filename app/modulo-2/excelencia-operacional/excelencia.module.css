@@ -1,0 +1,66 @@
+.screen { padding-bottom: 32px; }
+.content { width: calc(100% - clamp(32px, 5vw, 96px)); margin: 0 auto; }
+.content p { margin: 0; font-size: 25px; line-height: 1.5; color: #fff; }
+.content h1, .content h2, .content h3 { margin: 0; text-wrap: balance; }
+.content a:focus-visible, .topbar a:focus-visible { outline: 3px solid #ffd43b; outline-offset: 6px; }
+.content a[class~="module-two-button"] { font-size: 16px; letter-spacing: .035em; }
+.heading { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding: 38px 0 30px; }
+.content .kicker { display: block; margin: 0 0 16px; font-size: 18px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: #ffd43b; }
+.logos { display: flex; align-items: center; gap: 22px; flex-shrink: 0; }
+.logos img { width: 105px; height: 70px; object-fit: contain; }
+.introGrid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; }
+.panel { padding: clamp(24px, 2.5vw, 44px); border-radius: 28px; }
+.manifesto { display: flex; flex-direction: column; gap: 20px; }
+.content .statement { font-size: 36px; line-height: 1.2; font-weight: 700; }
+.statement strong { color: #ffd43b; }
+.content .people { padding-top: 22px; border-top: 1px solid rgba(53,199,255,.3); }
+.people strong { font-weight: 600; }
+.routineHighlight { display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.routineHighlight .kicker { margin-bottom: 0; }
+.routineHighlight a { align-self: flex-start; margin-top: 0; text-align: center; }
+.section { padding: 52px 0 0; scroll-margin-top: 24px; }
+.sectionHeading { display: flex; gap: 22px; align-items: flex-start; margin-bottom: 26px; }
+.sectionHeading p { margin-top: 16px; }
+.sectionNumber { flex-shrink: 0; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid rgba(53,199,255,.5); border-radius: 18px; font-size: 25px; font-weight: 800; color: #ffd43b; background: rgba(7,61,119,.7); }
+.pillars { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.pillar, .routineStep { padding: 26px; border-radius: 24px; }
+.cardNumber { display: block; font-size: 18px; font-weight: 800; color: #ffd43b; margin-bottom: 14px; }
+.content h3 { font-size: 28px; line-height: 1.2; color: #ffd43b; margin-bottom: 14px; }
+.nextRow { display: flex; justify-content: flex-end; padding-top: 22px; }
+.nextRow a { margin-top: 0; }
+.routine { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; padding: 0; margin: 0; list-style: none; }
+.content .detailNote { border-left: 4px solid #ffd43b; padding: 8px 0 8px 24px; margin-top: 26px; }
+.detailNote strong { color: #ffd43b; }
+.reflection { margin-top: 52px; scroll-margin-top: 24px; }
+.reflection > p { margin-top: 22px; }
+.questions { list-style: none; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px 32px; padding: 0; margin: 26px 0; }
+.questions li { display: flex; align-items: baseline; gap: 16px; padding: 20px 0; border-bottom: 1px solid rgba(53,199,255,.3); font-size: 25px; line-height: 1.4; }
+.questions li > span { font-size: 18px; color: #ffd43b; }
+.questions li:last-child { color: #ffd43b; }
+.content .closing { font-size: 30px; line-height: 1.35; }
+.closing strong { color: #ffd43b; }
+.footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-top: 32px; }
+.footer p { font-size: 16px; color: #dceaff; }
+.footer a { margin-top: 0; }
+@media (max-width: 1100px) {
+  .routine { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .pillars { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .introGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 700px) {
+  .topbar { height: auto; min-height: 88px; flex-wrap: wrap; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
+  .topbar .navigation { max-width: none; flex-wrap: wrap; overflow: visible; gap: 12px; }
+  .heading { align-items: flex-start; flex-direction: column; gap: 22px; }
+  .logos img { width: 88px; height: 56px; }
+  .content p, .questions li { font-size: 22px; }
+  .content .statement, .content .closing { font-size: 30px; }
+  .sectionHeading { gap: 12px; }
+  .sectionNumber { width: 42px; height: 46px; border-radius: 12px; font-size: 20px; }
+  .pillars, .routine, .questions { grid-template-columns: 1fr; }
+  .content a[class~="module-two-button"] { min-width: 0; width: 100%; white-space: normal; text-align: center; }
+  .footer { align-items: stretch; flex-direction: column; }
+  .content { width: calc(100% - 24px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .screen a { transition: none; }
+}
