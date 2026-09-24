@@ -1,0 +1,100 @@
+/* Tipografia das telas de apresentação. Painéis administrativos e relatórios
+   mantêm seus estilos próprios. Os tamanhos se mantêm também em telas menores;
+   o conteúdo passa para mais linhas em vez de reduzir a fonte. */
+:root {
+  --training-title-size: 60px;
+  --training-content-size: 40px;
+}
+
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2) {
+  font-size: var(--training-title-size) !important;
+  line-height: 1.15 !important;
+  overflow-wrap: anywhere;
+}
+
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(p, li, blockquote, h3, h4) {
+  font-size: var(--training-content-size) !important;
+  line-height: 1.4 !important;
+  overflow-wrap: anywhere;
+}
+
+/* Partes de uma frase acompanham seu texto, inclusive trechos em destaque. */
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2, h3, h4, p, li, blockquote) :is(strong, b, em, span, small) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  overflow-wrap: anywhere;
+}
+
+/* Conteúdo instrucional que usa elementos diferentes de parágrafos. */
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(
+  .today-module strong, .lesson-topics span, .test-steps span,
+  .disc-points strong, .disc-points span, .group-moment-callout b,
+  .moral-choice > b, .boat-alert strong, .case-access-copy > strong,
+  .case-access-copy > small, .post-card footer, .case-rule span,
+  .case-travel span, .decision-card footer, .case-delivery > div strong,
+  .graphology-note strong, .finale-message, .influence-card > strong,
+  .comm-noise, .communication-note > strong, .leadership-quote-card footer,
+  .module-two-coffee-message
+) {
+  font-size: var(--training-content-size) !important;
+  line-height: 1.4 !important;
+  overflow-wrap: anywhere;
+}
+
+/* As colunas precisam acomodar textos de 40 px sem limitar sua altura. */
+body main[class] :is(.hero-copy, .lesson-heading > div, .case-section-title > div,
+  .communication-heading > div, .quotes-heading > div, .feelings-heading > div,
+  .module-two-video-heading > div, .receiver-step > div) {
+  min-width: 0;
+}
+
+body main[class]:not(.dashboard-screen) :is(.disc-grid, .post-grid, .receiver-steps) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body main[class] :is(.influence-grid, .leadership-quotes-grid, .decision-grid,
+  .moral-choice-grid, .passenger-grid) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body main[class] .influence-card { grid-template-columns: 100px minmax(0, 1fr); }
+body main[class] .comm-noise {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  grid-column: 1 / -1;
+  width: 100%;
+  transform: none;
+  border-radius: 24px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+@media (max-width: 1400px) {
+  body main[class] :is(.brain-process, .feelings-stage) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body main[class] .communication-3d-stage {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 28px;
+  }
+  body main[class] .comm-transfer { transform: rotate(90deg); }
+  body main[class] .comm-node { transform: none; }
+}
+
+@media (max-width: 1000px) {
+  body main[class]:not(.dashboard-screen) :is(.disc-grid, .post-grid, .receiver-steps,
+    .influence-grid, .leadership-quotes-grid, .decision-grid, .moral-choice-grid,
+    .passenger-grid, .hero-grid, .test-grid) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  body main[class] :is(.communication-heading, .quotes-heading, .feelings-heading,
+    .module-two-video-heading, .influence-heading, .lesson-heading, .case-hero,
+    .case-rule, .communication-note) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  body main[class] .case-section-title { flex-wrap: wrap; }
+  body main[class] .influence-card { grid-template-columns: minmax(0, 1fr); }
+}

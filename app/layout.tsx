@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./training-typography.css";
 
 export const metadata: Metadata = {
   title: "TreinamentoWD1 | Jornada de Liderança",
