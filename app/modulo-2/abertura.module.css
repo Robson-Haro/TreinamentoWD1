@@ -1,0 +1,47 @@
+.opening { overflow-x: clip; }
+.opening .stage {
+  width: calc(100% - clamp(24px, 5vw, 96px));
+  min-height: calc(100svh - 88px);
+  margin: 0 auto;
+  padding: 32px 0;
+  display: grid;
+}
+.panel {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(28px, 3.5vw, 56px);
+  border-radius: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 32px;
+  text-align: center;
+}
+.heading { width: 100%; min-width: 0; }
+.eyebrow { display: block; color: #ccecff; font-size: 20px; font-weight: 650; line-height: 1.5; letter-spacing: .06em; text-wrap: balance; }
+.badge { width: fit-content; margin: 22px auto; padding: 6px 22px; border: 1px solid #8fd8ff55; border-radius: 999px; background: #a3dbff12; color: #ffd43b; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.opening .heading h1 { width: 100%; max-width: none; margin: 0; font-size: 60px; text-align: center; font-weight: 750; text-wrap: balance; }
+.opening .heading h1 strong { display: inline; }
+.opening .intro { width: 100%; max-width: none; margin: 0; color: #fff; font-size: 40px; text-align: center; text-wrap: balance; }
+.partnership { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; justify-items: center; gap: 32px; width: 100%; padding-top: 8px; }
+.logoCard { padding: 10px; border: 1px solid #99d9ff66; border-radius: 26px; background: linear-gradient(145deg,#a6d9ff2e,#2d70a522); box-shadow: inset 0 1px 0 #ffffff33,0 16px 32px #0005; transform: rotate(-4deg); }
+.logoCard:last-child { transform: rotate(4deg); }
+.logoCard img { display: block; width: 140px; height: 140px; object-fit: contain; border-radius: 18px; }
+.opening .start { width: fit-content; min-width: 320px; margin: 0; padding: 22px 28px; font-size: 24px; letter-spacing: .04em; gap: 28px; }
+.opening .start svg { width: 24px; flex-shrink: 0; }
+.opening a:focus-visible { outline: 3px solid #ffd43b; outline-offset: 6px; }
+@media (max-width: 800px) {
+  .opening .topbar { height: auto; min-height: 88px; flex-wrap: wrap; gap: 16px; padding-block: 18px; }
+  .opening .navLinks { flex-wrap: wrap; gap: 16px; max-width: 100%; }
+  .opening .stage { padding: 20px 0; }
+  .panel { padding: 28px 22px; gap: 28px; }
+  .partnership { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 20px; }
+  .opening .start { grid-column: 1 / -1; grid-row: 2; width: 100%; min-width: 0; justify-content: center; }
+  .logoCard img { width: 110px; height: 110px; }
+}
+@media (max-width: 380px) {
+  .panel { padding-inline: 16px; }
+  .logoCard { padding: 8px; border-radius: 20px; }
+  .logoCard img { width: 88px; height: 88px; }
+}
