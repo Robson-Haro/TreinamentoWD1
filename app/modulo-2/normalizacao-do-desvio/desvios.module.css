@@ -1,0 +1,55 @@
+.content { width: calc(100% - clamp(24px, 5vw, 96px)); margin: 0 auto; padding-bottom: 36px; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 36px 0; }
+.header > div:first-child { min-width: 0; }
+.header h1, .content h2, .content h3 { margin: 0; text-wrap: balance; }
+.content strong, .content h3 { color: #ffd43b; }
+.kicker { display: block; font-size: 20px; font-weight: 800; color: #ffd43b; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 16px; }
+.logos { display: flex; flex-shrink: 0; gap: 24px; }
+.logos img { width: 105px; height: 70px; object-fit: contain; }
+.navigation { display: flex; gap: 16px; flex-wrap: wrap; }
+.navigation a, .resourceLinks a { color: #fff; text-decoration: none; font-size: 24px; border: 1px solid #35c7ff70; border-radius: 16px; padding: 16px 22px; background: #073d7755; }
+.navigation a:hover, .resourceLinks a:hover { border-color: #ffd43b; }
+.section { padding-top: 48px; scroll-margin-top: 24px; }
+.section + .section { margin-top: 48px; border-top: 1px solid #35c7ff66; }
+.section p { margin: 24px 0 0; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 28px; }
+.panel { min-width: 0; padding: clamp(24px,2.5vw,44px); border-radius: 26px; }
+.panel p:first-child { margin-top: 0; }
+.callout { border-left: 5px solid #ffd43b; padding: 24px 28px; background: #ffd43b0d; border-radius: 0 20px 20px 0; margin-top: 28px; }
+.callout p { margin: 0; }
+.steps { display: grid; gap: 22px; padding-left: 1.4em; margin: 28px 0; }
+.steps li { padding-left: 12px; }
+.steps li::marker { color: #ffd43b; font-weight: 800; }
+.phrases { list-style: none; padding: 0; }
+.phrases li { border-left: 4px solid #ffd43b !important; }
+.smallLabel { display: block; font-size: 20px; font-weight: 800; color: #a6e8ff; margin-bottom: 16px; text-transform: uppercase; letter-spacing: .05em; }
+.citation { color: #a6e8ff; font-size: 22px; vertical-align: super; white-space: nowrap; }
+.sources { margin-top: 48px; scroll-margin-top: 24px; }
+.sources summary, .transcript summary { font-size: 28px; color: #ffd43b; cursor: pointer; font-weight: 700; }
+.sources li { margin: 28px 0; }
+.sources a { color: #a6e8ff; text-underline-offset: 6px; }
+.footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; padding-top: 36px; }
+.footer > span { font-size: 18px; color: #dceaff; }
+.content :global(.module-two-button) { font-size: 20px; min-width: 0; margin: 0; white-space: normal; }
+.content a:focus-visible, .content button:focus-visible, .content summary:focus-visible { outline: 3px solid #ffd43b; outline-offset: 6px; }
+.watchLead { margin: 0 0 28px; }
+.cinema { border: 1px solid #35c7ff88; background: #020916; border-radius: 26px; overflow: hidden; box-shadow: 0 22px 70px #0008, 0 0 28px #35c7ff22; }
+.cinema video { display: block; width: 100%; max-height: 78vh; aspect-ratio: 16 / 9; object-fit: contain; background: #020916; }
+.cinema video::cue { font-family: Arial,sans-serif; font-size: 40px; background: #021127ed; color: white; }
+.videoCaption { display: block; padding: 18px 24px; color: #dceaff; font-size: 20px; line-height: 1.5; }
+.afterVideo { margin-top: 32px; }
+.resourceLinks { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; }
+.transcript { margin-top: 30px; }
+.transcript p { margin: 24px 0 0; }
+@media(max-width:1400px) { .header { flex-wrap: wrap; } }
+@media(max-width:1100px) { .grid { grid-template-columns: minmax(0,1fr); } }
+@media(max-width:700px) {
+  .topbar { height: auto; flex-wrap: wrap; padding-block: 18px; gap: 16px; }
+  .topbar .topLinks { flex-wrap: wrap; max-width: none; overflow: visible; }
+  .content { width: calc(100% - 24px); }
+  .navigation, .resourceLinks { flex-direction: column; }
+  .panel { padding: 22px; }
+  .logos img { width: 88px; height: 56px; }
+  .footer { align-items: stretch; flex-direction: column; }
+  .content :global(.module-two-button) { width: 100%; text-align: center; justify-content: center; }
+}

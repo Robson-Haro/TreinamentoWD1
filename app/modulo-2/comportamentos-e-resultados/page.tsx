@@ -48,6 +48,7 @@ export default function ComportamentosEResultados() {
         <div className={`screen-nav ${styles.navigation}`}>
           <Link className="back-link" href="/modulo-2/excelencia-operacional">← Tela anterior</Link>
           <Link className="back-link" href="/modulo-2">Início do módulo</Link>
+          <Link className="back-link" href="/modulo-2/video-normalizacao-do-desvio">Próxima tela →</Link>
           <span className="module-two-step">Módulo 2 · Tela 12</span>
         </div>
       </nav>
@@ -192,7 +193,7 @@ export default function ComportamentosEResultados() {
         <footer className={styles.footer}>
           <Link className="module-two-button" href="/modulo-2/excelencia-operacional">← Excelência Operacional</Link>
           <span>Parceria do Grupo WD e Ramos Consultoria</span>
-          <a className="module-two-button" href="#inicio">Voltar ao topo ↑</a>
+          <Link className="module-two-button" href="/modulo-2/video-normalizacao-do-desvio">Antes que o desvio vire rotina →</Link>
         </footer>
       </div>
     </main>
