@@ -44,6 +44,7 @@ export default function ExcelenciaOperacional() {
         <div className={`screen-nav ${styles.navigation}`}>
           <a className="back-link" href="/modulo-2/operacao-em-alerta">← Tela anterior</a>
           <a className="back-link" href="/modulo-2">Início do módulo</a>
+          <Link className="back-link" href="/modulo-2/comportamentos-e-resultados">Próxima tela →</Link>
           <span className="module-two-step">Módulo 2 · Tela 11</span>
         </div>
       </nav>
@@ -132,7 +133,7 @@ export default function ExcelenciaOperacional() {
         <footer className={styles.footer}>
           <a className="back-link" href="/modulo-2/operacao-em-alerta">← Operação em alerta</a>
           <p>Parceria do Grupo WD e Ramos Consultoria</p>
-          <a className="module-two-button" href="#inicio-excelencia">Voltar ao topo ↑</a>
+          <Link className="module-two-button" href="/modulo-2/comportamentos-e-resultados">Comportamentos e resultados →</Link>
         </footer>
       </div>
     </main>
