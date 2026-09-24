@@ -1,0 +1,19 @@
+.visualRow { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; align-items:start; margin-top:28px; }
+.visualRow > div { min-width:0; }
+.visualRow h2 { margin-top:0; }
+.photo { margin:0; border:1px solid #35c7ff70; border-radius:26px; background:#031a3980; overflow:hidden; }
+.photo img { display:block; width:100%; height:auto; object-fit:contain; }
+.photo figcaption { padding:24px; color:#eaf7ff; font-size:40px; line-height:1.4; }
+.categories { display:grid; gap:24px; margin-top:28px; }
+.category { border-left:5px solid #ffd43b !important; }
+.checks { padding-left:1.25em; margin:24px 0 0; }
+.checks li { margin-top:18px; }
+.cycle { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; padding:0; list-style:none; margin-top:32px; }
+.cycle li { padding:24px 18px; min-width:0; background:#073d7777; border:1px solid #35c7ff88; border-radius:20px; }
+.cycle span { display:block; color:#ffd43b; font-weight:800; margin-bottom:8px; }
+.example { margin-top:32px; }
+.example p + p { margin-top:24px; }
+.sources p { margin-top:12px; }
+@media(max-width:1500px) { .cycle { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:1400px) { .visualRow { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:700px) { .cycle { grid-template-columns:minmax(0,1fr); } .photo figcaption { padding:22px; } }

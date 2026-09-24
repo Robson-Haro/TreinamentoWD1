@@ -34,6 +34,7 @@ export default function NormalizacaoDoDesvio() {
         <div className={`screen-nav ${styles.topLinks}`}>
           <Link className="back-link" href="/modulo-2/video-normalizacao-do-desvio">← Voltar ao vídeo</Link>
           <Link className="back-link" href="/modulo-2">Início do módulo</Link>
+          <Link className="back-link" href="/modulo-2/cliente-processos-e-padroes">Próxima tela →</Link>
           <span className="module-two-step">Módulo 2 · Tela 14</span>
         </div>
       </nav>
@@ -116,7 +117,7 @@ export default function NormalizacaoDoDesvio() {
           <p>Exemplos de facilities e orientações de aplicação elaborados para este treinamento a partir dessas bases. A ponte do vídeo é uma metáfora em miniatura, não uma explicação de engenharia nem uma reconstituição de acidente real.</p>
         </details>
         <footer className={styles.footer}>
-          <Link className="module-two-button" href="/modulo-2/video-normalizacao-do-desvio">← Rever o vídeo</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><a className="module-two-button" href="#inicio">Voltar ao topo ↑</a>
+          <Link className="module-two-button" href="/modulo-2/video-normalizacao-do-desvio">← Rever o vídeo</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><Link className="module-two-button" href="/modulo-2/cliente-processos-e-padroes">Cliente, processos e padrões →</Link>
         </footer>
       </div>
     </main>
