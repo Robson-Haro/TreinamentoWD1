@@ -1440,3 +1440,115 @@
     animation: none;
   }
 }
+
+
+/* Módulo 2 — Operação em Alerta */
+.module-two-case {
+  --case-gold: #c9ced5;
+  --case-gold-bright: #f4f6f8;
+  --case-ink: #0f1114;
+  --case-panel: rgba(118, 125, 135, .1);
+  background:
+    radial-gradient(circle at 18% 8%, rgba(190, 196, 205, .13), transparent 32%),
+    radial-gradient(circle at 86% 32%, rgba(101, 108, 118, .14), transparent 30%),
+    linear-gradient(145deg, #090a0c 0%, #181b20 48%, #08090b 100%);
+  color: #fff;
+}
+
+.module-two-case::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(118deg, transparent 18%, rgba(255,255,255,.035) 48%, transparent 68%);
+  animation: module-two-case-sheen 12s ease-in-out infinite;
+}
+
+.module-two-case .case-topbar {
+  background: rgba(19, 21, 25, .58);
+  border-bottom-color: rgba(255, 255, 255, .11);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.module-two-case .case-hero,
+.module-two-case .case-access-card,
+.module-two-case .case-index,
+.module-two-case .post-card,
+.module-two-case .crisis-timeline article,
+.module-two-case .case-resources,
+.module-two-case .case-travel,
+.module-two-case .case-rule,
+.module-two-case .decision-card,
+.module-two-case .case-delivery {
+  border-color: rgba(255, 255, 255, .16);
+  background: linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .035));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.13), 0 24px 70px rgba(0,0,0,.28);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+}
+
+.module-two-case .case-hero strong,
+.module-two-case .case-section-title > span,
+.module-two-case .crisis-timeline time,
+.module-two-case .decision-card header > span,
+.module-two-case .case-delivery i,
+.module-two-case .case-access-copy span,
+.module-two-case .eyebrow {
+  color: #e3e6ea;
+}
+
+.module-two-case .case-hero aside,
+.module-two-case .post-card-head b,
+.module-two-case .decision-card header b {
+  background: linear-gradient(135deg, #eef0f3, #858c96);
+  color: #111318;
+}
+
+.module-two-case .case-index a:hover,
+.module-two-case .case-access-copy a:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.56);
+}
+
+.module-two-case .post-card,
+.module-two-case .decision-card {
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+.module-two-case .post-card:hover,
+.module-two-case .decision-card:hover {
+  transform: translateY(-7px) rotateX(1.5deg);
+  border-color: rgba(255,255,255,.32);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 34px 90px rgba(0,0,0,.4);
+}
+
+.module-two-case .case-return-button {
+  display: inline-flex;
+  margin-top: 28px;
+}
+
+.relax-learn-next {
+  position: relative;
+  z-index: 3;
+  width: min(1180px, calc(100% - 48px));
+  margin: -14px auto 34px;
+}
+
+@keyframes module-two-case-sheen {
+  0%, 100% { opacity: .45; transform: translateX(-4%); }
+  50% { opacity: .95; transform: translateX(4%); }
+}
+
+@media (max-width: 560px) {
+  .relax-learn-next {
+    width: min(100% - 28px, 1180px);
+    margin-top: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-two-case::before {
+    animation: none;
+  }
+}
