@@ -1,0 +1,61 @@
+.screen { overflow-x: clip; overflow-y: visible; }
+
+.screen :global(.relax-learn-stage) {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  gap: 28px;
+  padding: 32px 0;
+}
+
+.screen :global(.relax-learn-copy) {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  padding: 40px clamp(24px, 3.5vw, 56px);
+  transform: none;
+  text-align: center;
+}
+
+.screen :global(.relax-learn-kicker) { margin: 0; }
+.screen :global(.relax-learn-copy) h1,
+.screen :global(.relax-learn-copy) > p {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+}
+.screen :global(.relax-learn-copy) h1 strong { display: inline; margin: 0; }
+.screen :global(.relax-learn-prompt) { margin: 0; justify-content: center; }
+
+.screen :global(.relax-learn-visual) {
+  min-height: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 12px 0;
+  transform: none;
+}
+.screen :global(.relax-orbit) { display: none; }
+.screen :global(.relax-core),
+.screen :global(.relax-chip) {
+  position: static;
+  transform: none;
+  animation: none;
+}
+.screen :global(.relax-core) { width: 100px; flex-shrink: 0; }
+.screen :global(.relax-core) span { font-size: 24px; }
+.screen :global(.relax-chip) { padding: 18px 24px; }
+.screen :global(.relax-learn-next) { justify-content: center; margin-top: 0; }
+
+@media (max-width: 700px) {
+  .screen :global(.topbar) { height: auto; min-height: 88px; flex-wrap: wrap; gap: 16px; padding-block: 18px; }
+  .screen :global(.relax-learn-copy) { padding: 28px 20px; }
+  .screen :global(.relax-learn-visual) { gap: 14px; }
+  .screen :global(.relax-learn-footer) { flex-wrap: wrap; gap: 12px; }
+}

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import "../../modulo-1/experience.css";
+import styles from "./layout.module.css";
 
 const moments = [
   { label: "Interagir", className: "relax-chip-one" },
@@ -9,15 +11,15 @@ const moments = [
 
 export default function DescontrairEAprender() {
   return (
-    <main className="module-two-screen relax-learn-screen">
+    <main className={`module-two-screen relax-learn-screen ${styles.screen}`}>
       <div className="module-two-silver-glow module-two-silver-glow-one" aria-hidden="true" />
       <div className="module-two-silver-glow module-two-silver-glow-two" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
 
       <nav className="topbar module-topbar module-two-topbar" aria-label="Navegação do módulo">
-        <a className="brand-mark" href="/">WD <span>×</span> RC</a>
+        <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2/leitura-dos-sentimentos">← Tela anterior</a>
+          <Link className="back-link" href="/modulo-2/leitura-dos-sentimentos">← Tela anterior</Link>
           <span className="module-two-step">Módulo 2 · Tela 9</span>
         </div>
       </nav>
@@ -26,7 +28,7 @@ export default function DescontrairEAprender() {
         <article className="relax-learn-copy module-two-glass-panel">
           <span className="relax-learn-kicker">Momento de conexão</span>
           <h1>
-            Dinâmica
+            Dinâmica{" "}
             <strong>da história.</strong>
           </h1>
           <p>
@@ -58,12 +60,12 @@ export default function DescontrairEAprender() {
       </section>
 
       <div className="module-two-next-row relax-learn-next">
-        <a className="module-two-button" href="/modulo-2/pausa-para-o-cafe">
+        <Link className="module-two-button" href="/modulo-2/pausa-para-o-cafe">
           <span>Hora do café</span>
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
-        </a>
+        </Link>
       </div>
 
       <footer className="relax-learn-footer">

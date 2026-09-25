@@ -1,6 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import "../../modulo-1/experience.css";
 
 const videos = [
@@ -14,6 +16,31 @@ export default function VideoEuOucoEReajo() {
   const [videoUrls, setVideoUrls] = useState<(string | null)[]>(videos.map(() => null));
   const [failed, setFailed] = useState<boolean[]>(videos.map(() => false));
   const [current, setCurrent] = useState(0);
+  const [needsPlaybackGesture, setNeedsPlaybackGesture] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const currentUrl = videoUrls[current];
+
+  useEffect(() => {
+    const player = videoRef.current;
+    if (!currentUrl || !player) return;
+    let active = true;
+    player.muted = false;
+    player.volume = 1;
+    player.play().catch((error: unknown) => {
+      if (active && error instanceof DOMException && error.name === "NotAllowedError") {
+        setNeedsPlaybackGesture(true);
+      }
+    });
+    return () => { active = false; };
+  }, [currentUrl]);
+
+  const startWithSound = () => {
+    const player = videoRef.current;
+    if (!player) return;
+    player.muted = false;
+    player.volume = 1;
+    player.play().catch(() => setNeedsPlaybackGesture(true));
+  };
 
   useEffect(() => {
     let active = true;
@@ -50,9 +77,9 @@ export default function VideoEuOucoEReajo() {
       <div className="noise" aria-hidden="true" />
 
       <nav className="topbar module-topbar module-two-topbar" aria-label="Navegação do módulo">
-        <a className="brand-mark" href="/">WD <span>×</span> RC</a>
+        <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2/eu-ouco-e-reajo">← Tela anterior</a>
+          <Link className="back-link" href="/modulo-2/eu-ouco-e-reajo">← Tela anterior</Link>
           <span className="module-two-step">Módulo 2 · Tela 5</span>
         </div>
       </nav>
@@ -62,11 +89,11 @@ export default function VideoEuOucoEReajo() {
           <div>
             <span>Descontração também é aprender</span>
             <h1>Eu ouço e reajo</h1>
-            <p>Observe os quatro vídeos. Eles começam automaticamente; use os controles para ativar o som.</p>
+            <p>Assista aos quatro vídeos em sequência, com o som ligado.</p>
           </div>
           <div className="influence-logos" aria-label="Grupo WD e Ramos Consultoria">
-            <img src="/grupo-wd.png" alt="Grupo WD" />
-            <img src="/ramos-consultoria.png" alt="Ramos Consultoria" />
+            <Image src="/grupo-wd.png" alt="Grupo WD" width={180} height={100} />
+            <Image src="/ramos-consultoria.png" alt="Ramos Consultoria" width={180} height={100} />
           </div>
         </header>
 
@@ -95,18 +122,27 @@ export default function VideoEuOucoEReajo() {
               <small>{current + 1} de {videos.length} · o próximo começa automaticamente</small>
             </header>
 
+            {currentUrl && needsPlaybackGesture && (
+              <div className="reaction-start">
+                <button type="button" className="module-two-button" onClick={startWithSound}>
+                  Iniciar vídeo com som
+                </button>
+              </div>
+            )}
+
             <div className="reaction-featured-video">
-              {videoUrls[current] && (
+              {currentUrl && (
                 <video
-                  key={`${current}-${videoUrls[current]}`}
+                  ref={videoRef}
                   controls
                   autoPlay
-                  muted
+                  muted={false}
                   playsInline
                   preload="auto"
-                  src={videoUrls[current] ?? undefined}
+                  src={currentUrl}
                   style={{ width: "100%", height: "100%", objectFit: "contain", aspectRatio: "9 / 16" }}
                   onEnded={() => setCurrent((index) => (index + 1) % videos.length)}
+                  onPlay={() => setNeedsPlaybackGesture(false)}
                   aria-label={`${videos[current].title} da dinâmica Eu ouço e reajo`}
                 >
                   Seu navegador não oferece suporte à reprodução de vídeo.
@@ -132,13 +168,11 @@ export default function VideoEuOucoEReajo() {
           </article>
         </div>
 
-        <p className="reaction-audio-note">Os vídeos iniciam sem som porque essa é uma exigência dos navegadores. Clique no ícone de volume de cada vídeo para ouvir.</p>
-
         <div className="module-two-next-row reaction-next-row">
-          <a className="module-two-button" href="/modulo-2/etapas-da-comunicacao">
+          <Link className="module-two-button" href="/modulo-2/etapas-da-comunicacao">
             <span>Etapas da comunicação</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -159,11 +193,11 @@ export default function VideoEuOucoEReajo() {
         .reaction-featured-video{position:relative;width:100%;aspect-ratio:9/16;display:grid;place-items:center;overflow:hidden;background:#020817}
         .reaction-featured-video video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;aspect-ratio:9/16!important;object-fit:contain!important;object-position:center!important;border-radius:0!important;background:#020817}
         .reaction-loading{display:grid;justify-items:center;gap:8px;color:#fff;text-align:center}.reaction-loading>span{width:80px;height:80px;display:grid;place-items:center;border:1px solid rgba(255,212,59,.55);border-radius:50%;color:#07152d;background:#ffd43b;font-size:30px;font-weight:950;animation:reaction-pulse 1.1s ease-in-out infinite}.reaction-loading strong{font-size:22px}.reaction-loading p{margin:0;color:rgba(255,255,255,.65)}
-        .reaction-audio-note{max-width:1180px;margin:22px auto 0;padding:16px 20px;border:1px solid rgba(255,212,59,.34);border-radius:16px;color:#fff;background:rgba(0,20,52,.7);font-size:18px;text-align:center}
+        .reaction-start{display:flex;justify-content:center;padding:20px}.reaction-start button{margin:0;min-width:0;width:100%;font-size:24px}
         .reaction-next-row{max-width:1180px;margin:24px auto 0}
         @keyframes reaction-pulse{50%{transform:scale(1.1);filter:brightness(1.2)}}
         @media(max-width:760px){.reaction-sequence-progress{grid-template-columns:repeat(2,1fr)}.reaction-featured-card{width:min(100%,520px)}.reaction-featured-card>header{align-items:flex-start;flex-wrap:wrap}.reaction-featured-card>header small{width:100%;margin-left:0}}
-        @media(max-width:560px){.reaction-sequence-progress button{grid-template-columns:40px 1fr;padding:10px}.reaction-sequence-progress button>span{width:38px;height:38px}.reaction-featured-card{width:min(100%,430px);border-radius:22px}.reaction-audio-note{font-size:16px}}
+        @media(max-width:560px){.reaction-sequence-progress button{grid-template-columns:40px 1fr;padding:10px}.reaction-sequence-progress button>span{width:38px;height:38px}.reaction-featured-card{width:min(100%,430px);border-radius:22px}}
         @media(prefers-reduced-motion:reduce){.reaction-loading>span{animation:none}}
       `}</style>
     </main>

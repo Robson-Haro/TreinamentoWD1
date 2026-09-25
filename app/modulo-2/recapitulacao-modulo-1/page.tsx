@@ -14,6 +14,7 @@ const sections = [
       { topic: "Autoconhecimento", text: "reconhecer forças e pontos de atenção." },
       { topic: "Estilo de liderança", text: "perceber o impacto das próprias atitudes." },
       { topic: "DISC", text: "entender diferenças e adaptar a abordagem, sem rotular pessoas." },
+      { topic: "Tipos diferentes de pessoas", text: "cada colaborador tem sua personalidade. Precisamos adaptar nossa liderança, a comunicação e o apoio às necessidades de cada um." },
       { topic: "Atenção e foco", text: "observar os detalhes antes de agir." },
     ],
   },
