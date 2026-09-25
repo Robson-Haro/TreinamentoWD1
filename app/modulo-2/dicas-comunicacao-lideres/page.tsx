@@ -217,7 +217,7 @@ const references = [
 
 export default function DicasComunicacaoLideres() {
   return (
-    <main className={`module-two-screen ${styles.screen}`} id="inicio">
+    <main className={`module-two-screen ${styles.screen}`} id="inicio" style={{ width: "100vw", maxWidth: "none", margin: 0, padding: 0 }}>
       <div className="module-two-silver-glow module-two-silver-glow-one" aria-hidden="true" />
       <div className="module-two-silver-glow module-two-silver-glow-two" aria-hidden="true" />
       <div className="noise" aria-hidden="true" />
@@ -231,7 +231,7 @@ export default function DicasComunicacaoLideres() {
         </div>
       </nav>
 
-      <div className={styles.content}>
+      <div className={styles.content} style={{ width: "100vw", maxWidth: "none", marginLeft: "calc(50% - 50vw)", marginRight: "calc(50% - 50vw)", paddingLeft: "12px", paddingRight: "12px" }}>
         <header className={`module-two-glass-panel ${styles.hero}`}>
           <div>
             <span className={styles.kicker}>Comunicação e liderança · Aplicação prática</span>
@@ -245,7 +245,7 @@ export default function DicasComunicacaoLideres() {
           </div>
         </header>
 
-        <div className={styles.tipGrid}>
+        <div className={styles.tipGrid} style={{ width: "100%", maxWidth: "none" }}>
           {tips.map((tip) => (
             <article className={`module-two-glass-panel ${styles.tipCard}`} key={tip.number}>
               <div className={styles.tipHeader}>
