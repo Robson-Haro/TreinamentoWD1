@@ -10,8 +10,8 @@ export default function PausaParaOCafe() {
       <nav className="topbar module-topbar module-two-topbar" aria-label="Navegação do módulo">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2/descontrair-e-aprender">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 11</span>
+          <a className="back-link" href="/modulo-2/dicas-comunicacao-lideres">← Dicas de comunicação</a>
+          <span className="module-two-step">Módulo 2 · Tela 12</span>
         </div>
       </nav>
 
