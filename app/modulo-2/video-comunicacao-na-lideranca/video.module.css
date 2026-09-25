@@ -1,0 +1,10 @@
+.screen { min-height: 100vh; overflow-x: clip; }
+.content { padding-bottom: 52px; color: #fff; }
+.hero { display: grid; justify-items: center; gap: 22px; margin-top: 32px; padding: 38px clamp(24px, 4vw, 66px); text-align: center; }
+.hero h1, .hero p { width: 100%; max-width: 1050px; margin: 0; text-wrap: balance; }
+.videoFrame { position: relative; margin-top: 30px; padding: 7px; overflow: hidden; border-radius: 30px; background: linear-gradient(135deg, rgba(70, 205, 255, .25), rgba(255, 212, 59, .13) 45%, rgba(255, 255, 255, .05)); box-shadow: 0 28px 70px rgba(0, 0, 0, .42); }
+.videoFrame::before { position: absolute; z-index: 1; top: 0; right: 12%; left: 12%; height: 1px; background: #ffd43b; box-shadow: 0 0 22px 4px rgba(255, 212, 59, .55); content: ""; }
+.videoFrame video { position: relative; z-index: 2; display: block; width: 100%; max-height: 73vh; border-radius: 24px; background: #020817; object-fit: contain; }
+.reflection { max-width: 1020px; margin: 28px auto 0; border-left: 5px solid #ffd43b !important; text-align: center; }
+.reflection p { margin-bottom: 0; font-size: clamp(20px, 2vw, 27px); line-height: 1.45; }
+@media (max-width: 700px) { .hero { padding: 28px 20px; } .videoFrame { border-radius: 21px; padding: 4px; } .videoFrame video { border-radius: 17px; max-height: none; } }

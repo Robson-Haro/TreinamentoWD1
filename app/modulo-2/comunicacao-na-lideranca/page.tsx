@@ -49,7 +49,7 @@ export default function ComunicacaoNaLideranca() {
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className={`screen-nav ${shared.topLinks}`}>
           <Link className="back-link" href="/modulo-2/frases-de-comunicacao">← Frases de comunicação</Link>
-          <Link className="back-link" href="/modulo-2/leitura-dos-sentimentos">Leitura dos sentimentos →</Link>
+          <Link className="back-link" href="/modulo-2/video-comunicacao-na-lideranca">Assistir ao vídeo →</Link>
           <span className="module-two-step">Módulo 2 · Tela 8</span>
         </div>
       </nav>
@@ -138,7 +138,7 @@ export default function ComunicacaoNaLideranca() {
         <footer className={shared.footer}>
           <Link className="module-two-button" href="/modulo-2/frases-de-comunicacao">← Frases de comunicação</Link>
           <span>Parceria do Grupo WD e Ramos Consultoria</span>
-          <Link className="module-two-button" href="/modulo-2/leitura-dos-sentimentos">Leitura dos sentimentos →</Link>
+          <Link className="module-two-button" href="/modulo-2/video-comunicacao-na-lideranca">Assistir ao vídeo →</Link>
         </footer>
       </div>
     </main>
