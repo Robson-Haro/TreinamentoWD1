@@ -66,9 +66,9 @@ export default function WorkGroup() {
       <nav className={`topbar module-topbar module-two-topbar ${styles.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className={styles.navLinks}>
-          <Link className="back-link" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link>
-          <Link className="back-link" href="/modulo-2/qualidade-na-origem">Próxima tela →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 18</span>
+          <Link className="back-link" href="/modulo-2/qualidade-na-origem">← Qualidade na origem</Link>
+          <Link className="back-link" href="/modulo-2/recapitulacao-modulo-2">Recapitular Módulo 2 →</Link>
+          <span className="module-two-step">Módulo 2 · Tela 19</span>
         </div>
       </nav>
 
@@ -105,7 +105,7 @@ export default function WorkGroup() {
               <button type="button" onClick={restart}>Reiniciar 30 minutos</button>
             </div>
           </div>
-          <Link className={styles.next} href="/modulo-2/qualidade-na-origem">Seguir para qualidade na origem →</Link>
+          <Link className={styles.next} href="/modulo-2/recapitulacao-modulo-2">Recapitular Módulo 2 →</Link>
           <div className={styles.progress} aria-hidden="true"><span style={{ transform: `scaleX(${remaining / DURATION})` }} /></div>
         </div>
       </section>

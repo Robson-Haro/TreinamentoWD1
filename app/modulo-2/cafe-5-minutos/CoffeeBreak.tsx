@@ -100,7 +100,7 @@ export default function CoffeeBreak() {
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className={styles.navLinks}>
           <Link className="back-link" href="/modulo-2/cliente-processos-e-padroes">← Tela anterior</Link>
-          <Link className="back-link" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link>
+          <Link className="back-link" href="/modulo-2/qualidade-na-origem">Qualidade na origem →</Link>
           <span className="module-two-step">Módulo 2 · Tela 17</span>
         </div>
       </nav>
@@ -128,7 +128,7 @@ export default function CoffeeBreak() {
       <footer className={styles.footer}>
         <Link href="/modulo-2/cliente-processos-e-padroes">← Voltar ao conteúdo</Link>
         <button type="button" onClick={() => setMotionPaused(!motionPaused)} aria-pressed={motionPaused}>{motionPaused ? "Retomar animação" : "Pausar animação"}</button>
-        <Link href="/modulo-2/grupo-de-trabalho">Seguir para Grupo de Trabalho →</Link>
+        <Link href="/modulo-2/qualidade-na-origem">Seguir para qualidade na origem →</Link>
       </footer>
     </main>
   );

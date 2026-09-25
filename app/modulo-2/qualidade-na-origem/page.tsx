@@ -42,7 +42,7 @@ export default function QualidadeNaOrigem() {
       <div className="noise" aria-hidden="true" />
       <nav className={`topbar module-topbar module-two-topbar ${shared.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
-        <div className={`screen-nav ${shared.topLinks}`}><Link className="back-link" href="/modulo-2/grupo-de-trabalho">← Grupo de Trabalho</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/recapitulacao-modulo-2">Recapitular Módulo 2 →</Link><span className="module-two-step">Módulo 2 · Tela 19</span></div>
+        <div className={`screen-nav ${shared.topLinks}`}><Link className="back-link" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link><span className="module-two-step">Módulo 2 · Tela 18</span></div>
       </nav>
       <div className={`${shared.content} ${styles.content}`}>
         <header className={shared.header}>
@@ -119,7 +119,7 @@ export default function QualidadeNaOrigem() {
 
         <section className={shared.section}><h2>Leve para a sua <strong>próxima operação.</strong></h2><p>Escolha uma situação e responda: <strong>qual é o padrão, qual sinal mostrará o desvio, quem vai responder e como vamos confirmar a solução?</strong></p></section>
         <details id="referencias" className={`module-two-glass-panel ${shared.panel} ${shared.sources}`}><summary>Referências e bases do conteúdo</summary><ol>{references.map(([title,description,url]) => <li key={url}><a href={url} target="_blank" rel="noopener noreferrer">{title} ↗</a><p>{description}</p></li>)}</ol><p>Os exemplos de facilities são adaptações didáticas. Os critérios operacionais devem ser definidos para cada serviço e equipamento. A referência HSE fundamenta princípios de segurança; não substitui os procedimentos e requisitos aplicáveis no Brasil.</p><p>O 5S aparece aqui na forma de cinco práticas difundida na literatura lean. A Toyota também utiliza a denominação 4S em sua tradição; isso não altera a importância de sustentar os cuidados na rotina. <Cite numbers="5" /></p></details>
-        <footer className={shared.footer}><Link className="module-two-button" href="/modulo-2/grupo-de-trabalho">← Grupo de Trabalho</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><Link className="module-two-button" href="/modulo-2/recapitulacao-modulo-2">Recapitular Módulo 2 →</Link></footer>
+        <footer className={shared.footer}><Link className="module-two-button" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link><span>Parceria do Grupo WD e Ramos Consultoria</span><Link className="module-two-button" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link></footer>
       </div>
     </main>
   );

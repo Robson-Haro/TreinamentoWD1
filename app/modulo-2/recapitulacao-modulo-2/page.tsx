@@ -43,7 +43,7 @@ export default function RecapitulacaoModuloDois() {
     emphasis="Módulo 2"
     subtitle="Comunicação e Excelência · O que aprendemos até aqui"
     screenNumber={20}
-    previous={{ href: "/modulo-2/qualidade-na-origem", label: "Qualidade na origem e 5S" }}
+    previous={{ href: "/modulo-2/grupo-de-trabalho", label: "Grupo de Trabalho" }}
     next={{ href: "/modulo-2", label: "Início do Módulo 2" }}
     sections={sections}
   />;
