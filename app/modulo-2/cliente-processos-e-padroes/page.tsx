@@ -37,7 +37,7 @@ export default function ClienteProcessosEPadroes() {
       <div className="noise" aria-hidden="true" />
       <nav className={`topbar module-topbar module-two-topbar ${styles.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
-        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">← Tela anterior</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/cafe-5-minutos">Pausa para o café →</Link><span className="module-two-step">Módulo 2 · Tela 16</span></div>
+        <div className={`screen-nav ${styles.topLinks}`}><Link className="back-link" href="/modulo-2/normalizacao-do-desvio">← Tela anterior</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/cafe-5-minutos">Pausa para o café →</Link><span className="module-two-step">Módulo 2 · Tela 17</span></div>
       </nav>
       <div className={styles.content}>
         <header className={styles.header}>

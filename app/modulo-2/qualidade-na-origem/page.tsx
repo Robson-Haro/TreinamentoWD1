@@ -42,7 +42,7 @@ export default function QualidadeNaOrigem() {
       <div className="noise" aria-hidden="true" />
       <nav className={`topbar module-topbar module-two-topbar ${shared.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
-        <div className={`screen-nav ${shared.topLinks}`}><Link className="back-link" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link><span className="module-two-step">Módulo 2 · Tela 18</span></div>
+        <div className={`screen-nav ${shared.topLinks}`}><Link className="back-link" href="/modulo-2/cafe-5-minutos">← Café de 5 minutos</Link><Link className="back-link" href="/modulo-2">Início do módulo</Link><Link className="back-link" href="/modulo-2/grupo-de-trabalho">Grupo de Trabalho →</Link><span className="module-two-step">Módulo 2 · Tela 19</span></div>
       </nav>
       <div className={`${shared.content} ${styles.content}`}>
         <header className={shared.header}>

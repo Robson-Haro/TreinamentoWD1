@@ -49,7 +49,7 @@ export default function ComportamentosEResultados() {
           <Link className="back-link" href="/modulo-2/excelencia-operacional">← Tela anterior</Link>
           <Link className="back-link" href="/modulo-2">Início do módulo</Link>
           <Link className="back-link" href="/modulo-2/video-normalizacao-do-desvio">Próxima tela →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 13</span>
+          <span className="module-two-step">Módulo 2 · Tela 14</span>
         </div>
       </nav>
 

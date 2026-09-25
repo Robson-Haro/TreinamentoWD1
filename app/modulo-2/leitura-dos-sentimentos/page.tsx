@@ -76,8 +76,8 @@ export default function LeituraDosSentimentos() {
       <nav className="topbar module-topbar module-two-topbar" aria-label="Navegação do módulo">
         <a className="brand-mark" href="/">WD <span>×</span> RC</a>
         <div className="screen-nav">
-          <a className="back-link" href="/modulo-2/frases-de-comunicacao">← Tela anterior</a>
-          <span className="module-two-step">Módulo 2 · Tela 8</span>
+          <a className="back-link" href="/modulo-2/comunicacao-na-lideranca">← Tela anterior</a>
+          <span className="module-two-step">Módulo 2 · Tela 9</span>
         </div>
       </nav>
 

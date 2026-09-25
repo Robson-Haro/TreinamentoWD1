@@ -45,7 +45,7 @@ export default function ExcelenciaOperacional() {
           <a className="back-link" href="/modulo-2/operacao-em-alerta">← Tela anterior</a>
           <a className="back-link" href="/modulo-2">Início do módulo</a>
           <Link className="back-link" href="/modulo-2/comportamentos-e-resultados">Próxima tela →</Link>
-          <span className="module-two-step">Módulo 2 · Tela 12</span>
+          <span className="module-two-step">Módulo 2 · Tela 13</span>
         </div>
       </nav>
 
