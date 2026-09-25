@@ -1,7 +1,10 @@
 .screen {
   min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: clip;
 }
 
 .topbar {
@@ -9,13 +12,15 @@
   z-index: 20;
 }
 
-.content {
-  width: calc(100vw - 24px);
-  max-width: none;
-  margin: 0 12px;
-  padding: 20px 0 64px;
+.screen .content {
+  width: 100vw !important;
+  max-width: none !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 16px clamp(8px, 1vw, 18px) 64px !important;
   position: relative;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .hero {
@@ -80,12 +85,13 @@
   font-weight: 900;
 }
 
-.tipGrid {
-  width: 100%;
+.screen .tipGrid {
+  width: 100% !important;
+  max-width: none !important;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-  gap: 16px;
-  margin-top: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
   align-items: stretch;
 }
 
@@ -381,18 +387,22 @@
 }
 
 @media (min-width: 1650px) {
-  .content {
-    width: calc(100vw - 18px);
-    margin: 0 9px;
+  .screen .content {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
-  .tipGrid {
+  .screen .tipGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 1180px) {
-  .tipGrid {
+  .screen .tipGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -406,7 +416,7 @@
 }
 
 @media (max-width: 860px) {
-  .tipGrid,
+  .screen .tipGrid,
   .referenceGrid {
     grid-template-columns: 1fr;
   }
@@ -427,10 +437,12 @@
 }
 
 @media (max-width: 620px) {
-  .content {
-    width: calc(100vw - 12px);
-    margin: 0 6px;
-    padding-bottom: 46px;
+  .screen .content {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 10px 6px 46px !important;
   }
 
   .hero,
