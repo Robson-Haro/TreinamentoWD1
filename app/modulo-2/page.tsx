@@ -25,23 +25,66 @@ export default function ModuloDois() {
             <p className={styles.badge}>Módulo 2</p>
             <h1 id="module-two-title">Comunicação <strong>e Excelência</strong></h1>
           </header>
+
           <p className={styles.intro}>
             Uma nova etapa para transformar intenção em clareza, presença em conexão
             e conversas em resultados de excelência.
           </p>
+
           <div className={styles.partnership}>
-            <div className={styles.logoCard}>
-              <Image src="/ramos-consultoria.png" alt="Ramos Consultoria" width={160} height={160} priority />
+            <div
+              className={styles.volleyCourt}
+              role="img"
+              aria-label="Logos da Ramos Consultoria e do Grupo WD jogando vôlei"
+            >
+              <div className={`${styles.logoPlayer} ${styles.playerLeft}`}>
+                <div className={styles.logoCard}>
+                  <Image
+                    src="/ramos-consultoria.png"
+                    alt="Ramos Consultoria"
+                    width={160}
+                    height={160}
+                    priority
+                  />
+                </div>
+                <span className={styles.playerShadow} aria-hidden="true" />
+              </div>
+
+              <div className={styles.net} aria-hidden="true">
+                <span className={styles.netTop} />
+                <span className={styles.netMesh} />
+                <span className={`${styles.netPole} ${styles.netPoleLeft}`} />
+                <span className={`${styles.netPole} ${styles.netPoleRight}`} />
+              </div>
+
+              <div className={`${styles.logoPlayer} ${styles.playerRight}`}>
+                <div className={styles.logoCard}>
+                  <Image
+                    src="/grupo-wd.png"
+                    alt="Grupo WD"
+                    width={160}
+                    height={160}
+                    priority
+                  />
+                </div>
+                <span className={styles.playerShadow} aria-hidden="true" />
+              </div>
+
+              <div className={styles.volleyball} aria-hidden="true">
+                <span className={styles.ballSeamOne} />
+                <span className={styles.ballSeamTwo} />
+                <span className={styles.ballSeamThree} />
+              </div>
+
+              <span className={styles.courtLine} aria-hidden="true" />
             </div>
+
             <Link className={`module-two-button ${styles.start}`} href="/modulo-2/recapitulacao-modulo-1">
               <span>Iniciar Módulo 2</span>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
             </Link>
-            <div className={styles.logoCard}>
-              <Image src="/grupo-wd.png" alt="Grupo WD" width={160} height={160} priority />
-            </div>
           </div>
         </div>
       </section>
