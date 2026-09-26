@@ -1,4 +1,5 @@
 .opening { overflow-x: clip; }
+
 .opening .stage {
   width: calc(100% - clamp(24px, 5vw, 96px));
   min-height: calc(100svh - 88px);
@@ -6,6 +7,7 @@
   padding: 32px 0;
   display: grid;
 }
+
 .panel {
   width: 100%;
   min-width: 0;
@@ -15,33 +17,529 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  gap: 32px;
+  gap: 30px;
   text-align: center;
 }
-.heading { width: 100%; min-width: 0; }
-.eyebrow { display: block; color: #ccecff; font-size: 20px; font-weight: 650; line-height: 1.5; letter-spacing: .06em; text-wrap: balance; }
-.badge { width: fit-content; margin: 22px auto; padding: 6px 22px; border: 1px solid #8fd8ff55; border-radius: 999px; background: #a3dbff12; color: #ffd43b; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.opening .heading h1 { width: 100%; max-width: none; margin: 0; font-size: 60px; text-align: center; font-weight: 750; text-wrap: balance; }
-.opening .heading h1 strong { display: inline; }
-.opening .intro { width: 100%; max-width: none; margin: 0; color: #fff; font-size: 40px; text-align: center; text-wrap: balance; }
-.partnership { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; justify-items: center; gap: 32px; width: 100%; padding-top: 8px; }
-.logoCard { padding: 10px; border: 1px solid #99d9ff66; border-radius: 26px; background: linear-gradient(145deg,#a6d9ff2e,#2d70a522); box-shadow: inset 0 1px 0 #ffffff33,0 16px 32px #0005; transform: rotate(-4deg); }
-.logoCard:last-child { transform: rotate(4deg); }
-.logoCard img { display: block; width: 140px; height: 140px; object-fit: contain; border-radius: 18px; }
-.opening .start { width: fit-content; min-width: 320px; margin: 0; padding: 22px 28px; font-size: 24px; letter-spacing: .04em; gap: 28px; }
-.opening .start svg { width: 24px; flex-shrink: 0; }
-.opening a:focus-visible { outline: 3px solid #ffd43b; outline-offset: 6px; }
-@media (max-width: 800px) {
-  .opening .topbar { height: auto; min-height: 88px; flex-wrap: wrap; gap: 16px; padding-block: 18px; }
-  .opening .navLinks { flex-wrap: wrap; gap: 16px; max-width: 100%; }
-  .opening .stage { padding: 20px 0; }
-  .panel { padding: 28px 22px; gap: 28px; }
-  .partnership { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 20px; }
-  .opening .start { grid-column: 1 / -1; grid-row: 2; width: 100%; min-width: 0; justify-content: center; }
-  .logoCard img { width: 110px; height: 110px; }
+
+.heading {
+  width: 100%;
+  min-width: 0;
 }
+
+.eyebrow {
+  display: block;
+  color: #ccecff;
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: .06em;
+  text-wrap: balance;
+}
+
+.badge {
+  width: fit-content;
+  margin: 22px auto;
+  padding: 6px 22px;
+  border: 1px solid #8fd8ff55;
+  border-radius: 999px;
+  background: #a3dbff12;
+  color: #ffd43b;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.opening .heading h1 {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-size: 60px;
+  text-align: center;
+  font-weight: 750;
+  text-wrap: balance;
+}
+
+.opening .heading h1 strong {
+  display: inline;
+}
+
+.opening .intro {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.partnership {
+  width: 100%;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.volleyCourt {
+  position: relative;
+  width: min(100%, 980px);
+  height: clamp(250px, 30vw, 340px);
+  overflow: hidden;
+  border: 1px solid #99d9ff55;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 50% 12%, #f8fbff22 0 8%, transparent 32%),
+    linear-gradient(180deg, #123d6950 0 56%, #0c3f365f 56% 100%);
+  box-shadow:
+    inset 0 1px 0 #ffffff2d,
+    inset 0 -24px 50px #001a2445,
+    0 22px 40px #0005;
+  isolation: isolate;
+}
+
+.volleyCourt::before {
+  content: "";
+  position: absolute;
+  inset: 56% 0 auto;
+  height: 44%;
+  background:
+    linear-gradient(90deg, transparent 0 49.7%, #ffffff30 49.7% 50.3%, transparent 50.3%),
+    linear-gradient(0deg, #ffffff1f 0 2px, transparent 2px);
+  opacity: .9;
+}
+
+.volleyCourt::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  right: 9%;
+  bottom: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d7f1ff99 10% 90%, transparent);
+  box-shadow: 0 -1px 0 #0004;
+}
+
+.logoPlayer {
+  position: absolute;
+  bottom: 17%;
+  z-index: 4;
+  width: 182px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: center bottom;
+}
+
+.playerLeft {
+  left: 10%;
+  animation: leftPlayerHit 4.4s ease-in-out infinite;
+}
+
+.playerRight {
+  right: 10%;
+  animation: rightPlayerHit 4.4s ease-in-out infinite;
+}
+
+.logoCard {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #99d9ff66;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #a6d9ff35, #2d70a52b);
+  box-shadow:
+    inset 0 1px 0 #ffffff3c,
+    0 16px 32px #0005,
+    0 0 28px #76cbff18;
+  backdrop-filter: blur(12px);
+  transition: filter .2s ease;
+}
+
+.playerLeft .logoCard {
+  transform: rotate(-5deg);
+}
+
+.playerRight .logoCard {
+  transform: rotate(5deg);
+}
+
+.logoCard img {
+  display: block;
+  width: 145px;
+  height: 145px;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.playerShadow {
+  width: 112px;
+  height: 18px;
+  margin-top: 14px;
+  border-radius: 50%;
+  background: #0008;
+  filter: blur(7px);
+  transform-origin: center;
+  animation: shadowPulse 2.2s ease-in-out infinite;
+}
+
+.net {
+  position: absolute;
+  left: 50%;
+  bottom: 16%;
+  z-index: 3;
+  width: 170px;
+  height: 150px;
+  transform: translateX(-50%);
+}
+
+.netTop {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  right: -8px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f8fdff, #9fc6da);
+  box-shadow: 0 2px 8px #0007;
+}
+
+.netMesh {
+  position: absolute;
+  inset: 8px 0 0;
+  border: 2px solid #deefff99;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 13px, #dceeff55 13px 15px),
+    repeating-linear-gradient(90deg, transparent 0 13px, #dceeff55 13px 15px);
+  box-shadow: inset 0 0 18px #c6e9ff15;
+}
+
+.netPole {
+  position: absolute;
+  top: -8px;
+  bottom: -13px;
+  width: 7px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #7d9dad, #f1fbff 50%, #7892a0);
+  box-shadow: 0 4px 10px #0006;
+}
+
+.netPoleLeft {
+  left: -8px;
+}
+
+.netPoleRight {
+  right: -8px;
+}
+
+.volleyball {
+  position: absolute;
+  z-index: 8;
+  left: 20%;
+  top: 48%;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, #ffffff 0 19%, #e9f7ff 20% 46%, #cce6f4 72%, #aac9d7 100%);
+  box-shadow:
+    inset -7px -7px 10px #2f6d8a29,
+    0 8px 18px #0007,
+    0 0 20px #eaf9ff4f;
+  animation: ballFlight 4.4s cubic-bezier(.44,.03,.56,.97) infinite;
+}
+
+.ballSeamOne,
+.ballSeamTwo,
+.ballSeamThree {
+  position: absolute;
+  border: 2px solid #6a9eb7;
+  border-radius: 50%;
+  opacity: .9;
+}
+
+.ballSeamOne {
+  width: 40px;
+  height: 24px;
+  left: -10px;
+  top: 2px;
+  transform: rotate(24deg);
+}
+
+.ballSeamTwo {
+  width: 36px;
+  height: 28px;
+  right: -12px;
+  bottom: 1px;
+  transform: rotate(-32deg);
+}
+
+.ballSeamThree {
+  width: 20px;
+  height: 44px;
+  left: 11px;
+  top: -13px;
+  transform: rotate(64deg);
+}
+
+.courtLine {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  z-index: 1;
+  width: 2px;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, #dff4ff55 35%, #dff4ff99);
+  transform: translateX(-50%);
+}
+
+.opening .start {
+  width: fit-content;
+  min-width: 320px;
+  margin: 0;
+  padding: 22px 28px;
+  font-size: 24px;
+  letter-spacing: .04em;
+  gap: 28px;
+}
+
+.opening .start svg {
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.opening a:focus-visible {
+  outline: 3px solid #ffd43b;
+  outline-offset: 6px;
+}
+
+@keyframes ballFlight {
+  0% {
+    left: 20%;
+    top: 48%;
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  12% {
+    left: 28%;
+    top: 25%;
+    transform: translate(-50%, -50%) rotate(85deg) scale(1.04);
+  }
+  25% {
+    left: 50%;
+    top: 11%;
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.08);
+  }
+  38% {
+    left: 72%;
+    top: 25%;
+    transform: translate(-50%, -50%) rotate(275deg) scale(1.04);
+  }
+  50% {
+    left: 80%;
+    top: 48%;
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+  62% {
+    left: 72%;
+    top: 25%;
+    transform: translate(-50%, -50%) rotate(445deg) scale(1.04);
+  }
+  75% {
+    left: 50%;
+    top: 11%;
+    transform: translate(-50%, -50%) rotate(540deg) scale(1.08);
+  }
+  88% {
+    left: 28%;
+    top: 25%;
+    transform: translate(-50%, -50%) rotate(635deg) scale(1.04);
+  }
+  100% {
+    left: 20%;
+    top: 48%;
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+}
+
+@keyframes leftPlayerHit {
+  0%, 82%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  88% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+  94% {
+    transform: translateY(-34px) rotate(5deg);
+  }
+  98% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+}
+
+@keyframes rightPlayerHit {
+  0%, 32%, 58%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  40% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  47% {
+    transform: translateY(-34px) rotate(-5deg);
+  }
+  53% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    transform: scaleX(1);
+    opacity: .65;
+  }
+  50% {
+    transform: scaleX(.72);
+    opacity: .35;
+  }
+}
+
+@media (max-width: 800px) {
+  .opening .topbar {
+    height: auto;
+    min-height: 88px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-block: 18px;
+  }
+
+  .opening .navLinks {
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .opening .stage {
+    padding: 20px 0;
+  }
+
+  .panel {
+    padding: 28px 22px;
+    gap: 26px;
+  }
+
+  .opening .heading h1 {
+    font-size: clamp(42px, 11vw, 60px);
+  }
+
+  .opening .intro {
+    font-size: clamp(24px, 6.2vw, 40px);
+  }
+
+  .volleyCourt {
+    height: 250px;
+    border-radius: 24px;
+  }
+
+  .logoPlayer {
+    width: 130px;
+    bottom: 16%;
+  }
+
+  .playerLeft {
+    left: 4%;
+  }
+
+  .playerRight {
+    right: 4%;
+  }
+
+  .logoCard {
+    padding: 8px;
+    border-radius: 22px;
+  }
+
+  .logoCard img {
+    width: 105px;
+    height: 105px;
+  }
+
+  .playerShadow {
+    width: 78px;
+    height: 14px;
+    margin-top: 10px;
+  }
+
+  .net {
+    width: 118px;
+    height: 115px;
+    bottom: 15%;
+  }
+
+  .volleyball {
+    width: 36px;
+    height: 36px;
+  }
+
+  .opening .start {
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .volleyCourt {
+    height: 220px;
+  }
+
+  .logoPlayer {
+    width: 106px;
+  }
+
+  .logoCard img {
+    width: 82px;
+    height: 82px;
+  }
+
+  .net {
+    width: 90px;
+    height: 95px;
+  }
+
+  .volleyball {
+    width: 31px;
+    height: 31px;
+  }
+}
+
 @media (max-width: 380px) {
-  .panel { padding-inline: 16px; }
-  .logoCard { padding: 8px; border-radius: 20px; }
-  .logoCard img { width: 88px; height: 88px; }
+  .panel {
+    padding-inline: 16px;
+  }
+
+  .logoCard {
+    padding: 7px;
+    border-radius: 18px;
+  }
+
+  .logoCard img {
+    width: 72px;
+    height: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playerLeft,
+  .playerRight,
+  .playerShadow,
+  .volleyball {
+    animation-play-state: paused;
+  }
+
+  .volleyball {
+    left: 50%;
+    top: 24%;
+    transform: translate(-50%, -50%);
+  }
 }
