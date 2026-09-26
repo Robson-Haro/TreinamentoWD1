@@ -25,6 +25,7 @@ const sections = [
       { topic: "Decisões éticas", text: "avaliar critérios, riscos e consequências." },
       { topic: "Estratégia e organização", text: "antecipar cenários, priorizar e preparar alternativas." },
       { topic: "Responsabilidade na operação", text: "cuidar das pessoas, do serviço e do cliente." },
+      { topic: "Líder precisa tomar decisões difíceis", text: "liderar não é buscar aprovação nem tentar agradar a todos. Em alguns momentos será necessário cobrar um padrão, dizer não, corrigir um comportamento, redistribuir responsabilidades, escolher prioridades ou tomar uma decisão impopular para proteger a equipe, o cliente e o resultado. O líder deve ouvir, explicar seus critérios e agir com respeito, mas não pode abandonar sua responsabilidade apenas para evitar desconforto ou desagradar alguém." },
     ],
   },
 ];
