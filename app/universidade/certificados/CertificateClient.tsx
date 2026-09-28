@@ -19,7 +19,7 @@ async function imageAsDataUrl(url: string) {
   });
 }
 
-function createCertificateCode() {
+function localCertificateCode() {
   const token = crypto.randomUUID().split("-")[0].toUpperCase();
   return "WD-LID-" + new Date().getFullYear() + "-" + token;
 }
@@ -29,6 +29,7 @@ export default function CertificateClient() {
   const [progress, setProgress] = useState<ProgressMap>({});
   const [certificateCode, setCertificateCode] = useState("");
   const [downloading, setDownloading] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     try {
@@ -48,11 +49,39 @@ export default function CertificateClient() {
     [progress],
   );
 
+  async function requestCertificateCode() {
+    if (!participant) return "";
+    try {
+      const response = await fetch("/api/universidade", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          action: "certificate",
+          participant,
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && data.configured && data.certificate_code) {
+        return String(data.certificate_code);
+      }
+      if (!response.ok) {
+        setMessage("O backend ainda não reconhece os dois módulos como aprovados. Refaça as avaliações nesta versão antes de emitir.");
+        return "";
+      }
+    } catch {
+      setMessage("Sem conexão com o backend. O certificado será gerado com validação local neste dispositivo.");
+    }
+    return localCertificateCode();
+  }
+
   async function downloadCertificate() {
     if (!participant || !eligible) return;
     setDownloading(true);
+    setMessage("");
     try {
-      const code = certificateCode || createCertificateCode();
+      const code = certificateCode || await requestCertificateCode();
+      if (!code) return;
+
       if (!certificateCode) {
         setCertificateCode(code);
         localStorage.setItem("wd_uc_certificate_lideranca", code);
@@ -117,10 +146,8 @@ export default function CertificateClient() {
       doc.setTextColor(215, 218, 220);
       doc.setFont("helvetica", "normal");
       doc.setFontSize(8.4);
-      const line1 = "Autoconhecimento • Estilos de Liderança • DISC • Decisões e Leitura de Cenário • Comunicação e Influência";
-      const line2 = "Liderança Situacional • Segurança Psicológica • Qualidade na Origem • Excelência Operacional";
-      doc.text(line1, width / 2, 130, { align: "center" });
-      doc.text(line2, width / 2, 136, { align: "center" });
+      doc.text("Autoconhecimento • Estilos de Liderança • DISC • Decisões e Leitura de Cenário • Comunicação e Influência", width / 2, 130, { align: "center" });
+      doc.text("Liderança Situacional • Segurança Psicológica • Qualidade na Origem • Excelência Operacional", width / 2, 136, { align: "center" });
 
       doc.setDrawColor(150, 155, 159);
       doc.line(45, 163, 110, 163);
@@ -145,19 +172,6 @@ export default function CertificateClient() {
       doc.text("Código de validação: " + code, width - 22, 186, { align: "right" });
 
       doc.save("Certificado-Jornada-Lideranca-" + participant.name.replace(/\s+/g, "-") + ".pdf");
-
-      fetch("/api/universidade", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          action: "certificate",
-          participant,
-          journey: "lideranca",
-          certificate_code: code,
-          module_1_score: progress["modulo-1"]?.score || 0,
-          module_2_score: progress["modulo-2"]?.score || 0,
-        }),
-      }).catch(() => undefined);
     } finally {
       setDownloading(false);
     }
@@ -199,9 +213,11 @@ export default function CertificateClient() {
           ) : (
             <div className={styles.resultBox}>
               <strong>100%</strong>
-              <p>Requisitos de certificação atendidos. O PDF A4 paisagem está liberado para emissão.</p>
+              <p>Requisitos locais de certificação atendidos. O backend fará a validação final antes de gerar o PDF.</p>
             </div>
           )}
+
+          {message ? <div className={styles.locked}>{message}</div> : null}
 
           <div style={{ marginTop: 20 }}>
             <p><strong>Módulo 1:</strong> {progress["modulo-1"]?.score ? String(progress["modulo-1"].score) + "%" : "pendente"}</p>
@@ -215,7 +231,7 @@ export default function CertificateClient() {
             onClick={downloadCertificate}
             style={{ opacity: !eligible || !participant ? .45 : 1, marginTop: 18 }}
           >
-            {downloading ? "Gerando PDF..." : "Baixar certificado em PDF"}
+            {downloading ? "Validando e gerando..." : "Baixar certificado em PDF"}
           </button>
         </aside>
       </div>
