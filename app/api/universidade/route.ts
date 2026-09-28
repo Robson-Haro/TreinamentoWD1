@@ -5,37 +5,29 @@ export const dynamic = "force-dynamic";
 type Participant = { name?: string; email?: string };
 
 function getConfig() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-  return { url: url.replace(/\/$/, ""), key };
+  const url = String(process.env.NEXT_PUBLIC_SUPABASE_URL || "").replace(/\/$/, "");
+  const key = String(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "");
+  return { url, key };
 }
 
-function headers(prefer?: string) {
-  const { key } = getConfig();
-  return {
-    apikey: key,
-    Authorization: "Bearer " + key,
-    "content-type": "application/json",
-    ...(prefer ? { Prefer: prefer } : {}),
-  };
-}
-
-async function rest(path: string, init: RequestInit = {}) {
+async function rpc(name: string, body: Record<string, unknown>) {
   const { url, key } = getConfig();
-  if (!url || !key) return { configured: false, ok: false, status: 503, data: null };
+  if (!url || !key) {
+    return { configured: false, ok: false, status: 503, data: null };
+  }
 
-  const response = await fetch(url + "/rest/v1/" + path, {
-    ...init,
+  const response = await fetch(url + "/rest/v1/rpc/" + name, {
+    method: "POST",
     headers: {
-      ...headers(),
-      ...(init.headers || {}),
+      apikey: key,
+      Authorization: "Bearer " + key,
+      "content-type": "application/json",
     },
+    body: JSON.stringify(body),
     cache: "no-store",
   });
 
-  let data: unknown = null;
-  const contentType = response.headers.get("content-type") || "";
-  if (contentType.includes("application/json")) data = await response.json().catch(() => null);
+  const data = await response.json().catch(() => null);
   return { configured: true, ok: response.ok, status: response.status, data };
 }
 
@@ -46,39 +38,41 @@ function validParticipant(participant?: Participant) {
   return { name, email };
 }
 
-async function upsertParticipant(participant: { name: string; email: string }) {
-  return rest("uc_participants?on_conflict=email", {
-    method: "POST",
-    headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify({
-      email: participant.email,
-      nome: participant.name,
-      updated_at: new Date().toISOString(),
-    }),
-  });
-}
-
 export async function GET(request: NextRequest) {
+  const moduleId = String(request.nextUrl.searchParams.get("module") || "").trim();
+  if (moduleId) {
+    const result = await rpc("uc_get_questionnaire", {
+      p_journey: "lideranca",
+      p_module_id: moduleId,
+    });
+
+    if (!result.configured) {
+      return NextResponse.json({ configured: false, questions: [] });
+    }
+    if (!result.ok) {
+      return NextResponse.json({ error: "Falha ao carregar questionário.", details: result.data }, { status: result.status });
+    }
+    return NextResponse.json({ configured: true, questions: result.data || [] });
+  }
+
   const email = String(request.nextUrl.searchParams.get("email") || "").trim().toLowerCase();
   if (!email || !email.includes("@")) {
-    return NextResponse.json({ error: "E-mail inválido." }, { status: 400 });
+    return NextResponse.json({ error: "Informe um e-mail válido." }, { status: 400 });
   }
 
-  const { url, key } = getConfig();
-  if (!url || !key) {
+  const result = await rpc("uc_get_progress", { p_email: email });
+  if (!result.configured) {
     return NextResponse.json({ configured: false, progress: [], certificates: [] });
   }
+  if (!result.ok) {
+    return NextResponse.json({ error: "Falha ao carregar progresso.", details: result.data }, { status: result.status });
+  }
 
-  const encoded = encodeURIComponent(email);
-  const [progress, certificates] = await Promise.all([
-    rest("uc_progress?email=eq." + encoded + "&select=journey,module_id,status,score,updated_at&order=updated_at.asc"),
-    rest("uc_certificates?email=eq." + encoded + "&select=journey,certificate_code,issued_at,module_1_score,module_2_score&order=issued_at.desc"),
-  ]);
-
+  const payload = result.data || {};
   return NextResponse.json({
     configured: true,
-    progress: progress.ok ? progress.data : [],
-    certificates: certificates.ok ? certificates.data : [],
+    progress: payload.progress || [],
+    certificates: payload.certificates || [],
   });
 }
 
@@ -91,86 +85,59 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Nome e e-mail do participante são obrigatórios." }, { status: 400 });
   }
 
-  const { url, key } = getConfig();
-  if (!url || !key) {
+  if (body.action === "assessment") {
+    const moduleId = String(body.module_id || "");
+    if (moduleId !== "modulo-1" && moduleId !== "modulo-2") {
+      return NextResponse.json({ error: "Módulo inválido." }, { status: 400 });
+    }
+
+    const result = await rpc("uc_submit_assessment", {
+      p_email: participant.email,
+      p_nome: participant.name,
+      p_journey: "lideranca",
+      p_module_id: moduleId,
+      p_answers: body.answers || {},
+    });
+
+    if (!result.configured) {
+      return NextResponse.json({ ok: true, configured: false, storage: "local" }, { status: 202 });
+    }
+    if (!result.ok) {
+      return NextResponse.json({ error: "Falha ao registrar avaliação.", details: result.data }, { status: result.status });
+    }
+
+    const row = Array.isArray(result.data) ? result.data[0] : result.data;
     return NextResponse.json({
       ok: true,
-      configured: false,
-      storage: "local",
-      message: "Backend Supabase ainda não configurado; o navegador preservou o progresso localmente.",
-    }, { status: 202 });
-  }
-
-  const personResult = await upsertParticipant(participant);
-  if (!personResult.ok) {
-    return NextResponse.json({ error: "Falha ao registrar participante.", details: personResult.data }, { status: 500 });
-  }
-
-  if (body.action === "assessment") {
-    const journey = String(body.journey || "lideranca");
-    const moduleId = String(body.module_id || "");
-    const score = Number(body.score || 0);
-    const passed = Boolean(body.passed);
-    const answers = body.answers || {};
-
-    const attempt = await rest("uc_assessment_attempts", {
-      method: "POST",
-      headers: { Prefer: "return=minimal" },
-      body: JSON.stringify({
-        email: participant.email,
-        journey,
-        module_id: moduleId,
-        score,
-        passed,
-        answers,
-      }),
+      configured: true,
+      score: Number(row?.score || 0),
+      passed: Boolean(row?.passed),
     });
-
-    if (!attempt.ok) {
-      return NextResponse.json({ error: "Falha ao registrar tentativa.", details: attempt.data }, { status: 500 });
-    }
-
-    const progress = await rest("uc_progress?on_conflict=email,journey,module_id", {
-      method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify({
-        email: participant.email,
-        journey,
-        module_id: moduleId,
-        status: passed ? "passed" : "attempted",
-        score,
-        updated_at: new Date().toISOString(),
-      }),
-    });
-
-    if (!progress.ok) {
-      return NextResponse.json({ error: "Falha ao atualizar progresso.", details: progress.data }, { status: 500 });
-    }
-
-    return NextResponse.json({ ok: true, configured: true });
   }
 
   if (body.action === "certificate") {
-    const code = String(body.certificate_code || "").trim();
-    if (!code) return NextResponse.json({ error: "Código do certificado ausente." }, { status: 400 });
-
-    const certificate = await rest("uc_certificates?on_conflict=certificate_code", {
-      method: "POST",
-      headers: { Prefer: "resolution=merge-duplicates,return=minimal" },
-      body: JSON.stringify({
-        email: participant.email,
-        journey: String(body.journey || "lideranca"),
-        certificate_code: code,
-        module_1_score: Number(body.module_1_score || 0),
-        module_2_score: Number(body.module_2_score || 0),
-      }),
+    const result = await rpc("uc_issue_certificate", {
+      p_email: participant.email,
+      p_nome: participant.name,
+      p_journey: "lideranca",
     });
 
-    if (!certificate.ok) {
-      return NextResponse.json({ error: "Falha ao registrar certificado.", details: certificate.data }, { status: 500 });
+    if (!result.configured) {
+      return NextResponse.json({ ok: true, configured: false, storage: "local" }, { status: 202 });
+    }
+    if (!result.ok) {
+      return NextResponse.json({ error: "Certificado ainda não pode ser emitido.", details: result.data }, { status: result.status });
     }
 
-    return NextResponse.json({ ok: true, configured: true, certificate_code: code });
+    const row = Array.isArray(result.data) ? result.data[0] : result.data;
+    return NextResponse.json({
+      ok: true,
+      configured: true,
+      certificate_code: row?.certificate_code || "",
+      issued_at: row?.issued_at || null,
+      module_1_score: Number(row?.module_1_score || 0),
+      module_2_score: Number(row?.module_2_score || 0),
+    });
   }
 
   return NextResponse.json({ error: "Ação não reconhecida." }, { status: 400 });
