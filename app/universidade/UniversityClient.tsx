@@ -74,7 +74,11 @@ export default function UniversityClient() {
     try {
       const saved = localStorage.getItem("wd_uc_participant");
       const savedProgress = localStorage.getItem("wd_uc_progress");
-      if (saved) setParticipant(JSON.parse(saved));
+      if (saved) {
+        const person = JSON.parse(saved) as Participant;
+        setParticipant(person);
+        void syncProgress(person);
+      }
       if (savedProgress) setProgress(JSON.parse(savedProgress));
     } catch {
       // Mantém a experiência disponível mesmo se o armazenamento local estiver indisponível.
@@ -90,6 +94,34 @@ export default function UniversityClient() {
     [track.title, track.description].join(" ").toLowerCase().includes(search.toLowerCase()),
   );
 
+  async function syncProgress(person: Participant) {
+    try {
+      const response = await fetch("/api/universidade?email=" + encodeURIComponent(person.email));
+      const data = await response.json();
+      if (!response.ok || !data.configured) return;
+
+      const next: ProgressMap = {};
+      for (const item of data.progress || []) {
+        next[String(item.module_id)] = {
+          status: String(item.status || "in_progress"),
+          score: Number(item.score || 0),
+        };
+      }
+
+      if (Object.keys(next).length) {
+        localStorage.setItem("wd_uc_progress", JSON.stringify(next));
+        setProgress(next);
+      }
+
+      const certificate = (data.certificates || [])[0];
+      if (certificate?.certificate_code) {
+        localStorage.setItem("wd_uc_certificate_lideranca", String(certificate.certificate_code));
+      }
+    } catch {
+      // Mantém o progresso local quando a sincronização não estiver disponível.
+    }
+  }
+
   function saveIdentity(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -100,6 +132,7 @@ export default function UniversityClient() {
     if (!next.name || !next.email.includes("@")) return;
     localStorage.setItem("wd_uc_participant", JSON.stringify(next));
     setParticipant(next);
+    void syncProgress(next);
     setShowIdentity(false);
   }
 
