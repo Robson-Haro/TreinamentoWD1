@@ -13,6 +13,7 @@ export default function AssessmentClient({ moduleId }: { moduleId: "1" | "2" }) 
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [result, setResult] = useState<{ score: number; passed: boolean } | null>(null);
   const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
     try {
@@ -26,7 +27,29 @@ export default function AssessmentClient({ moduleId }: { moduleId: "1" | "2" }) 
   const moduleTitle = moduleId === "1" ? "Se conhecendo para liderar" : "Comunicação e Excelência";
   const answered = useMemo(() => Object.keys(answers).length, [answers]);
 
-  function submit(event: FormEvent<HTMLFormElement>) {
+  function localResult() {
+    const correct = questions.reduce((total, question) => total + (answers[question.id] === question.correct ? 1 : 0), 0);
+    const score = Math.round((correct / questions.length) * 100);
+    return { score, passed: score >= 70 };
+  }
+
+  function persist(nextResult: { score: number; passed: boolean }) {
+    try {
+      const progress = JSON.parse(localStorage.getItem("wd_uc_progress") || "{}");
+      const key = "modulo-" + moduleId;
+      const previousScore = Number(progress[key]?.score || 0);
+      progress[key] = {
+        status: nextResult.passed || progress[key]?.status === "passed" ? "passed" : "attempted",
+        score: Math.max(previousScore, nextResult.score),
+        updated_at: new Date().toISOString(),
+      };
+      localStorage.setItem("wd_uc_progress", JSON.stringify(progress));
+    } catch {
+      // o resultado permanece na tela
+    }
+  }
+
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!participant) {
       setMessage("Volte à Universidade e identifique-se antes de concluir a avaliação.");
@@ -37,38 +60,36 @@ export default function AssessmentClient({ moduleId }: { moduleId: "1" | "2" }) 
       return;
     }
 
-    const correct = questions.reduce((total, question) => total + (answers[question.id] === question.correct ? 1 : 0), 0);
-    const score = Math.round((correct / questions.length) * 100);
-    const passed = score >= 70;
-    const nextResult = { score, passed };
-    setResult(nextResult);
+    setSubmitting(true);
     setMessage("");
 
+    let nextResult = localResult();
+
     try {
-      const progress = JSON.parse(localStorage.getItem("wd_uc_progress") || "{}");
-      progress["modulo-" + moduleId] = {
-        status: passed ? "passed" : "attempted",
-        score,
-        updated_at: new Date().toISOString(),
-      };
-      localStorage.setItem("wd_uc_progress", JSON.stringify(progress));
+      const response = await fetch("/api/universidade", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          action: "assessment",
+          participant,
+          module_id: "modulo-" + moduleId,
+          answers,
+        }),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (response.ok && data.configured) {
+        nextResult = { score: Number(data.score || 0), passed: Boolean(data.passed) };
+      } else if (!response.ok) {
+        setMessage("O resultado local foi calculado, mas o registro no backend não foi concluído.");
+      }
     } catch {
-      // o resultado permanece na tela
+      setMessage("O resultado foi salvo neste dispositivo; a sincronização com o backend será retomada quando estiver disponível.");
+    } finally {
+      setSubmitting(false);
     }
 
-    fetch("/api/universidade", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        action: "assessment",
-        participant,
-        journey: "lideranca",
-        module_id: "modulo-" + moduleId,
-        score,
-        passed,
-        answers,
-      }),
-    }).catch(() => undefined);
+    setResult(nextResult);
+    persist(nextResult);
   }
 
   return (
@@ -113,8 +134,8 @@ export default function AssessmentClient({ moduleId }: { moduleId: "1" | "2" }) 
 
           {message ? <div className={styles.locked}>{message}</div> : null}
 
-          <button className={styles.primaryButton} type="submit">
-            Finalizar avaliação
+          <button className={styles.primaryButton} type="submit" disabled={submitting}>
+            {submitting ? "Corrigindo e registrando..." : "Finalizar avaliação"}
           </button>
         </form>
 
