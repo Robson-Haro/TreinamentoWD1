@@ -14,6 +14,29 @@ export default function JornadaLiderancaPage() {
     try {
       const saved = localStorage.getItem("wd_uc_progress");
       if (saved) setProgress(JSON.parse(saved));
+
+      const savedParticipant = localStorage.getItem("wd_uc_participant");
+      if (!savedParticipant) return;
+      const participant = JSON.parse(savedParticipant) as { email?: string };
+      if (!participant.email) return;
+
+      fetch("/api/universidade?email=" + encodeURIComponent(participant.email))
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.configured || !Array.isArray(data.progress)) return;
+          const next: ProgressMap = {};
+          for (const item of data.progress) {
+            next[String(item.module_id)] = {
+              status: String(item.status || "in_progress"),
+              score: Number(item.score || 0),
+            };
+          }
+          if (Object.keys(next).length) {
+            setProgress(next);
+            localStorage.setItem("wd_uc_progress", JSON.stringify(next));
+          }
+        })
+        .catch(() => undefined);
     } catch {
       // A jornada continua navegável mesmo sem armazenamento local.
     }
