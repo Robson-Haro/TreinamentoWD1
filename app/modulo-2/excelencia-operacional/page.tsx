@@ -42,7 +42,7 @@ export default function ExcelenciaOperacional() {
       <nav className={`topbar module-topbar module-two-topbar ${styles.topbar}`} aria-label="Navegação do módulo">
         <Link className="brand-mark" href="/">WD <span>×</span> RC</Link>
         <div className={`screen-nav ${styles.navigation}`}>
-          <a className="back-link" href="/modulo-2/operacao-em-alerta">← Tela anterior</a>
+          <a className="back-link" href="/modulo-2/resumo-modulos-1-e-2">← Tela anterior</a>
           <a className="back-link" href="/modulo-2">Início do módulo</a>
           <Link className="back-link" href="/modulo-2/comportamentos-e-resultados">Próxima tela →</Link>
           <span className="module-two-step">Módulo 2 · Tela 13</span>
@@ -131,7 +131,7 @@ export default function ExcelenciaOperacional() {
         </section>
 
         <footer className={styles.footer}>
-          <a className="back-link" href="/modulo-2/operacao-em-alerta">← Operação em alerta</a>
+          <a className="back-link" href="/modulo-2/resumo-modulos-1-e-2">← Resumo dos módulos</a>
           <p>Parceria do Grupo WD e Ramos Consultoria</p>
           <Link className="module-two-button" href="/modulo-2/comportamentos-e-resultados">Comportamentos e resultados →</Link>
         </footer>

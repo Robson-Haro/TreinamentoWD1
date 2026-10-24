@@ -59,7 +59,7 @@ export default function OperacaoEmAlertaModuloDois() {
         </div>
         <div className="screen-nav">
           <a className="back-link" href="/modulo-2/pausa-para-o-cafe">← Tela anterior</a>
-          <a className="back-link next-test-link" href="/modulo-2/excelencia-operacional">Próxima tela →</a>
+          <a className="back-link next-test-link" href="/modulo-2/resumo-modulos-1-e-2">Próxima tela →</a>
           <span className="module-two-step">Módulo 2 · Tela 12</span>
         </div>
       </nav>
@@ -164,7 +164,7 @@ export default function OperacaoEmAlertaModuloDois() {
         <div><strong>PESSOAS</strong><b>+</b><strong>CONTINUIDADE DA OPERAÇÃO</strong><b>+</b><strong>SATISFAÇÃO DO CLIENTE</strong></div>
         <p>Resolver o problema de um posto criando um problema em outro não será considerado uma solução.</p>
         <a className="module-two-button case-return-button" href="/modulo-2/pausa-para-o-cafe">← Voltar para a pausa do café</a>
-        <a className="module-two-button case-return-button" href="/modulo-2/excelencia-operacional">Excelência Operacional →</a>
+        <a className="module-two-button case-return-button" href="/modulo-2/resumo-modulos-1-e-2">Resumo do módulo 1 e início do módulo 2 →</a>
       </section>
     </main>
   );

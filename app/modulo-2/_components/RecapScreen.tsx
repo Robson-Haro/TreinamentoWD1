@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./recap.module.css";
@@ -11,13 +12,14 @@ type RecapProps = {
   title: string;
   emphasis: string;
   subtitle: string;
-  screenNumber: number;
+  screenNumber: number | string;
+  children?: ReactNode;
   previous: { href: string; label: string };
   next: { href: string; label: string };
   sections: RecapSection[];
 };
 
-export default function RecapScreen({ title, emphasis, subtitle, screenNumber, previous, next, sections }: RecapProps) {
+export default function RecapScreen({ title, emphasis, subtitle, screenNumber, previous, next, sections, children }: RecapProps) {
   return (
     <main className={`module-two-screen ${styles.screen}`}>
       <div className="noise" aria-hidden="true" />
@@ -44,6 +46,8 @@ export default function RecapScreen({ title, emphasis, subtitle, screenNumber, p
             </ul>
           </section>
         ))}
+
+        {children}
 
         <footer className={styles.footer}>
           <Link className={`module-two-button ${styles.button}`} href={previous.href}>← {previous.label}</Link>

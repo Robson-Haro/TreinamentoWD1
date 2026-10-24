@@ -59,3 +59,5 @@
   .screen :global(.relax-learn-visual) { gap: 14px; }
   .screen :global(.relax-learn-footer) { flex-wrap: wrap; gap: 12px; }
 }
+
+.nonverbal { width: calc(100% - 48px); margin: 24px auto 40px; }

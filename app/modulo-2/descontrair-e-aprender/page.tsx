@@ -1,3 +1,4 @@
+import NonverbalExamples from "../_components/NonverbalExamples";
 import Link from "next/link";
 import "../../modulo-1/experience.css";
 import styles from "./layout.module.css";
@@ -58,6 +59,8 @@ export default function DescontrairEAprender() {
           ))}
         </div>
       </section>
+
+      <div className={styles.nonverbal}><NonverbalExamples /></div>
 
       <div className="module-two-next-row relax-learn-next">
         <Link className="module-two-button" href="/modulo-2/dicas-comunicacao-lideres">
