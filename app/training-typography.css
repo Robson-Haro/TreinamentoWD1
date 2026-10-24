@@ -6,27 +6,27 @@
   --training-content-size: 40px;
 }
 
-body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2) {
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .module-three-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2) {
   font-size: var(--training-title-size) !important;
   line-height: 1.15 !important;
   overflow-wrap: anywhere;
 }
 
-body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(p, li, blockquote, h3, h4) {
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .module-three-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(p, li, blockquote, h3, h4) {
   font-size: var(--training-content-size) !important;
   line-height: 1.4 !important;
   overflow-wrap: anywhere;
 }
 
 /* Partes de uma frase acompanham seu texto, inclusive trechos em destaque. */
-body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2, h3, h4, p, li, blockquote) :is(strong, b, em, span, small) {
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .module-three-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(h1, h2, h3, h4, p, li, blockquote) :is(strong, b, em, span, small) {
   font-size: inherit !important;
   line-height: inherit !important;
   overflow-wrap: anywhere;
 }
 
 /* Conteúdo instrucional que usa elementos diferentes de parágrafos. */
-body main[class]:is(.site-shell, .module-screen, .module-two-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(
+body main[class]:is(.site-shell, .module-screen, .module-two-screen, .module-three-screen, .case-screen, .moral-screen, .group-moment, .coffee-screen, .graphology-screen, .finale-screen):not(.dashboard-screen) :is(
   .today-module strong, .lesson-topics span, .test-steps span,
   .disc-points strong, .disc-points span, .group-moment-callout b,
   .moral-choice > b, .boat-alert strong, .case-access-copy > strong,

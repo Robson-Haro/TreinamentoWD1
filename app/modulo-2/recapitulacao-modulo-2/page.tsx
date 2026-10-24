@@ -44,7 +44,7 @@ export default function RecapitulacaoModuloDois() {
     subtitle="Comunicação e Excelência · O que aprendemos até aqui"
     screenNumber={21}
     previous={{ href: "/modulo-2/grupo-de-trabalho", label: "Grupo de Trabalho" }}
-    next={{ href: "/modulo-2", label: "Início do Módulo 2" }}
+    next={{ href: "/modulo-2/conclusao", label: "Celebrar e concluir o Módulo 2" }}
     sections={sections}
   />;
 }

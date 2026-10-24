@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -102,6 +103,16 @@ export default function Home() {
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
           </a>
+        </div>
+        <div className="glass-card modules-card">
+          <span className="eyebrow">Módulo 2</span><h2>Comunicação e Excelência</h2>
+          <p>Escuta, clareza e consistência na operação.</p>
+          <a className="gold-button module-entry" href="/modulo-2">Iniciar o módulo →</a>
+        </div>
+        <div className="glass-card modules-card">
+          <span className="eyebrow">Módulo 3</span><h2>Líder desenvolve líderes</h2>
+          <p>Desenvolvimento humano, delegação, conflitos, prioridades e visão de negócio.</p>
+          <Link className="gold-button module-entry" href="/modulo-3">Iniciar o módulo →</Link>
         </div>
       </section>
     </main>
