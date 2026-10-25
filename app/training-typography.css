@@ -98,3 +98,17 @@ body main[class] .comm-noise {
   body main[class] .case-section-title { flex-wrap: wrap; }
   body main[class] .influence-card { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Padrão compartilhado por todas as rotas dos três módulos. */
+.training-module { font-family: Inter, "Segoe UI", Arial, sans-serif; font-size:40px; line-height:1.4; }
+.training-module-menu { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:16px 32px; padding:16px 24px; background:#073b2d; color:#fff; border-bottom:1px solid #b6ffba66; position:relative; z-index:10; }
+.training-module-menu a { color:#fff; text-decoration:none; }
+body .training-module :is(h1,h2) { font-size:60px !important; line-height:1.15 !important; overflow-wrap:anywhere; }
+body .training-module :is(p,li,blockquote,h3,h4,label,input,textarea,button,summary,td,th,figcaption) { font-family:inherit; font-size:40px !important; line-height:1.4 !important; overflow-wrap:anywhere; }
+body .training-module :is(h1,h2,h3,h4,p,li,blockquote,label,button,summary,td,th) :is(strong,b,em,span,small) { font-size:inherit !important; line-height:inherit !important; }
+body .training-module nav { flex-wrap:wrap; gap:16px 24px; }
+body .training-module nav :is(a,span,select,button), body .training-module :is(.eyebrow,.back-link,.screen-nav,.badge), body .training-module [class*="badge"], body .training-module [class*="eyebrow"] { font-size:32px !important; line-height:1.35 !important; }
+body .training-module nav a { white-space:normal; }
+body .training-module select { font-family:inherit; }
+body .training-module :is(input,textarea,select,button) { max-width:100%; }
+body .training-module :is(a,button,input,select,textarea):focus-visible { outline:3px solid #ffd43b; outline-offset:4px; }

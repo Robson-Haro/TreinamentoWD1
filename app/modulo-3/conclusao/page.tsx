@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
 import Link from "next/link";
-import ModuleSelector from "../../ModuleSelector";
 import styles from "./celebracao.module.css";
 
 export const metadata: Metadata = { title: "Parabéns! Vocês concluíram o Módulo 3 | TreinamentoWD1" };
 const colors = ["#ffd43b","#fff1a6","#49d9ff","#f675c8","#8ff0b4","#b3a0ff"];
 export default function Closing() {
  return <main className={`module-three-screen ${styles.screen}`}>
-  <nav className={styles.topbar} aria-label="Navegação do treinamento"><Link href="/">WD × RC</Link><Link href="/modulo-3/referencias">← Referências</Link><span>Módulo 3 · Encerramento</span><ModuleSelector/></nav>
+  <nav className={styles.topbar} aria-label="Navegação do treinamento"><Link href="/">WD × RC</Link><Link href="/modulo-3/referencias">← Referências</Link><span>Módulo 3 · Encerramento</span></nav>
   <input className={styles.pause} type="checkbox" id="pause-party" />
   <label className={styles.pauseLabel} htmlFor="pause-party">Pausar animações</label>
   <div className={styles.party} aria-hidden="true">
