@@ -1,6 +1,6 @@
 export type UniversityModule = {
-  id: "modulo-1" | "modulo-2";
-  number: 1 | 2;
+  id: "modulo-1" | "modulo-2" | "modulo-3";
+  number: 1 | 2 | 3;
   title: string;
   subtitle: string;
   description: string;
@@ -52,6 +52,23 @@ export const leadershipModules: UniversityModule[] = [
       "Segurança Psicológica",
       "Leitura de sentimentos",
       "Excelência operacional",
+    ],
+  },
+  {
+    id: "modulo-3",
+    number: 3,
+    title: "Líder Desenvolve Líder",
+    subtitle: "Desenvolvimento de pessoas e resultados",
+    description: "O módulo completo reúne aulas, vídeos, exercícios e exemplos de indicadores para desenvolver novos líderes na operação.",
+    href: "/modulo-3",
+    duration: "Jornada presencial + atividades",
+    topics: [
+      "Desenvolvimento humano e formas de aprender",
+      "Delegação com propósito",
+      "Prevenção de conflitos",
+      "Gestão do tempo e prioridades",
+      "Pensar como dono e acompanhar indicadores",
+      "Plano de desenvolvimento e prática em grupo",
     ],
   },
 ];

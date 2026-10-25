@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ModuleSelector from "../ModuleSelector";
 import base from "./module.module.css";
 import styles from "./capa.module.css";
 
 export const metadata: Metadata = { title: "Líder Desenvolve Líder | Módulo 3 · TreinamentoWD1" };
 export default function ModuleThree() {
  return <main className={`module-three-screen ${base.screen} ${styles.cover}`}>
-  <nav className={base.topbar} aria-label="Navegação do módulo"><Link className={base.brand} href="/">WD × RC</Link><div className={base.nav}><Link href="/modulo-2/conclusao">← Conclusão do Módulo 2</Link><Link href="/">Voltar ao início</Link></div></nav>
+  <nav className={base.topbar} aria-label="Navegação do módulo"><Link className={base.brand} href="/">WD × RC</Link><div className={base.nav}><Link href="/modulo-2/conclusao">← Conclusão do Módulo 2</Link><Link href="/">Voltar ao início</Link></div><ModuleSelector/></nav>
   <section className={styles.stage} aria-labelledby="module-three-title">
    <div className={`${base.panel} ${styles.panel}`}>
     <span className={base.eyebrow}>Jornada de aprimoramento e qualificação da liderança</span>

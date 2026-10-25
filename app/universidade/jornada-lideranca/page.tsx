@@ -51,8 +51,7 @@ export default function JornadaLiderancaPage() {
           <span className={styles.kicker}>Jornada do Conhecimento · Trilha ativa</span>
           <h1>Jornada de Liderança</h1>
           <p>
-            Uma trilha construída a partir do TreinamentoWD1 do Grupo WD. O conteúdo foi organizado em dois módulos independentes,
-            cada um com sua avaliação. A conclusão dos dois módulos libera a certificação da jornada.
+            Uma trilha construída a partir do TreinamentoWD1 do Grupo WD. Os três módulos completos estão disponíveis abaixo, com aulas, vídeos e atividades para aplicar na operação. As avaliações e a certificação disponíveis correspondem aos módulos 1 e 2.
           </p>
         </section>
 
@@ -73,16 +72,16 @@ export default function JornadaLiderancaPage() {
 
                 <p>
                   <strong>Status:</strong>{" "}
-                  {passed ? "Avaliação aprovada · " + String(item.score || 0) + "%" : item ? "Avaliação realizada · " + String(item.score || 0) + "%" : "Em andamento"}
+                  {module.number === 3 ? "Conteúdo completo disponível" : passed ? "Avaliação aprovada · " + String(item.score || 0) + "%" : item ? "Avaliação realizada · " + String(item.score || 0) + "%" : "Em andamento"}
                 </p>
 
                 <div className={styles.moduleActions}>
                   <Link className={styles.primaryButton} href={module.href}>
                     Acessar conteúdo
                   </Link>
-                  <Link className={styles.secondaryButton} href={"/universidade/jornada-lideranca/avaliacao/" + module.number}>
+                  {module.number !== 3 && <Link className={styles.secondaryButton} href={"/universidade/jornada-lideranca/avaliacao/" + module.number}>
                     {passed ? "Rever avaliação" : "Fazer avaliação"}
-                  </Link>
+                  </Link>}
                 </div>
               </article>
             );
@@ -92,7 +91,7 @@ export default function JornadaLiderancaPage() {
         <section className={styles.courseRow} style={{ marginTop: 26 }}>
           <article className={[styles.courseCard, styles.certificateCard].join(" ")}>
             <span className={styles.courseBadge}>Etapa final</span>
-            <h3>Certificado da Jornada de Liderança</h3>
+            <h3>Certificação dos módulos 1 e 2</h3>
             <p>A emissão é liberada após aprovação mínima de 70% nas avaliações dos módulos 1 e 2.</p>
             <Link href="/universidade/certificados">Acessar certificação →</Link>
           </article>

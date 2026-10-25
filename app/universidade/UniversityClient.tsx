@@ -179,7 +179,7 @@ export default function UniversityClient() {
             <a className={styles.secondaryButton} href="#trilhas">Explorar trilhas</a>
           </div>
           <div className={styles.quickStats}>
-            <div><strong>2</strong><span>módulos disponíveis</span></div>
+            <div><strong>3</strong><span>módulos disponíveis</span></div>
             <div><strong>{completed}</strong><span>etapas concluídas</span></div>
             <div><strong>1</strong><span>trilha ativa</span></div>
           </div>
@@ -273,10 +273,11 @@ export default function UniversityClient() {
             <div className={styles.progressLine}><span style={{ width: progress["modulo-2"] ? "100%" : "6%" }} /></div>
             <Link href="/modulo-2">Acessar conteúdo</Link>
           </article>
+          <article className={styles.courseCard}><span className={styles.courseBadge}>Módulo 3</span><h3>Líder Desenvolve Líder</h3><p>Desenvolvimento humano, delegação, prioridades e indicadores. Aulas, vídeos e atividades completos.</p><Link href="/modulo-3">Acessar conteúdo</Link></article>
           <article className={[styles.courseCard, styles.certificateCard].join(" ")}>
             <span className={styles.courseBadge}>Certificação</span>
             <h3>Jornada de Liderança</h3>
-            <p>Conclua os dois módulos e as avaliações para liberar seu certificado.</p>
+            <p>Conclua os módulos 1 e 2 e suas avaliações para liberar seu certificado.</p>
             <Link href="/universidade/certificados">Ver certificados</Link>
           </article>
         </div>
