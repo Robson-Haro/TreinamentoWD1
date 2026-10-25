@@ -40,7 +40,7 @@ export default function Closing() {
      </g>
     </svg>
     <p>Líder Desenvolve Líder</p>
-    <Link className={styles.next} href="/universidade/jornada-lideranca">Voltar à Universidade Corporativa →</Link>
+    <Link className={styles.next} href="https://universidade-corporativa-grupo-wd.vercel.app/jornada-lideranca" target="_top">Voltar à Universidade Corporativa →</Link>
    </div>
   </section>
  </main>;

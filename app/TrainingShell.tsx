@@ -5,7 +5,7 @@ export default function TrainingShell({children}:{children:ReactNode}) {
  return <div className="training-module">
   <nav className="training-module-menu" aria-label="Módulos do treinamento">
    <ModuleSelector/>
-   <Link href="/universidade/jornada-lideranca">Universidade Corporativa</Link>
+   <Link href="https://universidade-corporativa-grupo-wd.vercel.app/jornada-lideranca" target="_top">Universidade Corporativa</Link>
   </nav>
   {children}
  </div>;
