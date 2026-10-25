@@ -1,0 +1,25 @@
+.screen{min-height:100vh;position:relative;isolation:isolate;overflow:hidden;color:white;background:radial-gradient(ellipse at 50% 40%,#165b9c88,transparent 60%),linear-gradient(145deg,#00102c,#032354 55%,#001633);font-family:inherit}
+.topbar{position:relative;z-index:5;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;padding:22px 3vw;background:#00122bbd;border-bottom:1px solid #6bc7ff55;font-size:16px;font-weight:800}
+.topbar a{color:white;text-decoration:none}
+.stage{position:relative;z-index:2;display:grid;place-items:center;padding:42px 20px 60px;min-height:calc(100svh - 90px)}
+.panel{width:min(1200px,100%);padding:clamp(22px,4vw,52px);text-align:center;border:1px solid #8ad6ff66;border-radius:36px;background:linear-gradient(125deg,#d9efff16,#041d3d66);box-shadow:inset 0 1px #ffffff40,0 30px 90px #0006;backdrop-filter:blur(14px)}
+.kicker{font-size:18px;font-weight:850;letter-spacing:.14em;text-transform:uppercase;color:#ffdf69}
+.panel h1{font-size:var(--training-title-size,60px);line-height:1.15;color:#ffd43b;margin:18px 0 0}
+.panel h1 strong{color:white}.panel p{font-size:var(--training-content-size,40px);margin:0 0 24px;color:#e5f4ff}
+.scene{display:block;width:min(760px,100%);height:auto;overflow:visible;margin:8px auto 0}
+.champions{animation:lift 3s ease-in-out infinite;transform-origin:380px 200px}
+.next{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:22px;font-weight:850;color:#071f41;background:linear-gradient(125deg,#fff0a1,#f7c300);border:1px solid #ffe795;padding:22px 32px;border-radius:18px;box-shadow:0 12px 35px #e6bd3633}
+.party{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.confetti{position:absolute;top:-30px;animation:fall 8s linear infinite;opacity:.9;border-radius:2px;will-change:transform}
+.balloon{position:absolute;bottom:-180px;width:48px;height:62px;border-radius:50% 50% 46% 46%;background:radial-gradient(circle at 30% 25%,#ffffffbf,transparent 25%),currentColor;box-shadow:inset -8px -8px 15px #0002;animation:rise 18s linear infinite;opacity:.8;will-change:transform}
+.balloon:before{content:"";position:absolute;bottom:-6px;left:19px;border-left:5px solid transparent;border-right:5px solid transparent;border-bottom:7px solid currentColor}
+.balloon:after{content:"";position:absolute;top:68px;left:23px;height:85px;width:18px;border-left:1px solid #ffffffaa;border-radius:50%}
+.pause{position:absolute;z-index:6;top:96px;left:22px;width:20px;height:20px;accent-color:#ffd43b}
+.pauseLabel{position:absolute;top:95px;left:52px;z-index:6;font-size:16px;padding:2px 8px;background:#001633b3;border-radius:6px;color:white}
+.pause:checked~.party i,.pause:checked~.stage .champions{animation-play-state:paused}
+.screen a:focus-visible,.pause:focus-visible{outline:3px solid #ffd43b;outline-offset:6px}
+@keyframes lift{0%,100%{transform:translateY(10px) rotate(-1deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+@keyframes fall{0%{transform:translate3d(0,-5vh,0) rotate(0)}100%{transform:translate3d(65px,110vh,0) rotate(680deg)}}
+@keyframes rise{0%{transform:translate3d(0,0,0) rotate(-6deg)}50%{transform:translate3d(var(--sway),-65vh,0) rotate(7deg)}100%{transform:translate3d(0,calc(-100vh - 230px),0) rotate(-6deg)}}
+@media(max-width:650px){.topbar{padding:18px;gap:12px}.topbar span{width:100%}.pause{top:134px}.pauseLabel{top:133px}.stage{padding-top:68px}.panel{padding:24px 16px}.next{width:100%;font-size:20px}.balloon{width:32px;height:44px}.balloon:after{top:49px;left:16px}.balloon:before{left:11px}.scene{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){.champions{animation:none}.party{display:none}.pause,.pauseLabel{display:none}}

@@ -1,11 +1,27 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import Frame from "./Frame";
-import { lessons } from "./content";
-import styles from "./module.module.css";
-export const metadata:Metadata={title:"Líder desenvolve líderes | Módulo 3 · TreinamentoWD1"};
-export default function ModuleThree(){return <Frame title="Líder desenvolve líderes" section="Módulo 3 · Da própria entrega ao crescimento da equipe" intro="Um líder deixa mais do que tarefas concluídas. Deixa pessoas mais preparadas para pensar, decidir, ensinar e assumir responsabilidades." number="Módulo 3 · Abertura" previous={{href:"/modulo-2/conclusao",label:"Encerramento do Módulo 2"}} next={{href:"/modulo-3/"+lessons[0].slug,label:"Começar a jornada"}}>
- <section className={styles.panel}><span className={styles.kicker}>Nossa pergunta central</span><h2>Quem está mais preparado porque você lidera?</h2><p>Nesta etapa, vamos conectar desenvolvimento humano, aprendizagem, delegação, prevenção de conflitos, prioridades e visão de negócio.</p><p><strong>Ao final:</strong> você terá um plano para desenvolver uma pessoa e critérios para acompanhar o sucesso da sua operação.</p></section>
- <section className={styles.panel}><h2>Seu caminho pelo módulo</h2><div className={`${styles.index} ${styles.grid}`}>{lessons.map((lesson,index)=><Link key={lesson.slug} href={"/modulo-3/"+lesson.slug}><span>{String(index+1).padStart(2,"0")} · {lesson.section}</span><strong>{lesson.title}</strong></Link>)}</div></section>
- <section className={styles.panel}><h2>Teoria com aplicação responsável</h2><p>As referências aparecem em cada tema e na bibliografia. Exemplos, indicadores por função e atividades são adaptações didáticas para facilities. As metas precisam ser pactuadas conforme o contrato e as condições reais.</p><Link className={styles.button} href="/modulo-3/referencias">Autores e referências →</Link></section>
- </Frame>}
+import base from "./module.module.css";
+import styles from "./capa.module.css";
+
+export const metadata: Metadata = { title: "Líder Desenvolve Líder | Módulo 3 · TreinamentoWD1" };
+export default function ModuleThree() {
+ return <main className={`module-three-screen ${base.screen} ${styles.cover}`}>
+  <nav className={base.topbar} aria-label="Navegação do módulo"><Link className={base.brand} href="/">WD × RC</Link><div className={base.nav}><Link href="/modulo-2/conclusao">← Conclusão do Módulo 2</Link><Link href="/">Voltar ao início</Link></div></nav>
+  <section className={styles.stage} aria-labelledby="module-three-title">
+   <div className={`${base.panel} ${styles.panel}`}>
+    <span className={base.eyebrow}>Jornada de aprimoramento e qualificação da liderança</span>
+    <p className={styles.number}>Módulo 3</p>
+    <h1 id="module-three-title">Líder Desenvolve <strong>Líder</strong></h1>
+    <p className={styles.intro}>Desenvolver pessoas. Compartilhar responsabilidades.<br/>Preparar novos líderes.</p>
+    <div className={styles.partnership} role="img" aria-label="Grupo WD e Ramos Consultoria unidos no desenvolvimento de novos líderes">
+     <span className={styles.halo} aria-hidden="true"/>
+     <div className={`${styles.logo} ${styles.left}`}><Image src="/ramos-consultoria.png" alt="Ramos Consultoria" width={160} height={160} priority/></div>
+     <svg className={styles.connection} viewBox="0 0 240 160" aria-hidden="true"><path d="M10 100 Q120 -25 230 100" fill="none" stroke="#b6ffba" strokeWidth="3" strokeDasharray="8 10"/><path d="M10 115 Q120 15 230 115" fill="none" stroke="#b6ffba" strokeWidth="2" opacity=".3"/><circle cx="120" cy="68" r="36" fill="#b6ffba" opacity=".12"/><path d="M120 41v52m-20-20 20 20 20-20" stroke="#d6ffc6" strokeWidth="6" fill="none" strokeLinecap="round" transform="rotate(180 120 67)"/></svg>
+     <div className={`${styles.logo} ${styles.right}`}><Image src="/grupo-wd.png" alt="Grupo WD" width={160} height={160} priority/></div>
+    </div>
+    <div className={styles.actions}><Link className={base.button} href="/modulo-3/desenvolvimento-humano">Iniciar Módulo 3 →</Link><Link className={styles.outline} href="/modulo-3/roteiro">Ver roteiro do módulo</Link></div>
+   </div>
+  </section>
+ </main>;
+}

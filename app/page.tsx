@@ -110,7 +110,7 @@ export default function Home() {
           <a className="gold-button module-entry" href="/modulo-2">Iniciar o módulo →</a>
         </div>
         <div className="glass-card modules-card">
-          <span className="eyebrow">Módulo 3</span><h2>Líder desenvolve líderes</h2>
+          <span className="eyebrow">Módulo 3</span><h2>Líder Desenvolve Líder</h2>
           <p>Desenvolvimento humano, delegação, conflitos, prioridades e visão de negócio.</p>
           <Link className="gold-button module-entry" href="/modulo-3">Iniciar o módulo →</Link>
         </div>
