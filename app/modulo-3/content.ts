@@ -240,38 +240,32 @@ export const lessons: Lesson[] = [
     "slug": "acordo-de-delegacao",
     "section": "02 · Delegar é diferente de mandar",
     "title": "Um acordo que desenvolve autonomia.",
-    "intro": "Exemplo didático: preparar uma encarregada para conduzir o alinhamento diário da equipe de limpeza.",
+    "intro": "Exercício prático para postos com mais de uma posição: desenvolver a visão do conjunto, acompanhar as entregas da escala e transformar a experiência em aprendizagem para a equipe e os supervisores.",
     "blocks": [
       {
-        "title": "1 · Resultado e valor",
-        "text": "Organizar a distribuição das áreas antes do início das atividades, evitando dúvidas e omissões. O valor para a pessoa é praticar coordenação; para a equipe, saber o que fazer.",
-        "example": "“Ao fim do alinhamento, cada profissional deve conseguir explicar sua área, prioridade e ponto de atenção.”",
+        "title": "1 · Ampliar a visão e praticar a liderança",
+        "text": "Em postos com mais de uma posição, escolha um colaborador para acompanhar a operação daquele dia, sem anunciá-lo como “líder do dia”. Convide-o a olhar além das próprias tarefas: compreender o funcionamento do posto, acompanhar o que precisa ser realizado e identificar prioridades e riscos de uma entrega não acontecer. Explique o valor dessa participação: desenvolver visão do conjunto, capacidade de organização e cuidado com o resultado da equipe. Combine os limites de atuação e mantenha o apoio e a responsabilidade do supervisor.",
+        "example": "No início da escala, o supervisor conversa individualmente com cada colaborador para alinhar responsabilidades, prioridades e pontos de atenção. A pessoa convidada acompanha o conjunto das atividades, identifica dependências e sinaliza riscos. Ao fim do alinhamento, cada profissional deve conseguir explicar sua área, prioridade e ponto de atenção.",
         "points": []
       },
       {
-        "title": "2 · Critérios, limites e recursos",
-        "text": "Use escala aprovada, plano de limpeza e pendências do turno. A encarregada pode organizar a sequência dentro desses limites; alterações de efetivo, escopo ou jornada devem ser encaminhadas.",
-        "example": "Disponibilize o plano atualizado, o tempo necessário e apoio para esclarecer dúvidas.",
+        "title": "2 · Fechar a escala e compreender as pendências",
+        "text": "Ao fim da escala, o supervisor retoma o alinhamento e verifica o que foi concluído e o que ficou pendente. Converse com os profissionais responsáveis para compreender os obstáculos: faltou tempo, recurso, pessoal, orientação ou apoio? Compare o planejamento com as condições reais, escute os envolvidos e identifique o que precisa mudar para viabilizar a entrega.",
+        "example": "Pergunte: “O que estava combinado? O que conseguimos entregar? O que impediu a conclusão? Do que você precisava e não estava disponível?”. Registre a pendência, o impacto, o encaminhamento, o responsável e o prazo. Prioridades e riscos que não podem esperar devem ser tratados de imediato e comunicados na passagem de turno.",
         "points": []
       },
       {
-        "title": "3 · Apoio e retorno",
-        "text": "No primeiro alinhamento, o supervisor demonstra. No seguinte, observa. Depois, acompanha a qualidade e intervém quando necessário. A progressão depende de evidências de execução.",
-        "example": "“Vamos revisar o que funcionou, onde houve dúvida e o que você propõe ajustar.”",
-        "points": []
-      },
-      {
-        "title": "4 · Se algo der errado",
-        "text": "Verifique clareza, preparo, recursos e contexto antes de atribuir a falha à pessoa. Corrija o necessário e ajuste o acordo.",
-        "example": "Se uma área ficou sem responsável, pergunte como a distribuição foi conferida e introduza uma verificação simples, em vez de retomar permanentemente toda a tarefa.",
+        "title": "3 · Acompanhar e desenvolver autonomia",
+        "text": "Ao longo da semana, ofereça essa experiência a diferentes colaboradores, considerando seu preparo e as condições do posto. O supervisor orienta, observa e dá retorno sobre comportamentos concretos: perceber uma prioridade, antecipar um risco, pedir apoio e acompanhar uma entrega. Amplie a autonomia conforme a pessoa demonstra capacidade, mantendo claros os limites da função.",
+        "example": "“Você percebeu que uma pendência afetaria outra atividade e pediu apoio a tempo. O que ajudou nessa percepção? Na próxima escala, como podemos identificar esse risco mais cedo?”",
         "points": []
       }
     ],
     "refs": [
       "ccl"
     ],
-    "prompt": "Em duplas, refaçam uma ordem vaga usando: resultado, valor, autonomia, recursos, prazo e acompanhamento.",
-    "answer": "A pessoa que recebeu o convite deve explicar o combinado com suas palavras. Se cada um entendeu um resultado diferente, o acordo ainda precisa ser ajustado."
+    "prompt": "Reunião semanal de supervisores: o que funcionou, o que não funcionou e o que vamos ajustar para avançar rumo à excelência?",
+    "answer": "Reserve de 30 a 45 minutos por semana para os supervisores compartilharem a aplicação desse exercício. Cada um apresenta um caso: como envolveu o colaborador na visão do posto, como realizou as conversas individuais e o fechamento da escala, quais entregas foram concluídas e quais ficaram pendentes. Relatem o que deu certo e o que deu errado, com exemplos e causas observadas — tempo, recursos, pessoas, clareza ou organização. Escolham as práticas que vale repetir e definam os ajustes, responsáveis e prazos para a próxima semana. Na reunião seguinte, retomem esses compromissos e verifiquem se houve melhora. Repitam esse ciclo de prática, avaliação e ajuste, consolidando o que funciona até alcançar um padrão consistente de excelência."
   },
   {
     "slug": "prevenir-conflitos",
