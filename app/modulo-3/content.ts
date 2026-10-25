@@ -4,6 +4,7 @@ export type Metric = { title: string; formula: string; source: string; care: str
 export type Lesson = { slug: string; section: string; title: string; intro: string; blocks: Block[]; refs: string[]; prompt: string; answer: string; metrics?: Metric[] };
 
 export const references: Reference[] = [
+{"id":"kpi-basics","author":"Balanced Scorecard Institute · KPI.org","title":"What is a Key Performance Indicator (KPI)?","url":"https://www.kpi.org/kpi-basics/","note":"Define KPIs como medidas-chave de progresso em direção a um resultado. Distingue medidas operacionais, resultados e metas. Exemplos escolares e de zeladoria são adaptações didáticas deste treinamento."},
   {
     "id": "baltes",
     "author": "Paul B. Baltes (1987)",
@@ -477,13 +478,25 @@ export const lessons: Lesson[] = [
   {
     "slug": "indicadores-zeladoria",
     "section": "05 · Indicadores por função",
-    "title": "Zeladoria: o que devemos entregar e como comprovar?",
-    "intro": "Vamos olhar para três áreas de resultado da zeladoria: atendimento dos chamados, conservação da estrutura e limpeza das áreas sob sua responsabilidade. Cada uma precisa de critérios claros, registros e acompanhamento.",
+    "title": "Indicadores e KPIs: entenda primeiro, aplique depois.",
+    "intro": "Um número só ajuda quando sabemos o que ele conta. Primeiro, vamos entender indicador, KPI e meta com um exemplo simples. Depois, vamos aplicar essa ideia ao trabalho do zelador.",
     "blocks": [
       {
-        "title": "KPA, KPI e indicador: entendendo sem complicar",
-        "text": "KPA é a área de resultado que precisa de atenção. KPI é um indicador importante para saber como essa área está indo. A meta diz onde queremos chegar. Para facilitar, vamos separar: o que cuidar, o que medir e qual resultado alcançar.",
-        "example": "O que cuidar: atendimento dos chamados. O que medir: porcentagem atendida dentro do prazo. Meta: 100% dos urgentes em até 30 minutos e 100% dos importantes em até 3 horas. Os números dos cálculos são exemplos para praticar.",
+        "title": "1 · Indicador é uma pista sobre como estamos indo",
+        "text": "Imagine que você quer aprender matemática. A quantidade de exercícios feitos, a quantidade de acertos e os tipos de erro dão pistas sobre seu aprendizado. No trabalho, também usamos medidas para acompanhar o que acontece. Chamamos essas medidas de indicadores.",
+        "example": "Você fez 10 exercícios e acertou 8. Seu indicador de acertos é (8 ÷ 10) × 100 = 80%. Saber que fez 10 exercícios mostra a quantidade; saber quantos acertou ajuda a avaliar o resultado.",
+        "points": []
+      },
+      {
+        "title": "2 · KPI é o indicador escolhido como principal",
+        "text": "KPI significa indicador-chave de desempenho. É um indicador que escolhemos porque mostra se estamos avançando em um objetivo importante. Todo KPI é um indicador, mas nem todo indicador precisa ser um KPI. Os indicadores de apoio ajudam a entender o resultado e o que precisa melhorar.",
+        "example": "Se o objetivo é aprender a resolver os problemas, podemos escolher o percentual de acertos como KPI. Quantidade de exercícios praticados e erros por assunto são medidas de apoio. Fazer muitos exercícios não garante aprender: precisamos olhar os acertos e entender os erros.",
+        "points": []
+      },
+      {
+        "title": "3 · Objetivo, KPI, resultado e meta são coisas diferentes",
+        "text": "Objetivo é o que queremos alcançar. KPI é a medida principal que acompanhamos. Resultado é o valor que encontramos. Meta é o valor que queremos atingir em um prazo. Os indicadores de apoio mostram detalhes para investigar por que o resultado aconteceu.",
+        "example": "Objetivo: melhorar em matemática. KPI: percentual de acertos. Resultado de hoje: 8 de 10 = 80%. Meta para a próxima avaliação: 9 de 10 = 90%. Apoio: conferir em quais assuntos ocorreram os 2 erros. Agora vamos usar essa mesma lógica na zeladoria.",
         "points": []
       },
       {
@@ -511,26 +524,28 @@ export const lessons: Lesson[] = [
         "points": []
       }
     ],
-    "refs": [],
+    "refs": [
+      "kpi-basics"
+    ],
     "prompt": "O zelador consegue explicar suas prioridades? E o cliente consegue ver, pelos registros, o que foi entregue e o que ainda precisa melhorar?",
     "answer": "Escolham uma dificuldade, identifiquem sua causa e combinem uma ação de desenvolvimento. Registrem quem fará, o apoio necessário e quando revisar. Apresentem ao cliente o resultado, as pendências e o plano de melhoria com transparência.",
     "metrics": [
       {
-        "title": "1 · Qualidade no atendimento dos chamados",
+        "title": "Zeladoria · KPI: percentual de chamados atendidos no prazo",
         "formula": "Meta do exercício: chamados urgentes com atendimento inicial em até 30 minutos; importantes em até 3 horas. Conte cada grupo separadamente. Exemplo: dos 10 urgentes, 8 foram atendidos no prazo. (8 ÷ 10) × 100 = 80%. Dos 20 importantes, 18 foram atendidos em até 3 horas. (18 ÷ 20) × 100 = 90%.",
-        "source": "Registre abertura, classificação, início do atendimento, providência, responsável e conclusão. O tempo começa na abertura registrada do chamado. Atendimento inicial significa avaliar a situação e iniciar a providência ou acionar o responsável; não é apenas confirmar recebimento.",
+        "source": "Registre abertura, classificação, início do atendimento, providência, responsável e conclusão. O tempo começa na abertura registrada do chamado. Atendimento inicial significa avaliar a situação e iniciar a providência ou acionar o responsável; não é apenas confirmar recebimento. Indicadores de apoio: quantidade de chamados por prioridade, tempo de espera de cada chamado, motivos dos atrasos, tempo até a solução e chamados reabertos. Confira semanalmente.",
         "care": "Meta: 100% em cada prazo. No exemplo, investigue os 2 urgentes e os 2 importantes atrasados. O prazo para resolver é acompanhado separadamente, pois pode depender de peças ou fornecedor. Situações de risco imediato exigem ação e acionamento imediato, sem esperar 30 minutos. Confira também se a solução funcionou e mantenha o solicitante informado."
       },
       {
-        "title": "2 · Estrutura 100% em ordem",
-        "formula": "Confira os itens previstos no checklist: iluminação funcionando, pintura em boas condições, portas, fechaduras e demais itens do posto. Exemplo: foram verificados 40 itens e 36 estavam em ordem. (36 ÷ 40) × 100 = 90% da estrutura verificada em ordem.",
-        "source": "Checklist por ambiente, com data, item, condição encontrada e evidência quando necessária. Defina antes o que significa “em ordem”: iluminação sem falha de funcionamento; pintura sem descascamento ou deterioração segundo o padrão combinado.",
+        "title": "Zeladoria · KPI: percentual da estrutura verificada em ordem",
+        "formula": "Objetivo: manter a estrutura em ordem. Meta: 100%. No exemplo, 18 de 20 pontos de iluminação funcionam (90%) e 18 de 20 pontos de pintura atendem ao padrão (90%). Ao todo, 36 dos 40 itens verificados estão em ordem: (36 ÷ 40) × 100 = 90%. O checklist deve definir os itens antes da inspeção; aqui cada item tem o mesmo peso.",
+        "source": "Checklist por ambiente, com data, item, condição encontrada e evidência quando necessária. Defina antes o que significa “em ordem”: iluminação sem falha de funcionamento; pintura sem descascamento ou deterioração segundo o padrão combinado. Indicadores de apoio: percentual de iluminação funcionando, percentual de pontos de pintura conformes e quantidade de reparos pendentes por tipo. Confira conforme o plano do posto.",
         "care": "Meta: 100% dos itens aplicáveis em ordem. No exemplo, faltam 4 itens. Registre o problema, o risco, a ação, o responsável e o prazo. Encaminhar um reparo não torna o item automaticamente conforme: confira a execução. Separe o estado da estrutura do cumprimento das ações que dependem do zelador; registre dependências de aprovação ou fornecedor."
       },
       {
-        "title": "3 · Limpeza das áreas de responsabilidade da zeladoria",
+        "title": "Zeladoria · KPI: percentual de itens de limpeza conformes",
         "formula": "Confira as áreas e rotinas previstas no plano: lixeiras, local de resíduos e acompanhamento da limpeza da caixa-d’água, entre outras responsabilidades definidas para o posto. Exemplo: de 20 itens aplicáveis, 18 atenderam ao padrão e ao prazo. (18 ÷ 20) × 100 = 90% de conformidade.",
-        "source": "Checklist com área, tarefa, frequência, responsável, data prevista e confirmação. Para lixeiras: verificar resíduos, transbordamento e condições do entorno conforme o plano. Para caixa-d’água: acompanhar a programação, a execução pelo responsável habilitado e o registro do serviço.",
+        "source": "Checklist com área, tarefa, frequência, responsável, data prevista e confirmação. Para lixeiras: verificar resíduos, transbordamento e condições do entorno conforme o plano. Para caixa-d’água: acompanhar a programação, a execução pelo responsável habilitado e o registro do serviço. Indicadores de apoio: itens não conformes por área, tarefas atrasadas, reincidências e situação dos registros de serviços programados. Confira conforme a frequência de cada rotina.",
         "care": "Meta: 100% dos itens aplicáveis no padrão e no prazo. Investigue os 2 itens pendentes. Aparência externa da caixa-d’água não comprova limpeza interna nem qualidade da água. O acompanhamento da zeladoria não significa executar atividade especializada: respeite as atribuições e os procedimentos do local."
       }
     ]
