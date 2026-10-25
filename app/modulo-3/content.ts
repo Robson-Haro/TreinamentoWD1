@@ -460,8 +460,8 @@ export const lessons: Lesson[] = [
         "points": []
       },
       {
-        "title": "6 · Limpeza como exemplo; demais funções em grupo",
-        "text": "Vamos aprofundar os indicadores da limpeza com números e contas simples. Depois, os grupos construirão os indicadores das outras funções. Os valores e as metas dos exemplos são fictícios; não representam resultados reais nem metas oficiais da WD.",
+        "title": "6 · Zeladoria como exemplo; demais funções em grupo",
+        "text": "Vamos aprofundar os indicadores da zeladoria com números e contas simples. Depois, os grupos construirão os indicadores das outras funções. Os valores e as metas dos exemplos são fictícios; não representam resultados reais nem metas oficiais da WD.",
         "example": "Se não houve casos para avaliar, escreva “não se aplica”. Não invente 100%. Não esconda problemas para melhorar o número: registrar com honestidade é o começo da melhoria.",
         "points": []
       }
@@ -475,102 +475,63 @@ export const lessons: Lesson[] = [
     "answer": "Respondam juntos: indicador, resultado atual, meta, prazo, registro usado e responsável. Se ainda não existe medição, definam como começar. Na revisão seguinte, levem os números e as ações realizadas, além da opinião sobre o serviço."
   },
   {
-    "slug": "indicadores-limpeza",
+    "slug": "indicadores-zeladoria",
     "section": "05 · Indicadores por função",
-    "title": "Limpeza: como provar a qualidade do serviço?",
-    "intro": "Vamos aprender usando a limpeza como exemplo completo. Um ambiente limpo depende da execução, do uso correto dos materiais, da apresentação da equipe e da organização. Os números abaixo são fictícios: servem para aprender a medir e conversar sobre a entrega.",
+    "title": "Zeladoria: o que devemos entregar e como comprovar?",
+    "intro": "Vamos olhar para três áreas de resultado da zeladoria: atendimento dos chamados, conservação da estrutura e limpeza das áreas sob sua responsabilidade. Cada uma precisa de critérios claros, registros e acompanhamento.",
     "blocks": [
       {
-        "title": "Como montar um checklist que todos entendam",
-        "text": "Transforme “está limpo” em critérios que possam ser conferidos. Defina o que observar, onde e quando. Use os mesmos critérios ao comparar períodos e registre os itens que não se aplicam.",
-        "example": "Exemplo de verificação visual, conforme o plano do local: piso sem resíduos visíveis e sem água acumulada; lixeira sem transbordamento; dispensador abastecido; superfície sem marcas visíveis. Aparência limpa, sozinha, não prova desinfecção.",
+        "title": "KPA, KPI e indicador: entendendo sem complicar",
+        "text": "KPA é a área de resultado que precisa de atenção. KPI é um indicador importante para saber como essa área está indo. A meta diz onde queremos chegar. Para facilitar, vamos separar: o que cuidar, o que medir e qual resultado alcançar.",
+        "example": "O que cuidar: atendimento dos chamados. O que medir: porcentagem atendida dentro do prazo. Meta: 100% dos urgentes em até 30 minutos e 100% dos importantes em até 3 horas. Os números dos cálculos são exemplos para praticar.",
         "points": []
       },
       {
-        "title": "Porcentagem ou média: escolha a conta certa",
-        "text": "Para saber a porcentagem, use (parte ÷ total) × 100. Para saber o consumo por serviço ou por área, divida o consumo pela quantidade atendida, sem multiplicar por 100. Sempre escreva a unidade: %, litros, mililitros ou minutos.",
-        "example": "45 itens corretos em 50 = 90%. Já 10 litros em 2.000 m² = 5 mililitros por m². Acertos: quanto maior, melhor. Retrabalho e perdas evitáveis: quanto menor, melhor. Consumo: precisa ser avaliado junto com a qualidade e as condições do serviço.",
+        "title": "Como isso desenvolve as pessoas?",
+        "text": "Quando a pessoa sabe o que se espera, consegue organizar o trabalho, escolher prioridades e perceber quando precisa pedir ajuda. O indicador transforma um comentário vago em uma conversa sobre uma ação que pode ser aprendida e melhorada.",
+        "example": "Em vez de dizer “você precisa ser mais ágil”, o supervisor pergunta: “Dos 10 chamados urgentes, 2 passaram de 30 minutos. O que aconteceu? Você reconheceu a prioridade? Faltou recurso, orientação ou apoio?”. Depois orienta, combina um ajuste e acompanha a próxima semana.",
         "points": []
       },
       {
-        "title": "Mostre a evolução ao cliente",
-        "text": "Leve o resultado, a meta, os problemas encontrados e as ações tomadas. A percepção do cliente ajuda a investigar; os registros permitem explicar a entrega com evidências. Compare períodos com critérios e condições semelhantes.",
-        "example": "Exemplo fictício: “Na primeira semana, 45 de 50 itens estavam corretos: 90%. Após orientação e reposição de materiais, foram 48 de 50: 96%. Melhoramos 6 pontos percentuais e atingimos a meta ilustrativa. Os 2 desvios restantes têm responsável e prazo para correção.”",
+        "title": "Ensinar, acompanhar e ampliar a autonomia",
+        "text": "O supervisor demonstra como classificar um chamado, conferir a estrutura e registrar uma pendência. Depois deixa o colaborador praticar, observa e dá retorno. Conforme a pessoa demonstra domínio, pode assumir mais autonomia dentro da sua função.",
+        "example": "Peça ao colaborador que apresente as pendências, explique quais vêm primeiro e proponha o próximo passo. Reconheça quando ele antecipa um problema ou aciona apoio a tempo. O número ajuda a localizar a dificuldade; não explica sozinho sua causa nem define o valor da pessoa.",
         "points": []
       },
       {
-        "title": "Comece com poucos indicadores e acompanhe",
-        "text": "Estes são exemplos para escolher, não uma obrigação de implantar todos de uma vez. Selecione os mais importantes para o contrato, combine as metas e defina quem registra, quem confere e quando a equipe vai revisar os resultados.",
-        "example": "Na reunião semanal, o supervisor apresenta o que melhorou, o que piorou e por quê. Para cada dificuldade, combinem uma ação, um responsável e uma data para verificar se funcionou.",
+        "title": "Por que esses indicadores importam para o cliente?",
+        "text": "O cliente ganha clareza sobre o serviço contratado: o que foi atendido, em quanto tempo, quais condições foram verificadas e o que ainda falta resolver. Isso reduz a dependência da impressão de que “está tudo bem” e permite discutir prioridades, recursos e resultados com evidências.",
+        "example": "Apresentação ao cliente: “Nesta semana, 8 de 10 chamados urgentes foram atendidos em até 30 minutos: 80%. Na estrutura, 36 de 40 itens estavam em ordem: 90%. Na limpeza, 18 de 20 itens estavam conformes: 90%. Estas são as pendências, seus responsáveis e os prazos combinados.” Não esconda uma falha grave dentro de uma média favorável.",
+        "points": []
+      },
+      {
+        "title": "Do dado à melhoria do serviço",
+        "text": "Na reunião semanal, compare os resultados com as metas e com o período anterior. Ouça a equipe e o cliente, investigue os obstáculos e combine ações. Na semana seguinte, confira se a mudança funcionou, usando os mesmos critérios.",
+        "example": "Se os chamados urgentes passarem de 8 em 10 para 10 em 10 no prazo, o resultado sobe de 80% para 100%: melhora de 20 pontos percentuais. Pergunte o que ajudou e como manter esse resultado. Confira a qualidade da solução, além da velocidade.",
         "points": []
       }
     ],
-    "refs": [
-      "issa",
-      "osha"
-    ],
-    "prompt": "Se vocês fossem apresentar o serviço de limpeza ao cliente hoje, quais três indicadores escolheriam e quais registros usariam?",
-    "answer": "Escolham indicadores que mostrem qualidade, execução e uso dos recursos. Expliquem a conta, o resultado atual, a meta pactuada e a ação necessária. Se o dado ainda não existe, combinem como começar a coletá-lo.",
+    "refs": [],
+    "prompt": "O zelador consegue explicar suas prioridades? E o cliente consegue ver, pelos registros, o que foi entregue e o que ainda precisa melhorar?",
+    "answer": "Escolham uma dificuldade, identifiquem sua causa e combinem uma ação de desenvolvimento. Registrem quem fará, o apoio necessário e quando revisar. Apresentem ao cliente o resultado, as pendências e o plano de melhoria com transparência.",
     "metrics": [
       {
-        "title": "1 · Qualidade da limpeza",
-        "formula": "O supervisor confere 50 itens do checklist: pisos, banheiros, lixeiras e superfícies previstas no plano. Desses, 45 estão dentro do padrão. (45 ÷ 50) × 100 = 90% de qualidade na avaliação.",
-        "source": "Checklist com critérios claros, local, horário e resultado. Conferência diária; resumo semanal.",
-        "care": "Meta ilustrativa: pelo menos 96%, ou 48 de 50 itens. Faltam 3 acertos para atingir a meta, mas os 5 problemas encontrados precisam de tratamento. Uma falha crítica exige ação imediata, mesmo que a média seja boa."
+        "title": "1 · Qualidade no atendimento dos chamados",
+        "formula": "Meta do exercício: chamados urgentes com atendimento inicial em até 30 minutos; importantes em até 3 horas. Conte cada grupo separadamente. Exemplo: dos 10 urgentes, 8 foram atendidos no prazo. (8 ÷ 10) × 100 = 80%. Dos 20 importantes, 18 foram atendidos em até 3 horas. (18 ÷ 20) × 100 = 90%.",
+        "source": "Registre abertura, classificação, início do atendimento, providência, responsável e conclusão. O tempo começa na abertura registrada do chamado. Atendimento inicial significa avaliar a situação e iniciar a providência ou acionar o responsável; não é apenas confirmar recebimento.",
+        "care": "Meta: 100% em cada prazo. No exemplo, investigue os 2 urgentes e os 2 importantes atrasados. O prazo para resolver é acompanhado separadamente, pois pode depender de peças ou fornecedor. Situações de risco imediato exigem ação e acionamento imediato, sem esperar 30 minutos. Confira também se a solução funcionou e mantenha o solicitante informado."
       },
       {
-        "title": "2 · Retrabalho: fazer certo na primeira vez",
-        "formula": "De 20 serviços conferidos, 4 precisaram ser refeitos por falha na execução. (4 ÷ 20) × 100 = 20% de retrabalho. Os outros 16 foram entregues corretamente na primeira vez: (16 ÷ 20) × 100 = 80%.",
-        "source": "Registro de inspeção e correção, com motivo e tempo gasto. Resumo semanal.",
-        "care": "Meta ilustrativa: no máximo 5% de retrabalho, ou 1 em 20. Quanto menor, melhor. Investigue método, orientação, tempo e material. Sujeira nova causada pelo uso do ambiente não é erro da limpeza anterior."
+        "title": "2 · Estrutura 100% em ordem",
+        "formula": "Confira os itens previstos no checklist: iluminação funcionando, pintura em boas condições, portas, fechaduras e demais itens do posto. Exemplo: foram verificados 40 itens e 36 estavam em ordem. (36 ÷ 40) × 100 = 90% da estrutura verificada em ordem.",
+        "source": "Checklist por ambiente, com data, item, condição encontrada e evidência quando necessária. Defina antes o que significa “em ordem”: iluminação sem falha de funcionamento; pintura sem descascamento ou deterioração segundo o padrão combinado.",
+        "care": "Meta: 100% dos itens aplicáveis em ordem. No exemplo, faltam 4 itens. Registre o problema, o risco, a ação, o responsável e o prazo. Encaminhar um reparo não torna o item automaticamente conforme: confira a execução. Separe o estado da estrutura do cumprimento das ações que dependem do zelador; registre dependências de aprovação ou fornecedor."
       },
       {
-        "title": "3 · Cumprimento das tarefas no prazo",
-        "formula": "O plano da escala previa 30 tarefas e 27 foram concluídas no prazo e conferidas. (27 ÷ 30) × 100 = 90% das tarefas entregues no prazo.",
-        "source": "Plano da escala com tarefa, responsável, horário previsto e confirmação da entrega.",
-        "care": "Meta ilustrativa: 100% das tarefas aplicáveis. Investigue as 3 pendências: faltou tempo, material, equipamento, pessoal ou clareza? Não marque como concluído o que ainda precisa ser feito."
-      },
-      {
-        "title": "4 · Uso correto e diluição dos produtos",
-        "formula": "Em 20 preparos ou usos observados, 18 seguiram corretamente as instruções do produto e o procedimento do local. (18 ÷ 20) × 100 = 90% de uso correto.",
-        "source": "Observação do produto escolhido, dosador, instruções, identificação e modo de uso. Registre os critérios aplicáveis.",
-        "care": "Meta ilustrativa: 100%. Corrija as 2 situações inadequadas. Não existe uma diluição única para todos os produtos: siga o fabricante e o procedimento aprovado. Não misture produtos; usar mais concentrado não significa limpar melhor."
-      },
-      {
-        "title": "5 · Consumo de produto por área limpa",
-        "formula": "Foram usados 10 litros de solução pronta para limpar 2.000 m² de áreas comparáveis. 10 ÷ 2.000 = 0,005 litro por m², ou 5 mililitros por m². Esta conta é uma média de consumo, não uma porcentagem.",
-        "source": "Registro da solução pronta utilizada e da área efetivamente limpa, pelo mesmo método. Não confunda solução pronta com produto concentrado.",
-        "care": "Referência fictícia: 5 mililitros por m² nesse serviço, apenas para entender a conta; não é recomendação de aplicação. Se outro período usar 14 litros nos mesmos 2.000 m², serão 7 mililitros por m²: investigue a diferença de 4 litros. Considere sujeira, método e qualidade antes de concluir que houve desperdício."
-      },
-      {
-        "title": "6 · Perda de material por desperdício",
-        "formula": "De 40 litros de solução pronta preparados, 4 litros tiveram descarte evitável por preparo excessivo ou derramamento. (4 ÷ 40) × 100 = 10% de perda registrada.",
-        "source": "Registro de preparo, uso, descarte e causa. Separe desperdício evitável de descarte necessário previsto no procedimento.",
-        "care": "Meta ilustrativa: no máximo 5% de perda evitável, ou 2 litros em 40. Ajuste o preparo e verifique recipientes e dosadores. Nunca reaproveite solução imprópria para melhorar o indicador; siga as regras de descarte."
-      },
-      {
-        "title": "7 · Disponibilidade de materiais e equipamentos",
-        "formula": "Em 20 verificações de início da escala, 18 tinham todos os itens necessários disponíveis e em condições de uso. (18 ÷ 20) × 100 = 90% de disponibilidade.",
-        "source": "Checklist de início de escala: produtos, panos, sacos, utensílios, equipamentos e itens de proteção previstos para a tarefa.",
-        "care": "Meta ilustrativa: 100%. Descubra o que faltou nas 2 verificações e quem deve providenciar a reposição. A falta de um item essencial exige ação antes da execução da tarefa."
-      },
-      {
-        "title": "8 · Uniforme: apresentação e condições de uso",
-        "formula": "Em 20 verificações de início de escala, 18 atenderam aos critérios combinados de uniforme: peças exigidas, limpeza e conservação. (18 ÷ 20) × 100 = 90% de conformidade.",
-        "source": "Checklist objetivo de apresentação profissional. Registre a necessidade de reposição ou troca, sem julgamentos sobre aparência pessoal.",
-        "care": "Meta ilustrativa: 100%. Converse reservadamente sobre as 2 situações e verifique se houve fornecimento, tamanho adequado e possibilidade de troca. Uniforme não substitui equipamento de proteção; avalie a proteção separadamente."
-      },
-      {
-        "title": "9 · Uso da proteção prevista para a tarefa",
-        "formula": "Em 15 observações de tarefas que exigiam proteção específica, 14 estavam com todos os itens previstos corretamente utilizados. (14 ÷ 15) × 100 = aproximadamente 93,3%.",
-        "source": "Observação conforme os riscos da tarefa e as orientações de segurança do local. Confira disponibilidade, estado e uso dos itens exigidos.",
-        "care": "Meta ilustrativa: 100%. Corrija a situação inadequada antes de continuar a tarefa. Não espere a reunião semanal nem aceite uma exposição ao risco porque a média ficou alta."
-      },
-      {
-        "title": "10 · Organização e identificação dos materiais",
-        "formula": "De 25 itens aplicáveis conferidos no carrinho e no local de armazenamento, 23 estavam organizados, identificados e guardados conforme o procedimento. (23 ÷ 25) × 100 = 92%.",
-        "source": "Checklist do carrinho e do armazenamento: identificação, validade, condições dos recipientes e separação prevista para os materiais.",
-        "care": "Meta ilustrativa: 100%. Corrija os 2 desvios. Produto sem identificação não deve ser usado até que a situação seja resolvida de forma segura."
+        "title": "3 · Limpeza das áreas de responsabilidade da zeladoria",
+        "formula": "Confira as áreas e rotinas previstas no plano: lixeiras, local de resíduos e acompanhamento da limpeza da caixa-d’água, entre outras responsabilidades definidas para o posto. Exemplo: de 20 itens aplicáveis, 18 atenderam ao padrão e ao prazo. (18 ÷ 20) × 100 = 90% de conformidade.",
+        "source": "Checklist com área, tarefa, frequência, responsável, data prevista e confirmação. Para lixeiras: verificar resíduos, transbordamento e condições do entorno conforme o plano. Para caixa-d’água: acompanhar a programação, a execução pelo responsável habilitado e o registro do serviço.",
+        "care": "Meta: 100% dos itens aplicáveis no padrão e no prazo. Investigue os 2 itens pendentes. Aparência externa da caixa-d’água não comprova limpeza interna nem qualidade da água. O acompanhamento da zeladoria não significa executar atividade especializada: respeite as atribuições e os procedimentos do local."
       }
     ]
   },
@@ -578,11 +539,11 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-em-grupo",
     "section": "05 · Indicadores por função",
     "title": "Agora é com vocês: construam os indicadores da WD.",
-    "intro": "Usamos a limpeza para aprender. Agora, cada grupo vai definir como demonstrar o sucesso de uma das funções abaixo. Não há respostas prontas: construam os indicadores a partir da realidade dos postos.",
+    "intro": "Usamos a zeladoria para aprender. Agora, cada grupo vai definir como demonstrar o sucesso de uma das funções abaixo. Não há respostas prontas: construam os indicadores a partir da realidade dos postos.",
     "blocks": [
       {
         "title": "Funções para o trabalho em grupo",
-        "text": "Portaria • Vigilante • Ronda • Zelador • Jardineiro • Recepcionista • Supervisor",
+        "text": "Portaria • Vigilante • Ronda • Limpeza • Jardineiro • Recepcionista • Supervisor",
         "example": "Distribuam as funções entre os grupos. Todos vão apresentar suas propostas e ouvir as contribuições dos demais.",
         "points": []
       },
