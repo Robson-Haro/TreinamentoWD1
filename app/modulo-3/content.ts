@@ -502,7 +502,7 @@ export const lessons: Lesson[] = [
       {
         "title": "Como isso desenvolve as pessoas?",
         "text": "Quando a pessoa sabe o que se espera, consegue organizar o trabalho, escolher prioridades e perceber quando precisa pedir ajuda. O indicador transforma um comentário vago em uma conversa sobre uma ação que pode ser aprendida e melhorada.",
-        "example": "Em vez de dizer “você precisa ser mais ágil”, o supervisor pergunta: “Dos 10 chamados urgentes, 2 passaram de 30 minutos. O que aconteceu? Você reconheceu a prioridade? Faltou recurso, orientação ou apoio?”. Depois orienta, combina um ajuste e acompanha a próxima semana.",
+        "example": "Em vez de dizer “você precisa ser mais ágil”, pergunte: “Dos 5 chamados urgentes, 1 atrasou. O que aconteceu? Faltou orientação, material ou apoio?”. Ensine o que for necessário, combine uma ação e confira os próximos atendimentos.",
         "points": []
       },
       {
@@ -514,13 +514,13 @@ export const lessons: Lesson[] = [
       {
         "title": "Por que esses indicadores importam para o cliente?",
         "text": "O cliente ganha clareza sobre o serviço contratado: o que foi atendido, em quanto tempo, quais condições foram verificadas e o que ainda falta resolver. Isso reduz a dependência da impressão de que “está tudo bem” e permite discutir prioridades, recursos e resultados com evidências.",
-        "example": "Apresentação ao cliente: “Nesta semana, 8 de 10 chamados urgentes foram atendidos em até 30 minutos: 80%. Na estrutura, 36 de 40 itens estavam em ordem: 90%. Na limpeza, 18 de 20 itens estavam conformes: 90%. Estas são as pendências, seus responsáveis e os prazos combinados.” Não esconda uma falha grave dentro de uma média favorável.",
+        "example": "“Dos 5 chamados urgentes, 4 tiveram atendimento iniciado no prazo. Das 5 lâmpadas, 4 funcionam. Das 5 lixeiras, 4 estão dentro do padrão. Vamos mostrar qual chamado atrasou, qual lâmpada precisa de reparo e qual lixeira precisa de correção, com responsáveis e prazos.”",
         "points": []
       },
       {
         "title": "Do dado à melhoria do serviço",
         "text": "Na reunião semanal, compare os resultados com as metas e com o período anterior. Ouça a equipe e o cliente, investigue os obstáculos e combine ações. Na semana seguinte, confira se a mudança funcionou, usando os mesmos critérios.",
-        "example": "Se os chamados urgentes passarem de 8 em 10 para 10 em 10 no prazo, o resultado sobe de 80% para 100%: melhora de 20 pontos percentuais. Pergunte o que ajudou e como manter esse resultado. Confira a qualidade da solução, além da velocidade.",
+        "example": "Se antes 4 de 5 chamados urgentes foram atendidos no prazo, o resultado foi 80%. Na semana seguinte, os 5 de 5 foram atendidos no prazo: 100%. O que mudou? A equipe aprendeu a identificar a urgência? O apoio chegou mais rápido? Entenda o que funcionou para repetir.",
         "points": []
       }
     ],
@@ -531,22 +531,22 @@ export const lessons: Lesson[] = [
     "answer": "Escolham uma dificuldade, identifiquem sua causa e combinem uma ação de desenvolvimento. Registrem quem fará, o apoio necessário e quando revisar. Apresentem ao cliente o resultado, as pendências e o plano de melhoria com transparência.",
     "metrics": [
       {
-        "title": "Zeladoria · KPI: percentual de chamados atendidos no prazo",
-        "formula": "Meta do exercício: chamados urgentes com atendimento inicial em até 30 minutos; importantes em até 3 horas. Conte cada grupo separadamente. Exemplo: dos 10 urgentes, 8 foram atendidos no prazo. (8 ÷ 10) × 100 = 80%. Dos 20 importantes, 18 foram atendidos em até 3 horas. (18 ÷ 20) × 100 = 90%.",
-        "source": "Registre abertura, classificação, início do atendimento, providência, responsável e conclusão. O tempo começa na abertura registrada do chamado. Atendimento inicial significa avaliar a situação e iniciar a providência ou acionar o responsável; não é apenas confirmar recebimento. Indicadores de apoio: quantidade de chamados por prioridade, tempo de espera de cada chamado, motivos dos atrasos, tempo até a solução e chamados reabertos. Confira semanalmente.",
-        "care": "Meta: 100% em cada prazo. No exemplo, investigue os 2 urgentes e os 2 importantes atrasados. O prazo para resolver é acompanhado separadamente, pois pode depender de peças ou fornecedor. Situações de risco imediato exigem ação e acionamento imediato, sem esperar 30 minutos. Confira também se a solução funcionou e mantenha o solicitante informado."
+        "title": "1 · Chamados: atendemos no prazo?",
+        "formula": "Imagine que chegaram 5 chamados urgentes. O prazo para iniciar o atendimento é de 30 minutos. O zelador iniciou 4 no prazo e 1 atrasou. A conta é: 4 ÷ 5 = 0,8. Depois: 0,8 × 100 = 80%. Isso significa que 4 de cada 5 chamados foram atendidos no prazo.",
+        "source": "Anote a hora em que o chamado chegou e a hora em que o atendimento começou. Exemplo: chegou às 9h e começou às 9h20 → dentro do prazo. Começou às 9h40 → atrasado. Confira os registros ao final do dia.",
+        "care": "Queremos os 5 chamados no prazo: 5 ÷ 5 × 100 = 100%. No exemplo, precisamos entender por que 1 atrasou e corrigir a causa. Para chamados importantes, faça a mesma conta, em separado, usando o prazo de 3 horas. Aqui medimos o início do atendimento, não a conclusão do reparo. Risco imediato exige ação imediata."
       },
       {
-        "title": "Zeladoria · KPI: percentual da estrutura verificada em ordem",
-        "formula": "Objetivo: manter a estrutura em ordem. Meta: 100%. No exemplo, 18 de 20 pontos de iluminação funcionam (90%) e 18 de 20 pontos de pintura atendem ao padrão (90%). Ao todo, 36 dos 40 itens verificados estão em ordem: (36 ÷ 40) × 100 = 90%. O checklist deve definir os itens antes da inspeção; aqui cada item tem o mesmo peso.",
-        "source": "Checklist por ambiente, com data, item, condição encontrada e evidência quando necessária. Defina antes o que significa “em ordem”: iluminação sem falha de funcionamento; pintura sem descascamento ou deterioração segundo o padrão combinado. Indicadores de apoio: percentual de iluminação funcionando, percentual de pontos de pintura conformes e quantidade de reparos pendentes por tipo. Confira conforme o plano do posto.",
-        "care": "Meta: 100% dos itens aplicáveis em ordem. No exemplo, faltam 4 itens. Registre o problema, o risco, a ação, o responsável e o prazo. Encaminhar um reparo não torna o item automaticamente conforme: confira a execução. Separe o estado da estrutura do cumprimento das ações que dependem do zelador; registre dependências de aprovação ou fornecedor."
+        "title": "2 · Estrutura: o que está funcionando?",
+        "formula": "Vamos começar só pela iluminação. Há 5 lâmpadas no local. O zelador confere e encontra 4 funcionando e 1 queimada. A conta é: 4 ÷ 5 × 100 = 80%. Portanto, 80% das lâmpadas estão funcionando.",
+        "source": "Use uma lista com a localização das 5 lâmpadas. Marque “funciona” ou “não funciona”. Confira na ronda prevista no posto. Para pintura, use outra lista: por exemplo, 5 paredes, marcando quais estão em boas condições.",
+        "care": "A meta é ter as 5 lâmpadas funcionando: 100%. Falta resolver 1. O zelador registra, aciona o responsável e depois confere se voltou a funcionar. Pedir o reparo ainda não significa que a lâmpada foi consertada. Iluminação e pintura são indicadores de apoio para acompanhar o objetivo de manter a estrutura em ordem; não vamos misturar os dois nesta conta."
       },
       {
-        "title": "Zeladoria · KPI: percentual de itens de limpeza conformes",
-        "formula": "Confira as áreas e rotinas previstas no plano: lixeiras, local de resíduos e acompanhamento da limpeza da caixa-d’água, entre outras responsabilidades definidas para o posto. Exemplo: de 20 itens aplicáveis, 18 atenderam ao padrão e ao prazo. (18 ÷ 20) × 100 = 90% de conformidade.",
-        "source": "Checklist com área, tarefa, frequência, responsável, data prevista e confirmação. Para lixeiras: verificar resíduos, transbordamento e condições do entorno conforme o plano. Para caixa-d’água: acompanhar a programação, a execução pelo responsável habilitado e o registro do serviço. Indicadores de apoio: itens não conformes por área, tarefas atrasadas, reincidências e situação dos registros de serviços programados. Confira conforme a frequência de cada rotina.",
-        "care": "Meta: 100% dos itens aplicáveis no padrão e no prazo. Investigue os 2 itens pendentes. Aparência externa da caixa-d’água não comprova limpeza interna nem qualidade da água. O acompanhamento da zeladoria não significa executar atividade especializada: respeite as atribuições e os procedimentos do local."
+        "title": "3 · Limpeza: o que ficou dentro do padrão?",
+        "formula": "Vamos começar só pelas lixeiras. Há 5 lixeiras para conferir. O zelador encontra 4 limpas e sem transbordamento; 1 está fora do padrão. A conta é: 4 ÷ 5 × 100 = 80%. Portanto, 80% das lixeiras estão dentro do padrão combinado.",
+        "source": "Use uma lista com a localização das 5 lixeiras e marque “dentro do padrão” ou “precisa corrigir”. Confira na rotina prevista no posto. A limpeza da caixa-d’água deve ser acompanhada em separado: data prevista, serviço realizado pelo responsável e comprovante.",
+        "care": "A meta é ter as 5 lixeiras dentro do padrão: 100%. Falta corrigir 1. Acione quem executa a limpeza e confira o resultado. Para a caixa-d’água, verifique se o serviço programado foi realizado e registrado; olhar por fora não comprova a limpeza interna."
       }
     ]
   },
