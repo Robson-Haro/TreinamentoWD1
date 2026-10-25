@@ -426,37 +426,43 @@ export const lessons: Lesson[] = [
   {
     "slug": "escolher-indicadores",
     "section": "05 · Negócio e indicadores",
-    "title": "Antes do indicador, defina o sucesso.",
-    "intro": "Os indicadores a seguir são propostas didáticas para adaptação ao contrato, ao posto e aos recursos disponíveis. Não são metas legais nem tabelas oficiais das instituições citadas.",
+    "title": "Quais são os indicadores de sucesso dos postos da WD?",
+    "intro": "Antes de olhar os exemplos, vamos conversar: como sabemos que um posto está entregando um bom serviço? O cliente precisa sair do campo da percepção e ir para o campo dos dados. Vamos mergulhar nos indicadores.",
     "blocks": [
       {
-        "title": "1 · Comece pela finalidade da função",
-        "text": "Pergunte: qual entrega esta função deve garantir? Quem recebe? Qual falha precisamos prevenir? O profissional consegue influenciar esse resultado?",
-        "example": "Portaria: controle de acesso confiável. Limpeza: ambiente conforme o plano de qualidade. Supervisor: continuidade e evolução do serviço.",
+        "title": "1 · O que prova que o posto está indo bem?",
+        "text": "Quais são os indicadores de sucesso dos postos da WD? Quando dizemos “o serviço está bom”, o que conseguimos mostrar? Pensem na portaria, vigilância, limpeza, ronda, zeladoria, jardinagem, recepção e supervisão.",
+        "example": "Pergunta para o grupo: “Se o cliente perguntasse hoje por que deve confiar na nossa entrega, quais números vocês apresentariam?”",
         "points": []
       },
       {
-        "title": "2 · Defina uma ficha completa",
-        "text": "Registre nome, objetivo, fórmula, unidade, origem dos dados, frequência, responsável pela apuração e ação esperada quando houver desvio.",
-        "example": "Conformidade = itens conformes ÷ itens aplicáveis inspecionados × 100. Documente a amostra; se não houver denominador, registre “não aplicável”, nunca invente 100%.",
+        "title": "2 · Como estamos medindo isso?",
+        "text": "Quem registra? Onde anota? Com que frequência confere? Todos usam a mesma regra? Sem registro e critério, duas pessoas podem dar opiniões diferentes sobre o mesmo serviço.",
+        "example": "“A limpeza está boa” é uma percepção. “Conferimos 50 itens e 45 estavam dentro do padrão combinado” é um dado. Ainda precisamos saber quais foram os 5 problemas e corrigi-los.",
         "points": []
       },
       {
-        "title": "3 · Equilibre prevenção e resultado",
-        "text": "Medidas preventivas mostram se ações de controle estão acontecendo. Medidas de resultado mostram o que ocorreu. A OSHA destaca essa distinção no acompanhamento de segurança.",
-        "example": "Avalie verificações realizadas e desvios corrigidos junto das ocorrências. “Zero ocorrências” isolado pode significar ausência de registro, não ausência de risco.",
+        "title": "3 · Quais metas queremos alcançar?",
+        "text": "Meta é o resultado que queremos atingir em um prazo. Primeiro conhecemos o resultado atual. Depois combinamos a meta com o cliente e a equipe, considerando o contrato, os riscos e os recursos disponíveis.",
+        "example": "Exemplo didático: hoje acertamos 45 de 50 itens, ou 90%. Uma meta de 96% significa acertar pelo menos 48 dos mesmos 50 itens na próxima avaliação. Precisamos melhorar 3 itens. Uma falha crítica exige ação mesmo se a média atingir a meta.",
         "points": []
       },
       {
-        "title": "4 · Estabeleça metas com contexto",
-        "text": "Levante uma linha de base, entenda o contrato e a criticidade e pactue melhoria viável. Considere volume, turno, área, clima e recursos antes de comparar equipes.",
-        "example": "Exemplo fictício: 45 atendimentos corretos em 50 avaliados = 90%. Examine os cinco desvios; a média não torna aceitável uma falha crítica de segurança.",
+        "title": "4 · Indicador, resultado e meta: qual é a diferença?",
+        "text": "Indicador é aquilo que acompanhamos. Resultado é o número que encontramos. Meta é o número que queremos alcançar. Porcentagem significa “de cada 100”. Para calcular: divida a quantidade que atendeu ao critério pelo total avaliado e multiplique por 100.",
+        "example": "Indicador: acessos feitos corretamente. Resultado: 98 corretos em 100 conferidos = 98%. Meta ilustrativa: 100%. Distância da meta: 2 acessos precisam ser corrigidos na forma de executar o procedimento.",
         "points": []
       },
       {
-        "title": "5 · Use o número para agir e ensinar",
-        "text": "Comece com poucos indicadores úteis. Valide registros, procure causas e envolva a equipe na solução. Proteja dados pessoais e apresente resultados agregados sempre que possível.",
-        "example": "Evite ranking público de pessoas e metas que incentivem esconder problemas, acelerar de forma insegura ou aumentar consumo só para demonstrar atividade.",
+        "title": "5 · O número precisa virar ação",
+        "text": "Quando o resultado fica longe da meta, pergunte o que aconteceu e o que precisa mudar. Pode faltar orientação, tempo, material, gente ou organização. Combine uma ação, um responsável e uma data para conferir novamente.",
+        "example": "Se 4 de 20 serviços precisaram ser refeitos, o retrabalho foi de 20%. O supervisor investiga a causa, orienta a equipe e mede de novo. Na semana seguinte, 1 de 20 precisou de correção: 5%. A comparação só vale se o critério e as condições forem comparáveis.",
+        "points": []
+      },
+      {
+        "title": "6 · Vamos aos exemplos dos postos",
+        "text": "Nas próximas telas, cada função terá exemplos com números e contas simples. Os valores e as metas são fictícios, usados para aprender. Eles não representam resultados reais nem metas oficiais da WD. Os padrões precisam ser combinados para cada contrato.",
+        "example": "Se não houve casos para avaliar, escreva “não se aplica”. Não invente 100%. Não esconda problemas para melhorar o número: registrar com honestidade é o começo da melhoria.",
         "points": []
       }
     ],
@@ -465,21 +471,15 @@ export const lessons: Lesson[] = [
       "osha",
       "issa"
     ],
-    "prompt": "Escolha uma função e complete: “Sabemos que fizemos um bom trabalho quando…”.",
-    "answer": "Transforme essa resposta em uma medida observável. Depois pergunte o que poderia ser sacrificado para melhorar artificialmente o número e acrescente um indicador de equilíbrio."
+    "prompt": "Escolham um posto da WD: o que significa sucesso, como vocês medem hoje e qual meta precisa ser combinada?",
+    "answer": "Respondam juntos: indicador, resultado atual, meta, prazo, registro usado e responsável. Se ainda não existe medição, definam como começar. Na revisão seguinte, levem os números e as ações realizadas, além da opinião sobre o serviço."
   },
   {
     "slug": "indicadores-portaria",
     "section": "05 · Indicadores por função",
     "title": "Portaria · o que significa fazer bem?",
-    "intro": "Controlar acessos com confiabilidade, cordialidade e registros completos.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "Em 40 acessos auditados, 38 cumpriram os requisitos: 95%. Os dois desvios devem ser tratados conforme sua gravidade, não apenas como “5%”.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "A portaria informa uma fila crescente. O futuro líder deve analisar fluxo, autorizações e recursos antes de propor liberar a entrada sem conferência.",
@@ -491,26 +491,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Conformidade dos acessos",
-        "formula": "Acessos auditados que cumpriram todos os requisitos aplicáveis ÷ acessos auditados × 100.",
+        "formula": "Em 100 acessos conferidos, 98 seguiram todas as regras. 98 ÷ 100 × 100 = 98%.",
         "source": "Amostra de registros e verificações autorizadas; revisão semanal.",
-        "care": "Quanto maior, melhor. Analise falhas críticas separadamente e nunca compense autorização incorreta com velocidade."
+        "care": "Meta ilustrativa: 100%. Faltaram 2 acessos corretos. Investigue os erros; não pule etapas para atender mais rápido."
       },
       {
         "title": "Qualidade da passagem de turno",
-        "formula": "Passagens com todos os campos obrigatórios preenchidos ÷ passagens verificadas × 100.",
+        "formula": "Em 20 passagens de turno, 18 tinham todas as informações necessárias. 18 ÷ 20 × 100 = 90%.",
         "source": "Livro ou sistema de passagem; conferência por turno e consolidação semanal.",
-        "care": "Registre pendência, responsável e encaminhamento. Volume de texto não significa qualidade."
+        "care": "Meta ilustrativa: 100%. Complete as 2 passagens com falhas e oriente o próximo registro."
       },
       {
-        "title": "Espera no atendimento",
-        "formula": "Mediana e percentil 90 do tempo entre chegada registrada e início do atendimento.",
+        "title": "Tempo médio de espera",
+        "formula": "Cinco pessoas esperaram 1, 2, 3, 4 e 5 minutos. Somamos 15 minutos e dividimos por 5: espera média de 3 minutos.",
         "source": "Registro de horários em amostra representativa; análise semanal por faixa de movimento.",
-        "care": "Investigue picos e disponibilidade de recursos. Reduzir espera não autoriza eliminar controles."
+        "care": "Meta ilustrativa: média de até 2 minutos. Avalie também a maior espera, de 5 minutos, e os horários de maior movimento."
       }
     ]
   },
@@ -518,14 +518,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-vigilante",
     "section": "05 · Indicadores por função",
     "title": "Vigilante · o que significa fazer bem?",
-    "intro": "Cumprir procedimentos do posto e comunicar situações de risco com precisão.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "De 12 ocorrências elegíveis, 11 foram comunicadas no prazo: 91,7%. Avalie a causa do atraso e se o prazo era adequado à criticidade.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "O supervisor pede que a pessoa explique quando acionar apoio e confira a compreensão por simulação compatível com sua habilitação.",
@@ -537,26 +531,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Conformidade dos procedimentos",
-        "formula": "Itens conformes ÷ itens aplicáveis verificados × 100.",
+        "formula": "Em 40 verificações do procedimento, 38 estavam corretas. 38 ÷ 40 × 100 = 95%.",
         "source": "Checklist do posto e auditoria autorizada; registro por turno e revisão semanal.",
-        "care": "Avalie prontidão e procedimentos, não quantidade de abordagens ou confrontos."
+        "care": "Meta ilustrativa: 100%. Corrija as 2 falhas; uma falha grave não pode ser escondida pela média."
       },
       {
         "title": "Comunicação de ocorrências no prazo",
-        "formula": "Ocorrências comunicadas dentro do prazo previsto para sua classe ÷ ocorrências elegíveis registradas × 100.",
+        "formula": "De 10 ocorrências registradas, 9 foram comunicadas no prazo definido para cada tipo. 9 ÷ 10 × 100 = 90%.",
         "source": "Horários de identificação e comunicação; avaliação por evento e consolidação mensal.",
-        "care": "Separe criticidades. A comunicação deve respeitar o protocolo e a segurança do profissional."
+        "care": "Meta ilustrativa: 100%. Entenda por que 1 comunicação atrasou e ajuste o apoio ou o fluxo."
       },
       {
         "title": "Completude dos relatos",
-        "formula": "Relatos com informações obrigatórias suficientes ÷ relatos auditados × 100.",
+        "formula": "De 20 relatos conferidos, 16 tinham horário, local, fatos e providências. 16 ÷ 20 × 100 = 80%.",
         "source": "Amostra de registros; revisão semanal pelo supervisor.",
-        "care": "Use fatos, horário, local e providência. Não premie redução de registros ou ocultação de incidentes."
+        "care": "Meta ilustrativa: 100%. Faltaram informações em 4 relatos. Oriente o registro completo, sem ocultar ocorrências."
       }
     ]
   },
@@ -564,14 +558,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-limpeza",
     "section": "05 · Indicadores por função",
     "title": "Limpeza · o que significa fazer bem?",
-    "intro": "Entregar áreas conforme o padrão pactuado, com uso adequado de materiais e sem retrabalho evitável.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "Em 60 serviços inspecionados, seis precisaram de correção por execução: 10% de retrabalho. Investigue método, treinamento, recursos e tempo disponível.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "Peça que a encarregada explique o motivo de uma não conformidade e ensine a correção. A ISSA recomenda critérios de avaliação e comparação com uma linha de base.",
@@ -583,26 +571,26 @@ export const lessons: Lesson[] = [
       "issa",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Qualidade da limpeza",
-        "formula": "Itens conformes ÷ itens aplicáveis inspecionados × 100.",
+        "formula": "De 50 itens inspecionados, 45 atenderam ao padrão. 45 ÷ 50 × 100 = 90%.",
         "source": "Checklist por tipo de área e criticidade; inspeção diária e tendência semanal.",
-        "care": "Use critérios claros e amostra consistente. Aparência sozinha não demonstra controle microbiológico."
+        "care": "Meta ilustrativa: pelo menos 96%, ou 48 de 50 itens. Corrija os 5 desvios e verifique causas. Falhas críticas exigem ação imediata."
       },
       {
         "title": "Retrabalho",
-        "formula": "Serviços que exigiram correção por falha de execução ÷ serviços inspecionados × 100.",
+        "formula": "De 20 serviços conferidos, 4 precisaram ser refeitos por erro na execução. 4 ÷ 20 × 100 = 20%.",
         "source": "Inspeção e ordens de correção; consolidação semanal.",
-        "care": "Quanto menor, melhor. Diferencie falha de execução de nova sujidade por uso do ambiente."
+        "care": "Meta ilustrativa: no máximo 5%, ou 1 em 20. Quanto menor, melhor. Sujeira nova causada pelo uso do ambiente não é o mesmo que erro de limpeza."
       },
       {
         "title": "Consumo de material por serviço comparável",
-        "formula": "Quantidade consumida ÷ unidades comparáveis atendidas, conforme o plano local.",
+        "formula": "Foram usados 12 litros de solução pronta em 60 serviços comparáveis. 12 ÷ 60 = 0,2 litro por serviço, ou 200 mililitros.",
         "source": "Estoque e execução do plano; análise mensal.",
-        "care": "Compare áreas e condições semelhantes. Menor consumo não é automaticamente melhor; respeite as instruções do produto e o padrão de qualidade."
+        "care": "Referência didática: 200 mililitros por serviço, somente se validada para essa tarefa. Consumo menor não garante qualidade; siga a diluição e as instruções do produto."
       }
     ]
   },
@@ -610,14 +598,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-ronda",
     "section": "05 · Indicadores por função",
     "title": "Ronda · o que significa fazer bem?",
-    "intro": "Verificar pontos previstos e transformar anomalias observadas em encaminhamentos úteis.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "Foram verificados 27 de 30 pontos previstos e aplicáveis: 90%. Identifique os três pontos não verificados e a contingência necessária.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "Aqui “ronda” significa a atividade de verificação definida no posto. Ela não amplia atribuições ou autoriza intervenções para as quais a pessoa não esteja preparada.",
@@ -629,26 +611,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Cobertura válida do plano",
-        "formula": "Pontos verificados com evidência válida ÷ pontos previstos e aplicáveis × 100.",
+        "formula": "O plano previa 40 pontos de verificação e 36 foram realmente conferidos. 36 ÷ 40 × 100 = 90%.",
         "source": "Plano de ronda e registros autorizados; apuração por turno.",
-        "care": "Justifique impedimentos e desvios do percurso. Um registro eletrônico sozinho não comprova inspeção de qualidade."
+        "care": "Meta ilustrativa: 100%. Investigue os 4 pontos pendentes. Marcar presença no sistema não substitui verificar o local."
       },
       {
         "title": "Encaminhamento de anomalias",
-        "formula": "Anomalias encaminhadas conforme protocolo e prazo ÷ anomalias registradas elegíveis × 100.",
+        "formula": "Foram registradas 8 anomalias e 6 foram encaminhadas no prazo do protocolo. 6 ÷ 8 × 100 = 75%.",
         "source": "Registro de achados e acionamentos; revisão semanal.",
-        "care": "Não use uma meta mínima de anomalias: isso incentiva registros artificiais. Nenhum achado pede verificação do contexto."
+        "care": "Meta ilustrativa: 100%. Trate as 2 pendências. Não estabeleça quantidade mínima de problemas para encontrar."
       },
       {
         "title": "Qualidade dos registros",
-        "formula": "Registros com local, horário, descrição e encaminhamento completos ÷ registros auditados × 100.",
+        "formula": "De 10 registros conferidos, 9 estavam completos. 9 ÷ 10 × 100 = 90%.",
         "source": "Amostra de relatórios; revisão semanal.",
-        "care": "Não transforme rapidez ou distância percorrida no objetivo principal da ronda."
+        "care": "Meta ilustrativa: 100%. Identifique o que faltou em 1 registro e melhore o próximo relato."
       }
     ]
   },
@@ -656,14 +638,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-zelador",
     "section": "05 · Indicadores por função",
     "title": "Zelador · o que significa fazer bem?",
-    "intro": "Acompanhar as condições do local e coordenar encaminhamentos dentro de sua responsabilidade.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "Das 20 verificações devidas, 18 ocorreram no prazo: 90%. Identifique recursos, impedimentos e riscos das duas pendências.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "O zelador prepara uma lista priorizada de pendências com impacto, responsável e próxima ação. O supervisor discute os critérios utilizados.",
@@ -675,26 +651,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Rotinas preventivas realizadas",
-        "formula": "Rotinas previstas executadas no prazo ÷ rotinas devidas no período × 100.",
+        "formula": "Das 20 verificações preventivas previstas, 18 foram feitas no prazo. 18 ÷ 20 × 100 = 90%.",
         "source": "Plano do local e evidências de verificação; revisão semanal.",
-        "care": "Distingua verificar de executar manutenção especializada. Não atribua ao zelador atividades fora de sua competência."
+        "care": "Meta ilustrativa: 100%. Reprograme as 2 pendências conforme o risco e acione profissionais habilitados quando necessário."
       },
       {
         "title": "Chamados encaminhados no prazo",
-        "formula": "Chamados com diagnóstico inicial e encaminhamento no prazo ÷ chamados elegíveis × 100.",
+        "formula": "De 15 chamados, 12 tiveram avaliação inicial e encaminhamento no prazo. 12 ÷ 15 × 100 = 80%.",
         "source": "Sistema ou livro de chamados; revisão semanal por criticidade.",
-        "care": "Separar tempo sob controle do zelador de espera por fornecedor ou aprovação."
+        "care": "Meta ilustrativa: 100%. Investigue os 3 atrasos. Separe o encaminhamento do tempo de execução do fornecedor."
       },
       {
         "title": "Reincidência de problemas",
-        "formula": "Chamados reabertos pelo mesmo problema na janela definida ÷ chamados encerrados elegíveis × 100.",
+        "formula": "De 20 chamados encerrados e acompanhados por 30 dias, 3 voltaram pelo mesmo problema. 3 ÷ 20 × 100 = 15%.",
         "source": "Histórico de chamados; revisão mensal.",
-        "care": "Defina antes a janela e o que constitui o mesmo problema. Investigue causa e qualidade do encerramento."
+        "care": "Meta ilustrativa: no máximo 5%, ou 1 em 20. Quanto menor, melhor. Investigue por que a solução não durou."
       }
     ]
   },
@@ -702,14 +678,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-jardineiro",
     "section": "05 · Indicadores por função",
     "title": "Jardineiro · o que significa fazer bem?",
-    "intro": "Manter áreas verdes nas condições pactuadas, respeitando necessidades das plantas e recursos disponíveis.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "Com medição dedicada de 6.000 litros para 1.000 m² no período, o indicador é 6 L/m². Esse valor não é uma meta universal de irrigação.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "Peça que o jardineiro identifique uma oportunidade de evitar desperdício e explique como preservará as condições das plantas ao testar o ajuste.",
@@ -721,26 +691,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Conformidade das áreas verdes",
-        "formula": "Itens conformes no checklist ÷ itens aplicáveis avaliados × 100.",
+        "formula": "De 30 itens avaliados nas áreas verdes, 27 estavam de acordo com o padrão. 27 ÷ 30 × 100 = 90%.",
         "source": "Inspeção por área e estação; consolidação semanal ou quinzenal.",
-        "care": "Considere espécie, clima e sazonalidade. Aparência não deve incentivar poda ou irrigação desnecessária."
+        "care": "Meta ilustrativa: pelo menos 90%. A meta foi atingida, mas os 3 desvios ainda precisam de análise, considerando clima e espécie."
       },
       {
         "title": "Cumprimento do plano de manejo",
-        "formula": "Atividades realizadas na janela técnica prevista ÷ atividades devidas e aplicáveis × 100.",
+        "formula": "Havia 12 atividades previstas para o período e 10 foram realizadas na época adequada. 10 ÷ 12 × 100 = 83,3%.",
         "source": "Plano de manejo e registros; revisão semanal.",
-        "care": "Registre ajustes por chuva, restrições e orientação técnica. O cronograma não deve prevalecer sobre condições inadequadas."
+        "care": "Meta ilustrativa: 100% das atividades aplicáveis. Registre se chuva ou orientação técnica impediram as 2 atividades; não execute em condições inadequadas."
       },
       {
         "title": "Eficiência do uso de água",
-        "formula": "Volume medido de irrigação ÷ área efetivamente irrigada, em litros por m² no período.",
+        "formula": "O medidor registrou 2.000 litros para irrigar 500 m² no período. 2.000 ÷ 500 = 4 litros por m².",
         "source": "Medidor dedicado e registro de áreas; avaliação mensal com dados de chuva.",
-        "care": "Se não houver medição confiável, não apresente estimativa como dado medido. Compare estações semelhantes e saúde das plantas."
+        "care": "Referência fictícia: até 4 litros por m² nesse período, se validada tecnicamente. Compare chuva, espécie e saúde das plantas; economizar água não significa deixar plantas sem o necessário."
       }
     ]
   },
@@ -748,14 +718,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-recepcao",
     "section": "05 · Indicadores por função",
     "title": "Recepcionista · o que significa fazer bem?",
-    "intro": "Acolher, orientar e encaminhar com precisão, preservando informações e os procedimentos do local.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "De 25 respostas válidas, 22 foram favoráveis: 88%. Se foram convidados 100 visitantes, a taxa de resposta foi 25%; os dois números devem aparecer.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "O supervisor observa uma simulação e dá retorno sobre escuta, clareza e encaminhamento. Desenvolver não é pedir que a pessoa “seja mais simpática” sem explicar comportamentos.",
@@ -767,26 +731,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Encaminhamento correto na primeira vez",
-        "formula": "Atendimentos encaminhados corretamente sem retrabalho ÷ atendimentos avaliados × 100.",
+        "formula": "De 50 atendimentos avaliados, 47 foram encaminhados corretamente na primeira vez. 47 ÷ 50 × 100 = 94%.",
         "source": "Amostra de atendimentos e correções; revisão semanal.",
-        "care": "Defina o que é erro e exclua mudanças legítimas de solicitação. Não confunda rapidez com precisão."
+        "care": "Meta ilustrativa: pelo menos 98%, ou 49 de 50. Precisamos de mais 2 encaminhamentos corretos para atingir a meta."
       },
       {
-        "title": "Tempo até o primeiro atendimento",
-        "formula": "Mediana e percentil 90 da espera entre chegada e início de atendimento.",
+        "title": "Tempo médio de espera",
+        "formula": "Cinco visitantes esperaram 1, 1, 2, 3 e 3 minutos. A soma é 10; 10 ÷ 5 = 2 minutos de espera média.",
         "source": "Registro por faixa de movimento; análise semanal.",
-        "care": "Avalie junto da qualidade e do volume. Casos prioritários podem alterar a sequência conforme procedimento do local."
+        "care": "Meta ilustrativa: média de até 2 minutos. Foi atingida, mas confira também a maior espera, de 3 minutos, e os picos."
       },
       {
         "title": "Satisfação com o atendimento",
-        "formula": "Respostas favoráveis ÷ respostas válidas × 100, acompanhadas da taxa de resposta.",
+        "formula": "Das 20 respostas recebidas, 18 foram “bom” ou “ótimo”. 18 ÷ 20 × 100 = 90% de satisfação. Se 50 pessoas foram convidadas, 20 ÷ 50 × 100 = 40% de participação.",
         "source": "Pesquisa breve e voluntária; análise mensal.",
-        "care": "Use critério explícito de resposta favorável. Amostra pequena ou seletiva limita conclusões; não pressione o visitante a avaliar."
+        "care": "Meta ilustrativa: pelo menos 90% de satisfação. Esse resultado descreve quem respondeu; não permite afirmar que todos os clientes estão satisfeitos."
       }
     ]
   },
@@ -794,14 +758,8 @@ export const lessons: Lesson[] = [
     "slug": "indicadores-supervisor",
     "section": "05 · Indicadores por função",
     "title": "Supervisor · o que significa fazer bem?",
-    "intro": "Garantir continuidade, qualidade e desenvolvimento, conectando os postos ao resultado do contrato.",
+    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
-      {
-        "title": "Exemplo de cálculo · dados fictícios",
-        "text": "De oito pessoas com verificação prevista, seis demonstraram a competência: 75%. As duas restantes precisam de diagnóstico e apoio, não de exposição pública.",
-        "example": "",
-        "points": []
-      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "Complete o painel com qualidade do serviço, voz do cliente, faltas e rotatividade contextualizadas e custos sob sua influência. O supervisor deve explicar causas, decisões e resultados, não apenas apresentar números.",
@@ -813,26 +771,26 @@ export const lessons: Lesson[] = [
       "kaplan",
       "osha"
     ],
-    "prompt": "Qual destes indicadores ajuda a tomar uma decisão no seu posto?",
-    "answer": "Escolha dois ou três para começar. Registre linha de base e pactue meta, responsável e ação. Valide o dado com a equipe antes de usá-lo para avaliar desempenho.",
+    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
+    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
     "metrics": [
       {
         "title": "Cobertura planejada do serviço",
-        "formula": "Horas de postos efetivamente cobertas conforme plano ÷ horas previstas aplicáveis × 100.",
+        "formula": "Foram previstas 200 horas de cobertura e 190 foram cumpridas conforme o plano. 190 ÷ 200 × 100 = 95%.",
         "source": "Escala e registros de cobertura; apuração diária e análise semanal.",
-        "care": "Leia junto de jornada, qualificação e condições de trabalho. Cobrir a qualquer custo não é sucesso sustentável."
+        "care": "Meta ilustrativa: 100%. Faltaram 10 horas. Investigue as causas e organize a cobertura respeitando jornada, preparo e condições de trabalho."
       },
       {
         "title": "Ações corretivas eficazes",
-        "formula": "Ações devidas concluídas no prazo com eficácia verificada ÷ ações devidas no período × 100.",
+        "formula": "Das 10 ações que deveriam terminar na semana, 8 foram concluídas no prazo e tiveram o resultado confirmado. 8 ÷ 10 × 100 = 80%.",
         "source": "Plano de ação, prazo e verificação; revisão semanal.",
-        "care": "Defina quando verificar eficácia. Fechar a tarefa no sistema sem resolver a causa não é conclusão eficaz."
+        "care": "Meta ilustrativa: 100%. Trate as 2 pendências. Marcar uma ação como concluída não basta: confira se resolveu o problema."
       },
       {
         "title": "Desenvolvimento com competência demonstrada",
-        "formula": "Pessoas que demonstraram a competência pactuada ÷ pessoas com essa verificação prevista no período × 100.",
+        "formula": "De 5 pessoas com avaliação prática prevista, 4 demonstraram a habilidade combinada. 4 ÷ 5 × 100 = 80%.",
         "source": "Plano de desenvolvimento e observação com critérios; revisão mensal.",
-        "care": "Não substitua capacidade por presença no treinamento. Ajuste oportunidades, acessibilidade e condições antes de comparar."
+        "care": "Meta ilustrativa: 100%. Planeje apoio para a pessoa que ainda precisa praticar. Participar do treinamento não é o mesmo que demonstrar a habilidade."
       }
     ]
   },
