@@ -521,6 +521,12 @@ export const lessons: Lesson[] = [
     "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
       {
+        "title": "A mesma regra para calcular a porcentagem",
+        "text": "Porcentagem = (parte que queremos contar ÷ total avaliado) × 100. A regra é igual na vigilância e na limpeza. O que muda é o que estamos contando: acertos ou problemas.",
+        "example": "Na vigilância, 38 acertos em 40 verificações = 95% de acertos. Na limpeza, 45 acertos em 50 itens = 90% de acertos. Nos dois casos, quanto maior, melhor. Já 4 serviços refeitos em 20 = 20% de retrabalho: quanto menor, melhor. Sempre leia o nome do indicador antes de comparar.",
+        "points": []
+      },
+      {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "O supervisor pede que a pessoa explique quando acionar apoio e confira a compreensão por simulação compatível com sua habilitação.",
         "example": "",
@@ -536,19 +542,19 @@ export const lessons: Lesson[] = [
     "metrics": [
       {
         "title": "Conformidade dos procedimentos",
-        "formula": "Em 40 verificações do procedimento, 38 estavam corretas. 38 ÷ 40 × 100 = 95%.",
+        "formula": "Regra: (verificações corretas ÷ total de verificações) × 100. Exemplo: 38 corretas em 40 verificações. Primeiro: 38 ÷ 40 = 0,95. Depois: 0,95 × 100 = 95% de acertos.",
         "source": "Checklist do posto e auditoria autorizada; registro por turno e revisão semanal.",
         "care": "Meta ilustrativa: 100%. Corrija as 2 falhas; uma falha grave não pode ser escondida pela média."
       },
       {
         "title": "Comunicação de ocorrências no prazo",
-        "formula": "De 10 ocorrências registradas, 9 foram comunicadas no prazo definido para cada tipo. 9 ÷ 10 × 100 = 90%.",
+        "formula": "Regra: (ocorrências comunicadas no prazo ÷ total de ocorrências avaliadas) × 100. Exemplo: 9 no prazo em 10 ocorrências. Primeiro: 9 ÷ 10 = 0,9. Depois: 0,9 × 100 = 90% no prazo.",
         "source": "Horários de identificação e comunicação; avaliação por evento e consolidação mensal.",
         "care": "Meta ilustrativa: 100%. Entenda por que 1 comunicação atrasou e ajuste o apoio ou o fluxo."
       },
       {
         "title": "Completude dos relatos",
-        "formula": "De 20 relatos conferidos, 16 tinham horário, local, fatos e providências. 16 ÷ 20 × 100 = 80%.",
+        "formula": "Regra: (relatos completos ÷ total de relatos conferidos) × 100. Exemplo: 16 completos em 20 relatos. Primeiro: 16 ÷ 20 = 0,8. Depois: 0,8 × 100 = 80% completos.",
         "source": "Amostra de registros; revisão semanal pelo supervisor.",
         "care": "Meta ilustrativa: 100%. Faltaram informações em 4 relatos. Oriente o registro completo, sem ocultar ocorrências."
       }
@@ -560,6 +566,12 @@ export const lessons: Lesson[] = [
     "title": "Limpeza · o que significa fazer bem?",
     "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
     "blocks": [
+      {
+        "title": "A mesma regra para calcular a porcentagem",
+        "text": "Porcentagem = (parte que queremos contar ÷ total avaliado) × 100. A regra é igual na vigilância e na limpeza. O que muda é o que estamos contando: acertos ou problemas.",
+        "example": "Na vigilância, 38 acertos em 40 verificações = 95% de acertos. Na limpeza, 45 acertos em 50 itens = 90% de acertos. Nos dois casos, quanto maior, melhor. Já 4 serviços refeitos em 20 = 20% de retrabalho: quanto menor, melhor. Sempre leia o nome do indicador antes de comparar.",
+        "points": []
+      },
       {
         "title": "Como desenvolver alguém usando estes dados",
         "text": "Peça que a encarregada explique o motivo de uma não conformidade e ensine a correção. A ISSA recomenda critérios de avaliação e comparação com uma linha de base.",
@@ -576,19 +588,19 @@ export const lessons: Lesson[] = [
     "metrics": [
       {
         "title": "Qualidade da limpeza",
-        "formula": "De 50 itens inspecionados, 45 atenderam ao padrão. 45 ÷ 50 × 100 = 90%.",
+        "formula": "Regra: (itens dentro do padrão ÷ total de itens inspecionados) × 100. Exemplo: 45 corretos em 50 itens. Primeiro: 45 ÷ 50 = 0,9. Depois: 0,9 × 100 = 90% de acertos.",
         "source": "Checklist por tipo de área e criticidade; inspeção diária e tendência semanal.",
         "care": "Meta ilustrativa: pelo menos 96%, ou 48 de 50 itens. Corrija os 5 desvios e verifique causas. Falhas críticas exigem ação imediata."
       },
       {
         "title": "Retrabalho",
-        "formula": "De 20 serviços conferidos, 4 precisaram ser refeitos por erro na execução. 4 ÷ 20 × 100 = 20%.",
+        "formula": "Regra: (serviços que precisaram ser refeitos ÷ total de serviços conferidos) × 100. Exemplo: 4 refeitos em 20 serviços. Primeiro: 4 ÷ 20 = 0,2. Depois: 0,2 × 100 = 20% de retrabalho. Aqui contamos os problemas, por isso quanto menor, melhor.",
         "source": "Inspeção e ordens de correção; consolidação semanal.",
         "care": "Meta ilustrativa: no máximo 5%, ou 1 em 20. Quanto menor, melhor. Sujeira nova causada pelo uso do ambiente não é o mesmo que erro de limpeza."
       },
       {
         "title": "Consumo de material por serviço comparável",
-        "formula": "Foram usados 12 litros de solução pronta em 60 serviços comparáveis. 12 ÷ 60 = 0,2 litro por serviço, ou 200 mililitros.",
+        "formula": "Esta conta não é uma porcentagem: é consumo médio por serviço. Regra: litros usados ÷ total de serviços comparáveis. Exemplo: 12 litros ÷ 60 serviços = 0,2 litro por serviço, ou 200 mililitros. Não multiplicamos por 100, pois queremos litros por serviço, e não uma porcentagem.",
         "source": "Estoque e execução do plano; análise mensal.",
         "care": "Referência didática: 200 mililitros por serviço, somente se validada para essa tarefa. Consumo menor não garante qualidade; siga a diluição e as instruções do produto."
       }
