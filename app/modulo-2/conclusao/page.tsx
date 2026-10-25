@@ -11,8 +11,8 @@ export default function Closing() {
   <input className={styles.pause} type="checkbox" id="pause-party" />
   <label className={styles.pauseLabel} htmlFor="pause-party">Pausar animações</label>
   <div className={styles.party} aria-hidden="true">
-   {Array.from({length:120},(_,i)=><i key={`c${i}`} className={styles.confetti} style={{left:`${(i*37)%100}%`,backgroundColor:colors[i%colors.length],animationDelay:`-${(i*0.31)%9}s`,animationDuration:`${6+(i%6)}s`,width:`${7+i%7}px`,height:`${12+i%13}px`}}/>)}
-   {Array.from({length:26},(_,i)=><i key={`b${i}`} className={styles.balloon} style={{left:`${(i*19)%96}%`,color:colors[(i+2)%colors.length],animationDelay:`-${(i*1.7)%22}s`,animationDuration:`${15+i%8}s`,"--sway":`${i%2?45:-45}px`} as CSSProperties}/>)}
+   {Array.from({length:120},(_,i)=><i key={`c${i}`} className={styles.confetti} style={{left:`${(i*37)%100}%`,backgroundColor:colors[i%colors.length],"--delay":`-${(i*0.31)%9}s`,"--duration":`${6+(i%6)}s`,width:`${7+i%7}px`,height:`${12+i%13}px`} as CSSProperties}/>)}
+   {Array.from({length:26},(_,i)=><i key={`b${i}`} className={styles.balloon} style={{left:`${(i*19)%96}%`,color:colors[(i+2)%colors.length],"--delay":`-${(i*1.7)%22}s`,"--duration":`${15+i%8}s`,"--sway":`${i%2?45:-45}px`} as CSSProperties}/>)}
   </div>
   <section className={styles.stage} aria-labelledby="celebration-title">
    <div className={styles.panel}>
