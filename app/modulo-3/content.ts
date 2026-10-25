@@ -460,8 +460,8 @@ export const lessons: Lesson[] = [
         "points": []
       },
       {
-        "title": "6 · Vamos aos exemplos dos postos",
-        "text": "Nas próximas telas, cada função terá exemplos com números e contas simples. Os valores e as metas são fictícios, usados para aprender. Eles não representam resultados reais nem metas oficiais da WD. Os padrões precisam ser combinados para cada contrato.",
+        "title": "6 · Limpeza como exemplo; demais funções em grupo",
+        "text": "Vamos aprofundar os indicadores da limpeza com números e contas simples. Depois, os grupos construirão os indicadores das outras funções. Os valores e as metas dos exemplos são fictícios; não representam resultados reais nem metas oficiais da WD.",
         "example": "Se não houve casos para avaliar, escreva “não se aplica”. Não invente 100%. Não esconda problemas para melhorar o número: registrar com honestidade é o começo da melhoria.",
         "points": []
       }
@@ -475,107 +475,33 @@ export const lessons: Lesson[] = [
     "answer": "Respondam juntos: indicador, resultado atual, meta, prazo, registro usado e responsável. Se ainda não existe medição, definam como começar. Na revisão seguinte, levem os números e as ações realizadas, além da opinião sobre o serviço."
   },
   {
-    "slug": "indicadores-portaria",
-    "section": "05 · Indicadores por função",
-    "title": "Portaria · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "A portaria informa uma fila crescente. O futuro líder deve analisar fluxo, autorizações e recursos antes de propor liberar a entrada sem conferência.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Conformidade dos acessos",
-        "formula": "Em 100 acessos conferidos, 98 seguiram todas as regras. 98 ÷ 100 × 100 = 98%.",
-        "source": "Amostra de registros e verificações autorizadas; revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Faltaram 2 acessos corretos. Investigue os erros; não pule etapas para atender mais rápido."
-      },
-      {
-        "title": "Qualidade da passagem de turno",
-        "formula": "Em 20 passagens de turno, 18 tinham todas as informações necessárias. 18 ÷ 20 × 100 = 90%.",
-        "source": "Livro ou sistema de passagem; conferência por turno e consolidação semanal.",
-        "care": "Meta ilustrativa: 100%. Complete as 2 passagens com falhas e oriente o próximo registro."
-      },
-      {
-        "title": "Tempo médio de espera",
-        "formula": "Cinco pessoas esperaram 1, 2, 3, 4 e 5 minutos. Somamos 15 minutos e dividimos por 5: espera média de 3 minutos.",
-        "source": "Registro de horários em amostra representativa; análise semanal por faixa de movimento.",
-        "care": "Meta ilustrativa: média de até 2 minutos. Avalie também a maior espera, de 5 minutos, e os horários de maior movimento."
-      }
-    ]
-  },
-  {
-    "slug": "indicadores-vigilante",
-    "section": "05 · Indicadores por função",
-    "title": "Vigilante · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "A mesma regra para calcular a porcentagem",
-        "text": "Porcentagem = (parte que queremos contar ÷ total avaliado) × 100. A regra é igual na vigilância e na limpeza. O que muda é o que estamos contando: acertos ou problemas.",
-        "example": "Na vigilância, 38 acertos em 40 verificações = 95% de acertos. Na limpeza, 45 acertos em 50 itens = 90% de acertos. Nos dois casos, quanto maior, melhor. Já 4 serviços refeitos em 20 = 20% de retrabalho: quanto menor, melhor. Sempre leia o nome do indicador antes de comparar.",
-        "points": []
-      },
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "O supervisor pede que a pessoa explique quando acionar apoio e confira a compreensão por simulação compatível com sua habilitação.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Conformidade dos procedimentos",
-        "formula": "Regra: (verificações corretas ÷ total de verificações) × 100. Exemplo: 38 corretas em 40 verificações. Primeiro: 38 ÷ 40 = 0,95. Depois: 0,95 × 100 = 95% de acertos.",
-        "source": "Checklist do posto e auditoria autorizada; registro por turno e revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Corrija as 2 falhas; uma falha grave não pode ser escondida pela média."
-      },
-      {
-        "title": "Comunicação de ocorrências no prazo",
-        "formula": "Regra: (ocorrências comunicadas no prazo ÷ total de ocorrências avaliadas) × 100. Exemplo: 9 no prazo em 10 ocorrências. Primeiro: 9 ÷ 10 = 0,9. Depois: 0,9 × 100 = 90% no prazo.",
-        "source": "Horários de identificação e comunicação; avaliação por evento e consolidação mensal.",
-        "care": "Meta ilustrativa: 100%. Entenda por que 1 comunicação atrasou e ajuste o apoio ou o fluxo."
-      },
-      {
-        "title": "Completude dos relatos",
-        "formula": "Regra: (relatos completos ÷ total de relatos conferidos) × 100. Exemplo: 16 completos em 20 relatos. Primeiro: 16 ÷ 20 = 0,8. Depois: 0,8 × 100 = 80% completos.",
-        "source": "Amostra de registros; revisão semanal pelo supervisor.",
-        "care": "Meta ilustrativa: 100%. Faltaram informações em 4 relatos. Oriente o registro completo, sem ocultar ocorrências."
-      }
-    ]
-  },
-  {
     "slug": "indicadores-limpeza",
     "section": "05 · Indicadores por função",
-    "title": "Limpeza · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
+    "title": "Limpeza: como provar a qualidade do serviço?",
+    "intro": "Vamos aprender usando a limpeza como exemplo completo. Um ambiente limpo depende da execução, do uso correto dos materiais, da apresentação da equipe e da organização. Os números abaixo são fictícios: servem para aprender a medir e conversar sobre a entrega.",
     "blocks": [
       {
-        "title": "A mesma regra para calcular a porcentagem",
-        "text": "Porcentagem = (parte que queremos contar ÷ total avaliado) × 100. A regra é igual na vigilância e na limpeza. O que muda é o que estamos contando: acertos ou problemas.",
-        "example": "Na vigilância, 38 acertos em 40 verificações = 95% de acertos. Na limpeza, 45 acertos em 50 itens = 90% de acertos. Nos dois casos, quanto maior, melhor. Já 4 serviços refeitos em 20 = 20% de retrabalho: quanto menor, melhor. Sempre leia o nome do indicador antes de comparar.",
+        "title": "Como montar um checklist que todos entendam",
+        "text": "Transforme “está limpo” em critérios que possam ser conferidos. Defina o que observar, onde e quando. Use os mesmos critérios ao comparar períodos e registre os itens que não se aplicam.",
+        "example": "Exemplo de verificação visual, conforme o plano do local: piso sem resíduos visíveis e sem água acumulada; lixeira sem transbordamento; dispensador abastecido; superfície sem marcas visíveis. Aparência limpa, sozinha, não prova desinfecção.",
         "points": []
       },
       {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "Peça que a encarregada explique o motivo de uma não conformidade e ensine a correção. A ISSA recomenda critérios de avaliação e comparação com uma linha de base.",
-        "example": "",
+        "title": "Porcentagem ou média: escolha a conta certa",
+        "text": "Para saber a porcentagem, use (parte ÷ total) × 100. Para saber o consumo por serviço ou por área, divida o consumo pela quantidade atendida, sem multiplicar por 100. Sempre escreva a unidade: %, litros, mililitros ou minutos.",
+        "example": "45 itens corretos em 50 = 90%. Já 10 litros em 2.000 m² = 5 mililitros por m². Acertos: quanto maior, melhor. Retrabalho e perdas evitáveis: quanto menor, melhor. Consumo: precisa ser avaliado junto com a qualidade e as condições do serviço.",
+        "points": []
+      },
+      {
+        "title": "Mostre a evolução ao cliente",
+        "text": "Leve o resultado, a meta, os problemas encontrados e as ações tomadas. A percepção do cliente ajuda a investigar; os registros permitem explicar a entrega com evidências. Compare períodos com critérios e condições semelhantes.",
+        "example": "Exemplo fictício: “Na primeira semana, 45 de 50 itens estavam corretos: 90%. Após orientação e reposição de materiais, foram 48 de 50: 96%. Melhoramos 6 pontos percentuais e atingimos a meta ilustrativa. Os 2 desvios restantes têm responsável e prazo para correção.”",
+        "points": []
+      },
+      {
+        "title": "Comece com poucos indicadores e acompanhe",
+        "text": "Estes são exemplos para escolher, não uma obrigação de implantar todos de uma vez. Selecione os mais importantes para o contrato, combine as metas e defina quem registra, quem confere e quando a equipe vai revisar os resultados.",
+        "example": "Na reunião semanal, o supervisor apresenta o que melhorou, o que piorou e por quê. Para cada dificuldade, combinem uma ação, um responsável e uma data para verificar se funcionou.",
         "points": []
       }
     ],
@@ -583,228 +509,99 @@ export const lessons: Lesson[] = [
       "issa",
       "osha"
     ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
+    "prompt": "Se vocês fossem apresentar o serviço de limpeza ao cliente hoje, quais três indicadores escolheriam e quais registros usariam?",
+    "answer": "Escolham indicadores que mostrem qualidade, execução e uso dos recursos. Expliquem a conta, o resultado atual, a meta pactuada e a ação necessária. Se o dado ainda não existe, combinem como começar a coletá-lo.",
     "metrics": [
       {
-        "title": "Qualidade da limpeza",
-        "formula": "Regra: (itens dentro do padrão ÷ total de itens inspecionados) × 100. Exemplo: 45 corretos em 50 itens. Primeiro: 45 ÷ 50 = 0,9. Depois: 0,9 × 100 = 90% de acertos.",
-        "source": "Checklist por tipo de área e criticidade; inspeção diária e tendência semanal.",
-        "care": "Meta ilustrativa: pelo menos 96%, ou 48 de 50 itens. Corrija os 5 desvios e verifique causas. Falhas críticas exigem ação imediata."
+        "title": "1 · Qualidade da limpeza",
+        "formula": "O supervisor confere 50 itens do checklist: pisos, banheiros, lixeiras e superfícies previstas no plano. Desses, 45 estão dentro do padrão. (45 ÷ 50) × 100 = 90% de qualidade na avaliação.",
+        "source": "Checklist com critérios claros, local, horário e resultado. Conferência diária; resumo semanal.",
+        "care": "Meta ilustrativa: pelo menos 96%, ou 48 de 50 itens. Faltam 3 acertos para atingir a meta, mas os 5 problemas encontrados precisam de tratamento. Uma falha crítica exige ação imediata, mesmo que a média seja boa."
       },
       {
-        "title": "Retrabalho",
-        "formula": "Regra: (serviços que precisaram ser refeitos ÷ total de serviços conferidos) × 100. Exemplo: 4 refeitos em 20 serviços. Primeiro: 4 ÷ 20 = 0,2. Depois: 0,2 × 100 = 20% de retrabalho. Aqui contamos os problemas, por isso quanto menor, melhor.",
-        "source": "Inspeção e ordens de correção; consolidação semanal.",
-        "care": "Meta ilustrativa: no máximo 5%, ou 1 em 20. Quanto menor, melhor. Sujeira nova causada pelo uso do ambiente não é o mesmo que erro de limpeza."
+        "title": "2 · Retrabalho: fazer certo na primeira vez",
+        "formula": "De 20 serviços conferidos, 4 precisaram ser refeitos por falha na execução. (4 ÷ 20) × 100 = 20% de retrabalho. Os outros 16 foram entregues corretamente na primeira vez: (16 ÷ 20) × 100 = 80%.",
+        "source": "Registro de inspeção e correção, com motivo e tempo gasto. Resumo semanal.",
+        "care": "Meta ilustrativa: no máximo 5% de retrabalho, ou 1 em 20. Quanto menor, melhor. Investigue método, orientação, tempo e material. Sujeira nova causada pelo uso do ambiente não é erro da limpeza anterior."
       },
       {
-        "title": "Consumo de material por serviço comparável",
-        "formula": "Esta conta não é uma porcentagem: é consumo médio por serviço. Regra: litros usados ÷ total de serviços comparáveis. Exemplo: 12 litros ÷ 60 serviços = 0,2 litro por serviço, ou 200 mililitros. Não multiplicamos por 100, pois queremos litros por serviço, e não uma porcentagem.",
-        "source": "Estoque e execução do plano; análise mensal.",
-        "care": "Referência didática: 200 mililitros por serviço, somente se validada para essa tarefa. Consumo menor não garante qualidade; siga a diluição e as instruções do produto."
+        "title": "3 · Cumprimento das tarefas no prazo",
+        "formula": "O plano da escala previa 30 tarefas e 27 foram concluídas no prazo e conferidas. (27 ÷ 30) × 100 = 90% das tarefas entregues no prazo.",
+        "source": "Plano da escala com tarefa, responsável, horário previsto e confirmação da entrega.",
+        "care": "Meta ilustrativa: 100% das tarefas aplicáveis. Investigue as 3 pendências: faltou tempo, material, equipamento, pessoal ou clareza? Não marque como concluído o que ainda precisa ser feito."
+      },
+      {
+        "title": "4 · Uso correto e diluição dos produtos",
+        "formula": "Em 20 preparos ou usos observados, 18 seguiram corretamente as instruções do produto e o procedimento do local. (18 ÷ 20) × 100 = 90% de uso correto.",
+        "source": "Observação do produto escolhido, dosador, instruções, identificação e modo de uso. Registre os critérios aplicáveis.",
+        "care": "Meta ilustrativa: 100%. Corrija as 2 situações inadequadas. Não existe uma diluição única para todos os produtos: siga o fabricante e o procedimento aprovado. Não misture produtos; usar mais concentrado não significa limpar melhor."
+      },
+      {
+        "title": "5 · Consumo de produto por área limpa",
+        "formula": "Foram usados 10 litros de solução pronta para limpar 2.000 m² de áreas comparáveis. 10 ÷ 2.000 = 0,005 litro por m², ou 5 mililitros por m². Esta conta é uma média de consumo, não uma porcentagem.",
+        "source": "Registro da solução pronta utilizada e da área efetivamente limpa, pelo mesmo método. Não confunda solução pronta com produto concentrado.",
+        "care": "Referência fictícia: 5 mililitros por m² nesse serviço, apenas para entender a conta; não é recomendação de aplicação. Se outro período usar 14 litros nos mesmos 2.000 m², serão 7 mililitros por m²: investigue a diferença de 4 litros. Considere sujeira, método e qualidade antes de concluir que houve desperdício."
+      },
+      {
+        "title": "6 · Perda de material por desperdício",
+        "formula": "De 40 litros de solução pronta preparados, 4 litros tiveram descarte evitável por preparo excessivo ou derramamento. (4 ÷ 40) × 100 = 10% de perda registrada.",
+        "source": "Registro de preparo, uso, descarte e causa. Separe desperdício evitável de descarte necessário previsto no procedimento.",
+        "care": "Meta ilustrativa: no máximo 5% de perda evitável, ou 2 litros em 40. Ajuste o preparo e verifique recipientes e dosadores. Nunca reaproveite solução imprópria para melhorar o indicador; siga as regras de descarte."
+      },
+      {
+        "title": "7 · Disponibilidade de materiais e equipamentos",
+        "formula": "Em 20 verificações de início da escala, 18 tinham todos os itens necessários disponíveis e em condições de uso. (18 ÷ 20) × 100 = 90% de disponibilidade.",
+        "source": "Checklist de início de escala: produtos, panos, sacos, utensílios, equipamentos e itens de proteção previstos para a tarefa.",
+        "care": "Meta ilustrativa: 100%. Descubra o que faltou nas 2 verificações e quem deve providenciar a reposição. A falta de um item essencial exige ação antes da execução da tarefa."
+      },
+      {
+        "title": "8 · Uniforme: apresentação e condições de uso",
+        "formula": "Em 20 verificações de início de escala, 18 atenderam aos critérios combinados de uniforme: peças exigidas, limpeza e conservação. (18 ÷ 20) × 100 = 90% de conformidade.",
+        "source": "Checklist objetivo de apresentação profissional. Registre a necessidade de reposição ou troca, sem julgamentos sobre aparência pessoal.",
+        "care": "Meta ilustrativa: 100%. Converse reservadamente sobre as 2 situações e verifique se houve fornecimento, tamanho adequado e possibilidade de troca. Uniforme não substitui equipamento de proteção; avalie a proteção separadamente."
+      },
+      {
+        "title": "9 · Uso da proteção prevista para a tarefa",
+        "formula": "Em 15 observações de tarefas que exigiam proteção específica, 14 estavam com todos os itens previstos corretamente utilizados. (14 ÷ 15) × 100 = aproximadamente 93,3%.",
+        "source": "Observação conforme os riscos da tarefa e as orientações de segurança do local. Confira disponibilidade, estado e uso dos itens exigidos.",
+        "care": "Meta ilustrativa: 100%. Corrija a situação inadequada antes de continuar a tarefa. Não espere a reunião semanal nem aceite uma exposição ao risco porque a média ficou alta."
+      },
+      {
+        "title": "10 · Organização e identificação dos materiais",
+        "formula": "De 25 itens aplicáveis conferidos no carrinho e no local de armazenamento, 23 estavam organizados, identificados e guardados conforme o procedimento. (23 ÷ 25) × 100 = 92%.",
+        "source": "Checklist do carrinho e do armazenamento: identificação, validade, condições dos recipientes e separação prevista para os materiais.",
+        "care": "Meta ilustrativa: 100%. Corrija os 2 desvios. Produto sem identificação não deve ser usado até que a situação seja resolvida de forma segura."
       }
     ]
   },
   {
-    "slug": "indicadores-ronda",
+    "slug": "indicadores-em-grupo",
     "section": "05 · Indicadores por função",
-    "title": "Ronda · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
+    "title": "Agora é com vocês: construam os indicadores da WD.",
+    "intro": "Usamos a limpeza para aprender. Agora, cada grupo vai definir como demonstrar o sucesso de uma das funções abaixo. Não há respostas prontas: construam os indicadores a partir da realidade dos postos.",
     "blocks": [
       {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "Aqui “ronda” significa a atividade de verificação definida no posto. Ela não amplia atribuições ou autoriza intervenções para as quais a pessoa não esteja preparada.",
-        "example": "",
+        "title": "Funções para o trabalho em grupo",
+        "text": "Portaria • Vigilante • Ronda • Zelador • Jardineiro • Recepcionista • Supervisor",
+        "example": "Distribuam as funções entre os grupos. Todos vão apresentar suas propostas e ouvir as contribuições dos demais.",
+        "points": []
+      },
+      {
+        "title": "Quais são os indicadores de sucesso desta função?",
+        "text": "O que significa entregar um bom serviço? O que precisa ser medido para comprovar essa entrega ao cliente? Como vocês medem hoje? Quais metas precisam ser alcançadas?",
+        "example": "Construam a resposta em grupo, sem se limitar à percepção de que “está bom” ou “está ruim”.",
+        "points": []
+      },
+      {
+        "title": "Preparem a apresentação do grupo",
+        "text": "Para cada indicador escolhido, registrem: nome, o que será medido, como calcular, unidade, origem do dado, frequência, responsável, meta e prazo. Se não conhecem o resultado atual, indiquem como irão levantá-lo.",
+        "example": "Ao apresentar, expliquem também o que a equipe fará quando o resultado ficar abaixo do esperado e como evitarão que a busca pela meta prejudique a qualidade ou a segurança.",
         "points": []
       }
     ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Cobertura válida do plano",
-        "formula": "O plano previa 40 pontos de verificação e 36 foram realmente conferidos. 36 ÷ 40 × 100 = 90%.",
-        "source": "Plano de ronda e registros autorizados; apuração por turno.",
-        "care": "Meta ilustrativa: 100%. Investigue os 4 pontos pendentes. Marcar presença no sistema não substitui verificar o local."
-      },
-      {
-        "title": "Encaminhamento de anomalias",
-        "formula": "Foram registradas 8 anomalias e 6 foram encaminhadas no prazo do protocolo. 6 ÷ 8 × 100 = 75%.",
-        "source": "Registro de achados e acionamentos; revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Trate as 2 pendências. Não estabeleça quantidade mínima de problemas para encontrar."
-      },
-      {
-        "title": "Qualidade dos registros",
-        "formula": "De 10 registros conferidos, 9 estavam completos. 9 ÷ 10 × 100 = 90%.",
-        "source": "Amostra de relatórios; revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Identifique o que faltou em 1 registro e melhore o próximo relato."
-      }
-    ]
-  },
-  {
-    "slug": "indicadores-zelador",
-    "section": "05 · Indicadores por função",
-    "title": "Zelador · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "O zelador prepara uma lista priorizada de pendências com impacto, responsável e próxima ação. O supervisor discute os critérios utilizados.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Rotinas preventivas realizadas",
-        "formula": "Das 20 verificações preventivas previstas, 18 foram feitas no prazo. 18 ÷ 20 × 100 = 90%.",
-        "source": "Plano do local e evidências de verificação; revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Reprograme as 2 pendências conforme o risco e acione profissionais habilitados quando necessário."
-      },
-      {
-        "title": "Chamados encaminhados no prazo",
-        "formula": "De 15 chamados, 12 tiveram avaliação inicial e encaminhamento no prazo. 12 ÷ 15 × 100 = 80%.",
-        "source": "Sistema ou livro de chamados; revisão semanal por criticidade.",
-        "care": "Meta ilustrativa: 100%. Investigue os 3 atrasos. Separe o encaminhamento do tempo de execução do fornecedor."
-      },
-      {
-        "title": "Reincidência de problemas",
-        "formula": "De 20 chamados encerrados e acompanhados por 30 dias, 3 voltaram pelo mesmo problema. 3 ÷ 20 × 100 = 15%.",
-        "source": "Histórico de chamados; revisão mensal.",
-        "care": "Meta ilustrativa: no máximo 5%, ou 1 em 20. Quanto menor, melhor. Investigue por que a solução não durou."
-      }
-    ]
-  },
-  {
-    "slug": "indicadores-jardineiro",
-    "section": "05 · Indicadores por função",
-    "title": "Jardineiro · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "Peça que o jardineiro identifique uma oportunidade de evitar desperdício e explique como preservará as condições das plantas ao testar o ajuste.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Conformidade das áreas verdes",
-        "formula": "De 30 itens avaliados nas áreas verdes, 27 estavam de acordo com o padrão. 27 ÷ 30 × 100 = 90%.",
-        "source": "Inspeção por área e estação; consolidação semanal ou quinzenal.",
-        "care": "Meta ilustrativa: pelo menos 90%. A meta foi atingida, mas os 3 desvios ainda precisam de análise, considerando clima e espécie."
-      },
-      {
-        "title": "Cumprimento do plano de manejo",
-        "formula": "Havia 12 atividades previstas para o período e 10 foram realizadas na época adequada. 10 ÷ 12 × 100 = 83,3%.",
-        "source": "Plano de manejo e registros; revisão semanal.",
-        "care": "Meta ilustrativa: 100% das atividades aplicáveis. Registre se chuva ou orientação técnica impediram as 2 atividades; não execute em condições inadequadas."
-      },
-      {
-        "title": "Eficiência do uso de água",
-        "formula": "O medidor registrou 2.000 litros para irrigar 500 m² no período. 2.000 ÷ 500 = 4 litros por m².",
-        "source": "Medidor dedicado e registro de áreas; avaliação mensal com dados de chuva.",
-        "care": "Referência fictícia: até 4 litros por m² nesse período, se validada tecnicamente. Compare chuva, espécie e saúde das plantas; economizar água não significa deixar plantas sem o necessário."
-      }
-    ]
-  },
-  {
-    "slug": "indicadores-recepcao",
-    "section": "05 · Indicadores por função",
-    "title": "Recepcionista · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "O supervisor observa uma simulação e dá retorno sobre escuta, clareza e encaminhamento. Desenvolver não é pedir que a pessoa “seja mais simpática” sem explicar comportamentos.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Encaminhamento correto na primeira vez",
-        "formula": "De 50 atendimentos avaliados, 47 foram encaminhados corretamente na primeira vez. 47 ÷ 50 × 100 = 94%.",
-        "source": "Amostra de atendimentos e correções; revisão semanal.",
-        "care": "Meta ilustrativa: pelo menos 98%, ou 49 de 50. Precisamos de mais 2 encaminhamentos corretos para atingir a meta."
-      },
-      {
-        "title": "Tempo médio de espera",
-        "formula": "Cinco visitantes esperaram 1, 1, 2, 3 e 3 minutos. A soma é 10; 10 ÷ 5 = 2 minutos de espera média.",
-        "source": "Registro por faixa de movimento; análise semanal.",
-        "care": "Meta ilustrativa: média de até 2 minutos. Foi atingida, mas confira também a maior espera, de 3 minutos, e os picos."
-      },
-      {
-        "title": "Satisfação com o atendimento",
-        "formula": "Das 20 respostas recebidas, 18 foram “bom” ou “ótimo”. 18 ÷ 20 × 100 = 90% de satisfação. Se 50 pessoas foram convidadas, 20 ÷ 50 × 100 = 40% de participação.",
-        "source": "Pesquisa breve e voluntária; análise mensal.",
-        "care": "Meta ilustrativa: pelo menos 90% de satisfação. Esse resultado descreve quem respondeu; não permite afirmar que todos os clientes estão satisfeitos."
-      }
-    ]
-  },
-  {
-    "slug": "indicadores-supervisor",
-    "section": "05 · Indicadores por função",
-    "title": "Supervisor · o que significa fazer bem?",
-    "intro": "Vamos entender o resultado deste posto com três exemplos simples. Em cada um, veja o que foi contado, faça a conta e compare com a meta de exemplo.",
-    "blocks": [
-      {
-        "title": "Como desenvolver alguém usando estes dados",
-        "text": "Complete o painel com qualidade do serviço, voz do cliente, faltas e rotatividade contextualizadas e custos sob sua influência. O supervisor deve explicar causas, decisões e resultados, não apenas apresentar números.",
-        "example": "",
-        "points": []
-      }
-    ],
-    "refs": [
-      "kaplan",
-      "osha"
-    ],
-    "prompt": "Agora é com vocês: quais destes números vocês já conhecem no posto e o que falta começar a registrar?",
-    "answer": "Escolham um indicador para começar. Combinem o que será contado, quem vai registrar, quando vão conferir e qual será a meta real do contrato. Depois expliquem o resultado à equipe e ao cliente com números e ações.",
-    "metrics": [
-      {
-        "title": "Cobertura planejada do serviço",
-        "formula": "Foram previstas 200 horas de cobertura e 190 foram cumpridas conforme o plano. 190 ÷ 200 × 100 = 95%.",
-        "source": "Escala e registros de cobertura; apuração diária e análise semanal.",
-        "care": "Meta ilustrativa: 100%. Faltaram 10 horas. Investigue as causas e organize a cobertura respeitando jornada, preparo e condições de trabalho."
-      },
-      {
-        "title": "Ações corretivas eficazes",
-        "formula": "Das 10 ações que deveriam terminar na semana, 8 foram concluídas no prazo e tiveram o resultado confirmado. 8 ÷ 10 × 100 = 80%.",
-        "source": "Plano de ação, prazo e verificação; revisão semanal.",
-        "care": "Meta ilustrativa: 100%. Trate as 2 pendências. Marcar uma ação como concluída não basta: confira se resolveu o problema."
-      },
-      {
-        "title": "Desenvolvimento com competência demonstrada",
-        "formula": "De 5 pessoas com avaliação prática prevista, 4 demonstraram a habilidade combinada. 4 ÷ 5 × 100 = 80%.",
-        "source": "Plano de desenvolvimento e observação com critérios; revisão mensal.",
-        "care": "Meta ilustrativa: 100%. Planeje apoio para a pessoa que ainda precisa praticar. Participar do treinamento não é o mesmo que demonstrar a habilidade."
-      }
-    ]
+    "refs": [],
+    "prompt": "Cada grupo apresenta sua proposta. Os demais conseguem entender como medir, qual meta buscar e o que fazer com o resultado?",
+    "answer": "Discutam clareza, utilidade, possibilidade de coletar o dado e relação com o contrato. Ajustem as propostas em conjunto antes de colocá-las em prática."
   },
   {
     "slug": "plano-de-desenvolvimento",
