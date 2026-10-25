@@ -1,5 +1,5 @@
-.cover{overflow-x:clip}.stage{display:grid;place-items:center;padding:44px clamp(16px,4vw,64px);min-height:calc(100svh - 92px)}
-.panel{width:min(1280px,100%);text-align:center;padding:clamp(24px,4vw,56px);overflow:hidden}
+.cover{overflow-x:clip}.stage{display:grid;place-items:center;padding:24px 16px;min-height:calc(100svh - 92px)}
+.panel{width:100%;text-align:center;padding:clamp(24px,4vw,56px);overflow:hidden}
 .number{display:table;margin:28px auto 20px!important;color:#caffb5;border:1px solid #b6ffba55;background:#caffb50e;padding:8px 28px;border-radius:99px;font-weight:750}
 .panel h1{margin:0 0 24px;text-wrap:balance}.panel h1 strong{color:white}.intro{color:#e4ffeb;text-wrap:balance;margin:0}
 .partnership{width:min(680px,100%);height:260px;position:relative;margin:14px auto 20px;display:flex;align-items:center;justify-content:space-between;gap:22px}
@@ -11,3 +11,5 @@
 @keyframes float{0%,100%{translate:0 6px}50%{translate:0 -10px}}
 @media(max-width:650px){.stage{padding:28px 16px}.panel{padding:26px 16px}.partnership{height:180px;gap:10px}.logo{width:100px;height:110px;border-radius:20px;padding:12px;flex-shrink:0}.connection{width:60px}.actions{flex-direction:column}.actions a{width:100%}.intro br{display:none}}
 @media(prefers-reduced-motion:reduce){.logo{animation:none}}
+
+.panel h1{width:100%;max-width:none;text-align:center}.intro{text-align:justify;text-justify:inter-word;text-wrap:wrap;hyphens:auto}.number{text-align:center!important}

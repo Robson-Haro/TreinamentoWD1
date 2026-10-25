@@ -44,3 +44,20 @@
 @media(max-width:900px) { .grid,.hero { grid-template-columns:minmax(0,1fr); } .logos { width:fit-content; } .nav { gap:16px; } .footer { align-items:stretch; flex-direction:column; } .button { text-align:center; } }
 @media(prefers-reduced-transparency:reduce) { .panel { background:#123e30; backdrop-filter:none; } }
 @media print { .screen { color:#111; background:#fff; } .topbar,.footer { display:none; } .panel { break-inside:avoid; box-shadow:none; background:#fff; border-color:#777; } .screen h1,.screen h2,.screen h3,.screen strong { color:#17432c; } }
+
+/* Layout amplo para todas as telas do terceiro módulo. */
+.screen:not(.blue) .content { width:calc(100% - 32px); max-width:none; padding-top:24px; }
+.screen:not(.blue) .panel { padding:clamp(20px,2vw,36px); }
+.screen:not(.blue) :is(h1,h2,h3) { width:100%; max-width:none; text-align:center; }
+.screen:not(.blue) :is(p,li,blockquote) { max-width:none; text-align:justify; text-justify:inter-word; hyphens:auto; }
+.screen:not(.blue) .hero { grid-template-columns:minmax(0,1fr); }
+.screen:not(.blue) .hero > div:first-child { width:100%; min-width:0; }
+.screen:not(.blue) .logos { justify-self:center; width:fit-content; }
+.screen:not(.blue) :is(.eyebrow,.kicker) { display:block; text-align:center; }
+.screen:not(.blue) .index a { text-align:center; }
+.screen:not(.blue) .index strong { display:block; }
+.screen:not(.blue) .details summary { text-align:center; }
+@media(max-width:650px) {
+ .screen:not(.blue) .content { width:calc(100% - 16px); }
+ .screen:not(.blue) .panel { padding:20px 16px; }
+}
